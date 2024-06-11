@@ -1,0 +1,78 @@
+.delete-close-img-circle-div-container {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 10px;
+  padding-top: 10px;
+  cursor: pointer;
+}
+
+.delete-close-img-circle {
+  padding-right: 10px;
+  padding-top: 10px;
+}
+
+.delete-main-container {
+  margin: 10px;
+  margin-top: 30px;
+}
+
+.delete-container {
+  text-align: center;
+  margin: 10px;
+}
+
+.delete-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+}
+
+.delete-buttons-one {
+  margin-right: 10px;
+}
+
+.delete-img-circle {
+  height: 40px;
+  width: 40px;
+  background: #d9d9d9;
+  border-radius: 50%;
+  padding: 8px;
+  text-align: center;
+}
+
+.delete-img-circle-div-container {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  margin: 30px;
+}
+
+
+.qrsection {
+  display: flex;
+  justify-content: center;
+  padding: 40px 0 40px 0px;
+}
+
+.qrsection_qr {
+  padding: 40px 0 40px 0;
+}
+
+.qrsection_bubbl {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: -5px;
+  bottom: 0;
+}
+
+.qrsection_bubbl_logo {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  z-index: 1;
+}

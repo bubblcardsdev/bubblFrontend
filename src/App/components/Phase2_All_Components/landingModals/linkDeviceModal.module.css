@@ -1,0 +1,147 @@
+.step2DetailsTemplate {
+    background-color: #1E1D24;
+    padding: 40px 30px 20px 30px;
+}
+
+.hrDivLine {
+    background: #9B9B9B;
+    width: 366px;
+    height: 0.4px;
+    margin-top: 25px;
+    margin-left: 39px;
+
+}
+
+.ContinueContent {
+    color: red;
+    font-size: 12px;
+    margin-left: 32px;
+
+}
+
+.linkText {
+    color: white !important;
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 14px;
+    cursor: pointer;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+    border-top-right-radius: 5px !important;
+    border-bottom-right-radius: 5px !important;
+    z-index: 1;
+}
+
+
+.linkHeading {
+    color: #FFF;
+    text-align: center;
+    font-family: Oxygen;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.inputHead {
+    margin-top: 30px;
+    margin-left: 32px;
+}
+
+.linkSubContent {
+    margin-left: 32px;
+    color: #FFF;
+    font-family: "Oxygen";
+    font-size: 9px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 7px;
+}
+
+.linkSubContent span {
+    opacity: 0.7;
+    color: #ffffff;
+    font-family: "Oxygen";
+    font-size: 9px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.placeholder_head {
+
+    color: #FFF;
+    font-family: "Oxygen";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.doneBtnDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 63px;
+    gap: 30px;
+    margin-bottom: 59px;
+}
+
+.doneBtn {
+    width: 200px;
+    height: 51px;
+
+    border-radius: 18px;
+    background: #AB39D2;
+    color: #FFF;
+    font-family: "Oxygen";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    border: none;
+}
+
+.doneBtn:active {
+    background: #AB39D2 !important;
+    border: none !important;
+}
+
+.doneBtn:hover {
+    background: #AB39D2 !important;
+    border: none !important;
+}
+
+.closeBtn,
+.closeBtn:hover,
+.closeBtn:active,
+.closeBtn:focus-visible {
+    background-color: transparent !important;
+    border: transparent;
+}
+
+@media screen and (max-width: 500px) {
+    .hrDivLine {
+        width: 56vw !important;
+        /* margin: 0 */
+    }
+
+    .doneBtn {
+        width: 30vw;
+        height: 5vh;
+    }
+
+    .inputHead {
+        margin-left: 0px;
+    }
+
+    .linkSubContent {
+        margin-left: 0px;
+    }
+
+    .ContinueContent {
+        margin-left: 0px;
+        display: none;
+    }
+}

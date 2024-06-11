@@ -1,0 +1,35 @@
+.accordianbody {
+  font-family: "Oxygen";
+
+  font-weight: lighter;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: justify;
+  color: #ffffff;
+}
+
+.accordianhead {
+  font-family: "Oxygen";
+  width: 100%;
+  font-weight: 700;
+  font-size: 18px;
+  text-align: left;
+  color: #ffffff;
+}
+
+.accordianhead button {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.faq_des p {
+  font-weight: 700;
+  padding-top: 15px;
+  padding-bottom: 8px;
+}
+
+.line {
+  border-top: 1px solid #454545;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

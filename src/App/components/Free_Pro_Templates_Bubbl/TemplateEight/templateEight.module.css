@@ -1,0 +1,303 @@
+.container {
+  max-height: 104%;
+  overflow: scroll;
+}
+
+.mobile_template {
+  max-width: 480px;
+  position: relative;
+  margin: 0 auto;
+  background-color: white;
+  width: 100%;
+}
+
+.imageCss {
+  position: absolute;
+  top: 0;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  justify-content: center;
+  display: flex;
+}
+
+.bg_img {
+  top: 0;
+  position: relative;
+  height: 450px;
+}
+
+.bg_image {
+  top: -60px;
+  position: absolute;
+}
+
+.bg_image {
+  height: 300px;
+}
+
+.logo_shadow {
+  background-color: #F4F4F4;
+  height: 110px;
+  border-bottom-left-radius: 122px;
+  border-bottom-right-radius: 122px;
+  margin-top: -6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content_des {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  text-align: center;
+  overflow: hidden;
+  max-width: 30ch;
+  text-overflow: ellipsis;
+}
+
+
+
+.totalContainer {
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-top: 50px;
+}
+
+.contact_btns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.saveConBtn {
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 27px;
+  padding: 5px 11px;
+  height: 42px;
+  width: 150px;
+  border: unset;
+}
+
+.savePhoneBtn {
+  font-weight: 700;
+  font-size: 16px;
+  color: white;
+  background-color: #67505f;
+  border-radius: 27px;
+  padding: 5px 11px;
+  height: 42px;
+  width: 70px;
+  border: unset;
+}
+
+.contact_head {
+  font-weight: 700;
+  font-size: 28px;
+  margin: 25px 0px 16px 0px;
+}
+
+.content_div {
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.svg_div {
+  margin-bottom: 16px;
+}
+
+.hr_div {
+  margin: 48px 0px 38px 0px;
+}
+
+.social_head {
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 79.61%;
+}
+
+.social_icons_div {
+  margin: 36px 0px 43px 0px;
+  display: flex;
+  justify-content: center;
+}
+
+.social_icons_div>div {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.payment_color {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 79.61%;
+  margin: 38px 0px 36px 0px;
+}
+
+/*qr for all templates  */
+.qrCode {
+  padding-top: 30px;
+}
+
+.qrCode canvas {
+  width: 120px;
+  height: 120px;
+  border-radius: 3px;
+}
+
+.qrCode h6 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 33px;
+}
+
+/* user info */
+.name {
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.position {
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 12px;
+  margin-bottom: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.contentdiv {
+  text-align: -webkit-center;
+}
+
+.content_des {
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  margin-bottom: 24px;
+  overflow: hidden;
+  max-width: 280px;
+  word-wrap: break-word;
+  text-overflow: ellipsis;
+}
+
+.userInfo_div {
+  padding: 30px;
+  border-radius: 32px;
+  margin-top: -78px;
+}
+
+/* payments */
+.gpay {
+  background-color: #f5f5f5;
+  height: 43px;
+  width: 50px;
+  border-radius: 5px;
+  text-align: -webkit-center;
+  padding-top: 10px;
+}
+
+.pay {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.headings {
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 29px;
+  color: #3b4fae;
+  text-align: left;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.logo_Img {
+  position: absolute;
+  z-index: 1;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-top: 80px;
+}
+
+/* name Component */
+
+.header_name {
+  padding-top: 40px;
+}
+
+.yourname {
+  display: flex;
+}
+
+.header_name h2 {
+  font-size: 24px;
+  font-weight: 700;
+  overflow: hidden;
+  max-width: 16ch;
+  text-overflow: ellipsis;
+  flex-wrap: nowrap;
+}
+
+.tick {
+  padding-top: 4px;
+}
+
+.header_name p {
+  font-weight: 400;
+  font-size: 12px;
+  margin-bottom: 9px;
+  word-wrap: break-word;
+}
+
+.contact_paragraph {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  max-width: 270px;
+  word-wrap: break-word;
+  margin-bottom: 0;
+  font-family: "Source Sans Pro";
+}
+
+/* Save Contact */
+.saveContactDiv {
+  margin: 21px 0px 30px 0px;
+}
+
+@media screen and (max-width: 520px) {
+  .bg_image {
+    top: -75px;
+    position: absolute;
+  }
+
+  .header_name {
+    padding-top: 50px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .bg_image {
+    top: -55px;
+    position: absolute;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .bg_image {
+    top: -40px;
+    position: absolute;
+  }
+}

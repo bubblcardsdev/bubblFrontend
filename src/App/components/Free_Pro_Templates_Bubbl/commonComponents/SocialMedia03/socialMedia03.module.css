@@ -1,0 +1,14 @@
+.social_icons_div {
+  margin: 20px 0px 30px 0px;
+  display: flex;
+}
+
+.social_icons_div>div {
+  padding-right: 10px;
+}
+
+.social_head {
+  font-weight: 700;
+  font-size: 28px;
+  padding-top: 20px;
+}

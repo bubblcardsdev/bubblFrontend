@@ -1,0 +1,100 @@
+.welcome {
+  text-align: center;
+  font-size: 32px;
+  margin-top: 35px;
+}
+
+.login_right {
+  padding-left: 139px;
+  padding-right: 139px;
+}
+
+.right_heading {
+  font-size: 32px;
+  padding-top: 75px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.loginrt_line {
+  border-top: 2px solid black;
+  width: 488px;
+  margin-bottom: 71px;
+}
+
+.login_right {
+  background-color: white;
+}
+
+.signUp_page {
+  display: flex;
+  justify-content: space-between;
+}
+
+.signUp_fieldName {
+  display: flex;
+  justify-content: space-between;
+}
+
+.first_name,
+.last_name,
+.email,
+.password,
+.confirmPassword {
+  margin-bottom: 10px;
+}
+
+.nextBtn {
+  width: 100%;
+}
+
+.logo {
+  font-size: 24px;
+  margin-top: 80px;
+  margin-bottom: 50px;
+}
+
+.login_leftheading {
+  font-size: 48px;
+  width: 396px;
+  font-weight: 400px;
+}
+
+.login_page {
+  background-color: #cbcbcb;
+}
+
+.nfc_card {
+  font-size: 38px;
+  padding-top: 105px;
+  padding-left: 37px;
+  padding-right: 265px;
+  padding-bottom: 106px;
+  background-color: white;
+  border-radius: 9px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.card_list {
+  font-size: 26px;
+  margin-bottom: 130px;
+}
+
+/* right */
+.login_right {
+  background-color: white;
+}
+
+.right_heading {
+  font-size: 32px;
+  padding-top: 75px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.loginrt_line {
+  border-top: 2px solid black;
+  width: 488px;
+  margin-bottom: 71px;
+}

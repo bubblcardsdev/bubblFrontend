@@ -1,0 +1,1225 @@
+.planSection {
+    background-color: black;
+    position: relative;
+}
+
+/* .navigation {
+    width: 95vw;
+} */
+
+
+
+.background {
+    overflow: hidden;
+    position: fixed;
+}
+
+.planPage {
+    max-width: 85.7vw;
+    margin: 0 auto;
+    /* height: 100vh; */
+}
+
+.footerSectionInside {
+    width: 85.7vw;
+    margin: 0% auto;
+}
+
+.footerSection {
+    background: linear-gradient(1deg, rgba(58, 73, 249, .88) -171.77%, rgba(129, 45, 226, .49) -22.73%, transparent 102.14%) !important;
+    padding-top: 35px;
+    margin-top: 100px;
+}
+
+.breadCrumbs {
+    display: flex;
+    gap: 5px;
+    margin-top: 20px;
+    /* padding-left: 40px; */
+}
+
+.link1 a {
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 14px;
+    color: white;
+}
+
+.link2 a {
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 14px;
+    color: #AB39D2;
+}
+
+.FreeProDiv,
+.proDiv {
+    background: linear-gradient(140deg, rgba(129, 45, 226, 0.34) 0.6%, rgba(129, 45, 226, 0.34) 39.66%, rgba(58, 73, 249, 0.34) 98.25%);
+    border-radius: 25px;
+}
+
+.free_plan {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 140px;
+    /* background-color: #0b0711; */
+    color: #0b0711;
+    border-radius: 20px 20px 0px 0px;
+}
+
+.free_plan_header {
+    display: flex;
+    align-items: center;
+    padding-left: 50px;
+}
+
+.free_plan_header h2 {
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 34px;
+    padding-left: 30px;
+}
+
+.free_plan_img {
+    margin-right: 10px;
+}
+
+.free_plan_hamburger button {
+    color: white;
+    padding-right: 65px;
+    font-size: 40px;
+    margin-top: -15px;
+}
+
+.free_plan_details {
+    height: 147px;
+    /* background-color: white; */
+}
+
+.free_plan_details h3 {
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 26px;
+    max-width: 500px;
+    padding-left: 55px;
+    color: white;
+
+}
+
+.free_plan_details h3 span {
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 26px;
+}
+
+.free_plan_bg {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding-top: 55px; */
+}
+
+.free_plan_bg h4 {
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 26px;
+    color: white;
+}
+
+.free_plan_bg p {
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 26px;
+    color: white;
+}
+
+.planHeading {
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 36px;
+    padding-bottom: 40px;
+    margin-top: 80px;
+    color: white;
+}
+
+.planDiv {
+    margin-top: 140px;
+    padding-bottom: 10px;
+}
+
+.chooseHead {
+    color: white;
+    font-family: Oxygen;
+    font-weight: 700;
+    font-size: 36px;
+}
+
+.currentPlan {
+    font-family: Oxygen;
+    font-weight: 400;
+    font-size: 18px;
+    padding-bottom: 43px;
+    color: white;
+    opacity: .7;
+}
+
+.currentPlan span {
+    color: #af38d6;
+    font-family: Oxygen;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+/* Pro */
+.pro_plan_details {
+    height: 368px;
+    /* background-color: white; */
+    border-radius: 0px 0px 20px 20px;
+}
+
+.pro_plan_details h3 {
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 26px;
+    /* padding-top: 50px; */
+    color: white;
+    padding-left: 55px;
+}
+
+.pro_plan_details h3 span {
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 26px;
+}
+
+.orderLine {
+    content: "";
+    max-width: 100%;
+    height: 1px;
+    border: 1px solid #e04ff2;
+    opacity: 0.2;
+    margin-bottom: 40px;
+    margin-left: 55px;
+    margin-top: 30px;
+}
+
+.validity_pro {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    width: 60vw;
+    margin-left: 5vw;
+}
+
+.validity_pro h4 {
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 26px;
+}
+
+.validity_pro p {
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 26px;
+}
+
+.upgrade {
+    margin-left: 55px;
+    margin-top: 60px;
+    width: 220px;
+    height: 46px;
+    background: linear-gradient(109deg,
+            rgba(129, 45, 226),
+            rgba(58, 73, 249));
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.upgrade:hover {
+    background: linear-gradient(109deg,
+            rgba(129, 45, 226),
+            rgba(58, 73, 249));
+
+    color: white;
+    box-shadow: 0px 0px 4px rgb(0 0 0 / 25%);
+}
+
+.upgrade:active {
+    background-color: linear-gradient(109deg,
+            rgba(129, 45, 226),
+            rgba(58, 73, 249));
+
+    color: white !important;
+    border-color: #af38d6 !important;
+    box-shadow: 0px 0px 4px rgb(0 0 0 / 25%);
+}
+
+.upgrade span {
+    margin-top: 7px;
+    padding-left: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 992px) {
+
+    .validity_pro h4 {
+        font-size: 18px !important;
+    }
+
+    .validity_pro p {
+        font-size: 16px !important;
+    }
+
+    .chooseHead {
+        font-size: 22px;
+    }
+
+    .currentPlan {
+        font-size: 16px;
+
+    }
+
+    .planPage {
+        width: 85.7vw;
+        margin: 0 auto;
+        /* height: 100vh; */
+    }
+
+    .planHeading {
+        font-size: 24px;
+    }
+
+    .breadCrumbs {
+        display: none;
+    }
+
+    .free_plan_header {
+        padding-left: 20px;
+    }
+
+    .free_plan_hamburger button {
+        padding-right: 15px;
+    }
+
+    .free_plan_bg {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .free_plan_details span {
+        font-size: 24px;
+    }
+
+    .free_plan_details h3 {
+        padding-left: 20px;
+        padding-right: 15px;
+        font-size: 24px;
+    }
+
+    .line_resp {
+        display: none;
+    }
+
+    .bubble_free {
+        padding-top: 40px;
+        padding-left: 20px;
+    }
+
+    .free_plan_details {
+        max-height: 100%;
+        height: 100%;
+        padding-bottom: 30px;
+    }
+
+    .upgrade {
+        margin-left: 20px;
+    }
+
+    .pro_plan_details h3 {
+        font-size: 22px;
+        padding-left: 15px;
+        padding-right: 20px;
+    }
+
+    .orderLine {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .validity_pro {
+        margin-left: 15px;
+        padding-right: 20px;
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 769px) {
+    .validity_pro {
+        flex-direction: column;
+    }
+
+    .validity_pro div {
+        padding-bottom: 30px;
+    }
+
+    .pro_plan_details {
+        height: 100%;
+        max-height: 100%;
+        padding-bottom: 40px;
+    }
+
+    .upgrade {
+        margin-top: 50px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.web {
+    padding-left: 40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.container {
+    overflow-y: scroll;
+    height: 300px,
+}
+
+.shopPageSection {
+    background-color: black;
+}
+
+.shopPageBackSection {
+    background: linear-gradient(to right,
+            rgba(203, 186, 223, 0.05),
+            rgba(193, 179, 231, 0.25));
+}
+
+.proContentHead {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.proContentFirst {
+    color: #FFF;
+    font-family: "Source Sans Pro";
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 117%;
+    /* text-transform: capitalize; */
+    width: 50%;
+}
+
+.proContentFirst span {
+    color: #FFF;
+    font-family: "Source Sans Pro";
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 117%;
+}
+
+.proContentSecond {
+    color: #FFF;
+    text-align: right;
+    font-family: "Oxygen";
+    font-size: 16px;
+    font-weight: 300;
+    width: 29%;
+    padding-right: 131px;
+
+}
+
+.userprofile_sec {
+    width: 75%;
+    margin-left: 212px;
+
+    color: white;
+    padding-bottom: 0;
+}
+
+.bubblProHead {
+    padding-left: 235px;
+    margin-top: 20px;
+}
+
+
+
+
+.home a {
+    font-family: "Oxygen", sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    color: #e4e4e4;
+    text-decoration: none;
+}
+
+.home a:hover {
+    color: #af38d6;
+}
+
+.home a:active {
+    color: #af38d6;
+}
+
+.contact_dropdown {
+    display: flex;
+    border-bottom: 1px solid #cacaca;
+    width: 100%;
+    margin-top: 7px;
+}
+
+.contact_dropdown button {
+    padding: 0;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: #020202;
+}
+
+.contact_dropdown>div {
+    width: 100%;
+}
+
+.dropdown_contact button {
+    width: 100% !important;
+    display: flex !important;
+}
+
+.dropdown_contact .home {
+    display: flex;
+    justify-content: space-between;
+    gap: 35px;
+    align-items: center;
+}
+
+
+
+
+.userprofile_landingthree {
+    border-radius: 0px 0px 228.5px 228.5px;
+    /* background: rgba(81, 81, 81, 0.11); */
+    background: grey;
+
+    backdrop-filter: blur(54.54999923706055px);
+    /* padding-top: 130px; */
+    padding-bottom: 109px;
+    background-repeat: no-repeat;
+    background-position-x: 631px;
+    background-position-y: bottom;
+    border-bottom-left-radius: 210px;
+    border-bottom-right-radius: 210px;
+    margin-bottom: 100px;
+    background-size: 775px;
+}
+
+
+@media screen and (max-width: 500px) {
+
+
+    .userprofile_landingthree {
+        border-bottom-left-radius: 72px;
+        border-bottom-right-radius: 72px;
+        margin-bottom: 65px;
+    }
+
+
+
+    .features {
+        margin-top: 0px !important;
+    }
+}
+
+
+.letscard {
+    font-size: 32px;
+    font-weight: 700;
+    font-family: "Source Sans Pro";
+    margin-bottom: 10px;
+    margin-top: 68px;
+    background: linear-gradient(90deg, #812DE2 -26.37%, #3A49F9 113.91%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+.explore {
+    color: #F5F5F7;
+    font-family: "Oxygen";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 143.947%;
+    width: 31%;
+
+    /* 46.063px */
+}
+
+
+.contactPage {
+    background-color: black;
+}
+
+
+.knowhwat {
+    text-align: -webkit-center;
+}
+
+.experience {
+    font-family: "Oxygen", sans-serif;
+
+    font-weight: 300;
+    font-size: 28px;
+    text-align: center;
+    color: #111111;
+    margin-bottom: 60px;
+}
+
+.breadcrumbs {
+    font-family: "Oxygen", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    color: #656565;
+}
+
+.sub_breadcrumbs {
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: #af38d6;
+
+}
+
+
+
+
+.line {
+    opacity: 0.1;
+    border-top: 1px solid #000000;
+    width: 100%;
+    margin-top: 80px;
+}
+
+.dots {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.bundlesandcustoms {
+    margin-top: 80px;
+}
+
+.bundlescustom {
+    display: flex;
+    margin-top: 50px;
+    margin-bottom: 140px;
+}
+
+.bubblBundle {
+    margin-bottom: 120px;
+}
+
+.bundlesandcustoms {
+    margin-bottom: 100px;
+}
+
+.quantity {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 24px;
+    padding-bottom: 16px;
+}
+
+.heading {
+    font-family: "Oxygen", sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    color: #020202;
+    width: 207px;
+}
+
+
+.product_buttons {
+    display: flex;
+    gap: 24px;
+}
+
+.testcont {
+    text-align: -webkit-center;
+}
+
+
+
+
+.newsletter {
+    font-family: "Oxygen", sans-serif;
+    font-weight: 300;
+    font-size: 32px;
+    color: #f8f8f8;
+}
+
+.newslettersection {
+    margin-top: 120px;
+}
+
+
+.number {
+    background-color: white;
+    height: 45px;
+}
+
+.features {
+    margin-top: 37px;
+    padding-left: 121px;
+    /* margin-bottom: 50px; */
+}
+
+.contact_us {
+    margin-top: 109px;
+}
+
+.footerDiv {
+    margin-top: 177px;
+}
+
+.letscard span {
+    color: #db973e;
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 700;
+}
+
+.minus,
+.plus {
+    width: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+}
+
+.bubblName {
+    color: white;
+    margin-top: 27px;
+    display: flex;
+    justify-content: center;
+    font-family: "Source Sans Pro";
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 162.336%;
+}
+
+
+.bubblSubHead {
+    margin-top: 6px;
+    color: #F5F5F7;
+    text-align: center;
+    font-family: "Oxygen";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+}
+
+.imageDiv {
+    margin-top: 15px;
+}
+
+.contentHeading {
+    margin-top: 64px;
+}
+
+.firstContent {
+    color: #FFF;
+    text-align: center;
+    font-family: "Source Sans Pro";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    margin-left: 37px;
+    margin-right: 37px;
+}
+
+.secondContent {
+    margin-top: 10px;
+    color: #FFF;
+    text-align: center;
+    font-family: "Oxygen";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    margin-left: 77px;
+    margin-right: 77px;
+}
+
+@media screen and (max-width:1245px) {
+    .shopPageBackSection {
+        border-bottom-left-radius: 117px;
+        border-bottom-right-radius: 117px;
+    }
+
+
+}
+
+@media screen and (min-width:1201px) {
+    .shopPageResponsive {
+        display: none;
+    }
+}
+
+
+@media screen and (max-width:1202px) {
+    .web {
+        display: none !important;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+
+
+
+    .newsletter {
+        font-size: 14px;
+    }
+
+    .form__field:placeholder-shown~.form__label {
+        font-size: 10px !important;
+        top: 44px !important;
+    }
+
+
+
+    .productcontbtn {
+        background-color: rgba(255, 255, 255, 0.43);
+        padding-left: 10px;
+        padding-bottom: 15px;
+    }
+}
+
+
+
+@media screen and (max-width: 769px) {
+    .userprofile_sec {
+        display: none;
+    }
+
+
+}
+
+
+
+
+
+
+.plan_banner {
+    background-color: #f5f5f7;
+    padding-bottom: 200px;
+}
+
+.order_banner {
+    background-color: #f5f5f7;
+}
+
+.plan_header_div {
+    border-radius: 20px;
+    padding: 50px 0 70px 63px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 242px;
+    margin-top: 69px;
+    margin-bottom: 80px;
+    background-color: black;
+}
+
+.linkDevice_color_head {
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: #af38d6;
+}
+
+.home_color_head {
+    color: white;
+    opacity: 0.4;
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.linkDevice_color_head {
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: #af38d6;
+}
+
+.plan_heading {
+    color: white;
+    font-weight: 700;
+    font-size: 30px;
+    font-family: "Oxygen";
+    padding: 6px 0px 8px 0px;
+}
+
+.plan_heading_content {
+    color: white;
+    max-width: 530px;
+    padding-right: 30px;
+}
+
+.plan_section h1 {
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 36px;
+    padding-bottom: 40px;
+}
+
+.free_plan_img {
+    margin-right: 10px;
+}
+
+.free_plan_header {
+    display: flex;
+    align-items: center;
+    padding-left: 50px;
+}
+
+.free_plan_header h2 {
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 34px;
+    padding-left: 30px;
+}
+
+.free_plan {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.free_plan {
+    height: 140px;
+    background: linear-gradient(140deg, rgba(129, 45, 226, 0.34) 0.6%, rgba(129, 45, 226, 0.34) 39.66%, rgba(58, 73, 249, 0.34) 98.25%);
+    color: white;
+}
+
+.free_plan_hamburger button {
+    color: white;
+    padding-right: 65px;
+    font-size: 40px;
+    margin-top: -15px;
+}
+
+.free_plan_details {
+    height: 220px;
+    background-color: white;
+}
+
+.free_plan_bg {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 55px;
+}
+
+.free_plan_details h3 {
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 26px;
+    max-width: 500px;
+    padding-left: 55px;
+}
+
+.free_plan_details h3 span {
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 26px;
+}
+
+.free_plan_bg h4 {
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 26px;
+}
+
+.free_plan_bg p {
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 26px;
+}
+
+.upgrade {
+    margin-left: 55px;
+    margin-top: 85px;
+    width: 220px;
+    height: 46px;
+    background: linear-gradient(109deg,
+            rgba(129, 45, 226),
+            rgba(58, 73, 249));
+    border-radius: 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.upgrade:hover {
+    background: linear-gradient(109deg,
+            rgba(129, 45, 226),
+            rgba(58, 73, 249));
+    color: white;
+    box-shadow: 0px 0px 4px rgb(0 0 0 / 25%);
+}
+
+.upgrade:active {
+    background-color: linear-gradient(109deg,
+            rgba(129, 45, 226),
+            rgba(58, 73, 249));
+    color: white !important;
+    border-color: #af38d6 !important;
+    box-shadow: 0px 0px 4px rgb(0 0 0 / 25%);
+}
+
+.upgrade span {
+    margin-top: 7px;
+    padding-left: 10px;
+}
+
+/* Pro */
+.pro_plan_details {
+    height: 420px;
+    background-color: linear-gradient(140deg, rgba(129, 45, 226, 0.34) 0.6%, rgba(129, 45, 226, 0.34) 39.66%, rgba(58, 73, 249, 0.34) 98.25%);
+    background: linear-gradient(140deg, rgba(129, 45, 226, 0.34) 0.6%, rgba(129, 45, 226, 0.34) 39.66%, rgba(58, 73, 249, 0.34) 98.25%);
+
+}
+
+.pro_plan_details h3 {
+    width: 70vw;
+
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 26px;
+    padding-top: 50px;
+    padding-left: 55px;
+}
+
+.pro_plan_details h3 span {
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 26px;
+}
+
+.orderLine {
+    content: "";
+    width: 73vw;
+    height: 1px;
+    border: 1px solid #e04ff2;
+    opacity: 0.2;
+    margin-bottom: 40px;
+    margin-left: 55px;
+    margin-top: 30px;
+}
+
+/* .validity_pro {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 55px;
+} */
+
+.validity_pro h4 {
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 26px;
+}
+
+.validity_pro p {
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 26px;
+}
+
+/* Plan */
+
+.yourPlan h2 {
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 36px;
+    margin-top: 140px;
+    padding-bottom: 10px;
+}
+
+.yourPlan p {
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 18px;
+    padding-bottom: 43px;
+    opacity: 0.7;
+    padding-left: 4px;
+}
+
+.yourPlan p span {
+    font-size: 18px;
+    color: #af38d6;
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 18px;
+}
+
+@media screen and (max-width: 768px) {
+    .plan_header_div {
+        padding: 50px 0 70px 30px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .free_plan_header {
+        padding-left: 20px;
+    }
+
+    .free_plan_hamburger button {
+        padding-right: 15px;
+    }
+
+    .free_plan_bg {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .free_plan_details span {
+        font-size: 24px;
+    }
+
+    .free_plan_details h3 {
+        padding-left: 20px;
+        padding-right: 15px;
+        font-size: 24px;
+    }
+
+    .line_resp {
+        display: none;
+    }
+
+    .bubble_free {
+        padding-top: 40px;
+        padding-left: 20px;
+    }
+
+    .free_plan_details {
+        max-height: 100%;
+        height: 100%;
+        padding-bottom: 30px;
+    }
+
+    .upgrade {
+        margin-left: 20px;
+    }
+
+    .pro_plan_details h3 {
+        font-size: 22px;
+        padding-left: 15px;
+        padding-right: 20px;
+    }
+
+    .orderLine {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .validity_pro {
+        margin-left: 15px;
+        padding-right: 20px;
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 769px) {
+    .validity_pro {
+        flex-direction: column;
+    }
+
+    .validity_pro div {
+        padding-bottom: 30px;
+    }
+
+    .pro_plan_details {
+        height: 100%;
+        max-height: 100%;
+        padding-bottom: 40px;
+    }
+
+    .upgrade {
+        margin-top: 50px;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .free_plan_header h2 {
+        font-size: 22px;
+        padding-left: 15px;
+    }
+}

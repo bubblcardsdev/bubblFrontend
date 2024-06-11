@@ -1,0 +1,35 @@
+.contact_btn {
+    background-color: #1F87FA;
+    border: #1F87FA;
+    border-radius: 5px;
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 14px;
+    width: 152px;
+    height: 41px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+}
+
+.QrText {
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 22px;
+}
+
+.contact_black_btntwo {
+    display: flex;
+    align-items: center;
+    padding-top: 2px;
+}
+
+.buttons button,
+.buttons button:hover,
+.buttons button:active,
+.buttons button:focus-visible {
+    background-color: transparent !important;
+    border: transparent !important;
+}

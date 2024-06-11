@@ -1,0 +1,599 @@
+.home_color_head {
+    color: black;
+    opacity: 0.8;
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.productListHomeTag {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 50px;
+}
+
+.linkDevice_color_head {
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 14px;
+    color: #af38d6;
+}
+
+.responsive_nameCustom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+.ImageRowDiv {
+    margin-top: 30px;
+}
+
+.leftSideContent h2 {
+    font-family: "Oxygen", sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: #000000;
+    margin-bottom: 6px;
+}
+
+.leftSideContent p {
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #000000;
+    opacity: 60%;
+}
+
+.ColorSection {
+    margin-top: 40px;
+}
+
+.colorHead {
+    font-family: "Oxygen", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: #000000;
+}
+
+.colorText {
+    font-family: "Oxygen", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    -webkit-text-stroke: 0.3px black;
+
+}
+
+.imageSection {
+    margin-top: 19px;
+}
+
+.imageSection img {
+    margin-right: 28px !important;
+    margin-bottom: 21px !important;
+}
+
+.imageSection image {
+    margin-right: 10px;
+    margin-left: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.hrTagDiv {
+    margin-top: 42px;
+}
+
+.quantityPriceDiv {
+    margin-top: 42px;
+}
+
+.quantityPriceDiv {
+    display: flex;
+    margin-top: 42px;
+}
+
+.quantityText {
+    font-family: "Oxygen", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: #000000;
+    margin-bottom: 23px;
+}
+
+.quantityText_price {
+    font-family: "Oxygen", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: #000000;
+    margin-bottom: 23px;
+}
+
+
+.minus,
+.plus {
+    width: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    font-size: 22px;
+}
+
+.input {
+    margin-top: 1px;
+    height: 34px;
+    width: 50px;
+    text-align: center;
+    font-size: 26px;
+    border: unset;
+    border-radius: 4px;
+    display: inline-block;
+    vertical-align: middle;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: #af38d6;
+}
+
+.customization_details_right h4 {
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 22px;
+}
+
+.customization_details_right span {
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 12px;
+    color: #AF38D6;
+}
+
+.checkOutBtn_fixed {
+    font-family: "Oxygen", sans-serif;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+    color: white;
+    cursor: pointer;
+    opacity: 1;
+    border-radius: 0;
+    display: flex;
+    background-color: #af38d6;
+    border-radius: 5px;
+    align-items: center;
+    padding: 10px 60px 10px 60px;
+}
+
+.cartButton {
+    background-color: #af38d6;
+    outline-color: #af38d6;
+    border: unset;
+    font-size: 14px;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 500;
+    width: 46%;
+    margin-top: 60px;
+    height: 40px;
+    color: white;
+    border-radius: 20px;
+
+}
+
+.cartButton:focus-visible,
+.cartButton:active,
+.cartButton:hover {
+    background-color: #af38d6 !important;
+    outline-color: #af38d6;
+    border: unset;
+    color: white;
+
+}
+
+.cartButton:active {
+    color: white !important;
+}
+
+.cartBtnDiv {
+    margin-bottom: 42px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.contentDiv {
+    margin-top: 22px;
+}
+
+.cartBtnDiv_responsive {
+    width: 215px;
+}
+
+.hrTag {
+    margin: 42px 0px 42px 0px;
+}
+
+.productDetails {
+    font-size: 24px;
+    font-weight: 700;
+    font-family: "Oxygen", sans-serif;
+    color: #000000;
+    margin-top: 42px;
+
+}
+
+.contentDiv h2 {
+    font-size: 14px;
+    font-weight: 700;
+    font-family: "Oxygen", sans-serif;
+    color: #000000;
+}
+
+.dummyValue {
+    color: #000000;
+    opacity: 60%;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: "Oxygen", sans-serif;
+}
+
+.mainValue {
+    color: #000000;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: "Oxygen", sans-serif;
+}
+
+.aboutItemDiv {
+    /* margin-top: 42px; */
+    margin-bottom: 45px;
+}
+
+.aboutItemDiv h2 {
+    color: #000000;
+    font-size: 24px;
+    font-weight: 700;
+    font-family: "Oxygen", sans-serif;
+}
+
+.aboutItemDiv p {
+    color: #000000;
+    opacity: 60%;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: "Oxygen", sans-serif;
+}
+
+.imageBackGround {
+    width: 603px;
+    height: 425px;
+    background-color: #ECECEC;
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media screen and (max-width:992px) {
+    .cartBtnDiv {
+        display: none;
+    }
+
+    .leftSideContent {
+        display: none;
+    }
+
+    .leftSideContent_responsive {
+        margin-bottom: 26px;
+    }
+
+    .leftSideContent_responsive h2 {
+        margin-bottom: 5px;
+    }
+
+    .leftSideContent_responsive p {
+        font-family: "Oxygen", sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        color: #000000;
+        opacity: 60%;
+    }
+
+    .productListHomeTag {
+        margin-bottom: 20px;
+    }
+
+    .quantityText_price {
+        display: none;
+    }
+
+    .priceBtnDiv {
+
+        margin: 22px 0px 44px 0px;
+        background-color: white;
+        padding: 22px;
+    }
+
+    .responsiveContainer {
+        background-color: #F5F5F7;
+    }
+
+    .priceValue {
+        font-family: "Oxygen";
+        font-weight: 700;
+        font-size: 22px;
+    }
+
+    .perCard {
+        font-family: "Oxygen";
+        font-weight: 400;
+        font-size: 12px;
+        color: #AF38D6;
+    }
+
+    .cartButtonResponsive {
+        background-color: #af38d6;
+        outline-color: #af38d6;
+        border: unset;
+        font-size: 14px;
+        font-family: "Oxygen", sans-serif;
+        font-weight: 500;
+        width: 100%;
+        height: 40px;
+        color: white;
+        border-radius: 20px;
+    }
+
+    .cartButtonResponsive:focus-visible,
+    .cartButtonResponsive:active,
+    .cartButtonResponsive:hover {
+        background-color: #af38d6 !important;
+        outline-color: #af38d6;
+        border: unset;
+        color: white;
+    }
+
+    .cartButtonResponsive:active {
+        color: white !important;
+    }
+
+    .buyNowButtonResponsive {
+        background-color: #af38d6;
+        outline-color: #af38d6;
+        border: unset;
+        font-size: 14px;
+        font-family: "Oxygen", sans-serif;
+        font-weight: 500;
+        width: 100%;
+        height: 40px;
+        color: white;
+        border-radius: 20px;
+    }
+
+    .buyNowButtonResponsive:focus-visible,
+    .buyNowButtonResponsive:active,
+    .buyNowButtonResponsive:hover {
+        background-color: #af38d6 !important;
+        outline-color: #af38d6;
+        border: unset;
+        color: white;
+    }
+
+    .buyNowButtonResponsive:active {
+        color: white !important;
+    }
+
+    .customization_details_right {
+        display: none;
+    }
+
+    .hrTagResponsive {
+        display: none;
+    }
+
+    .imageColResponsive {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .buyNowBTn {
+        width: 100%;
+    }
+
+    .buyNowBtnResponsive {
+        margin-top: 15px;
+        display: flex;
+        justify-content: center;
+    }
+
+}
+
+@media screen and (min-width: 991px) {
+    .leftSideContent_responsive {
+        display: none;
+    }
+
+    .priceBtnDiv {
+        display: none;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .productListHomeTag {
+        margin-bottom: 10px;
+    }
+
+    .leftSideContent_responsive {
+        margin-bottom: 0px;
+    }
+
+    .leftSideContent_responsive h2 {
+        font-size: 22px;
+    }
+
+    .leftSideContent_responsive p {
+        font-size: 16px;
+    }
+
+    .quantityPriceDiv {
+        margin-top: 3px;
+    }
+
+    .hrTagDiv {
+        margin: 7px;
+    }
+
+    .quantityText {
+        margin-bottom: 8px;
+
+    }
+
+    .priceBtnDiv {
+        margin: 17px 0px 25px 0px;
+
+    }
+
+    .productDetails {
+        margin-top: 0px;
+    }
+
+    .hrTag {
+        margin: 13px 0px 13px 0px;
+    }
+
+    .aboutItemDiv {
+        margin-bottom: 13px;
+
+    }
+
+    .cartBtnDiv_responsive {
+        width: 280px;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .productListHomeTag {
+        margin-bottom: 10px;
+    }
+
+    .leftSideContent_responsive {
+        margin-bottom: 2px;
+    }
+
+    .home_color_head {
+        font-size: 12px;
+    }
+
+    .linkDevice_color_head {
+        font-size: 12px;
+    }
+
+    .leftSideContent_responsive h2 {
+        font-size: 18px;
+    }
+
+    .leftSideContent_responsive p {
+        font-size: 14px;
+    }
+
+    .ImageRowDiv {
+        margin-top: 16px;
+    }
+
+    .imageBackGround {
+        height: 380px;
+    }
+
+    .ColorSection {
+        margin-top: 20px;
+    }
+
+    .quantityText {
+        margin-bottom: 7px;
+    }
+
+    .priceBtnDiv {
+        margin: 22px 0px 19px 0px;
+    }
+
+    .hrTag {
+        margin: 15px 0px 13px 0px;
+
+    }
+
+    .productDetails {
+        margin-top: 15px;
+        font-size: 20px;
+    }
+
+    .aboutItemDiv {
+        margin-bottom: 20px;
+    }
+
+    .aboutItemDiv h2 {
+        font-size: 20px;
+    }
+
+    .aboutItemDiv p {
+        font-size: 14px;
+    }
+
+    .hrTagDiv {
+        margin-top: 5px;
+    }
+
+    .quantityPriceDiv {
+        margin-top: 0px;
+    }
+
+    .colorHead {
+        font-size: 16px;
+    }
+
+    .colorText {
+        font-size: 18px;
+    }
+}
+
+@media screen and (min-width: 421px) and (max-width: 499px) {
+    .cartBtnDiv_responsive {
+        width: 221px;
+    }
+}
+
+@media screen and (max-width:420px) {
+    .cartBtnDiv_responsive {
+        width: 170px;
+    }
+}
+
+@media screen and (max-width:407px) {}
+
+@media screen and (max-width:396px) {
+    .priceValue {
+        font-size: 14px;
+    }
+
+    .productDetails {
+        font-size: 18px;
+    }
+
+    .mainValue {
+        font-size: 12px;
+    }
+
+    .contentDiv {
+        margin-top: 16px;
+    }
+
+    .aboutItemDiv h2 {
+        font-size: 18px;
+    }
+
+    .aboutItemDiv p {
+        font-size: 12px;
+    }
+}

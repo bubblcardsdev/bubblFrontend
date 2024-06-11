@@ -1,0 +1,308 @@
+.container {
+  max-height: 104%;
+  overflow: scroll;
+}
+
+.mobile_template {
+  max-width: 480px;
+  margin: 0 auto;
+  background-color: white;
+}
+
+.background_bg_img {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.background_section {
+  position: absolute;
+}
+
+.background_curve {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  background-color: white;
+  height: 90px;
+  width: 160px;
+  border-bottom-left-radius: 80px;
+  border-bottom-right-radius: 80px;
+}
+
+.user_temp {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  top: 120px;
+  position: absolute;
+}
+
+/*qr for all templates  */
+.qrCode {
+  padding-bottom: 120px;
+  padding-top: 30px;
+}
+
+.qrCode canvas {
+  width: 120px;
+  height: 120px;
+  border-radius: 3px;
+}
+
+.qrCode h6 {
+  font-family: " Tiro Bangla ";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 33px;
+}
+
+.profile_img {
+  border-radius: 50%;
+}
+
+/* after image content */
+.containereight {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.userinfo {
+  padding-top: 100px;
+  align-items: center;
+  line-height: 0px;
+  text-align: center;
+}
+
+.container {
+  max-height: 100%;
+  overflow: scroll;
+}
+
+.mobile_template {
+  max-width: 450px;
+  position: relative;
+  margin: 0 auto;
+  background-color: white;
+}
+
+.background_temp {
+  position: relative;
+}
+
+.containerSix {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 100px;
+}
+
+.userInfo {
+  text-align: center;
+}
+
+.contact_div {
+  margin: 40px 0px 20px 0px;
+}
+
+/* name Component */
+
+
+.buttons {
+  display: flex;
+  gap: 7px;
+  justify-content: left;
+}
+
+.contact_btn {
+  border-radius: 5px;
+  height: 42px;
+  width: 100%;
+  margin-right: 7px;
+}
+
+.contact_btn_div {
+  border-radius: 5px;
+  height: 42px;
+  width: 100%;
+}
+
+.contact_btntwo {
+  background-color: transparent;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px 27px;
+  width: 99px;
+  height: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* conatact information */
+.headings {
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 24px;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+}
+
+/* social */
+.social_headings {
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 24px;
+  text-transform: capitalize;
+  margin: 42px 0px 20px 0px;
+}
+
+.midfield {
+  margin-left: 15px;
+}
+
+.inputfield_social {
+  font-weight: 700;
+  font-size: 14px;
+  align-items: center;
+}
+
+.inputfield_social_url {
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 79.61%;
+}
+
+/* blac version */
+
+.contact_white_btntwo {
+  background-color: transparent;
+  border: 1px solid #e17157;
+  border-radius: 5px;
+  padding: 10px 27px;
+  width: 99px;
+  height: 42px;
+}
+
+/* name component */
+
+.heading_name {
+  display: flex;
+  justify-content: center;
+}
+
+.name {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-weight: 400;
+  font-size: 43px;
+  max-width: 18ch;
+}
+
+.position {
+  font-weight: 400;
+  font-size: 16px;
+  margin: 0 auto;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin-bottom: 10px;
+  width: 150px;
+}
+
+.contentdiv {
+  text-align: -webkit-center;
+  max-width: 250px;
+  margin: 0 auto;
+  word-wrap: break-word;
+}
+
+.content {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  margin-bottom: 19px;
+  text-align: center;
+  overflow: hidden;
+  max-width: 30ch;
+  text-overflow: ellipsis;
+}
+
+/* social Media Function */
+.head_social {
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 33px;
+  text-transform: capitalize;
+  margin-bottom: 30px;
+}
+
+.inputfield_soc {
+  background-color: transparent;
+  width: 100%;
+}
+
+.inputfield_soc p {
+  padding-top: 3px;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.inputfield_soc h3 {
+  font-weight: 400;
+  font-size: 12px;
+  overflow: hidden;
+  max-width: 30ch;
+  text-overflow: ellipsis;
+}
+
+.arrow_soc {
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.contactBorders {
+  width: 103px;
+  height: 0px;
+  border: 1px solid #ba5b45;
+  margin-bottom: 36px;
+}
+
+/* SOCIAL MEDIA CSS */
+.socialMedia_div {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 26px 0px 16px 0px;
+}
+
+/* PAYMENT CSS */
+.paymentColor {
+  margin: 26px 0px 16px 0px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 600px) {
+  .user_temp {
+    top: 200px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .user_temp {
+    top: 170px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .user_temp {
+    top: 150px;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .user_temp {
+    top: 130px;
+  }
+}

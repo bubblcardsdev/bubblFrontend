@@ -1,0 +1,229 @@
+.Navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 30px;
+}
+
+.navLogo {
+    cursor: pointer;
+}
+
+.NavigationSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(109deg, rgba(122, 122, 122, 0.30) -1.98%, rgba(48, 48, 48, 0.25) 99.78%);
+    border-radius: 50px;
+    padding: 15px 40px 15px 40px;
+}
+
+.logo_sec {
+    height: 24px;
+}
+
+.cartIconContainer {
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+.cartIcon {
+    cursor: pointer;
+    position: absolute;
+}
+
+.cartCountResp {
+    position: relative;
+    bottom: 10px;
+    margin-left: 20px;
+    color: white;
+    background-color: #e04ff2;
+    border-radius: 50%;
+    width: 5vw;
+    height: 5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    z-index: 3;
+}
+
+
+
+.cartCount {
+    position: relative;
+    bottom: 10px;
+    margin-left: 20px;
+    color: white;
+    background-color: #e04ff2;
+    border-radius: 50%;
+    width: 1.5vw;
+    height: 1.5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+}
+
+.ActionButton {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+.Nav_list button {
+    font-family: "Oxygen";
+    font-weight: 400;
+    color: white;
+    font-size: clamp(0.625rem, 0.2159rem + 0.7273vw, 1.125rem);
+    margin-left: 35px;
+}
+
+.Nav_list button:hover {
+    color: #AB39D2;
+    transition: 0.3s;
+}
+
+.Nav_list button {
+    background: none;
+    border: none;
+}
+
+.cartIcon {
+    cursor: pointer;
+}
+
+.profile_dropdown button {
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+}
+
+.profile_dropdown button:hover,
+.profile_dropdown button:active {
+    background-color: transparent !important;
+}
+
+
+.ActionButton span {
+    margin-top: 4px;
+}
+
+.cartIconNoVal {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1200px) {
+    /* .Navigation {
+        padding: 30px 40px 15px 40px;
+    } */
+
+}
+
+@media screen and (min-width: 993px) {
+    .NavigationMobile {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .Navigation {
+        display: none;
+    }
+
+    .NavigationResp {
+
+        background: linear-gradient(109deg, rgba(122, 122, 122, 0.30) -1.98%, rgba(48, 48, 48, 0.25) 99.78%);
+        display: flex;
+        justify-content: space-between;
+        /* margin: 0px 24px 33px 24px; */
+        padding: 17px 20px 17px 20px;
+        border-radius: 5px;
+    }
+
+    .ActionButtonResp {
+        display: flex;
+        align-items: center;
+    }
+
+    .ActionButtonResp>span {
+        padding-left: 30px;
+    }
+
+    .sidePanel {
+        position: fixed;
+        top: 0;
+        right: -250px;
+        /* Start the panel off-screen */
+        width: 250px;
+        height: 95%;
+        background-color: #27272D;
+        /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); */
+        background: rgba(0, 0, 0, 0.60);
+        border-top-right-radius: 0;
+        border-top-left-radius: 16px;
+        border-bottom-left-radius: 16px;
+        border-bottom-right-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        transition: right 0.3s ease;
+        z-index: 10000;
+    }
+
+    .sidePanel.open {
+        right: 0;
+        z-index: 10000000;
+
+        /* Slide the panel in when it's open */
+    }
+
+    /* Additional styles for the list items */
+    .sidePanel ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .sidePanel ul li {
+        padding: 10px 0 20px 30px;
+        cursor: pointer;
+    }
+
+    /* .sidePanel ul li:hover {
+        background-color: #f0f0f0;
+    } */
+    .NavigationMobile {
+        padding-top: 0px;
+    }
+
+    .closeButton {
+        display: flex;
+        justify-content: flex-end;
+        padding: 10px 20px 0 0;
+        cursor: pointer;
+        font-size: 35px;
+        color: white;
+    }
+
+    .Nav_listResp button {
+        display: flex;
+        flex-direction: column;
+        font-family: "Oxygen";
+        font-weight: 500;
+        color: white;
+        margin-bottom: 40px;
+        background-color: transparent;
+        border: none;
+        margin-left: 30px;
+    }
+
+    /* .NavigationResp {
+        margin: 0px 24px 20px 24px;
+    } */
+}

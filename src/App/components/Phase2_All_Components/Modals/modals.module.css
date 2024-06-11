@@ -1,0 +1,383 @@
+/* Common */
+.deleteBtn {
+    cursor: pointer;
+}
+
+/* Edit Profile Name */
+.step2Details {
+    background-color: #1E1D24 !important;
+    padding: 50px 40px 30px 40px;
+    border-radius: 15px;
+}
+
+.step2Details h2 {
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 18px;
+    color: #AB39D2;
+    padding-bottom: 16px;
+}
+
+.step2Details h3 {
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 14px;
+    color: white;
+    margin-bottom: 11px;
+    margin-top: 30px;
+    letter-spacing: 1px;
+
+}
+
+.line {
+    content: "";
+    width: -webkit-fill-available;
+    height: 1px;
+    border: 1px solid #9B9B9B;
+    position: absolute;
+    margin-right: 30px;
+}
+
+.formHeight input {
+    height: 48px;
+    position: relative;
+}
+
+
+.formHeight input::placeholder {
+    color: #B9B9B9;
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.inputFieldStep2 {
+    color: white !important;
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 14px;
+    cursor: pointer;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+    border-top-right-radius: 5px !important;
+    border-bottom-right-radius: 5px !important;
+    z-index: 1;
+}
+
+.inputFieldStep2:focus {
+    border: 1px solid #AB39D2;
+    transition: 0.5s;
+}
+
+.confirmationTick {
+    height: 48px;
+    display: flex;
+    width: 100%;
+    position: absolute;
+    justify-content: flex-end;
+
+}
+
+.confirmationTick span {
+    background-color: transparent;
+    border: none;
+}
+
+
+.error {
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 11px;
+    color: red;
+    padding-top: 3px;
+}
+
+.selectingNameSection {
+    padding-top: 30px;
+}
+
+.selectingNameSection p {
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 14px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.selectingBox {
+    display: flex;
+    gap: 10px;
+}
+
+.selectingBox span {
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 12px;
+    color: white;
+    border: 1px solid #AB39D2;
+    border-radius: 4px;
+    padding: 2px 6px 2px 6px;
+    cursor: pointer;
+}
+
+.selectingBox span:hover {
+    background-color: #AB39D2;
+    color: white;
+    transition: 0.4s;
+}
+
+
+.ActionModal_Image {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    text-align: center;
+    gap: 35px;
+    padding-top: 40px;
+    padding-bottom: 30px;
+}
+
+.ModalClose,
+.ModalClose:hover,
+.ModalClose:active {
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 14px;
+    color: white;
+    text-transform: capitalize;
+    background-color: transparent !important;
+    border: transparent;
+}
+
+.ModalSave,
+.ModalSave:hover {
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 14px;
+    color: white;
+    text-transform: capitalize;
+    background-color: #AB39D2 !important;
+    border-radius: 5px;
+    width: 136px;
+    height: 40px;
+    border: transparent;
+
+}
+
+/* Edit Mobile Number */
+
+.step2DetailsView {
+    background-color: #1E1D24 !important;
+    padding: 50px 40px 20px 40px;
+    border-radius: 15px;
+}
+
+.step2DetailsView h2 {
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 22px;
+    color: white;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.line_View {
+    content: "";
+    height: 1px;
+    border: 1px solid #9B9B9B;
+    position: relative;
+}
+
+
+.checked_box h3 {
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 14px;
+    color: white;
+    padding-top: 15px;
+    padding-bottom: 5px;
+}
+
+.checkToggle {
+    height: 16px;
+}
+
+.placeholder_head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    padding-top: 15px;
+}
+
+.placeholder_text input,
+.placeholder_text input:focus {
+    background-color: white;
+    color: black;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.placeholder_text input::placeholder {
+    color: #B9B9B9;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.inputFieldStep1 div:first-child {
+    color: white;
+    font-size: 18px;
+}
+
+.inputFieldStep1 input {
+
+    color: black;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    height: 35px;
+    border-radius: 5px;
+}
+
+.ActionModal_Social {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    text-align: center;
+    gap: 35px;
+    padding-top: 40px;
+    padding-bottom: 30px;
+}
+
+/* View Mobile Number */
+.IconsCall {
+    display: flex;
+    vertical-align: center;
+}
+
+.ActionModal_Social {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    text-align: center;
+    gap: 35px;
+    padding-top: 40px;
+    padding-bottom: 30px;
+}
+
+.CommonSecView {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-top: 20px;
+    cursor: pointer;
+}
+
+.CommonSecView h3 {
+    color: white;
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+
+/* Address */
+.placeholder_text_msg textarea,
+.placeholder_text_msg textarea:focus {
+    background-color: white;
+    color: black;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.placeholder_text_msg textarea::placeholder {
+    color: #B9B9B9;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.CommonSecViewLocation {
+    padding-top: 10px;
+    cursor: pointer;
+}
+
+.CommonSecViewLocation h3 {
+    color: white;
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    padding-bottom: 10px;
+}
+
+.CommonSecViewLocation p {
+    color: white;
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 14px;
+    text-decoration: none;
+    padding-bottom: 25px;
+}
+
+/* Socail */
+.SocialHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-top: 20px;
+}
+
+.placeholder_head_social {
+    color: white;
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 16px;
+}
+
+/* Digital Payment */
+
+.DigitalHeader_DP {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-top: 0px;
+}
+
+
+@media screen and (max-width: 500px) {
+    .step2Details h3 {
+        font-size: 11px;
+    }
+
+    .step2Details p {
+        padding-left: 0;
+        margin-bottom: 0;
+        font-size: 10px;
+    }
+
+    .selectingNameSection p {
+        padding-bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .step2DetailsView {
+        padding: 50px 15px 20px 15px;
+    }
+
+    .step2Details {
+        padding: 50px 15px 20px 15px;
+    }
+
+
+}

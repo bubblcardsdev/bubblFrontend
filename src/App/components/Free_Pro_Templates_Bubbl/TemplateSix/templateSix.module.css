@@ -1,0 +1,138 @@
+.container {
+  max-height: 104%;
+  overflow: scroll;
+}
+
+.mobile_template {
+  max-width: 480px;
+  margin: 0 auto;
+  background-color: white;
+}
+
+.background_temp {
+  position: relative;
+}
+
+.background_curve {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.background_bg_img {
+  position: relative;
+}
+
+.background_logo_curve {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: -80;
+  left: 0;
+  right: 160;
+  margin: 0 auto;
+  background-color: white;
+  height: 90px;
+  width: 160px;
+  border-top-left-radius: 80px;
+  border-top-right-radius: 80px;
+}
+
+.background_logo_curve_dark {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: -80;
+  left: 0;
+  right: 160;
+  margin: 0 auto;
+  background-color: black;
+  height: 90px;
+  width: 160px;
+  border-top-left-radius: 80px;
+  border-top-right-radius: 80px;
+}
+
+.user_temp {
+  position: relative;
+}
+
+.saveContact_div {
+  margin-bottom: 30px;
+}
+
+.userName {
+  display: flex;
+  align-items: flex-end;
+  padding-top: 20px;
+}
+
+.containerSix {
+  position: relative;
+  top: -103px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-top-right-radius: 112px;
+}
+
+/* NAME COMPONENT CSS */
+.name {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+.position {
+  font-weight: 400;
+  font-size: 12px;
+  max-width: 30ch;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.contentdiv {
+  word-wrap: break-word;
+}
+
+.content {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  margin-bottom: 30px;
+  overflow: hidden;
+  max-width: 35ch;
+  text-overflow: ellipsis;
+}
+
+.socialMedia_div {
+  margin: 40px 0px 30px 0px;
+}
+
+/* QR CSS  */
+
+.qrCode canvas {
+  width: 120px;
+  height: 120px;
+  border-radius: 3px;
+}
+
+.qrCode h6 {
+  font-family: "Oxygen";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 33px;
+}
+
+/* PAYMENT CSS */
+.payment_color {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 33px;
+}

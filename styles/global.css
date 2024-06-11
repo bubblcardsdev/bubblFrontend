@@ -1,0 +1,354 @@
+@font-face {
+  font-family: "oxygen";
+  src: url("/fonts/Oxygen-Regular.woff2");
+  font-weight: 400;
+}
+
+/* Font for Name Custom */
+@font-face {
+  font-family: 'romeliosans';
+  src: url('/fonts/Romeliosans-z8y7L.woff2');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'muller';
+  src: url('/fonts/Muller-ExtraBold-DEMO.woff2 ');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'amenti';
+  src: url('/fonts/Amenti Bold.woff2');
+  font-weight: 400;
+}
+
+/* End for Name Custom */
+
+/* Common for all */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+html,
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+span {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+
+  padding-top: 0rem;
+  padding-bottom: 0rem;
+  padding-left: 0rem;
+  padding-right: 0rem;
+
+  margin-right: 0rem;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+  margin-left: 0rem;
+
+  margin-bottom: 0px;
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+body {
+  /* Text not be selected */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #f5f5f7;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Scroll to top */
+.scroll-to-top {
+  border-radius: 50% !important;
+  background-color: #af38d6 !important;
+}
+
+.scroll-to-top svg {
+  fill: white !important;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: black;
+}
+
+/* For all forms */
+input {
+  outline: none;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border: 1px solid #af38d6;
+}
+
+.form-control:focus {
+  box-shadow: none !important;
+}
+
+.form-select:focus {
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0);
+}
+
+.dropdown-toggle::after {
+  display: none;
+}
+
+.form-check-input:checked {
+  background-color: #af38d6 !important;
+  border-color: black !important;
+  margin-top: 2px;
+}
+
+.form-check-input:focus {
+  box-shadow: none !important;
+  border-color: #af38d6 !important;
+  margin-top: 2px;
+}
+
+/* Home page accordian */
+.accordion {
+  --bs-accordion-color: white !important;
+  --bs-accordion-bg: transparent;
+  --bs-accordion-border-color: 1px solid #828282 !important;
+}
+
+.accordion-body {
+  padding: 0px !important;
+}
+
+.accordion-button {
+  color: #FFF;
+  font-family: "Oxygen";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.accordion-button:not(.collapsed) {
+  --bs-accordion-active-bg: transparent !important;
+  background-color: transparent !important;
+  box-shadow: unset !important;
+  color: white !important;
+}
+
+.accordion-button:focus {
+  border-color: transparent !important;
+  box-shadow: unset !important;
+}
+
+.accordion-button::after {
+  background-image: url("../../Bubbl_FrontEnd/images/Phase_2_All_Assets/home_page/accordianArrow.svg") !important;
+  /* --bs-accordion-btn-icon-width: 16px !important; */
+  /* padding-right: 24px; */
+  margin-right: -55px;
+  margin-top: 10px;
+}
+
+/* Mobile flag */
+.react-tel-input .form-control {
+  width: 100%;
+  height: 37px;
+}
+
+.react-tel-input .selected-flag:hover,
+.react-tel-input .flag-dropdown.open .selected-flag {
+  background: #f5f5f5;
+}
+
+.react-tel-input .flag-dropdown {
+  border-right: 1px solid #af38d6;
+}
+
+.react-tel-input .flag-dropdown:focus {
+  border-right: 1px solid #af38d6;
+}
+
+.react-tel-input .selected-flag .arrow {
+  border-top: 4px solid #af38d6;
+}
+
+.react-tel-input .selected-flag .arrow.up {
+  border-bottom: 4px solid #af38d6;
+}
+
+.react-tel-input .selected-flag {
+  background-color: white !important;
+}
+
+.form-control {
+  background-color: transparent;
+}
+
+.form-control:hover:not(:disabled):not([readonly])::file-selector-button {
+  background-color: black;
+}
+
+.form-select {
+  background-color: transparent;
+  border-color: #696969;
+}
+
+.form-control:focus {
+  background-color: transparent;
+  border-color: #696969;
+}
+
+.dropdown-item:active {
+  background-color: transparent;
+  color: #af38d6;
+}
+
+.icons_hide .dropdown-toggle:after {
+  display: none !important;
+}
+
+.form-control::file-selector-button {
+  background-color: black;
+  border-radius: 5px;
+  color: white;
+}
+
+.form-switch .form-check-input:checked,
+.form-switch .form-check-input {
+  cursor: pointer;
+}
+
+.btn:first-child:active {
+  border-color: transparent;
+}
+
+/* Floating button */
+.floating-btn-holder {
+  background: none;
+  color: white;
+  border: none;
+  padding: 0;
+  font-family: "Oxygen";
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  outline: inherit;
+  width: 100%;
+}
+
+.btn-holder {
+  display: flex;
+  justify-content: center;
+  background: #af38d6;
+  border-radius: 10px;
+  max-width: 100%;
+  padding: 12px 0px 12px 0px;
+  position: fixed;
+  bottom: 20px;
+  margin: 0 auto;
+  left: 15px;
+  right: 15px;
+}
+
+.modal-body {
+  padding: 0;
+}
+
+.modal-content {
+  background-color: #1E1D24;
+  border-radius: 20px;
+}
+
+@media screen and (min-width: 769px) {
+
+  .floating-btn-holder,
+  .btn-holder {
+    display: none;
+  }
+
+  .modal-content {
+    width: 85%;
+  }
+}
+
+@media screen and (max-width: 769px) {
+
+
+  .modal-content {
+    margin: 0% auto;
+    width: 85.7vw;
+  }
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+.react-multi-carousel-dot button {
+  display: inline-block;
+  width: 15px !important;
+  height: 4px !important;
+  border-radius: 0% !important;
+  opacity: 1;
+  padding: 5px 5px 5px 5px;
+  border-width: 2px !important;
+  border-color: #af38d6 !important;
+  padding: 0;
+  margin: 0;
+  margin-right: 6px;
+  outline: 0;
+  cursor: pointer;
+  background-color: #af38d6 !important;
+}
+
+.react-multi-carousel-dot--active button {
+  background: #af38d6 !important;
+  width: 30px !important;
+}
+
+.dropdown {
+  text-align: -webkit-center;
+}
+
+.accordion-button,
+.collapsed {
+  padding-left: 0px;
+}
+
+/* .carousel-control-prev,
+.carousel-control-next {
+  opacity: 0 !important;
+}
+/* .carousel-inner {
+  overflow: inherit;
+} */

@@ -1,0 +1,287 @@
+.testimonial {
+    height: 250px;
+    align-items: flex-start;
+}
+
+.testimonial>span:nth-child(even) {
+    align-self: flex-end;
+}
+
+
+.mainTest {
+    /* margin: 0 auto;
+     */
+    display: flex;
+    width: 100%;
+    gap: 60px;
+    align-items: center;
+}
+
+.quotecont {
+    color: #d2d1d1;
+    width: 100% !important;
+    z-index: 2;
+    position: relative;
+    margin-left: 4vw;
+    font-size: clamp(0.75rem, 0.4853rem + 0.7059vw, 1.5rem);
+    font-family: "Oxygen";
+
+}
+
+.quotes {
+    color: #FFFFFF;
+    margin-left: 4vw;
+    font-size: 30px;
+    font-style: italic;
+    font-family: "Oxygen";
+    font-weight: bold;
+    /* margin-bottom: -3vh; */
+}
+
+.backgroundImage {
+    position: absolute;
+    left: 65vw;
+    padding-bottom: 5vh;
+}
+
+.testContent {
+    align-self: center;
+    background-repeat: no-repeat;
+    background-position-x: 140px;
+    margin-left: 50vw;
+}
+
+
+
+.customer {
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: clamp(0.875rem, 0.5221rem + 0.9412vw, 1.875rem);
+    color: #FFFFFF;
+    text-align: left;
+    margin-top: 10px;
+    margin-left: 4vw;
+
+}
+
+.arrow_container {
+    position: relative;
+    left: 3vw;
+    margin-left: 5vw;
+}
+
+.customCarousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    /* Adjust the height as needed */
+}
+
+
+
+.testingOne {
+    margin-left: 40px !important;
+}
+
+.testingThree {
+    margin-right: 40px !important;
+}
+
+
+
+.swiper {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+}
+
+.swiperContainer {
+    width: 45%;
+}
+
+
+
+.testNextIcon {
+    width: 19px;
+    cursor: pointer;
+}
+
+.testimonial_container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.testimonial_heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px;
+}
+
+.testimonital_title_line1 {
+    font-size: clamp(1.375rem, 0.9338rem + 1.1765vw, 2.625rem);
+    font-weight: bold;
+    font-family: "Source Sans Pro", sans-serif;
+    color: #FFFFFF;
+}
+
+.testimonital_title_line2 {
+    font-size: clamp(1.25rem, 0.9412rem + 0.8235vw, 2.125rem);
+    font-weight: 400;
+    font-family: "Oxygen", sans-serif;
+    color: #FFFFFF;
+
+}
+
+.maintest__block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.swiper_contrainer {
+    width: 30vw;
+}
+
+.testcontent {
+    width: 45vw;
+}
+
+@media screen and (min-width:769px) {
+    .maintest__block_resp {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    /* .testimonial {
+        display: none !important;
+    } */
+
+    .maintest__block {
+        display: flex
+    }
+
+    .maintest__block {
+        display: none;
+    }
+
+    .testContent {
+        width: 100vw;
+        background-position-x: 70px !important;
+        background-size: 149px;
+        background-repeat: no-repeat;
+        background-position-x: 140px;
+    }
+
+    .quotes {
+        display: none;
+    }
+
+
+}
+
+
+@media screen and (max-width: 1199px) {
+    .mainTest {
+        gap: 18px;
+        width: 85.7vw
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    .arrow_container {
+        width: 9vw;
+    }
+
+    .name_container {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .testContent {
+        width: 100vw;
+        background-position-x: 70px !important;
+        background-size: 149px;
+        background-repeat: no-repeat;
+        background-position-x: 140px;
+    }
+
+    .testimonital_title_line1 {
+        font-size: 26px;
+        font-size: 26px;
+        font-weight: bold;
+        font-family: "Source Sans Pro", sans-serif;
+    }
+
+    .testimonital_title_line2 {
+        font-size: clamp(1.125rem, 0.9839rem + 0.3226vw, 1.5rem);
+        font-weight: 400;
+        font-family: "Oxygen";
+        color: #FFFFFF;
+        margin-top: 0.1vh;
+    }
+
+    .backgroundImage {
+        position: absolute;
+        left: 60vw;
+        width: 70px;
+    }
+
+    .swiper_contrainer {
+        width: 30vw;
+    }
+
+    .quotes {
+        display: none;
+    }
+
+    .quotecont {
+        font-size: 12px;
+        width: 125vw !important;
+        font-family: "Oxygen";
+    }
+
+    .testimonial {
+        display: none !important;
+    }
+
+    .mainTest {
+        gap: 20px;
+    }
+
+
+    .customer {
+        font-size: 16px !important;
+        margin-top: 10px !important;
+        /* padding-left: 24vw;
+        width: 45vw; */
+    }
+
+
+
+    .testcontent {
+        display: flex;
+        width: 85vw;
+        align-items: center;
+        margin-top: 3vh;
+    }
+
+}

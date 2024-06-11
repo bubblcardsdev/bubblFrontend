@@ -1,0 +1,138 @@
+.url-main-container {
+  padding: 15px;
+  background-color: #1E1D24;
+}
+
+.url-close-img-circle-div-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.imageHrLine {
+  margin-top: 30px;
+  width: 361px;
+  height: 0.3px;
+  background: #FFF;
+  margin-left: 26px;
+}
+
+.url-close-img-circle {
+  height: 30px;
+  width: 30px;
+  background: #d9d9d9;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.bubblLogo {
+  display: flex;
+  justify-content: center;
+  margin: 30px;
+}
+
+/* url*/
+.lead_headings {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-family: "Oxygen";
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 25px;
+  color: #AF38D6;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 25ch;
+}
+
+.nameDiv {
+  color: #FFF;
+
+  font-family: "Oxygen";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.urlLinkDiv {
+  border-bottom: 1px solid rgba(175, 56, 214, 0.8);
+  margin-top: 10px;
+  display: flex;
+}
+
+.contactDividerDiv {
+  border-left: 1px solid black;
+  height: 25px;
+  margin: 10px;
+}
+
+.inputDiv {
+  border: 1px solid transparent;
+  padding: 0px 0px 0px 0px;
+}
+
+.inputDivSelect {
+  border: 1px solid transparent;
+  padding: 0px 0px 0px 0px;
+  width: 86px;
+}
+
+.inputDiv:active {
+  border: 1px solid transparent;
+  color: #1E1D24;
+}
+
+.inputDiv:focus {
+  border: 1px solid transparent;
+  /* color: #f8f8f8; */
+}
+
+.buttonDiv {
+  margin: 50px 0px 50px 0px;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.buttonTag {
+  color: white;
+  width: 198px;
+  height: 42px;
+  background-color: #af38d6;
+
+}
+
+.buttonTag:active {
+  color: white !important;
+  background-color: #af38d6;
+
+}
+
+.buttonTag:focus {
+  color: white;
+  background-color: #af38d6;
+
+}
+
+.buttonTag:hover {
+  color: white;
+  background-color: #af38d6;
+
+}
+
+.emailDiv {
+  margin-top: 25px;
+}
+
+.urlLinkDiv .react-tel-input {
+  border: none !important;
+}
+
+@media screen and (max-width:330px) {
+  .lead_headings {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 18ch;
+  }
+}

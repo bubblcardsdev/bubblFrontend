@@ -1,0 +1,31 @@
+/* Carousel */
+.carousel-indicators [data-bs-target] {
+  background-color: grey !important;
+  opacity: 0.6;
+  opacity: 0.6;
+}
+
+.carousel-indicators .active {
+  background-color: #af38d6 !important;
+  font-weight: bolder;
+  font-weight: bolder;
+}
+
+/* name cust */
+.carousel-indicators {
+  justify-content: center;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  opacity: 1.5;
+  border-radius: 50%;
+  bottom: -16px;
+
+}
+
+/* name cust */
+.carousel-control-next,
+.carousel-control-prev {
+  align-items: flex-end;
+}

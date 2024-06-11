@@ -1,0 +1,288 @@
+.footer_section {
+    bottom: 0;
+    height: 100%;
+}
+
+.footer_details {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+
+}
+
+.footer_links {
+    display: flex;
+    gap: 100px;
+}
+
+.customerCare {
+    display: flex;
+    flex-direction: column;
+}
+
+.customerCare h2,
+.customerCareResp h2 {
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 14px;
+    padding-bottom: 15px;
+    color: white;
+}
+
+.customerCare a,
+.customerCareResp a {
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 14px;
+    text-decoration: none;
+    color: white;
+}
+
+.customerCare a:nth-child(2) {
+    padding-bottom: 6px;
+}
+
+.linkPage a {
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 14px;
+    text-decoration: none;
+    color: white;
+}
+
+.linkPage>a {
+    margin-right: 30px;
+}
+
+.quickLinks h2 {
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 14px;
+    padding-bottom: 15px;
+    color: white;
+}
+
+.footer_links {
+    /* background-image: url("../../../../../images/Phase_2_All_Assets/comman_assets/nfc_img.png");
+    background-repeat: no-repeat;
+    background-position: center right;
+    display: flex;
+    align-items: center;
+    height: 210px; */
+}
+
+.contactInformation h2,
+.contactInformationResp h2 {
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 14px;
+    padding-bottom: 15px;
+    color: white;
+}
+
+.contactInformation a,
+.contactInformationResp a {
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 14px;
+    text-decoration: none;
+    color: white;
+}
+
+.contactInformation a:nth-child(2) {
+    padding-bottom: 6px;
+}
+
+.contactInformation {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer_line {
+    height: 1px;
+    width: 100%;
+    background-color: #AB39D2;
+    margin-top: 35px;
+    margin-bottom: 15px;
+}
+
+.copyrights {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 12px;
+    padding-bottom: 20px;
+    color: white;
+
+}
+
+.ModalBg {
+    background: black;
+}
+
+.BottomLink {
+    display: flex;
+    gap: 50px;
+}
+
+.BottomLink h6 {
+    cursor: pointer;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+}
+
+
+.privacy {
+    padding: 20px 30px 20px 30px;
+}
+
+.privacy h3 {
+    font-size: 20px;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 700;
+    color: white;
+    padding-bottom: 10px;
+}
+
+.customArrow {
+    position: absolute;
+    right: 20px;
+    color: white;
+    font-weight: 400;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+
+.head {
+    color: white;
+}
+
+.privacy p {
+    font-size: 16px;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    color: white;
+    padding-bottom: 30px;
+}
+
+.privacy span {
+    font-size: 16px;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 700;
+    color: white;
+}
+
+.contact_info_resp {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact_info_resp a {
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 1200px) {
+    .footer_section {
+        width: 85.7vw;
+        margin: 0% auto;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .footer_details {
+        flex-wrap: wrap;
+    }
+
+    .logo_icon {
+        margin-bottom: 20px;
+    }
+
+    .BottomLink h6 {
+        font-size: 10px;
+    }
+
+    .copyrights p {
+        font-size: 10px;
+    }
+
+}
+
+@media screen and (min-width: 801px) {
+    .resp_footer {
+        display: none;
+    }
+
+
+
+    .contactInformationResp {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .BottomLink h6 {
+        font-size: 8px;
+    }
+
+    .footer_details {
+        flex-direction: column;
+    }
+
+    .footer_links {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .contact_info_resp {
+        display: flex;
+        gap: 30px;
+    }
+
+    .resp_footer {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .contactInformation {
+        display: none;
+    }
+
+    .customerCare {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .BottomLink {
+        padding-bottom: 10px;
+    }
+
+    .copyrights p {
+        padding-bottom: 5px;
+    }
+
+    .copyrights {
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+    }
+
+    .privacy {
+        margin-bottom: 15px;
+    }
+
+    .footer_line {
+        margin-top: 25px;
+    }
+
+    .linkPage a {
+        margin-right: 20px;
+    }
+
+    .contact_info_resp {
+        gap: 0;
+    }
+}

@@ -1,0 +1,79 @@
+.device_header_line {
+  max-width: 850px;
+  height: 0.5px;
+  border: 0.5px solid #ededed;
+  margin-top: 86px;
+}
+.device_header {
+  display: flex;
+  justify-content: space-between;
+  margin: -22px 0px 100px 0px;
+}
+.link_icon_background {
+  background-color: #af38d6;
+  border-radius: 50%;
+  padding: 8px 8px 4px 10px;
+  width: 45px;
+  margin: 0 auto;
+}
+.device_header_profile {
+  color: #000000;
+  font-family: "Oxygen";
+  font-weight: 400;
+  font-size: 18px;
+  padding-top: 16px;
+}
+.device_header_linkedDevice {
+  font-family: "Oxygen";
+  font-weight: 700;
+  font-size: 18px;
+  color: #000000;
+  padding-top: 15px;
+}
+.profile_icon {
+  margin: 0 auto;
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  background: white;
+  border-radius: 50%;
+  width: 45px;
+}
+
+/* Mobile responsive Background color */
+@media screen and (max-width: 500px) {
+  .device_header_line {
+    max-width: 100%;
+    height: 0.5px;
+    border: 0.5px solid rgba(255, 255, 255, 0.4);
+    margin-top: -125px;
+    display: flex;
+    justify-content: center;
+  }
+  .device_header_linkedDevice {
+    font-size: 14px;
+    color: white;
+    width: 90px;
+  }
+  .device_header_profile {
+    font-size: 14px;
+    padding-top: 8px;
+    color: white;
+    width: 90px;
+  }
+
+  .profile_icon {
+    padding: 12px;
+    margin-top: 7px;
+  }
+  .device_header {
+    display: flex;
+    justify-content: space-around;
+    margin: -32px 0px 100px 0px;
+    text-align: center;
+    align-items: baseline;
+  }
+  .device_header_linkedDevice {
+    padding-top: 10px;
+  }
+}

@@ -1,0 +1,264 @@
+@import url("https://fonts.googleapis.com/css2?family=Oxygen:wght@300;700&family=Source+Sans+Pro:wght@700&display=swap");
+
+.container {
+  overflow-y: scroll;
+  /* height: 300px; */
+  width: 100vw;
+
+}
+
+.homePageSection {
+  position: relative;
+  overflow: hidden;
+  background-color: black;
+  overflow-y: scroll;
+}
+
+.homePage {
+  width: 85.7vw;
+  /* margin-left: 3vw; */
+  margin: 0% auto;
+}
+
+/* {showArrow && (
+  <div className={styles.upArrow} onClick={scrollToTop}>
+    <Image src={UpArrow} alt="upArrow" width={20} height={20} />
+  </div>
+)} */
+.upArrowButton {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background-color: #AB39D2;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  cursor: pointer;
+  z-index: 1;
+  border: transparent;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.footerSectionInside {
+  width: 85.7vw;
+  margin: 0% auto;
+}
+
+.footerSection {
+  background: linear-gradient(1deg, rgba(58, 73, 249, .88) -171.77%, rgba(129, 45, 226, .49) -22.73%, transparent 102.14%) !important;
+  padding-top: 35px;
+  position: relative;
+  z-index: 1;
+}
+
+.networkSection {
+  margin-top: 20vh;
+}
+
+.testimonial {
+  margin-top: 15vh;
+}
+
+.frequentSection {
+  display: flex;
+  justify-content: center;
+  /* width: 95vw; */
+  margin-top: 20vh;
+}
+
+.treeSection {
+  margin-top: 20vh;
+}
+
+.footerSection {
+  /* width: 94vw; */
+  margin-top: 10vh;
+}
+
+.productSection {
+  margin-top: 20vh;
+  position: relative;
+  z-index: 3;
+}
+
+.connectSectionSec {
+  margin-top: 29vh;
+}
+
+.parallaxBackground {
+  position: relative;
+  overflow: hidden;
+
+}
+
+.userprofile {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 35px;
+  padding-bottom: 35px;
+  align-items: center;
+  height: 112px;
+}
+
+.logo {
+  cursor: pointer;
+}
+
+.banner_image {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.submitButton {
+  background-color: #af38d6;
+  border-radius: 86.5px;
+  font-family: "Oxygen", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #ffffff;
+  display: flex;
+  gap: 17px;
+  padding: 7px 18px;
+  align-items: center;
+  margin-top: 7px;
+  border-color: transparent;
+}
+
+.contact_submit button:hover,
+.contact_submit button:first-child:active {
+  background-color: #af38d6;
+  color: white;
+  border-color: #af38d6;
+}
+
+.banner_slider {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flowContent {
+  margin-top: 20vh;
+}
+
+.clientSection {
+  margin-top: 25vh;
+}
+
+.customizeContainer {
+  margin-top: 10vh;
+}
+
+.functionSection {
+  margin-top: 20vh;
+}
+
+.profileSection {
+  margin-top: 20vh;
+}
+
+@media screen and (min-width: 1500px) {
+  .connectSectionSec {
+    margin-top: 30vh;
+  }
+
+  .flowContent {
+    margin-top: 20vh;
+  }
+
+  .clientSection {
+    margin-top: 15vh;
+  }
+
+  .productSection {
+    margin-top: 15vh;
+  }
+
+  .customizeContainer {
+    margin-top: 15vh;
+
+  }
+
+  .functionSection {
+    margin-top: 20vh;
+
+  }
+
+  .profileSection {
+    margin-top: 20vh;
+  }
+
+  .networkSection {
+    margin-top: 20vh;
+  }
+
+  .treeSection {
+    margin-top: 20vh;
+
+  }
+
+  .testimonial {
+    margin-top: 10vh;
+
+  }
+
+  .frequentSection {
+    margin-top: 15vh;
+
+  }
+}
+
+@media screen and (max-width:1024px) {
+  .connectSectionSec {
+    padding-top: 20px;
+    margin-top: 20px
+  }
+
+
+
+  .profileSection {
+    margin-top: 18vh
+  }
+
+}
+
+@media screen and (max-width:500px) {
+
+  /* .navigationContainer {
+    padding-top: 25px;
+  } */
+
+  .customizeContainer {
+    margin-top: 20vh;
+  }
+
+  .clientSection {
+    margin-top: 10vh;
+  }
+
+  .treeSection {
+    margin-top: 15vh;
+  }
+
+  .testimonial {
+    margin-top: 15vh;
+  }
+
+  .frequentSection {
+    margin-top: 10vh;
+  }
+
+  .functionSection {
+    margin-top: 20vh;
+    background: linear-gradient(187deg, rgba(129, 45, 226, 0.00) 5.95%, rgba(129, 45, 226, 0.18) 45.87%, rgba(58, 73, 249, 0.01) 94.52%) !important;
+    border-radius: 20px;
+    position: relative;
+  }
+
+}

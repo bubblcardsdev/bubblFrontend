@@ -1,0 +1,70 @@
+/* eslint-disable react/function-component-definition */
+import React from "react";
+
+interface LinkDinSVGProps {
+  color: string;
+}
+
+const LinkDinSVG: React.FC<LinkDinSVGProps> = ({ color }) => (
+  <svg
+    width={35}
+    height={35}
+    viewBox="0 0 40 40"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g filter="url(#filter0_d_2526_2666)">
+      <path
+        d="M11.8217 10.6411H4.09961V31.9925H11.8217V10.6411Z"
+        fill={color}
+      />
+      <path
+        d="M28.1976 10.6147C22.6868 10.6147 21.7702 13.6029 21.7702 13.6029V10.6412H15.8125V31.9925H21.8389V19.6774C21.8389 17.9359 22.8624 15.6315 26.1048 15.6315C29.3472 15.6315 29.7367 18.7707 29.7023 19.156C29.6679 19.5414 29.6336 32.0001 29.6336 32.0001H35.9999V17.1917C36.0037 12.3676 32.7499 10.6147 28.1976 10.6147Z"
+        fill={color}
+      />
+      <path
+        d="M8.05535 7.73278C10.1871 7.67944 11.8714 5.92683 11.8174 3.81821C11.7634 1.7096 9.9915 0.0434571 7.85979 0.0967906C5.72809 0.150124 4.04378 1.90273 4.09778 4.01135C4.15178 6.11997 5.92364 7.78611 8.05535 7.73278Z"
+        fill={color}
+      />
+    </g>
+    <defs>
+      <filter
+        id="filter0_d_2526_2666"
+        x="0.0966797"
+        y="0.0957031"
+        width="39.9033"
+        height="39.9043"
+        filterUnits="userSpaceOnUse"
+        // color-interpolation-filters="sRGB"
+      >
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
+        <feColorMatrix
+          in="SourceAlpha"
+          type="matrix"
+          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+          result="hardAlpha"
+        />
+        <feOffset dy="4" />
+        <feGaussianBlur stdDeviation="2" />
+        <feComposite in2="hardAlpha" operator="out" />
+        <feColorMatrix
+          type="matrix"
+          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+        />
+        <feBlend
+          mode="normal"
+          in2="BackgroundImageFix"
+          result="effect1_dropShadow_2526_2666"
+        />
+        <feBlend
+          mode="normal"
+          in="SourceGraphic"
+          in2="effect1_dropShadow_2526_2666"
+          result="shape"
+        />
+      </filter>
+    </defs>
+  </svg>
+);
+
+export default LinkDinSVG;

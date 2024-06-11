@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Oxygen:wght@300;700&family=Source+Sans+Pro:wght@700&display=swap");
+
+.signUp_page {
+  display: flex;
+  justify-content: space-around;
+}
+
+.signUp_fieldName {
+  display: flex;
+  justify-content: space-between;
+}
+
+.first_name,
+.last_name,
+.email,
+.password,
+.confirmPassword {
+  margin-bottom: 10px;
+}
+
+.nextBtn {
+  width: 100%;
+}
+
+.logo {
+  font-size: 24px;
+  margin-top: 80px;
+  margin-bottom: 50px;
+  font-family: "Oxygen", sans-serif;
+}
+
+.login_leftheading {
+  font-size: 48px;
+  width: 396px;
+  font-weight: 400px;
+  font-family: "Oxygen", sans-serif;
+}
+
+.login_page {
+  background-color: #cbcbcb;
+}
+
+.nfc_card {
+  font-size: 38px;
+  padding-top: 105px;
+  padding-left: 37px;
+  padding-right: 265px;
+  padding-bottom: 106px;
+  background-color: white;
+  border-radius: 9px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.card_list {
+  font-size: 26px;
+  margin-bottom: 130px;
+}
+
+/* right */
+
+.LoginHeading {
+  font-weight: 300;
+  font-size: 42px;
+  color: #ffffff;
+  padding-top: 10px;
+  padding-left: 32px;
+  margin: 0;
+  font-family: "Oxygen", sans-serif;
+}
+
+.LoginHeadingTwo {
+  font-weight: 700;
+  font-size: 42px;
+  padding-left: 32px;
+  color: #ffffff;
+  font-family: "Oxygen", sans-serif;
+  margin-bottom: 0px;
+}
+
+@media screen and (max-width: 1440px) {
+  .LoginHeading {
+    font-weight: 300;
+    font-size: 40px;
+    line-height: 73px;
+    color: #ffffff;
+  }
+
+  .LoginHeadingTwo {
+    font-size: 40px;
+  }
+}
+
+.login_left {
+  margin-top: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  .login_left {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+
+  .login_left {
+    margin-top: 80px;
+  }
+
+  .LoginHeading {
+    padding-top: 0px;
+  }
+}

@@ -1,0 +1,35 @@
+.home_color_head {
+    color: black;
+    opacity: 0.8;
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.productListHomeTag {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 50px;
+}
+
+.linkDevice_color_head {
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 14px;
+    color: #af38d6;
+}
+
+.responsive_nameCustom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+.ImageRowDiv {
+    margin-top: 66px;
+}
+
+.leftSideContent h2 {
+    font-family: "Oxygen", sans-serif;
+}

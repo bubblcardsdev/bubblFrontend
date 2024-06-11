@@ -1,0 +1,101 @@
+.frequentSection {
+    background: linear-gradient(109deg, rgba(203, 186, 233, 0.05) -30.58%, rgba(193, 179, 231, 0.25) 71.18%);
+    /* border-width: 1px ; */
+    /* border: 2px rgba(255, 255, 255, 0.60); */
+    /* border: 1px solid rgba(255, 255, 255, 0.60); */
+    /* opacity: 0.75; */
+
+    width: 83vw;
+    /* height: 753px; */
+    border-radius: 15px;
+
+}
+
+
+.frequentSectionContainer {
+    background-image: url("../../../../../images/Phase_2_All_Assets/home_page/bigBubblIconSvg.svg");
+    background-repeat: no-repeat;
+    background-position: 10% 50%;
+    position: relative;
+}
+
+.frequently {
+    color: #F8F8F8;
+    width: 26.3vw;
+    font-family: "Oxygen";
+    font-size: clamp(1.75rem, -1.0625rem + 5vw, 3.4375rem);
+    font-style: normal;
+    font-weight: 700;
+    line-height: 101.4%;
+}
+
+.accord {
+    display: flex;
+    /* background-color: #000000; */
+    padding-top: 110px;
+    padding-left: 65px;
+    padding-right: 100px;
+    padding-bottom: 100px;
+    border-radius: 35px;
+}
+
+.faq {
+    font-family: "Oxygen", sans-serif;
+    color: #F8F8F8;
+    font-size: clamp(0.875rem, -0.5833rem + 2.5926vw, 1.75rem);
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    margin-top: 11px;
+}
+
+.mob_faq {
+    font-size: 20px;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 300;
+    color: white;
+    text-align: left;
+    padding-bottom: 38px;
+}
+
+@media screen and (min-width:1025px) {
+    .responsiveFrequent {
+        display: none;
+    }
+}
+
+@media screen and (max-width:1024px) {
+    .frequentSection {
+        display: none;
+    }
+
+    .responsiveFrequent {
+        background: linear-gradient(187deg, rgba(129, 45, 226, 0.00) 5.95%, rgba(129, 45, 226, 0.21) 45.87%, rgba(58, 73, 249, 0.21) 94.52%) !important;
+    }
+
+    .responsiveFrequent h1 {
+        font-family: "Source Sans Pro", sans-serif;
+        font-size: 28px;
+        font-weight: 700;
+        color: white;
+    }
+
+    .responsiveFrequentWidth {
+        width: 90%;
+        padding: 20px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .bubblFaq {
+        width: auto;
+        margin-top: 14px;
+        font-family: "Oxygen", sans-serif;
+        font-size: 12px;
+        font-weight: lighter;
+        margin-bottom: 28px;
+        color: white;
+
+    }
+
+}

@@ -1,0 +1,68 @@
+.buttons {
+    display: flex;
+    gap: 7px;
+    justify-content: left;
+}
+
+
+
+.contact_btn,
+.contact_btn:hover {
+    text-decoration: none;
+    width: 260px;
+    height: 42px;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 50px;
+    align-items: center;
+    border-radius: 6px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 16px;
+    color: rgb(245, 50, 50);
+    background: transparent;
+}
+
+.contact_black_btntwo {
+    border-radius: 5px;
+    padding: 10px 27px;
+    width: 99px;
+    height: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media screen and (max-width: 500px) {
+    .contact_btn {
+        width: 230px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .contact_btn {
+        width: 230px;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .contact_btn {
+        width: 250px;
+    }
+
+    .contact_btn {
+        padding-left: 55px
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .contact_btn {
+        width: 230px;
+    }
+
+    .contact_btn {
+        padding-left: 55px
+    }
+}

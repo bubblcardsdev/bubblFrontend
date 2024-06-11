@@ -1,0 +1,56 @@
+/* footer */
+.footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  background: #FBFBFB;
+  height: 150px;
+  padding-bottom: 10px;
+}
+
+.subscribe_btn {
+  width: 113px;
+  height: 40px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  color: #ffffff;
+  background: linear-gradient(96.23deg, #11427d 3.06%, #663ef7 100%);
+  border-radius: 6px;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 12px;
+}
+
+.mobile_content p {
+  font-weight: 700;
+  font-size: 15px;
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 0;
+}
+
+.mobile_content span {
+  font-size: 15px;
+  font-weight: 700;
+  font-family: "Montserrat", sans-serif;
+  color: #db973e;
+}
+
+.mobile_content h2 {
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 0;
+}
+
+.footer_container {
+  max-width: 480px;
+  margin: 0 auto;
+}

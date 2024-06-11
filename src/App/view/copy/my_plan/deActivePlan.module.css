@@ -1,0 +1,95 @@
+.step2DetailsTemplate {
+    background-color: #1E1D24;
+    padding: 40px 30px 20px 30px;
+}
+
+.delete-container {
+    text-align: center;
+    margin: 10px;
+}
+
+.delete-container h2 {
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 22px;
+}
+
+.delete-container h5 {
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 18px;
+    padding-top: 19px;
+}
+
+.delete-container p {
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 18px;
+    padding-top: 5px;
+    padding-bottom: 52px;
+}
+
+.delete-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.delete-buttons-one {
+    margin-right: 10px;
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.delete-buttons-two {
+    margin-right: 10px;
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 16px;
+    border: 1px solid #af38d6;
+    border-color: #af38d6;
+    background: white;
+    color: #af38d6;
+    padding: 10px 30px;
+}
+
+.delete-buttons-two:hover {
+    background: #af38d6;
+    border-color: #af38d6;
+    color: white;
+}
+
+.delete-buttons-two:first-child:active {
+    border: 1px solid #af38d6;
+    background: #af38d6;
+    border-color: #af38d6;
+    color: white;
+}
+
+.delete-img-circle {
+    border-radius: 50%;
+    padding: 8px;
+    text-align: center;
+}
+
+.delete-close-img-circle {
+    padding-right: 30px;
+    padding-top: 30px;
+    cursor: pointer;
+}
+
+.delete-img-circle-div-container {
+    display: flex;
+    justify-content: center;
+}
+
+.delete-close-img-circle-div-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.delete-main-container {
+    margin: 10px;
+}

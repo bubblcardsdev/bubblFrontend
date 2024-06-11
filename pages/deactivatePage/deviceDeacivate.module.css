@@ -1,0 +1,26 @@
+.activatePge {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.activate_text p {
+  font-family: "Oxygen";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  color: #000000;
+}
+.activate_text {
+  margin: 24px 0px 24px 0px;
+}
+.content {
+  color: #000000;
+
+  opacity: 0.6;
+  font-family: "Oxygen";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+}

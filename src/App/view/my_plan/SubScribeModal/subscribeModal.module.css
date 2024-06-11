@@ -1,0 +1,177 @@
+.step2DetailsTemplate {
+    background-color: #1E1D24;
+    padding: 20px 30px 20px 30px;
+}
+
+.delete-container {
+    text-align: center;
+    margin: 10px;
+}
+
+
+
+.delete-container h4 {
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 22px;
+    color: white;
+}
+
+.delete-container h5 {
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 18px;
+    padding-top: 19px;
+    color: white;
+
+}
+
+.check {
+    display: flex;
+    gap: 10px;
+    margin-top: 40px;
+    justify-content: center;
+}
+
+.form-check-input {
+    border-color: black;
+}
+
+.form-check-input:checked {
+    border-color: black !important;
+    background-color: rgb(207, 89, 223) !important;
+}
+
+.check label {
+    line-height: 19px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    font-family: "Oxygen", sans-serif;
+    color: white;
+}
+
+.radio {
+    border: .5px solid;
+    border-image: linear-gradient(109deg, rgba(129, 45, 226), rgba(58, 73, 249)) 1;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 2.5em;
+    padding-right: 25px;
+    /* color: white; */
+}
+
+.radio input {
+    cursor: pointer;
+}
+
+.buyPlan {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.purchaseBtnTwo {
+    width: 100%;
+    background: linear-gradient(109deg, rgba(129, 45, 226), rgba(58, 73, 249));
+    border-radius: 5px;
+    border-color: transparent;
+    height: 38px;
+}
+
+.purchaseBtnTwo:active {
+    background-color: linear-gradient(109deg, rgba(129, 45, 226), rgba(58, 73, 249));
+    border-color: transparent;
+}
+
+.purchaseBtnTwo:hover {
+    background: linear-gradient(109deg, rgba(129, 45, 226), rgba(58, 73, 249));
+    border-color: transparent;
+}
+
+.arrowBtn {
+    padding-left: 1px !important;
+    margin-top: -1px !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.delete-buttons-one {
+    margin-right: 10px;
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 16px;
+    color: white;
+}
+
+.delete-buttons-two {
+    margin-right: 10px;
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 16px;
+    border: 1px solid #af38d6;
+    border-color: #af38d6;
+    background: white;
+    color: #af38d6;
+    padding: 10px 30px;
+}
+
+.delete-buttons-two:hover {
+    background: #af38d6;
+    border-color: #af38d6;
+    color: white;
+}
+
+.delete-buttons-two:first-child:active {
+    border: 1px solid #af38d6;
+    background: #af38d6;
+    border-color: #af38d6;
+    color: white;
+}
+
+.delete-img-circle {
+    border-radius: 50%;
+    padding: 8px;
+    text-align: center;
+}
+
+.delete-close-img-circle {
+    padding-right: 30px;
+    padding-top: 30px;
+    cursor: pointer;
+}
+
+.delete-img-circle-div-container {
+    display: flex;
+    justify-content: center;
+}
+
+.delete-close-img-circle-div-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.delete-main-container {
+    margin: 10px;
+}

@@ -1,0 +1,941 @@
+.error {
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 12px;
+    color: red;
+    padding-top: 2px;
+}
+
+.createProfilePage {
+    width: 85.7vw;
+    margin: 0 auto;
+    /* height: 100vh; */
+}
+
+.footerSectionInside {
+    width: 85.7vw;
+    margin: 0% auto;
+}
+
+.footerSection {
+    background: linear-gradient(1deg, rgba(58, 73, 249, .88) -171.77%, rgba(129, 45, 226, .49) -22.73%, transparent 102.14%) !important;
+    padding-top: 35px;
+}
+
+.createProfileSection {
+    /* background-image: url("../../images/Phase_2_All_Assets/create_profile/bg_image3x.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100%; */
+    background-color: black;
+    /* height: 100vh; */
+}
+
+.createProfile {
+    width: 505px;
+    /* height: 580px; */
+    border-radius: 10px;
+    background-color: #18171E;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 100px;
+}
+
+.fillHead {
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 34px;
+    padding-bottom: 15px;
+    text-align: center;
+    padding-top: 30px;
+    color: white;
+}
+
+.DescriptionPara {
+    width: 350px;
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.breadCrumbs {
+    display: flex;
+    gap: 5px;
+    margin-top: 20px;
+    padding-left: 3vw;
+}
+
+.link1 a {
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 14px;
+    color: white;
+}
+
+.link2 a {
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 14px;
+    color: #AB39D2;
+}
+
+.accordionDetails {
+    margin-top: 20px;
+    padding: 0 30px 30px 30px;
+}
+
+
+.editIcon {
+    transform: none !important;
+    /* Prevent rotation */
+}
+
+
+/* .accordionDetails div:first-child {
+    padding: 7px;
+} */
+
+
+.accordionDetails>div {
+    margin-bottom: 20px !important;
+    background-color: #1E1D24;
+}
+
+.customAccordionSummaryStep1 h5 {
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 15px;
+    color: #AB39D2;
+    /* margin: 0px 0px !important; */
+    padding: 0;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+}
+
+.customAccordionSummaryStep1 span {
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 15px;
+    color: white;
+    /* margin: 0px 0px !important; */
+    padding: 0;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+}
+
+.customAccordionSummaryStep2 h5,
+.customAccordionSummaryStep3 h5 {
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 15px;
+    color: #AB39D2;
+    /* margin: 0px 0px !important; */
+    padding: 0;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+}
+
+.customAccordionSummaryStep2 span {
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 15px;
+    color: white;
+    /* margin: 0px 0px !important; */
+    padding: 0;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+}
+
+.customAccordionSummaryStep3 span {
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 15px;
+    color: white;
+    /* margin: 0px 0px !important; */
+    padding: 0;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+}
+
+
+.customAccordionSummaryStep1 h3 {
+    font-family: "Oxygen";
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 13px;
+    color: white;
+    padding-top: 5px;
+}
+
+.customAccordionSummaryStep2 h3,
+.customAccordionSummaryStep3 h3 {
+    font-family: "Oxygen";
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 13px;
+    color: white;
+    padding-top: 5px;
+    max-width: 300px;
+    line-height: 16px;
+}
+
+
+.customAccordionSummary span {
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 12px;
+    color: white;
+}
+
+.increasedHeight {
+    height: 70px;
+}
+
+.step1Section {
+    border-top: 1px solid #9B9B9B;
+}
+
+.UploadPhoto {
+    padding-bottom: 20px;
+}
+
+.UploadPhoto h2 {
+    padding-top: 25px;
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 14px;
+    color: white;
+    display: flex;
+    letter-spacing: 1px;
+}
+
+.step1Details h3 {
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 14px;
+    color: white;
+    margin-bottom: 11px;
+    letter-spacing: 1px;
+    padding-top: 20px;
+}
+
+.step2Details h3 {
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 14px;
+    color: white;
+    margin-bottom: 11px;
+    margin-top: 30px;
+    letter-spacing: 1px;
+
+}
+
+.step2Details p {
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 12px;
+    color: white;
+    /* margin-bottom: 20px; */
+}
+
+.formHeight input {
+    height: 48px;
+    position: relative;
+}
+
+.formHeight input::placeholder {
+    color: #B9B9B9;
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.inputFieldStep1 {
+    color: white !important;
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 14px;
+    cursor: pointer;
+    /* margin-bottom: 20px; */
+    letter-spacing: 1px;
+}
+
+.inputFieldStep1:focus {
+    border: 1px solid #AB39D2;
+    transition: 0.5s;
+}
+
+.inputFieldStep1 input {
+    color: white !important;
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 14px;
+    cursor: pointer;
+    /* margin-bottom: 20px; */
+    letter-spacing: 1px;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 6px;
+    padding-left: 12px;
+}
+
+.inputFieldStep1:focus {
+    border: 1px solid #AB39D2;
+    transition: 0.5s;
+}
+
+.inputFieldStep1::placeholder {
+    text-align: left;
+    padding-left: 10px;
+}
+
+.inputFieldStep2 {
+    color: white !important;
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 14px;
+    cursor: pointer;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+    border-top-right-radius: 5px !important;
+    border-bottom-right-radius: 5px !important;
+    z-index: 1;
+}
+
+.inputFieldStep2:focus {
+    border: 1px solid #AB39D2;
+    transition: 0.5s;
+}
+
+
+.SubmitBtn,
+.SubmitBtn:hover {
+    border: none;
+    background-color: #AB39D2;
+    border-radius: 10px;
+    color: white;
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 18px;
+    width: 280px;
+    height: 54px;
+    margin: 0 auto;
+    display: flex;
+    text-transform: capitalize;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.SubmitBtnStep2,
+.SubmitBtnStep2:hover {
+    background-color: #AB39D2;
+    border-radius: 10px;
+    color: white;
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 18px;
+    width: 280px;
+    height: 54px;
+    margin: 0 auto;
+    display: flex;
+    text-transform: capitalize;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+}
+
+.SubmitBtnStep3,
+.SubmitBtnStep3:hover {
+    background-color: #AB39D2;
+    border-radius: 10px;
+    color: white;
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 18px;
+    width: 280px;
+    height: 54px;
+    margin: 0 auto;
+    display: flex;
+    text-transform: capitalize;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.completedTextStep1 {
+    padding-left: 150px;
+    color: #4BAE4F;
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.completedTextStep2 {
+    padding-left: 115px;
+    color: #4BAE4F;
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.completedTextStep3 {
+    padding-left: 82px;
+    color: #4BAE4F;
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.actionButton {
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 10px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.actionButton a {
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 10px;
+    color: white;
+    text-decoration: none;
+    text-decoration: underline;
+
+}
+
+.blurConfirm {
+    filter: blur(1px);
+    /* Apply blur effect */
+    opacity: 0.9;
+    /* Reduce opacity for a more blurred appearance */
+    cursor: not-allowed;
+    color: white !important;
+    /* Change cursor to indicate the button is disabled */
+}
+
+.inputFieldStep2:disabled {
+    filter: blur(1px);
+    /* Apply blur effect */
+    opacity: 1;
+    /* Reduce opacity for a more blurred appearance */
+    cursor: not-allowed;
+    background-color: rgb(73, 70, 70);
+
+    /* Change cursor to indicate the input is disabled */
+}
+
+.blurSkip {
+    filter: blur(1px);
+    /* Apply blur effect */
+    opacity: 0.9;
+    color: #AB39D2 !important;
+    /* Reduce opacity for a more blurred appearance */
+    cursor: not-allowed;
+    /* Change cursor to indicate the button is disabled */
+}
+
+.skip button,
+.skip button:hover {
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 13px;
+    color: #AB39D2;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    padding-top: 30px;
+    text-decoration: underline;
+    padding-bottom: 30px;
+    background-color: transparent;
+}
+
+.selectingNameSection {
+    padding-top: 30px;
+}
+
+.selectingNameSection p {
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 14px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.selectingBox {
+    display: flex;
+    gap: 10px;
+}
+
+.selectingBox span {
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 12px;
+    color: white;
+    border: 1px solid #AB39D2;
+    border-radius: 4px;
+    padding: 2px 6px 2px 6px;
+    cursor: pointer;
+}
+
+.selectingBox span:hover {
+    background-color: #AB39D2;
+    color: white;
+    transition: 0.4s;
+}
+
+.ModalSection {
+    padding-top: 40px;
+}
+
+.ModalSectionDetails {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 40px;
+}
+
+.ModalSection h2 {
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 20px;
+    color: white;
+    padding-top: 18px;
+}
+
+.ModalSection p {
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 18px;
+    color: white;
+    max-width: 280px;
+    padding-top: 8px;
+}
+
+.ActionModal {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    text-align: center;
+    gap: 35px;
+    padding-top: 40px;
+    padding-bottom: 80px;
+}
+
+.ActionModal_Image {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    text-align: center;
+    gap: 35px;
+    padding-top: 40px;
+    /* padding-bottom: 30px; */
+}
+
+.ModalSection {
+    background-color: #1E1D24;
+}
+
+.confirmationTick {
+    height: 48px;
+    display: flex;
+    width: 100%;
+    position: absolute;
+    justify-content: flex-end;
+
+}
+
+.confirmationTick span {
+    background-color: transparent;
+    border: none;
+}
+
+.ModalClose,
+.ModalClose:hover,
+.ModalClose:active {
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 14px;
+    color: white;
+    text-transform: capitalize;
+    background-color: transparent !important;
+}
+
+.ModalSave,
+.ModalSave:hover {
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 14px;
+    color: white;
+    text-transform: capitalize;
+    background-color: #AB39D2;
+    border-radius: 5px;
+    width: 136px;
+    height: 40px;
+
+}
+
+.FileNames {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.FileNames h6 {
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 14px;
+    color: white;
+    overflow: hidden;
+    max-width: 15ch;
+    text-overflow: ellipsis;
+    text-decoration: none;
+}
+
+.IncompleteDevice {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.IncompleteDevice span {
+    background-color: #AB39D2;
+    color: white;
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 12px;
+    width: 70px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.LinkDeviceForm {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.LinkDeviceFormSection {
+    width: 100%;
+}
+
+.Clear span {
+    /* background-color: #AB39D2; */
+    border: 1px solid #AB39D2;
+    color: white;
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 12px;
+    width: 70px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.DeviceUnlink h5 {
+    color: white;
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 14px;
+    padding-top: 40px;
+    padding-bottom: 10px;
+}
+
+.CloseIcons {
+    padding-top: 4px;
+}
+
+.FileNames img {
+    cursor: pointer;
+}
+
+.UploadPhoto h2 {
+    /* padding-bottom: 20px; */
+}
+
+/* Image Upload */
+.avatar-wrapper {
+    position: relative;
+    height: 80px;
+    width: 80px;
+    margin-top: 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 1px 1px 15px -5px black;
+    transition: all 0.3s ease;
+}
+
+.upload-icon {
+    font-size: 48px;
+    margin: 16px;
+    /* opacity: 0.2; */
+}
+
+.ImageCrop {
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 18px;
+    color: #AB39D2;
+    /* margin-top: 20px; */
+}
+
+.CropBodyHeader {
+    padding: 0;
+    padding-bottom: 20px;
+}
+
+.CustomCloseButton {
+    cursor: pointer;
+}
+
+.CropBody {
+    padding: 30px;
+    background-color: #1E1D24;
+    border-radius: 20px;
+}
+
+
+
+.avatar-wrapper {
+    position: relative;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 1px 1px 15px -5px black;
+    transition: all 0.3s ease;
+}
+
+.avatar-wrapper:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.avatar-wrapper:hover .profile-pic {
+    opacity: 0.5;
+}
+
+.avatar-wrapper .profile-pic {
+    height: 100%;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.avatar-wrapper .profile-pic:after {
+    font-family: FontAwesome;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    font-size: 190px;
+    background: #ecf0f1;
+    color: #34495e;
+    text-align: center;
+}
+
+.avatar-wrapper .upload-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.upload-button input {
+    padding: 20px !important;
+}
+
+.avatar-wrapper .upload-button .fa-arrow-circle-up {
+    position: absolute;
+    font-size: 234px;
+    top: -17px;
+    left: 0;
+    text-align: center;
+    opacity: 0;
+    transition: all 0.3s ease;
+    color: #34495e;
+}
+
+.avatar-wrapper .upload-button:hover .fa-arrow-circle-up {
+    opacity: 0.9;
+}
+
+@media screen and (max-width: 1200px) {
+    .breadCrumbs {
+        padding: 0 40px 0 40px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .createProfile {
+        max-width: 550px;
+        margin: 0 30px 0 30px;
+    }
+
+    .breadCrumbs {
+        display: none;
+    }
+
+    .createProfile {
+        max-width: none;
+        margin: 0 auto;
+
+    }
+
+    .fillHead {
+        font-size: 28px;
+    }
+
+    .DescriptionPara {
+        font-size: 14px;
+    }
+
+    .createProfile {
+        margin-bottom: 100px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .createProfile {
+        max-width: min-content;
+        margin: 0 auto;
+        width: auto;
+    }
+
+    .accordionDetails {
+        padding: 0 10px 30px 10px;
+    }
+
+    .createProfile p {
+        font-size: 14px;
+        width: 100%;
+        padding: 0 20px 0 20px;
+    }
+
+    .fillHead {
+        font-size: 24px;
+    }
+
+    .breadCrumbs {
+        padding-bottom: 30px;
+    }
+
+    .createProfile {
+        margin-bottom: 100px;
+        margin-top: 5vh;
+    }
+
+    /* .accordionDetails {
+        padding: 0 20px 30px 20px;
+    } */
+
+
+    .SubmitBtn,
+    .SubmitBtn:hover,
+    .SubmitBtnStep2,
+    .SubmitBtnStep2:hover,
+    .SubmitBtnStep3,
+    .SubmitBtnStep2:hover {
+        /* width: 265px; */
+        height: 45px !important;
+        font-size: 16px !important;
+        border-radius: 10px !important;
+        margin: 20px 10px 0 10px !important;
+    }
+
+    .completedTextStep1 {
+        padding-left: 80px;
+        font-size: 12px;
+    }
+
+    .completedTextStep2 {
+        padding-left: 55px;
+        font-size: 10px;
+    }
+
+    .completedTextStep3 {
+        padding-left: 32px;
+        font-size: 10px;
+    }
+
+    .NavigationResp {
+        margin: 0px 30px 33px 30px;
+    }
+
+    .step2Details h3 {
+        font-size: 11px;
+    }
+
+    .customAccordionSummaryStep2 h3 {
+        font-size: 10px;
+        max-width: 200px;
+    }
+
+    .customAccordionSummaryStep1 span,
+    .customAccordionSummaryStep2 span {
+        font-size: 10px;
+    }
+
+    .customAccordionSummaryStep3 span {
+        font-size: 10px;
+    }
+
+    .step2Details p {
+        padding-left: 0;
+        margin-bottom: 0;
+        font-size: 10px;
+    }
+
+    .selectingNameSection p {
+        padding-bottom: 15px;
+    }
+
+    .customAccordionSummaryStep1 h5,
+    .customAccordionSummaryStep2 h5,
+    .customAccordionSummaryStep3 h5 {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .NavigationResp {
+        margin: 0px 20px 33px 20px;
+    }
+}

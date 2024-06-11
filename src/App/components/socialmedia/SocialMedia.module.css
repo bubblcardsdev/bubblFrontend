@@ -1,0 +1,6 @@
+.socialMedia {
+  display: flex;
+  gap: 23px;
+  justify-content: center;
+  margin-bottom: 48px;
+}

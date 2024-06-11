@@ -1,0 +1,58 @@
+.imgContainer {
+  display: flex;
+  flex-wrap: wrap;
+  color: white;
+  /* background-color: black; */
+  border-radius: 10px;
+  /* padding: 26px; */
+  padding-top: 26px;
+  padding-left: 26px;
+}
+
+.img_div {
+  border-radius: 50%;
+}
+
+.nameDiv {
+  /* margin-left: 23px; */
+  display: flex;
+  align-items: center;
+}
+
+.nameDiv>p {
+  font-family: "Oxygen";
+  font-weight: 700;
+}
+
+.nameTag {
+  text-transform: capitalize;
+  font-size: 18px;
+  color: #ffffff;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 18ch;
+}
+
+.nameDesignation {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 18ch;
+}
+
+@media screen and (max-width: 480px) {
+  .imgContainer {
+    justify-content: start;
+  }
+
+  .nameTag {
+    max-width: 24ch;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .nameTag {
+    max-width: 18ch;
+  }
+}

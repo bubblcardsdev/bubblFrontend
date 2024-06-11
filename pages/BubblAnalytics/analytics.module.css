@@ -1,0 +1,686 @@
+.order_banner {
+    background-color: #000000;
+    width: 85.7vw;
+    margin: 0% auto;
+}
+
+.container {
+    background-color: #000000;
+    overflow: hidden;
+    /* width: 85.7vw;
+    margin: 0% auto; */
+}
+
+.analyticsBackgroundContainer {
+    position: relative;
+    width: 100vw;
+
+}
+
+
+.navigationContainer {
+    width: 85.7vw;
+    margin: 0% auto;
+    position: relative;
+    z-index: 3;
+}
+
+.analyticsFooterContainer {
+    margin-top: 10vh;
+
+}
+
+.footerSectionInside {
+    width: 85.7vw;
+    margin: 0% auto;
+}
+
+.footerSection {
+    background: linear-gradient(1deg, rgba(58, 73, 249, .88) -171.77%, rgba(129, 45, 226, .49) -22.73%, transparent 102.14%) !important;
+    padding-top: 35px;
+}
+
+.formSelectOptions option {
+    background-color: rgb(24, 23, 30);
+}
+
+.filterByDevice {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5vh;
+    position: relative;
+    z-index: 1;
+}
+
+.formUnderline {
+    border-bottom: 1px solid #af38d6;
+}
+
+.heading {
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 38px;
+}
+
+.plan_header_div {
+    border-radius: 20px;
+    padding: 50px 0 70px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 242px;
+    margin-top: 69px;
+    margin-bottom: 80px;
+    background-color: black;
+}
+
+.helpTip {
+    text-align: center;
+    border: 1px solid #444;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.helpTip:before {
+    content: 'i';
+    font-family: sans-serif;
+    font-weight: normal;
+    color: #444;
+}
+
+.helpTip:hover p {
+    display: block;
+    transform-origin: 100% 0%;
+    -webkit-animation: fadeIn 0.3s ease;
+    animation: fadeIn 0.3s ease;
+}
+
+/* The tooltip */
+.helpTip p {
+    display: none;
+    font-family: sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    text-align: center;
+    background-color: #FFFFFF;
+    padding: 12px 16px;
+    width: 178px;
+    height: auto;
+    position: absolute;
+    border-radius: 3px;
+    border: 1px solid #E0E0E0;
+    box-shadow: 0 0px 20px 0 rgba(0, 0, 0, 0.1);
+    color: #37393D;
+    font-size: 12px;
+    z-index: 99;
+}
+
+/* Prevents the tooltip from being hidden */
+.helpTip p:after {
+    width: 10px;
+    height: 40px;
+    content: '';
+    position: absolute;
+    left: 0;
+}
+
+.info {
+    display: flex;
+    align-items: flex-end;
+}
+
+.info p {
+    margin-right: 8px;
+    font-family: sans-serif;
+    font-weight: normal;
+    padding-top: 10px;
+}
+
+/* CSS animation */
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 100%;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 100%;
+    }
+}
+
+.home_color_head {
+    color: white;
+    opacity: 0.4;
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.linkDevice_color_head {
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: #af38d6;
+    position: relative;
+    z-index: 1;
+}
+
+.plan_heading {
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+    font-size: 30px;
+    font-family: "Oxygen";
+    padding: 6px 0px 8px 0px;
+}
+
+.plan_heading_content {
+    color: white;
+    max-width: 60vw;
+    padding-right: 30px;
+    font-size: 20px;
+}
+
+.analytics_firstSection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 60px;
+}
+
+.analytics_topSection {
+    padding-bottom: 60px;
+}
+
+.blur {
+    background-size: cover;
+    overflow: hidden;
+    filter: blur(13px);
+}
+
+.heading {
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    z-index: 10;
+    position: relative;
+}
+
+.heading a {
+    background-color: #af38d6;
+    border-radius: 86.5px;
+    font-family: Oxygen, sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 10px 20px 10px 20px;
+    margin-left: 12px;
+    margin-top: 5px;
+}
+
+.heading a:hover,
+.heading a:active,
+.heading a:focus {
+    background-color: #af38d6 !important;
+    border-color: transparent;
+}
+
+.analytics_tap {
+    position: relative;
+    background-color: rgb(24, 23, 30, 0.6);
+    border-radius: 15px;
+    z-index: 1;
+}
+
+.analytics_deviceType,
+.analytics_ModeType {
+    background-color: rgb(24, 23, 30, 0.6);
+    border-radius: 10px;
+    padding: 20px 30px 30px 30px;
+    z-index: 10;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.analytics_lead {
+    color: white;
+    background-color: rgb(24, 23, 30, 0.4);
+    height: 450px;
+    border-radius: 10px;
+    padding: 20px 20px 20px 20px;
+    z-index: 10;
+    position: relative;
+}
+
+.noData {
+    color: #afafaf;
+}
+
+.scrollableContainer {
+    max-height: 100%;
+    overflow-y: auto;
+    max-width: 100%;
+    z-index: 1;
+    position: relative;
+}
+
+.scrollableContainer::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+.scrollableContainer::-webkit-scrollbar-thumb {
+    background-color: #E0E0E0;
+    border-radius: 6px;
+
+}
+
+.scrollableContainer::-webkit-scrollbar-track {
+    background: #E0E0E0;
+}
+
+.analytics_tap {
+    padding: 20px 25px 0px 25px;
+}
+
+.analytics_tapBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.analytics_section h4 {
+    font-weight: 700;
+    font-size: 30px;
+    font-family: "Oxygen";
+    padding-bottom: 30px;
+}
+
+.analytics_tapBox h5 {
+    font-weight: 700;
+    font-size: 20px;
+    font-family: "Oxygen";
+    color: #afafaf;
+}
+
+.analytics_deviceType h5 {
+    font-weight: 700;
+    font-size: 17px;
+    font-family: "Oxygen";
+}
+
+.analytics_tapBox_details {
+    padding-top: 20px;
+}
+
+.analytics_tapBox_details h6 {
+    font-weight: 400;
+    font-size: 22px;
+    font-family: "Oxygen";
+    color: #afafaf;
+}
+
+
+.analytics_tapBox_details p {
+    font-weight: 700;
+    font-size: 40px;
+    font-family: "Oxygen";
+    color: #afafaf;
+}
+
+.analytics_tapBox_details>div {
+    padding-bottom: 50px;
+}
+
+.analytics_deviceType h6 {
+    font-weight: 700;
+    font-size: 30px;
+    font-family: "Oxygen";
+}
+
+.analytics_timeRange {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #afafaf;
+}
+
+.analytics_secondSection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 80px;
+}
+
+.analytics_leadForm {
+    display: flex;
+    justify-content: space-between;
+}
+
+.analytics_leadForm h6 {
+    padding-bottom: 10px;
+}
+
+.analytics_ThirdSection {
+    margin-top: 60px;
+}
+
+.details {
+    display: flex;
+}
+
+.colorB,
+.colorG,
+.colorY,
+.colorR,
+.colorB,
+.colorMB,
+.colorMG,
+.colorMR,
+.colorMY,
+.colorV,
+.colorSB,
+.colorSG,
+.colorSR,
+.colorSY,
+.colorSV,
+.colorPB,
+.colorPY,
+.colorPR,
+.colorPG,
+.colorCB,
+.colorCY,
+.colorCG,
+.colorCR,
+.colorCV,
+.colorSLB,
+.colorSPR,
+.colorSLB2,
+.colorV {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+}
+
+.colorSPR {
+    background-color: rgb(192, 24, 88);
+}
+
+/* device Type */
+.colorB {
+    background-color: blue
+}
+
+.colorG {
+    background-color:
+        #48BF53;
+}
+
+.colorY {
+    background-color: #FFBF00;
+}
+
+/* Mode Usage */
+
+.colorMB {
+    background-color: blue;
+}
+
+.colorMY {
+    background-color: yellow;
+}
+
+.colorMR {
+    background-color: red;
+}
+
+.colorMG {
+    background-color: green;
+}
+
+/* Mode Social */
+
+.colorSB {
+    background-color: blue;
+}
+
+.colorSLB {
+    background-color: lightblue;
+}
+
+.colorSLB2 {
+    background-color: rgb(198, 216, 222);
+}
+
+.colorSY {
+    background-color: yellow;
+}
+
+.colorSR {
+    background-color: red;
+}
+
+.colorSG {
+    background-color: green;
+}
+
+.colorSV {
+    background-color: violet;
+}
+
+.colorR {
+    background-color:
+        #DE1848;
+}
+
+/* Payment Mode */
+.colorPB {
+    background-color: blue;
+}
+
+.colorPG {
+    background-color: green;
+}
+
+.colorPR {
+    background-color: red;
+}
+
+/* Contact  */
+.colorCB {
+    background-color: blue;
+}
+
+.colorCY {
+    background-color: yellow;
+}
+
+.colorCG {
+    background-color: green;
+}
+
+.colorCV {
+    background-color: violet;
+}
+
+.colorV {
+    background-color:
+        violet;
+}
+
+.details_info {
+    display: flex;
+    align-items: center;
+
+}
+
+.details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.chart_details {
+    margin-top: 30px;
+}
+
+.details_info h6 {
+    font-weight: 400;
+    font-size: 16px;
+    font-family: "Oxygen";
+    padding-left: 15px;
+    color: #afafaf;
+}
+
+.details p {
+    font-weight: 700;
+    font-size: 14px;
+    font-family: "Oxygen";
+    color: #afafaf;
+}
+
+.chartjs {
+    height: 200px;
+    width: 200px;
+    margin: 0 auto;
+}
+
+.noData {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+
+.names {
+    padding: 20px;
+
+}
+
+.name {
+    padding: 20px;
+}
+
+@media screen and (min-width: 769px) {
+    .line_resp {
+        display: none;
+    }
+
+    .analytics_leadForm {
+        padding-bottom: 15px;
+    }
+
+    .name {
+        font-size: 12px;
+    }
+
+
+}
+
+@media screen and (max-width: 768px) {
+    /* .plan_header_div {
+        padding: 50px 0 70px 30px;
+    } */
+
+    .line_resp {
+        display: block;
+    }
+
+    .name {
+        font-size: 12px;
+        padding: 5px;
+
+    }
+
+    .names {
+        font-size: 12px;
+        padding: 5px
+    }
+
+    .home_color_head {
+        display: none;
+    }
+
+    .linkDevice_color_head {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+
+    .analytics_deviceType {
+        background-color: rgb(24, 23, 30, 0.6);
+        border-radius: 10px;
+        padding: 20px 30px 30px 30px;
+        z-index: 10;
+        position: relative;
+        height: 65vh;
+        margin-bottom: 10px;
+    }
+
+    .analytics_leadForm {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    .name {
+        font-size: 12px;
+        padding: 5px;
+
+    }
+
+    .names {
+        font-size: 12px;
+        padding: 5px
+    }
+
+    .analytics_secondSection {
+        margin-top: 0px;
+    }
+
+    .analytics_ThirdSection {
+        margin-top: 30px;
+    }
+
+    .heading {
+        font-size: 24px;
+    }
+
+    .info {
+        align-items: center;
+    }
+
+    /* .plan_header_div {
+        padding: 50px 0 70px 20px;
+    } */
+
+    .plan_heading_content {
+        padding-right: 20px;
+
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .heading {
+        font-size: 16px;
+    }
+}

@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Oxygen:wght@300;700&family=Source+Sans+Pro:wght@700&display=swap");
+
+.buttonShop {
+  background: linear-gradient(110deg,
+      rgba(129, 45, 226),
+      rgba(58, 73, 249));
+  border-radius: 86.5px;
+  font-family: "Oxygen", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #ffffff;
+  display: flex;
+  gap: 17px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  border-color: transparent;
+  width: 220px;
+  height: 56px;
+}
+
+.buttonShop p {
+  margin-bottom: 0px;
+}
+
+.buttonShopNow {
+  background: linear-gradient(110deg,
+      rgba(129, 45, 226, 0.8),
+      rgba(58, 73, 249, 0.9));
+  border-radius: 90px;
+  border-color: transparent;
+  font-family: "Oxygen", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: #ffffff;
+  display: flex;
+  padding: 7px 18px;
+  align-items: center;
+  width: 150px;
+  height: 50px;
+  justify-content: center;
+}
+
+@media screen and (min-width: 1600px) {
+  /* .buttonShop {
+    margin-top: 150px;
+  } */
+}
+
+@media screen and (max-width: 769px) {
+  .buttonShopNow {
+    font-size: 11px;
+    padding: 7px 10px;
+    /* margin-left: 20px; */
+  }
+
+  .buttonShop {
+    font-size: 12px;
+    height: 43px;
+    margin-bottom: 30px;
+  }
+
+  .buttonaddtocart {
+    font-size: 11px !important;
+  }
+
+  .signupbtn {
+    font-size: 8px !important;
+    margin-top: 11px !important;
+  }
+}
+
+.buttonShopNow p {
+  margin-bottom: 0px;
+}
+
+.signupbtn {
+  background-color: #af38d6;
+  border-radius: 86.5px;
+  font-family: "Oxygen", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #ffffff;
+  display: flex;
+  gap: 17px;
+  padding: 7px 30px;
+  align-items: center;
+  margin-top: 28px;
+  border-color: transparent;
+}
+
+.signupbtn p {
+  margin-bottom: 0px;
+}
+
+.buttonaddtocart {
+  border: 2px solid #af38d6;
+  background-color: transparent;
+  border-radius: 86.5px;
+  font-family: "Oxygen", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #af38d6;
+  padding: 7px 18px;
+  align-items: center;
+  border-color: #af38d6;
+  outline: unset;
+}
+
+.arrowBtn {
+  padding-left: 1px !important;
+  margin-top: -1px !important;
+}
+
+.buttonaddtocart p {
+  margin-bottom: 0px;
+}
+
+@media screen and (max-width: 1024px) {
+  .buttonShop {
+    background-color: #af38d6;
+    border-radius: 29.5px;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: #ffffff;
+    display: flex;
+    gap: 17px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0px;
+    border-color: transparent;
+    height: 45px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .buttonShop {
+    margin-top: 20px;
+  }
+
+  .resp_btn {
+    margin-top: 40px;
+  }
+}

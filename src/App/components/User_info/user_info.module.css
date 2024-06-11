@@ -1,0 +1,30 @@
+.userName {
+  font-weight: 900;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 170px;
+  padding-bottom: 4px;
+}
+.userprof {
+  text-align: center;
+  font-weight: 400;
+  font-size: 10px;
+  padding-bottom: 17px;
+}
+.userprof span {
+  background: linear-gradient(to right, #d35470, #e5686f, #ebac9c);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  font-weight: 900;
+}
+.userinfo {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  width: 274px;
+}
+.UserInfo {
+  text-align: -webkit-center;
+}

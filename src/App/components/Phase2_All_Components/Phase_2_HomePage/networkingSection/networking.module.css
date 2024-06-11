@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+
+.networkingHead {
+    text-align: center;
+    font-family: "Source Sans 3", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.375rem, -0.5rem + 3.3333vw, 2.5rem);
+    color: #ffff;
+    margin-bottom: 20px;
+}
+
+.backgroundContainer {
+    /* position: relative; */
+    z-index: -1;
+}
+
+.networkingContainer {
+    position: relative;
+    z-index: 1
+}
+
+.networkingContentDiv {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.networkingContentDiv p {
+    color: white;
+    width: 60%;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.125rem, 0.9839rem + 0.3226vw, 1.5rem);
+    position: relative;
+    z-index: 1;
+}
+
+.bubblImage {
+    display: flex;
+    justify-content: flex-end;
+    color: white;
+    margin-top: 31px;
+}
+
+.imageDiv img {
+    width: 36vw !important;
+    height: 26vw !important;
+    background-size: cover;
+    transition: opacity 1.3s ease-in-out;
+}
+
+.paragraphContainers {
+    position: relative;
+}
+
+.business:hover::after {
+    width: 100%;
+}
+
+.business {
+    position: relative;
+    display: inline-block;
+    color: white;
+    font-size: 30px;
+    font-weight: 300;
+    /* font-size: clamp(1.5rem, 0.0417rem + 2.5926vw, 2.375rem); */
+    font-family: "Source Sans 3", sans-serif;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.business:hover {
+    font-weight: 700;
+}
+
+.business::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1.5px;
+    background-color: #635DD4;
+    transition: width 0.6s ease;
+
+}
+
+/* 
+.business::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-color: transparent;
+    transition: background-color 0.3s;
+
+} */
+
+/* .business:hover::after {
+    background-color: #635DD4;
+} */
+
+
+/* Style for the bottom line when hovered */
+.business:hover::after {
+    left: 0;
+    width: 100%;
+}
+
+.imageContainer {
+    margin-top: 96px;
+    /* position: relative; */
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10vw
+}
+
+.paragraphContainers:hover .arrow {
+    width: 30px;
+    opacity: 1;
+    transform: translateY(-50%) scale(1.2);
+}
+
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    padding-left: 10px;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+    color: #635DD4;
+}
+
+.firstCol {
+    display: inline-flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+    gap: 2vw;
+}
+
+@keyframes arrowAnimation {
+    0% {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    100% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
+/* Media queries for responsiveness */
+
+/* Adjust styles for screens smaller than 768px */
+@media (max-width: 768px) {
+    .networkingContentDiv p {
+        width: 80%;
+        font-size: 18px;
+    }
+
+    .networkingHead {
+        font-size: 22px;
+    }
+
+    .imageDiv img {
+
+        width: 42vw !important;
+        height: 16vh !important;
+        background-size: cover;
+        align-items: center !important;
+    }
+
+    .imageContainer {
+        /* align-items: flex-start; */
+        margin-top: 50px;
+    }
+
+}
+
+/* Adjust styles for screens smaller than 480px */
+@media (max-width: 480px) {
+    .networkingContentDiv p {
+        width: 100%;
+        font-size: 14px;
+        font-weight: 100;
+    }
+
+    .networkingHead {
+        font-size: 26px;
+    }
+
+    .business {
+        font-size: 16px;
+        font-weight: 200;
+        font-family: "Source Sans Pro", sans-serif;
+        margin-bottom: 10px;
+        cursor: pointer;
+        position: relative;
+        /* Add position relative for ::after pseudo-element */
+    }
+
+    .business::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -3px;
+        width: 100%;
+        height: 1px;
+        background-color: transparent;
+        transition: background-color 0.3s ease;
+        font-size: 22px;
+        font-weight: 200;
+        font-family: "Source Sans Pro", sans-serif;
+
+    }
+
+    .business:hover::after {
+        background-color: #635DD4;
+        padding-bottom: 1px;
+        font-size: 22px;
+        font-weight: 400;
+        font-family: "Source Sans Pro", sans-serif;
+    }
+
+}

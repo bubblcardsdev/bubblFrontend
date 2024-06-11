@@ -1,0 +1,356 @@
+.shopPageSection {
+    background-color: black;
+    /* overflow: hidden; */
+}
+
+.background {
+    /* overflow: hidden; */
+    position: relative;
+}
+
+.container {
+    overflow: hidden;
+}
+
+.shopPageBackSection {
+    background-color: rgba(81, 81, 81, 0.11);
+    /* opacity: 27%; */
+    backdrop-filter: blur(10px);
+    border-bottom-left-radius: 210px;
+    border-bottom-right-radius: 210px;
+    /* max-width: 1235px; */
+    margin: 0 auto;
+    /* overflow: hidden; */
+    /* padding-left: 40px; */
+}
+
+.testimonial_container {
+    margin-top: 30vh;
+}
+
+.navigateDiv {
+    max-width: 1235px;
+    margin: 0 auto;
+    z-index: 1;
+    position: relative;
+}
+
+.cardWidthDiv {
+    max-width: 1235px;
+    margin: 0 auto;
+    padding-left: 40px;
+}
+
+.shopPageDiv {
+    max-width: 1235px;
+    margin: 0 auto;
+    padding-left: 40px;
+
+}
+
+.shopBreadCrumbs {
+    display: flex;
+    gap: 5px;
+    margin-top: 20px;
+    z-index: 1;
+    position: relative;
+    /* margin-left: 92px; */
+
+}
+
+.homeLink a {
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 14px;
+    color: white;
+}
+
+.shopLink a {
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 14px;
+    color: #AB39D2;
+}
+
+.bubblHeading {
+    margin-top: 76px;
+    text-align: center;
+}
+
+.bubblName {
+    background: linear-gradient(to right, rgba(66, 70, 247), rgba(127, 46, 227));
+    -webkit-background-clip: text;
+    color: transparent;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 59px;
+    font-weight: 700;
+}
+
+.bubblSubHead {
+    color: #F5F5F7;
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 47px;
+    padding-bottom: 113px;
+
+}
+
+.cardContainer {
+    max-width: 1235px;
+    margin: 0 auto;
+    padding-left: 40px;
+}
+
+.individualContainer {
+    margin-top: 71px;
+    margin-bottom: 64px;
+}
+
+.individualHead {
+    color: #FFFFFF;
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    text-align: center;
+}
+
+.individualSubHead {
+    color: #FFFFFF;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    font-size: 40px;
+    text-align: center;
+}
+
+.individualSubHeading {
+    color: #FFFFFF;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    font-size: 22px;
+    text-align: center;
+    margin-top: 11px;
+    margin-bottom: 64px;
+}
+
+.individualDiv {
+    /* display: flex; */
+    justify-content: center;
+    text-align: center;
+}
+
+.individualContent {
+    color: #FFFFFF;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    font-size: 22px;
+    text-align: center;
+    margin-top: 11px;
+    margin-bottom: 64px;
+    margin-left: 156px;
+    margin-right: 120px;
+    position: relative;
+    z-index: 1;
+}
+
+.line {
+    border-top: 1px solid #635DD4;
+    margin-top: 114px;
+}
+
+.customSection {
+    margin-top: 82px;
+}
+
+
+.bundleComp {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+.cardFunction {
+    margin-top: 148px;
+}
+
+.customDiv {
+    display: flex;
+    justify-content: center;
+}
+
+.customDiv>ul>li .react-multi-carousel-item {
+    background: red !important;
+}
+
+.react-multi-carousel-list {
+    background-color: orange !important;
+}
+
+.footerSection {
+    margin-top: 211px;
+}
+
+@media screen and (max-width:1245px) {
+    .shopPageDiv {
+        padding-left: 0px;
+    }
+
+    .shopPageBackSection {
+        border-bottom-left-radius: 117px;
+        border-bottom-right-radius: 117px;
+    }
+
+    .bubblHeading {
+        margin-top: 0px;
+    }
+
+    .bubblSubHead {
+        padding-bottom: 60px;
+    }
+
+    .navigateDiv {
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+
+    .shopBreadCrumbs {
+        margin-left: 50px;
+    }
+
+}
+
+@media screen and (min-width:1201px) {
+    .shopPageResponsive {
+        display: none;
+    }
+}
+
+@media screen and (max-width:1202px) {
+    .web {
+        display: none !important;
+    }
+
+    .shopBreadCrumbs {
+        margin-top: 0px;
+    }
+
+    .bubblSubHead {
+        padding-bottom: 0px;
+    }
+}
+
+@media screen and (max-width:999px) {
+    .individualContent {
+        margin-left: 95px;
+        margin-right: 76px;
+        margin-bottom: 36px;
+    }
+
+    .cardFunction {
+        margin-top: 96px;
+    }
+
+    .shopPageBackSection {
+        padding-top: 65px;
+        padding-bottom: 65px;
+    }
+
+    .individualContainer {
+        margin-top: 26px;
+    }
+
+    .bubblSubHead {
+        padding-bottom: 0px;
+    }
+
+    .bubblName {
+        font-size: 40px;
+    }
+
+    .bubblSubHead {
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .individualContainer {
+        margin-top: 26px;
+        margin-bottom: 32px;
+    }
+
+    .individualSubHead {
+        font-size: 26px;
+    }
+
+    .quantity {
+        padding-top: 22px;
+    }
+
+}
+
+@media screen and (max-width:610px) {
+    .shopPageBackSection {
+        border-bottom-left-radius: 96px;
+        border-bottom-right-radius: 96px;
+    }
+
+    .cardFunction {
+        margin-top: 91px;
+    }
+
+    .cards_prod_img img {
+        width: 50%;
+        margin-left: 90px;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .individualSubHead {
+        font-size: 24px;
+    }
+
+    .individualContent {
+        font-size: 14px;
+        margin-bottom: 32px;
+
+    }
+
+    .individualContainer {
+        margin-bottom: 32px;
+    }
+
+    .cardFunction {
+        margin-bottom: 40px;
+    }
+
+}
+
+
+@media screen and (max-width:425px) {
+    .shopPageBackSection {
+        border-bottom-left-radius: 74px;
+        border-bottom-right-radius: 74px;
+    }
+
+    .individualContent {
+        margin-left: 28px;
+        margin-right: 28px;
+        margin-bottom: 32px;
+    }
+
+    .cardFunction {
+        margin-top: 91px;
+    }
+}
+
+
+@media screen and (max-width:390px) {
+    .individualSubHead {
+        font-size: 22px;
+    }
+
+    .individualContent {
+        font-size: 12px;
+        margin-bottom: 32px;
+    }
+}

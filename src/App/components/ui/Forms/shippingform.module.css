@@ -1,0 +1,134 @@
+.firstname {
+  display: flex;
+  /* flex-wrap: wrap; */
+  margin-bottom: 32px;
+  color: white;
+  font-family: "Oxygen", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.border {
+  border: 1px solid rgba(255, 255, 255, 0.60) !important;
+  border-radius: 5px;
+  margin-bottom: 20px;
+
+
+}
+
+.space {
+  margin-left: 40px;
+}
+
+/* 
+.shipping_detail {
+  padding-left: 25px;
+} */
+
+.countryCode select {
+  max-width: 100%;
+  font-family: "Oxygen", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  border: 1px solid white !important;
+  outline: none;
+  border-radius: 5px;
+  height: 38px;
+  /* background-color: #f5f5f7; */
+  background: none;
+
+  padding-left: 10px;
+  color: #696969;
+  width: 266px;
+}
+
+.payment_btn {
+  margin-top: 50px;
+  background: #af38d6;
+  border-radius: 5px;
+  color: white;
+  font-family: "Oxygen", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  padding: 10px 20px 10px 20px;
+}
+
+.payment_btn:hover,
+.payment_btn:active {
+  background-color: #af38d6 !important;
+  color: white !important;
+  border-color: #af38d6 !important;
+}
+
+.shipping_detail {
+  font-family: "Oxygen", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.shippingFormUi {
+  padding-top: 40px;
+  padding-left: 47px;
+  padding-right: 47px;
+}
+
+
+
+@media screen and (max-width: 1024px) {
+  .payment_btn {
+    display: none;
+  }
+}
+
+@media screen and (max-width:768px) {
+  .colGap {
+    margin-right: 10px;
+  }
+
+}
+
+@media screen and (max-width: 769px) {
+  .space {
+    margin-left: 0;
+  }
+
+  .firstname {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 0;
+  }
+
+  .shipping_detail {
+    margin-bottom: 50px;
+  }
+}
+
+@media screen and (max-width:577px) {
+  .countryCode select {
+    width: 300px;
+  }
+
+}
+
+@media screen and (max-width: 426px) {
+  .space {
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width:475px) {
+  .shippingFormUi {
+    padding-top: 25px;
+    padding-left: 10px;
+    padding-right: 0px !important;
+  }
+
+}
+
+@media screen and (max-width:375px) {
+  .countryCode select {
+    width: 100px;
+  }
+}

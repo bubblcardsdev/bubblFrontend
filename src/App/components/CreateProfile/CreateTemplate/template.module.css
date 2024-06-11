@@ -1,0 +1,288 @@
+.device-header {
+  margin: 20px 0px 20px 0px;
+  display: flex;
+  padding: 10px;
+  width: 60%;
+}
+
+.templateDiv {
+  background-color: #f5f5f7;
+}
+
+.templateDiv .form-control {
+  background-color: black !important;
+}
+
+.device-header-linkedevice {
+  margin-right: 10%;
+}
+
+.device-header-profile {
+  margin-right: 10%;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.primary-moddel-template-div {
+  width: 100%;
+  margin: 20px 0px 20px 0px;
+  display: flex;
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  font-family: "Montserrat";
+
+  font-weight: 400;
+  font-size: 22px;
+}
+
+.template-img-div {
+  border: 2px solid red;
+}
+
+.contact-details-div {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.phone-toggle-div {
+  display: flex;
+  margin-top: 10px;
+  justify-content: space-between;
+}
+
+.phone-dropdown-div {
+  width: 100%;
+  margin: 10px 0px 10px 0px;
+  display: flex;
+  padding: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.phone-delete-div {
+  display: flex;
+  margin-top: 10px;
+}
+
+.phone-delete-img {
+  margin: 17px 0px 0px 10px;
+}
+
+.phone-checkbox-div {
+  margin: 17px 10px 0px 0px;
+}
+
+.mail-format-div {
+  margin-top: 6px;
+}
+
+.hr-div-css {
+  border-left: 1px solid rgba(0, 0, 0, 1);
+  height: 34px;
+  margin-top: 6px;
+}
+
+.socialmedia-img-div {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgba(217, 217, 217, 1);
+  margin: 0px 10px 0px 0px;
+}
+
+.socialmedia-input-div {
+  width: 100%;
+}
+
+.pay-pro-div {
+  background-color: #d9d9d9;
+  border-radius: 30px;
+  width: 87px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 27px;
+  margin: 0px 0px 0px 18px;
+}
+
+.preview_fixed {
+  position: sticky;
+  top: 110px;
+}
+
+.warning-information-div {
+  font-family: "Oxygen";
+  font-weight: 400;
+  font-size: 18px;
+  color: #000000;
+  margin-top: 65px;
+}
+
+.cancel-btns-div {
+  display: flex;
+  margin-top: 40px;
+  font-family: "Oxygen";
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.btn:first-child:active {
+  border-color: none !important;
+}
+
+.reset-btn {
+  margin-left: 61px;
+}
+
+.save-btns-div {
+  display: flex;
+  width: 60%;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.firstName {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+.textarea {
+  width: 100%;
+  height: 70px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+}
+
+.profile-branding-waring {
+  font-family: "Montserrat";
+  font-style: italic;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 15px;
+  color: #000000;
+  margin-top: 10px;
+}
+
+.branding-color-div {
+  width: 100%;
+  border: 1px solid black;
+  margin: 0px 10px 0px 0px;
+  display: flex;
+  justify-content: space-between;
+  padding: 7px;
+}
+
+.branding-color-box {
+  border: 1px solid black;
+  width: 30px;
+  height: 30px;
+}
+
+.branding-color-box-div {
+  display: flex;
+  margin-top: 10px;
+}
+
+.cover {
+  position: "fixed" !important;
+  top: "0px" !important;
+  right: "0px";
+  bottom: "0px";
+  left: "0px";
+}
+
+.popover {
+  position: "absolute";
+  z-index: "2";
+}
+
+/* profile Information */
+.profile-save-btn {
+  margin-top: 10px;
+}
+
+.brand-icon {
+  margin-right: 10px;
+}
+
+.media-div-btn {
+  margin-top: 39px;
+}
+
+.media-save-btn {
+  background-color: #af38d6;
+  border-color: #af38d6;
+  width: 230px;
+}
+
+.media-save-btn:hover {
+  background: #af38d6;
+  border-color: #af38d6;
+  box-shadow: 1px -1px 25px -2px rgba(189, 189, 189, 1);
+}
+
+.media-save-btn:first-child:active {
+  background: #af38d6;
+  border-color: #af38d6;
+}
+
+.media-save-btn:focus {
+  background: #af38d6;
+  border-color: #af38d6;
+}
+
+.device-header {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 20px;
+}
+
+.link-icon-background {
+  width: 30px;
+  height: 30px;
+  background-color: #af38d6;
+  border-radius: 50%;
+  margin-left: 34%;
+  display: flex;
+  justify-content: center;
+}
+
+.device_header_link_device {
+  font-weight: 600;
+}
+
+.profile_icon {
+  height: 30px;
+  margin-left: 20px;
+}
+
+.device_header_profile {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.arrow-btn {
+  margin-right: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .preview_fixed {
+    display: none;
+  }
+}
+
+/* Mobile responsive Background color */
+@media screen and (max-width: 500px) {
+  .card_header {
+    box-shadow: 0px 0px 0px #ffffff;
+    border-color: transparent;
+  }
+
+  .warning-information-div {
+    margin-top: 0px;
+  }
+}

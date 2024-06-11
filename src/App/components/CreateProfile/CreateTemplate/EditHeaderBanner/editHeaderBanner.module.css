@@ -1,0 +1,77 @@
+.createProfile_header_div {
+  background: #000000;
+  border-radius: 20px;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.createProfile_header_banner {
+  padding-top: 67px;
+}
+.createProfile_header_left {
+  width: 60%;
+  margin-left: 63px;
+}
+.home_color_head {
+  color: rgba(255, 255, 255, 0.8);
+  font-family: "Oxygen";
+  font-weight: 400;
+  font-size: 14px;
+}
+.linkDevice_color_head {
+  font-family: "Oxygen";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #af38d6;
+}
+.createProfile_heading {
+  color: #fff;
+  font-weight: 700;
+  font-size: 30px;
+  font-family: "Oxygen";
+  padding: 6px 0px 8px 0px;
+}
+
+.image_head {
+  margin-right: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  .createProfile_header_left {
+    width: 60%;
+    margin-left: 0px;
+  }
+  .home_color_head,
+  .linkDevice_color_head {
+    font-size: 12px;
+  }
+  .createProfile_heading {
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .image_head {
+    display: none;
+  }
+  .createProfile_header_left {
+    width: 100%;
+    margin-top: 120px;
+  }
+  .createProfile_header_div {
+    height: 510px;
+    align-items: flex-start;
+    margin-top: -110px;
+  }
+}
+.createProfile_heading_content {
+  color: #fff;
+  font-family: "Oxygen";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #ffffff;
+  opacity: 0.7;
+}

@@ -1,0 +1,614 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Oxygen&family=Poppins:wght@700&family=Readex+Pro:wght@400;500;700&display=swap');
+
+.FreeTemplateFive {
+    max-width: 400px;
+    background: black;
+    min-height: 100vh;
+}
+
+
+/* Template Banner */
+
+.BannerImg {
+    padding: 0px 0px 20px 0px;
+}
+
+.qrImgLogo {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.qrImg {
+    width: 90px;
+    height: auto;
+}
+
+.B_Img {
+    position: relative;
+}
+
+.UserImg {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+
+.userProfileEdit {
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 35px;
+    right: 0;
+    display: flex;
+    cursor: pointer;
+    top: 25px;
+    right: 25px;
+}
+
+/* Crop */
+.CropBody {
+    padding: 30px;
+    background-color: #1E1D24;
+    border-radius: 20px;
+}
+
+.CropBodyHeader {
+    padding: 0;
+    padding-bottom: 20px;
+}
+
+.ImageCrop {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 18px;
+    color: #AB39D2;
+    /* margin-top: 20px; */
+}
+
+.SaveLogo {
+    background-color: #AB39D2 !important;
+    border: 1px solid #AB39D2 !important;
+    color: white !important;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    width: 100%;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.LogoUploadInput {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    flex-direction: column;
+}
+
+.LogoUploadInput input {
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.CustomCloseButton {
+    cursor: pointer;
+}
+
+/* Info Section */
+
+.InfoSectionDetails {
+    max-width: 330px;
+    margin: 0 auto;
+
+}
+
+.TopInfoSectionDetails {
+    padding: 0 0 15px 10px;
+    border: 1px solid;
+    border-image-source: linear-gradient(109deg, rgba(255, 255, 255, 0.6), rgba(167, 86, 191, 0.05), rgba(255, 255, 255, 0.5));
+    border-image-slice: 1;
+    background: linear-gradient(109deg, rgba(188, 182, 198, 0.05) -1.98%, rgba(105, 102, 113, 0.25) 99.78%);
+    backdrop-filter: blur(10px);
+    margin-top: 20px;
+
+}
+
+.TopInfoSectionDetails {
+    border-radius: 10px;
+    /* Standard */
+    -webkit-border-radius: 10px;
+    /* Safari/Chrome */
+    -moz-border-radius: 10px;
+    /* Firefox */
+    -ms-border-radius: 10px;
+    /* Internet Explorer */
+    -o-border-radius: 10px;
+    /* Opera */
+}
+
+.BoxRadius {
+    border-radius: 10px !important
+}
+
+.errorMsg {
+    display: flex;
+    justify-content: center;
+    padding-top: 5px;
+    padding-bottom: 20px;
+}
+
+.templateBanner1 {
+    /* background-image: url("./Components/banner/1.png"); */
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: 240px 360px;
+}
+
+.templateBanner2 {
+    /* background-image: url("./Components/banner/2.png"); */
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: 0px 820px;
+}
+
+.templateBanner3 {
+    /* background-image: url("./Components/banner/3.png"); */
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: 210px 1050px;
+}
+
+.InfoHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.LogoBrand {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    position: relative;
+}
+
+
+.FirstNameEdit,
+.RoleNameEdit,
+.DesEdit {
+    margin-bottom: 5px;
+}
+
+.DesEdit textarea {
+    padding-left: 0;
+}
+
+.Information h2 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 18px;
+    color: white;
+}
+
+.FirstNameEdit {
+    width: 190px;
+}
+
+.RoleNameEdit {
+    width: 180px;
+}
+
+.FirstNameEdit input {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 20px;
+    color: white;
+    word-break: keep-all;
+
+}
+
+.FirstName h2 {
+    overflow: hidden;
+    /* max-width: 27ch; */
+    /* text-overflow: ellipsis; */
+    width: 200px;
+    display: flex;
+    /* height: 50px; */
+    overflow-wrap: anywhere;
+}
+
+.FirstName {
+    padding-top: 20px;
+}
+
+.FirstName,
+.RoleName {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    /* padding-bottom: 6px; */
+}
+
+.RoleName {
+    padding-top: 5px;
+}
+
+.FirstName img,
+.RoleName img {
+    cursor: pointer;
+    display: flex;
+}
+
+.RoleName h3 {
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    overflow: hidden;
+    max-width: 22ch;
+    text-overflow: ellipsis;
+    color: white;
+}
+
+.RoleNameEdit input {
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+}
+
+.DescriptionPara {
+    display: flex;
+    word-wrap: break-word;
+    width: 100%;
+    padding-top: 15px;
+}
+
+.DescriptionPara p {
+    display: flex;
+}
+
+.Description p {
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    color: white;
+    width: 100%;
+}
+
+.input_line,
+.input_line:focus-visible {
+    border: none;
+    border-bottom: 1px solid white;
+    color: white;
+    outline: none;
+    background-color: transparent;
+    width: 100%;
+    margin-left: 10px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.input_line_des,
+.input_line_des:focus-visible {
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 11px;
+    color: white;
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+    background-color: transparent;
+    width: 290px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    margin-left: 10px;
+    resize: none;
+}
+
+.DescriptionPara p {
+    width: 290px;
+}
+
+.error {
+    color: red;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-style: normal;
+    font-size: 10px;
+    padding-left: 10px;
+    letter-spacing: 1px;
+}
+
+
+.PencilEdit {
+    display: flex;
+    vertical-align: center;
+    cursor: pointer;
+}
+
+.PencilEditDes {
+    cursor: pointer;
+    width: 50px;
+}
+
+.QrEdit {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    position: relative;
+    bottom: -5px;
+    background-color: #1F87FA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: -10px;
+    cursor: pointer;
+    position: absolute;
+}
+
+/* Save contact */
+
+.SaveContactSection {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.SaveContact {
+    position: relative;
+    display: inline-block;
+}
+
+.Share {
+    height: 42px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    background: linear-gradient(94deg, #DD38D8 0.21%, #4B57FF 99.89%);
+}
+
+.Qr {
+    height: 42px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    background: linear-gradient(94deg, #DD38D8 0.21%, #4B57FF 99.89%);
+    cursor: pointer;
+}
+
+/* Contact Information */
+
+.ContactInformation {
+    padding-top: 25px;
+    border: 1px solid;
+    border-image-source: linear-gradient(109deg, rgba(255, 255, 255, 0.6), rgba(167, 86, 191, 0.05), rgba(255, 255, 255, 0.5));
+    border-image-slice: 1;
+    background: linear-gradient(109deg, rgba(188, 182, 198, 0.05) -1.98%, rgba(105, 102, 113, 0.25) 99.78%);
+    backdrop-filter: blur(10px);
+    padding: 20px 0 20px 10px;
+    margin-top: 30px;
+    border-radius: 5px;
+}
+
+.ContactInformation h2 {
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 18px;
+    padding-bottom: 25px;
+}
+
+.ContactIcons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.ContactInfo {
+    border-radius: 5px;
+
+    background: linear-gradient(109deg, rgba(188, 182, 198, 0.05) -1.98%, rgba(105, 102, 113, 0.25) 99.78%);
+    backdrop-filter: blur(10px);
+    width: 55px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ContactInfo {
+    position: relative;
+}
+
+.ContactNumber {
+    position: absolute;
+    top: -7px;
+    right: -7px;
+    width: 22px;
+    height: 22px;
+    color: white;
+    border-radius: 50%;
+    background-color: #0082E1;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 11px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1px;
+    cursor: pointer;
+}
+
+/* Social Media */
+.socialSection {
+    border-radius: 5px;
+    margin-top: 30px;
+    border: 1px solid;
+    border-image-source: linear-gradient(109deg, rgba(255, 255, 255, 0.6), rgba(167, 86, 191, 0.05), rgba(255, 255, 255, 0.5));
+    border-image-slice: 1;
+    background: linear-gradient(109deg, rgba(188, 182, 198, 0.05) -1.98%, rgba(105, 102, 113, 0.25) 99.78%);
+    backdrop-filter: blur(10px);
+    padding: 20px 0 20px 10px;
+}
+
+.socialSection h2 {
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 18px;
+
+}
+
+.SocialEdit {
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 20px;
+}
+
+.SocialMediaIcons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 40px;
+
+}
+
+.SocialEditImg {
+    cursor: pointer;
+}
+
+/* Digital Payment */
+
+.DigitalPayment {
+    padding: 20px 0 20px 10px;
+}
+
+.PaymentInformationHead {
+    display: flex;
+    gap: 12px;
+
+}
+
+.DigitalMediaIcons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.DigitalEditImg {
+    cursor: pointer;
+}
+
+.DigitalPayment h2 {
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 18px;
+    padding-bottom: 25px;
+}
+
+.DigitalPayment {
+    border: 1px solid;
+    border-image-source: linear-gradient(109deg, rgba(255, 255, 255, 0.6), rgba(167, 86, 191, 0.05), rgba(255, 255, 255, 0.5));
+    border-image-slice: 1;
+    background: linear-gradient(109deg, rgba(188, 182, 198, 0.05) -1.98%, rgba(105, 102, 113, 0.25) 99.78%);
+    backdrop-filter: blur(10px);
+    margin-top: 25px;
+}
+
+.DigitalInfo {
+    /* border-radius: 10px; */
+    /* background: linear-gradient(109deg, rgba(188, 182, 198, 0.05) -1.98%, rgba(105, 102, 113, 0.25) 99.78%); */
+    width: 55px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/* Footer */
+.TemplateFooter {
+    margin-top: 35px;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 1px solid;
+    border-image-source: linear-gradient(109deg, rgba(255, 255, 255, 0.6), rgba(167, 86, 191, 0.05), rgba(255, 255, 255, 0.5));
+    border-image-slice: 1;
+    background: linear-gradient(109deg, rgba(188, 182, 198, 0.05) -1.98%, rgba(105, 102, 113, 0.25) 99.78%);
+    backdrop-filter: blur(10px);
+    margin-bottom: 50px;
+}
+
+.TemplateFooter p {
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    padding: 14px 0 0px 0;
+}
+
+.TemplateFooter h3 {
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 13px;
+}
+
+.SubscribeText a {
+    width: 113px;
+    height: 37px;
+    border-radius: 6px;
+    background: linear-gradient(96deg, #11427D 3.06%, #663EF7 100%);
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    border: none;
+    margin-top: 15px;
+}
+
+@media screen and (max-width: 500px) {
+    .LogoUploadInput input {
+        width: 280px;
+    }
+}

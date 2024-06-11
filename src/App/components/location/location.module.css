@@ -1,0 +1,36 @@
+.form__Input {
+  background-color: transparent;
+  border: unset;
+}
+
+.form__Input:active {
+  border: unset;
+}
+
+.form__Input:hover {
+  border: unset;
+}
+
+.form__Input:focus-visible {
+  border: unset;
+}
+
+.input_border {
+  border-top: 0.5px solid black;
+  width: 277px;
+  margin-top: 10px;
+}
+
+.formWhole {
+  display: flex;
+  font-weight: 500;
+  font-size: 14px;
+  justify-content: center;
+  max-width: 277px;
+  justify-content: space-between;
+}
+
+.form {
+  text-align: -webkit-center;
+  padding-bottom: 70px;
+}

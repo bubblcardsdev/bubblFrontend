@@ -1,0 +1,212 @@
+.payment-heading-div {
+  margin: 0px 0px 25px 0px;
+  display: flex;
+  padding: 14px 10px 10px 10px;
+  justify-content: space-between;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  align-items: center;
+}
+
+.digital-payment-heading {
+  font-family: "Oxygen";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  color: #000000;
+  margin-left: 15px;
+}
+
+.image-payment-icon-paymentHeading {
+  display: flex;
+  margin-left: 30px;
+}
+
+.image-payment-icon {
+  margin-right: 10px;
+}
+
+.phone-toggle-div {
+  display: flex;
+  margin-bottom: 36px;
+  align-items: center;
+}
+
+.phone-toggle {
+  display: flex;
+  justify-content: space-between;
+}
+
+.digital-add-btn {
+  background: none;
+  color: #af38d6;
+  width: 100px;
+  border: 1px solid #af38d6;
+  border-radius: 10px;
+  margin-bottom: 36px;
+}
+
+.digital-add-btn:hover {
+  background: none;
+  color: #af38d6;
+  border-color: #af38d6;
+}
+
+.digital-add-btn:first-child:active {
+  background: none;
+  color: #af38d6;
+  border-color: #af38d6;
+}
+
+.phone-delete-div {
+  display: flex;
+  margin-top: 10px;
+}
+
+.digital-media-input-div {
+  width: 100%;
+}
+
+.digital-delete-img {
+  margin: 48px 0px 0px 10px;
+  cursor: pointer;
+}
+
+.digital-add-btn-form {
+  margin-left: 40px;
+}
+
+.digital-values {
+  font-weight: 400;
+  font-size: 18px;
+  font-family: "Oxygen";
+  margin-bottom: 10px;
+}
+
+.digital-div-btn {
+  margin-top: 50px;
+}
+
+.profile-save-btn {
+  background-color: #af38d6;
+}
+
+.digital-save-btn {
+  border: 1px solid #af38d6;
+  border-color: #af38d6;
+  width: 120px;
+  background: #f5f5f7;
+  color: #af38d6;
+  /* margin-bottom: 60px; */
+}
+
+.digital-save-btn:hover {
+  background: #af38d6;
+  border-color: #af38d6;
+  color: white;
+}
+
+.digital-save-btn:first-child:active {
+  background: #af38d6;
+  border-color: #af38d6;
+  color: white;
+}
+
+/*Customixation QR Code*/
+
+.qr-heading-div {
+  margin: 60px 0px 25px 0px;
+  display: flex;
+  padding: 14px 10px 10px 10px;
+  justify-content: space-between;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  align-items: center;
+}
+
+.image-qr-icon-paymentHeading {
+  display: flex;
+  margin-left: 30px;
+}
+
+.image-qr-icon {
+  margin-right: 10px;
+}
+
+.digital-qr-heading {
+  font-family: "Oxygen";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  color: #000000;
+}
+
+.upload_qr {
+  margin-left: 40px;
+}
+
+.upload_qr h2 {
+  font-family: "Oxygen";
+  font-weight: 400;
+  font-size: 18px;
+  padding-bottom: 8px;
+  margin-top: 40px;
+}
+
+.upload_qr p {
+  font-family: "Oxygen";
+  font-weight: 400;
+  font-size: 16px;
+  padding-bottom: 50px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.digital-enable {
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.choose_file_section {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 15px 15px 15px 25px;
+  margin-bottom: 70px;
+}
+
+.choose_file {
+  border: 1px solid transparent;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.choose_file:focus {
+  border-color: transparent;
+}
+
+.payment_input {
+  border: 1px solid #696969;
+}
+
+
+@media screen and (max-width: 500px) {
+  .image-payment-icon-paymentHeading {
+    margin-left: 10px;
+  }
+
+  .digital-add-btn-form {
+    margin-left: 10px;
+  }
+
+  .image-qr-icon-paymentHeading {
+    margin-left: 10px;
+  }
+
+  .upload_qr {
+    margin-left: 10px;
+  }
+
+  .digital-payment-heading {
+    margin-left: 0px;
+  }
+}

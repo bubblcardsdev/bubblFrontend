@@ -1,0 +1,391 @@
+@import url("https://fonts.googleapis.com/css2?family=Oxygen:wght@300;700&family=Source+Sans+Pro:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oxygen:wght@400&display=swap");
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.quickLink a {
+  font-family: "Oxygen", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #000000;
+  text-decoration: none;
+}
+
+.quickLink a:hover {
+  color: #af38d6;
+}
+
+.quickLink p:hover {
+  color: #af38d6;
+  cursor: pointer;
+}
+
+
+.quickLink {
+  display: flex;
+  justify-content: space-between;
+  gap: 46px;
+  flex-wrap: wrap;
+}
+
+.footer_line {
+  border-top: 2px solid rgba(0, 0, 0, 0.4);
+  opacity: 40%;
+}
+
+.footer_second {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 27px;
+}
+
+.terms {
+  display: flex;
+  justify-content: space-between;
+}
+
+.terms button {
+  gap: 50px;
+  font-size: 12px;
+  color: black;
+  opacity: 40%;
+}
+
+.privacy {
+  padding: 20px 30px 20px 30px;
+}
+
+.privacy h3 {
+  font-size: 20px;
+  font-family: "Oxygen", sans-serif;
+  font-weight: 700;
+  color: #000000;
+  padding-bottom: 10px;
+}
+
+.privacy p {
+  font-size: 16px;
+  font-family: "Oxygen", sans-serif;
+  font-weight: 400;
+  color: #000000;
+  padding-bottom: 30px;
+}
+
+.privacy span {
+  font-size: 16px;
+  font-family: "Oxygen", sans-serif;
+  font-weight: 700;
+  color: #000000;
+}
+
+.rights {
+  font-size: 12px;
+  color: black;
+  opacity: 40%;
+}
+
+.customer_number {
+  font-family: "Oxygen", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 27px;
+  display: flex;
+  align-items: center;
+  color: #000000;
+}
+
+.customer_number:hover {
+  color: #000000;
+}
+
+.footer_lynx {
+  background-color: #f5f5f7;
+}
+
+.footer_second {
+  padding-bottom: 30px;
+}
+
+.customer_care p {
+  font-family: "Oxygen", sans-serif;
+  margin-bottom: 12px;
+  font-weight: 700;
+  font-size: 14px;
+  color: #0d071a;
+}
+
+.quick_links p {
+  font-family: "Oxygen", sans-serif;
+  margin-bottom: 12px;
+  font-weight: 700;
+  font-size: 14px;
+  color: #0d071a;
+}
+
+.contact p {
+  font-family: "Oxygen", sans-serif;
+  margin-bottom: 12px;
+  font-weight: 700;
+  font-size: 14px;
+  color: #0d071a;
+}
+
+.contact_info a {
+  text-decoration: none;
+  font-family: "Oxygen", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #000000;
+}
+
+.contact_info p {
+  font-size: 10px;
+  max-width: 140px;
+}
+
+.contact_info {
+  display: flex;
+  flex-direction: column;
+}
+
+.footerSub {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.footerSub>div {
+  margin-left: 100px;
+}
+
+.footer_icon {
+  display: flex;
+  gap: 15px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1200px) {
+  .footerSub>div {
+    margin-left: 0px;
+    padding-right: 20px;
+  }
+}
+
+.footer_lynx {
+  background-repeat: no-repeat;
+  padding-top: 200px;
+  background-position-x: right;
+  background-position-y: bottom;
+}
+
+@media screen and (max-width: 993px) {
+  .footerSub {
+    padding-top: 30px;
+  }
+
+  .contact h6 {
+    padding-top: 20px;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .footer_logo {
+    margin-bottom: 25px;
+  }
+
+  .footerSub>div {
+    margin-left: 0;
+  }
+
+  .footerSub {
+    gap: 50px;
+  }
+
+  .footer_lynx {
+    padding-top: 80px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .footerSub {
+    gap: 30px;
+  }
+
+  .customer_care>div {
+    display: flex;
+  }
+
+  .customer_number {
+    margin-right: 10px;
+  }
+
+  .footer_logo {
+    margin-bottom: 25px;
+    gap: 60px;
+  }
+
+  .rights {
+    padding-bottom: 12px;
+  }
+
+  .footer_second {
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .contact_info {
+    flex-direction: inherit;
+  }
+
+  .contact_info p {
+    padding-right: 40px;
+  }
+
+  .customer_number {
+    color: #606060;
+  }
+
+  .footer_lynx {
+    background-image: none;
+  }
+
+  .quickLink {
+    gap: 0px;
+    justify-content: flex-start;
+  }
+
+  .quickLink a {
+    width: 140px;
+    padding-bottom: 16px;
+  }
+
+  .footer_lynx {
+    padding-top: 100px;
+  }
+}
+
+@media screen and(min-width: 501px) {
+  .footer_twoo {
+    display: none;
+  }
+}
+
+/* Mobile responsive Background color */
+@media screen and (max-width: 500px) {
+
+  .card_header {
+    box-shadow: 0px 0px 0px #ffffff;
+    border-color: transparent;
+  }
+
+  .footerSub {
+    display: none;
+  }
+
+  .customerCare h1 {
+    font-family: "Oxygen", sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: #0d071a;
+    padding-bottom: 12px;
+    padding-top: 20px;
+  }
+
+  .customerCare div {
+    font-size: 10px;
+    max-width: 140px;
+  }
+
+  .number_res {
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #000000;
+    width: 123px;
+    line-height: 27px;
+  }
+
+  .number_restwo {
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #000000;
+    width: 123px;
+    padding-bottom: 13px;
+  }
+
+  .footer_logo {
+    display: none;
+  }
+
+  .footer_h {
+    font-family: "Oxygen", sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: #0d071a;
+    padding-bottom: 12px;
+    padding-top: 20px;
+    text-align: end;
+  }
+
+  .responsive_footer {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  .quic_res a {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .quic_res p {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 12px;
+  }
+
+  .quic_res a,
+  .quic_res a:active,
+  .quic_res a:hover {
+    text-decoration: none;
+    color: black;
+  }
+
+  .footer {
+    display: unset;
+  }
+
+  .terms {
+    display: unset;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 501px) {
+  .footer_logotwo {
+    display: none;
+  }
+
+  .responsive_footer {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .footer_twoo {
+    display: none;
+  }
+}

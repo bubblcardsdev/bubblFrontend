@@ -1,0 +1,312 @@
+.shopPageSection {
+    background-color: black;
+    overflow: hidden;
+}
+
+.shopPageBackSection {
+    border-radius: 0px 0px 228.5px 228.5px;
+    background: rgba(81, 81, 81, 0.11);
+    /* backdrop-filter: blur(54.54999923706055px); */
+    width: 100vw;
+
+
+}
+
+.netWorkingBackground {
+    position: relative;
+    margin-top: 10vh;
+
+}
+
+.footerSectionInside {
+    width: 85.7vw;
+    margin: 0% auto;
+}
+
+.footerSectionResp {
+    background: linear-gradient(1deg, rgba(58, 73, 249, .88) -171.77%, rgba(129, 45, 226, .49) -22.73%, transparent 102.14%) !important;
+    padding-top: 35px;
+    margin-top: 60px;
+}
+
+.footerSection {
+    background: linear-gradient(1deg, rgba(58, 73, 249, .88) -171.77%, rgba(129, 45, 226, .49) -22.73%, transparent 102.14%) !important;
+    padding-top: 35px;
+    margin-top: 60px;
+}
+
+/* .web {
+        width: 95vw;
+
+    } */
+
+.navigateDiv {
+    width: 85.7vw;
+    /* margin-left: 5vw; */
+    margin: 0% auto;
+}
+
+.shopPageDiv,
+.imageContent {
+    width: 85.7vw;
+    margin: 0% auto;
+    /* padding-left: 40px; */
+}
+
+.bubblHeading {
+    margin-top: 5vh;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.networkHead {
+    background: linear-gradient(91deg, #812DE2 0%, #423EE0 102.66%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.bubblSubHead {
+    color: #FFF;
+    text-align: center;
+    font-family: "Oxygen", sans-serif;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 100;
+    line-height: normal;
+    padding-bottom: 85px;
+    z-index: 1;
+    position: relative;
+    width: 48vw;
+    margin: 0% auto;
+}
+
+/* .imageContent {
+    max-width: 1383px;
+    margin: 0 auto;
+    padding-left: 40px;
+} */
+
+.businessImageDiv {
+    width: 600px;
+    /* height: 4vh !important; */
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+}
+
+.firstColumn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.rowContainer {
+    display: flex;
+    gap: 93px;
+    margin-top: 80px;
+    align-items: center;
+}
+
+.rowContainerTop {
+    margin-top: 181px;
+}
+
+.firstColumnContent h1 {
+    color: #FFF;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 46px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 124%;
+    margin-bottom: 26px;
+    position: relative;
+    z-index: 1;
+}
+
+.firstColumnContent p {
+    color: #e0e0e0;
+    font-family: "Oxygen", sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 100;
+    line-height: 1.5;
+    position: relative;
+    z-index: 1;
+    text-align: justify;
+}
+
+.learnMoreContainer {
+    font-family: "Oxygen", sans-serif;
+    color: #812DE2;
+    font-weight: 800;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.functionSectionContainer {
+    margin-top: 170px;
+    /* overflow: hidden; */
+    position: relative;
+    z-index: 1;
+}
+
+
+
+.testimonialSectionContainer {
+    /* width: 100%; */
+    margin-top: 10vh;
+}
+
+.footerDiv {
+    padding-top: 183px;
+    /* padding: 10px; */
+    width: 85.7vw;
+    margin: 0% auto;
+    /* margin-left: 3vw; */
+    justify-content: center;
+    align-items: center;
+}
+
+.responsive {
+    overflow: hidden;
+}
+
+@media screen and (min-width: 1500px) {
+    .bubblSubHead {
+        width: 40vw;
+    }
+
+}
+
+@media screen and (min-width:1201px) {
+    .responsive {
+        display: none;
+    }
+
+}
+
+/* Responsive styles */
+@media screen and (max-width: 1200px) {
+    .reponsive {
+        display: none;
+    }
+
+    .businessImageDiv {
+        width: 450px;
+    }
+
+    .rowContainer {
+        gap: 40px;
+    }
+
+    /* .shopPageDiv,
+    .imageContent {
+        padding-left: 20px;
+        padding-right: 20px;
+    } */
+
+    /* .businessImageDiv {
+        width: 100%;
+        max-width: 602px;
+    } */
+}
+
+@media screen and (max-width: 992px) {
+    .businessImageDiv {
+        width: 400px;
+    }
+
+    .rowContainer {
+        gap: 35px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .responsive {
+        overflow: hidden;
+    }
+
+    .respSection {
+        overflow: hidden;
+    }
+
+    .navigateDiv {
+        width: 100%;
+        margin-left: 0;
+        height: 72%;
+    }
+
+    .rowContainer {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .bubblSubHead {
+        font-size: 18px;
+        position: relative;
+        z-index: .5;
+        width: 85vw;
+        padding-bottom: 40px;
+
+    }
+
+    .businessImageDivResponsive {
+        /* width: 74vw; */
+        margin-bottom: 2.5vh;
+        height: 50vw;
+        background-size: cover;
+        position: relative;
+        z-index: 1;
+    }
+
+    .web {
+        display: none;
+    }
+
+    .webSection {
+        display: none;
+    }
+
+    .shopPageBackSection {
+        width: 85.7vw;
+        margin: 0% auto;
+        background-size: cover;
+        overflow: hidden;
+        background: none !important;
+        border-radius: 0px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .firstColumnContent h1 {
+        font-size: 30px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .firstColumnContent p {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .rowContainerTop {
+        margin-top: 50px;
+    }
+
+    /* .navigateDiv {
+        padding-top: 25px;
+    } */
+}
+
+/* Add more media queries as needed */

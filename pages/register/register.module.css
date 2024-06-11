@@ -1,0 +1,757 @@
+@import url("https://fonts.googleapis.com/css2?family=Oxygen:wght@300;700&family=Source+Sans+Pro:wght@700&display=swap");
+
+.signUp_page {
+  display: flex;
+
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+}
+
+.signUp_fieldName {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nextBtn {
+  width: 100%;
+}
+
+.logo {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.login_leftheading {
+  font-size: 38px;
+  width: 396px;
+  font-weight: 400px;
+}
+
+.otpTimer {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.nfc_card {
+  font-size: 38px;
+  padding-top: 70px;
+  padding-left: 37px;
+  padding-right: 265px;
+  padding-bottom: 90px;
+  background-color: white;
+  border-radius: 9px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.card_list {
+  font-size: 26px;
+  margin-bottom: 130px;
+}
+
+/* right */
+.login_right {
+  background: #18171E;
+}
+
+.right_headingOtp {
+  font-family: "Oxygen", sans-serif;
+
+  font-weight: 300;
+  font-size: 32px;
+  line-height: 40px;
+  text-align: center;
+  color: #262626;
+  padding-top: 33px;
+  padding-bottom: 78px;
+}
+
+.loginrt_line {
+  border-top: 2px solid black;
+  width: 488px;
+  margin-bottom: 71px;
+}
+
+.loginrt_otp {
+  display: flex;
+  font-family: "Oxygen", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #000000;
+  text-align: left;
+  padding-bottom: 12px;
+}
+
+@media screen and (max-width: 500px) {
+  .loginrt_otp {
+    margin-top: 60px;
+  }
+
+  .loginrt_para {
+    margin-bottom: 30px !important;
+  }
+}
+
+.loginrt_para {
+  font-family: "Oxygen", sans-serif;
+
+  font-weight: 400;
+  font-size: 16px;
+  color: #000000;
+  text-align: left;
+  max-width: 396px;
+  margin-bottom: 70px;
+}
+
+.loginrt_msg {
+  text-align: center;
+  padding-bottom: 120px;
+  font-family: "Oxygen", sans-serif;
+
+  font-weight: 700;
+  font-size: 20px;
+  color: white;
+}
+
+.linkotp {
+  text-align: center;
+  font-family: "Oxygen", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: #af38d6;
+  padding-bottom: 145px;
+}
+
+.afterotp {
+  text-align: center;
+  font-family: "Oxygen", sans-serif;
+
+  font-weight: 400;
+  font-size: 18px;
+  margin-top: 150px;
+  padding-bottom: 30px;
+}
+
+.countdownText {
+  font-family: "Oxygen", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  padding-bottom: 40px;
+}
+
+.afterlogin {
+  text-decoration: none;
+  color: #af38d6;
+}
+
+.afterlogin:hover {
+  color: #af38d6;
+}
+
+.verify {
+  text-align: center;
+  margin-bottom: 25px;
+  margin-top: 83px;
+}
+
+.resend {
+  font-family: "Oxygen", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  margin-bottom: 58px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: inherit;
+}
+
+.resend_otp {
+  display: flex;
+  justify-content: center;
+}
+
+.welcome {
+  text-align: center;
+  font-size: 32px;
+  padding-bottom: 17px;
+  width: 100%;
+  margin: auto;
+}
+
+.please_login {
+  font-size: 16px;
+  color: black;
+  opacity: 40%;
+  padding-bottom: 55px;
+  text-align: center;
+}
+
+.message {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 35px;
+  margin-top: 35px;
+}
+
+.alreadyacct {
+  text-align: center;
+  padding-bottom: 30px;
+  color: #ffffff;
+}
+
+.alreadyacct {
+  font-family: "Oxygen", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.no_account {
+  font-size: 14px;
+  color: black;
+  opacity: 40%;
+  margin-top: 39px;
+  text-align: center;
+}
+
+.no_account_login {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.social {
+  display: flex;
+  justify-content: space-around;
+}
+
+.social i:hover {
+  cursor: pointer;
+}
+
+.login_right {
+  padding-left: 139px;
+  padding-right: 139px;
+  background: #18171E;
+
+}
+
+/* login css */
+.sign-up-page {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 768px) {
+  .sign-up-page {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.email {
+  background-color: unset;
+}
+
+.login_leftheading {
+  font-size: 48px;
+  width: 396px;
+  font-weight: 400px;
+}
+
+.login_page {
+  background-repeat: repeat;
+  background-color: black;
+  width: 100vw;
+}
+
+@media screen and (max-width: 1300px) {
+  .login_page {
+    height: auto;
+  }
+}
+
+.loginPageBubbl {
+  padding-top: 30px;
+}
+
+.nfc_card {
+  font-size: 38px;
+  padding-top: 105px;
+  padding-left: 37px;
+  padding-right: 265px;
+  padding-bottom: 106px;
+  background-color: white;
+  border-radius: 9px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.card_list {
+  font-size: 26px;
+  margin-bottom: 130px;
+}
+
+/* right */
+.login_right {
+  background: #18171E;
+  border-radius: 14px;
+}
+
+.right_heading {
+  font-family: "Oxygen", sans-serif;
+  font-weight: 300;
+  font-size: 27px;
+  line-height: 40px;
+  text-align: center;
+  color: #ffffff;
+  padding-top: 19px;
+  padding-bottom: 17px;
+}
+
+@media screen and (max-width: 1440px) {
+  .right_heading {
+    padding-bottom: 15px;
+  }
+
+  .loginUsing {
+    margin-bottom: 10px;
+  }
+}
+
+.loginrt_line {
+  border-top: 2px solid black;
+  width: 488px;
+  margin-bottom: 71px;
+}
+
+.welcome {
+  text-align: center;
+  font-size: 32px;
+  padding-bottom: 17px;
+  width: 100%;
+  margin: auto;
+}
+
+.please_login {
+  font-size: 16px;
+  color: black;
+  opacity: 40%;
+  padding-bottom: 55px;
+  text-align: center;
+}
+
+.message {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 35px;
+  margin-top: 35px;
+}
+
+.no_account {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.social {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  /* gap: 49px; */
+  margin-bottom: 20px;
+}
+
+.login_right {
+  width: 504px;
+  padding-left: 46px;
+  padding-right: 62px;
+}
+
+.emailBar {
+  border: 1px solid #d1d1d1;
+  border-radius: 5px;
+  background-color: unset;
+  font-family: "Oxygen", sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  width: 100%;
+
+}
+
+.fields {
+  border: 1px solid #d1d1d1;
+  border-radius: 5px;
+  background-color: unset;
+  font-family: "Oxygen", sans-serif;
+  padding-left: 40px;
+  font-weight: 400;
+  font-size: 13px;
+  width: 100%;
+  color: white;
+}
+
+.fields:focus {
+  background-color: unset;
+}
+
+.emailBar:focus {
+  background-color: unset;
+}
+
+.passwordBar:focus {
+  background-color: unset;
+}
+
+.passwordBar {
+  border: 1px solid #d1d1d1;
+  border-radius: 5px;
+  background-color: unset;
+  font-family: "Oxygen", sans-serif;
+
+  font-weight: 400;
+  font-size: 13px;
+}
+
+.message {
+  background-color: unset;
+  font-family: "Oxygen", sans-serif;
+
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+}
+
+.remember {
+  color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+}
+
+.forgotPsw {
+  font-family: "Oxygen", sans-serif;
+
+  font-weight: 400;
+  font-size: 12px;
+  color: #af38d6;
+}
+
+.nextBtn {
+  background-color: #af38d6;
+  outline-color: #af38d6;
+  border: unset;
+  margin-bottom: 20px;
+  margin-top: 15px;
+  font-family: "Oxygen", sans-serif;
+  padding: 10px 0 10px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.nextBtn:disabled {
+  background-color: #af38d6;
+  outline-color: #af38d6;
+  border: unset;
+  font-family: "Oxygen", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.nextBtn:active {
+  background-color: #af38d6 !important;
+  outline-color: #af38d6;
+  border: unset;
+  font-family: "Oxygen", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.nextBtn:focus-visible {
+  background-color: #af38d6;
+  box-shadow: unset;
+}
+
+.nextBtn:hover {
+  background-color: #af38d6;
+  outline-color: #af38d6;
+  border: unset;
+  font-family: "Oxygen", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.loginUsing {
+  font-family: "Oxygen", sans-serif;
+
+  font-weight: 400;
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+}
+
+.logo {
+  text-align: center;
+}
+
+.signup {
+  color: #af38d6;
+  cursor: pointer;
+}
+
+.inputHead {
+  font-family: "Oxygen", sans-serif;
+
+  font-weight: 400;
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: rgba(254, 254, 254, 0.7);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.fields:focus {
+  border-color: unset;
+  box-shadow: unset;
+  outline: 1px solid #af38d6;
+}
+
+.fields::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.password .fields::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+  /* all icons in a single file */
+  background-repeat: no-repeat;
+}
+
+.email .fields::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+  /* all icons in a single file */
+  background-repeat: no-repeat;
+}
+
+.emailBar::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+  /* all icons in a single file */
+  background-repeat: no-repeat;
+}
+
+.emailBar:focus {
+  border-color: unset;
+  box-shadow: unset;
+  outline: 1px solid #af38d6;
+}
+
+.eye-icon {
+  position: absolute;
+  top: 7px;
+  right: 15px;
+  cursor: pointer;
+}
+
+.fields {
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 40px;
+}
+
+.fieldgap {
+  padding-left: 16px;
+  color: #ffffff;
+}
+
+.emailBar {
+  position: relative;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 40px;
+  color: white;
+}
+
+.signUp_fieldName {
+  margin-bottom: 14px;
+}
+
+.email {
+  margin-bottom: 17px;
+  position: relative;
+}
+
+.password {
+  margin-bottom: 17px;
+}
+
+.confirmPassword {
+  margin-bottom: 15px;
+}
+
+.errorMessage {
+  margin-bottom: 0px;
+  position: absolute;
+  background-repeat: no-repeat;
+  padding-left: 16px;
+  background-size: 12px 12px;
+  background-position-y: 3px;
+  font-size: 12px;
+}
+
+.mobile_flag {
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 1025px) {
+  .signUp_fieldName>div {
+    width: 100%;
+  }
+
+  .signUp_fieldName {
+    gap: 25px;
+  }
+
+  .errorMessage {
+    padding-left: 13px;
+    background-size: 11px 11px;
+    background-position-y: 0px;
+    font-size: 9px;
+    max-width: 282px;
+  }
+
+  .login_right {
+    padding-left: 27px;
+    padding-right: 27px;
+  }
+
+  .emailBar {
+    padding-top: 7px;
+    padding-bottom: 7px;
+  }
+
+  .right_heading {
+    font-size: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .mobile_flag {
+    margin-bottom: 50px;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .right_heading {
+    font-size: 20px;
+    padding-bottom: 0px;
+  }
+
+  .signUp_fieldName {
+    display: unset;
+  }
+
+  .login_right {
+    padding-left: 17px;
+    padding-right: 17px;
+  }
+
+  .fields {
+    font-size: 13px;
+    width: 266px;
+  }
+
+  .first_name {
+    padding-left: 15px;
+    padding-bottom: 16px;
+  }
+
+  .last_name {
+    padding-left: 15px;
+    padding-bottom: 16px;
+  }
+
+  .email {
+    padding-left: 15px;
+  }
+
+  .password {
+    padding-left: 15px;
+  }
+
+  .confirmPassword {
+    padding-left: 15px;
+  }
+
+  .emailBar {
+    width: 266px;
+    font-size: 13px;
+  }
+
+  .button {
+    text-align: center;
+  }
+
+  .login_right {
+    width: 325px;
+    margin-bottom: 26px;
+  }
+
+  .linkotp {
+    padding-bottom: 170px;
+  }
+}
+
+.verify_phnNum {
+  font-family: "Oxygen", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 23px;
+  text-align: left;
+  color: #000000;
+  margin-top: 55px;
+  margin-bottom: 32px;
+}
+
+.passwordLabel {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  font-family: "Oxygen", sans-serif;
+  text-align: left;
+  color: rgba(0, 0, 0, 0.7);
+  margin-bottom: 8px;
+}
+
+.cancel {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  font-family: "Oxygen", sans-serif;
+  text-align: center;
+  color: #af38d6;
+  padding-bottom: 207px;
+  border: unset;
+  background-color: unset;
+}
+
+.cancelbutton {
+  text-align-last: center;
+}
+
+.facebook button {
+  align-items: center;
+  padding: 0px;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  justify-content: center;
+  border-radius: 3px !important;
+  padding-left: 7px;
+}
+
+.kep-login-facebook {
+  height: 30px;
+}

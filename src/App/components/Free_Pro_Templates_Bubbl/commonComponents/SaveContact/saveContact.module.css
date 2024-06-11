@@ -1,0 +1,31 @@
+.buttons {
+  display: flex;
+  gap: 7px;
+  justify-content: left;
+}
+
+.contact_btn {
+  background-color: #1F87FA;
+  border: #1F87FA;
+  border-radius: 5px;
+  font-family: "Oxygen";
+  font-weight: 700;
+  font-size: 14px;
+  width: 152px;
+  height: 41px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: white;
+}
+
+.contact_black_btntwo {
+  border-radius: 5px;
+  padding: 10px 27px;
+  width: 99px;
+  height: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

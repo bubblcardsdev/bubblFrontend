@@ -1,0 +1,636 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Oxygen&family=Poppins:wght@700&family=Readex+Pro:wght@400;500;700&display=swap');
+
+.FreeTemplateThree {
+    max-width: 400px;
+    background: white;
+    min-height: 100vh;
+}
+
+/* Template Banner */
+
+.BannerImg {
+    padding: 0px 0px 20px 0px;
+}
+
+
+.B_Img {
+    position: relative;
+}
+
+.UserImg {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.qrImgLogo {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.qrImg {
+    width: 90px;
+    height: auto;
+}
+
+.userProfileEdit {
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 35px;
+    right: 0;
+    display: flex;
+    cursor: pointer;
+    top: 25px;
+    right: 25px;
+}
+
+/* Crop */
+.CropBody {
+    padding: 30px;
+    background-color: #1E1D24;
+    border-radius: 20px;
+}
+
+.CropBodyHeader {
+    padding: 0;
+    padding-bottom: 20px;
+}
+
+.ImageCrop {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 18px;
+    color: #AB39D2;
+    /* margin-top: 20px; */
+}
+
+.SaveLogo {
+    background-color: #AB39D2 !important;
+    border: 1px solid #AB39D2 !important;
+    color: white !important;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    width: 100%;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.LogoUploadInput {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    flex-direction: column;
+}
+
+.LogoUploadInput input {
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.CustomCloseButton {
+    cursor: pointer;
+}
+
+/* Info Section */
+
+.InfoSectionDetails {
+    max-width: 330px;
+    margin: 0 auto;
+}
+
+.InfoHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    width: 290px;
+    height: 190px;
+    background-color: #ECECEC;
+    border-radius: 10px;
+}
+
+.LogoBrand {
+    right: -55px;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: #171717;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    padding: 10px;
+    top: 45px;
+}
+
+
+.FirstNameEdit,
+.RoleNameEdit,
+.DesEdit {
+    margin-bottom: 5px;
+}
+
+.DesEdit textarea {
+    padding-left: 0;
+}
+
+/* .Information {
+    padding: 10px 0 10px 10px;
+} */
+
+.Information h2 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 18px;
+}
+
+.FirstNameEdit input {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 20px;
+    color: #4F4F4F;
+    word-break: keep-all;
+    /* overflow: hidden;
+    max-width: 25ch;
+    text-overflow: ellipsis; */
+}
+
+.FirstName {
+    width: 220px;
+    word-wrap: anywhere;
+}
+
+.FirstName,
+.RoleName {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding-bottom: 4px;
+}
+
+.FirstName {
+    padding-left: 10px;
+}
+
+.RoleName {
+    padding-left: 10px;
+}
+
+.FirstName img,
+.RoleName img {
+    cursor: pointer;
+    display: flex;
+}
+
+.RoleName h3 {
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    overflow: hidden;
+    max-width: 22ch;
+    text-overflow: ellipsis;
+    width: 180px;
+}
+
+.RoleNameEdit input {
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+}
+
+.DescriptionPara {
+    display: flex;
+    word-wrap: break-word;
+
+}
+
+.DescriptionPara p {
+    display: flex;
+}
+
+.PencilEditDes {
+    width: 25px;
+}
+
+.errorMsg {
+    display: flex;
+    justify-content: center;
+    padding-top: 5px;
+    padding-bottom: 20px;
+}
+
+.Description p {
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 11px;
+    color: #4F4F4F;
+    padding-left: 10px;
+    width: 240px;
+}
+
+.input_line,
+.input_line:focus-visible {
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+    background-color: transparent;
+    width: 200px;
+    margin-left: 10px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.input_line_des,
+.input_line_des:focus-visible {
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 11px;
+    color: #4F4F4F;
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+    background-color: transparent;
+    width: 200px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    margin-left: 10px;
+    resize: none;
+}
+
+.error {
+    color: red;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-style: normal;
+    font-size: 10px;
+    padding-left: 10px;
+    letter-spacing: 1px;
+}
+
+
+.PencilEdit {
+    display: flex;
+    vertical-align: center;
+    cursor: pointer;
+    width: 50px;
+}
+
+.PencilEditDes {
+    cursor: pointer;
+}
+
+.QrEdit {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -5px;
+    margin-left: 80px;
+    background-color: #1F87FA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* Save Contact */
+.SaveConBtn,
+.SaveConBtn:hover {
+    text-decoration: none;
+    width: 270px;
+    height: 42px;
+    border: 2px solid #0082E1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 16px;
+    color: #0082E1;
+}
+
+.SaveContact {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.Share {
+    border: 2px solid #0082E1;
+    height: 42px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    color: #0082E1;
+    cursor: pointer;
+}
+
+.Qr {
+    height: 42px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    background-color: #0082E1;
+    cursor: pointer;
+}
+
+.SaveContactSection {
+    margin-top: 30px;
+    display: flex;
+    /* justify-content: space-between; */
+    gap: 20px;
+}
+
+.SaveContact {
+    position: relative;
+    display: inline-block;
+}
+
+.Share {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+
+/* Contact Information */
+
+.ContactInformation {
+    padding-top: 25px;
+}
+
+.ContactInformation h2 {
+    color: #4F4F4F;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 18px;
+    padding-bottom: 25px;
+}
+
+.ContactIcons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.ContactInfo {
+    border-radius: 10px;
+    background: linear-gradient(315deg, #D0D0D0 0%, #F8F8F8 100%);
+    width: 55px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ContactInfo {
+    position: relative;
+}
+
+.ContactNumber {
+    position: absolute;
+    top: -7px;
+    right: -7px;
+    width: 22px;
+    height: 22px;
+    color: white;
+    border-radius: 50%;
+    background-color: #0082E1;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 11px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1px;
+    cursor: pointer;
+}
+
+/* Social Information */
+
+.SocialEdit {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 25px;
+    padding-top: 10px;
+}
+
+.socialSection {
+    padding-top: 20px;
+}
+
+.socialSection h2 {
+    color: #4F4F4F;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 18px;
+
+}
+
+.SocialMediaIcons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.SocialEditImg,
+.DigitalEditImg {
+    cursor: pointer;
+}
+
+.SocailInfo {
+    border-radius: 10px;
+    background: linear-gradient(315deg, #D0D0D0 0%, #F8F8F8 100%);
+    width: 55px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.SocailInfo svg {
+    margin-top: 5px;
+}
+
+/* Digital Payment */
+
+.PaymentInformationHead {
+    display: flex;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.DigitalMediaIcons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.DigitalPayment h2 {
+    color: #4F4F4F;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 18px;
+    padding-bottom: 25px;
+}
+
+.DigitalInfo {
+    border-radius: 10px;
+    background: linear-gradient(315deg, #D0D0D0 0%, #F8F8F8 100%);
+    width: 55px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Footer */
+.TemplateFooter {
+    margin-top: 35px;
+    text-align: center;
+    border-top: 1px solid black;
+    padding-top: 15px;
+    padding-bottom: 30px;
+}
+
+.TemplateFooter p {
+    color: #0B0B0B;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    padding: 14px 0 0px 0;
+}
+
+.TemplateFooter h3 {
+    color: #0B0B0B;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 13px;
+}
+
+.SubscribeText a {
+    width: 113px;
+    height: 37px;
+    border-radius: 6px;
+    background: linear-gradient(96deg, #11427D 3.06%, #663EF7 100%);
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    border: none;
+    margin-top: 15px;
+}
+
+@media screen and (max-width: 500px) {
+    .InfoSectionDetails {
+        padding: 0 25px;
+        max-width: fit-content;
+    }
+
+    .LogoBrand {
+        right: -25px
+    }
+
+    .InfoHeader {
+        width: 290px;
+    }
+
+    .Description p {
+        width: 200px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .LogoUploadInput input {
+        width: 280px;
+    }
+
+    .FirstName {
+        width: 200px;
+    }
+
+    .SaveContactSection {
+        gap: 20px;
+        justify-content: start;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .LogoBrand {
+        right: -14px
+    }
+
+    .InfoHeader {
+        width: 270px;
+    }
+
+    .InfoSectionDetails {
+        padding: 0 20px;
+        max-width: none;
+    }
+
+    .LogoBrand {
+        right: -50px
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .LogoBrand {
+        right: -50px
+    }
+
+    .Description {
+        width: 220px;
+    }
+
+    .InfoSectionDetails {
+        padding: 0 20px;
+        max-width: none;
+    }
+
+    .SaveContactSection {
+        gap: 20px;
+        justify-content: start;
+    }
+}

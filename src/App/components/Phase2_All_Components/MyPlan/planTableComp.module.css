@@ -1,0 +1,334 @@
+.tables h2 {
+    font-family: "Oxygen", sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    padding-bottom: 10px;
+    padding-left: 25px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(92deg, #812DE2 1.06%, #3A49F9 99.41%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.container {
+    margin: 0% auto;
+}
+
+.imageContainer {
+
+    width: 85.7vw;
+    margin: 0% auto;
+
+}
+
+.tables p {
+    font-family: "Oxygen", sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    /* padding-left: 15px; */
+    color: black;
+}
+
+.proHeading {
+    background: linear-gradient(92deg, #812DE2 57.26%, #3A49F9 102.22%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: "Oxygen";
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: capitalize;
+}
+
+.tables h3 {
+    font-family: "Oxygen", sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    padding-left: 15px;
+    color: white;
+}
+
+.tables h3 span {
+    color:
+        #932FAF;
+}
+
+.tables {
+    display: flex;
+}
+
+.tables h4 {
+    color: #FFF;
+    font-family: "Oxygen";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+}
+
+
+.bubblProImage {
+    background-image: url("../../../../../images/Phase_2_All_Assets/home_page/freeFeature.svg");
+    width: 790px;
+    height: 1122px;
+}
+
+.bubblImageContainer {
+    display: flex;
+}
+
+.featureDiv {
+    width: 68%;
+}
+
+.featuresFreeHead>div,
+.featuresProHead>div {
+    margin-top: 5px;
+}
+
+.featuresFreeHead,
+.featuresProHead {
+    /* background: linear-gradient(109deg, rgba(203, 186, 233, 0.05) -30.58%, rgba(193, 179, 231, 0.25) 71.18%); */
+
+    border-width: 1px;
+    border: rgba(255, 255, 255, 0.60);
+
+    opacity: 0.34;
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px 10px 10px;
+    border-radius: 10px;
+}
+
+/* .featureDiv h2 {
+    background: linear-gradient(92deg, #812DE2 1.06%, #3A49F9 99.41%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    font-family: Oxygen;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: capitalize;
+  } */
+
+.chipTag {
+    margin-top: 38px;
+    margin-left: 44px;
+}
+
+.lineFeature {
+    background: #635DD4;
+    width: 263px;
+    height: 0.5px;
+    margin-top: 22px;
+    margin-bottom: 21px;
+}
+
+.chipTag p {
+    color: #FFF;
+    font-family: "Oxygen", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+}
+
+.bubblFreeDiv {
+    width: 45%;
+}
+
+.bubblImageDiv {
+    display: flex;
+    justify-content: space-between;
+    height: 83px;
+    align-items: center;
+}
+
+
+.freeImage {
+    margin-right: 22px;
+}
+
+.featureBgFree,
+.featureBgPro {
+    margin-top: 43px;
+
+
+}
+
+.featuresProHead .featuresProHead>div {
+    margin-top: 5px;
+}
+
+.featuresProHead {
+    /* background: linear-gradient(109deg, rgba(203, 186, 233, 0.05) -30.58%, rgba(193, 179, 231, 0.25) 71.18%); */
+    background: linear-gradient(92deg, #812DE2 57.26%, #3A49F9 102.22%);
+
+    border-width: 1px;
+    border: rgba(255, 255, 255, 0.60);
+
+    opacity: 0.34;
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px 10px 10px;
+    border-radius: 10px;
+}
+
+
+.featureBgFree>div,
+.featureBgPro>div {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 35px;
+}
+
+.featureBgFree,
+.featureBgPro {
+    margin-top: 43px;
+
+    /* padding: 15px 0 15px 25px; */
+    /* background: rgba(203, 186, 233, 0.05); */
+    /* background: linear-gradient(140deg, rgba(129, 45, 226, 0.34) 0.6%, rgba(129, 45, 226, 0.34) 39.66%, rgba(58, 73, 249, 0.34) 98.25%); */
+    /* background: linear-gradient(109deg, rgba(203, 186, 233, 0.05) -30.58%, rgba(193, 179, 231, 0.25) 71.18%);
+  
+    border-width: 1px;
+    border: rgba(255, 255, 255, 0.60);
+  
+    opacity: 0.75;
+    backdrop-filter: blur(5px);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px; */
+
+
+}
+
+/* .featureBgFree {
+    box-shadow: 0px 20px 24px -6px #932FAF2E;
+  } */
+
+.featureBgPro {
+    box-shadow: 0px 20px 24px -6px #DB973E2E;
+
+}
+
+.featureBgFree>div,
+.featureBgPro>div {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 35px;
+}
+
+.featuresPro {
+    padding-left: 25px;
+
+
+    /* background: linear-gradient(109deg, rgba(203, 186, 233, 0.05) -30.58%, rgba(193, 179, 231, 0.25) 71.18%);
+    border: 1px solid rgba(255, 255, 255, 0.60);
+    opacity: 0.75;
+    backdrop-filter: blur(5px); */
+}
+
+.featuresBack {
+    background-image: url("../../../../../images/Phase_2_All_Assets/home_page/pro.svg");
+    width: 344px;
+    /* height: 980px; */
+    height: 1112px;
+}
+
+.check {
+    display: flex;
+    gap: 10px;
+    margin-top: 40px;
+    margin-right: 22px;
+}
+
+.form-check-input {
+    border-color: black;
+}
+
+.form-check-input:checked {
+    border-color: black !important;
+    background-color: rgb(207, 89, 223) !important;
+}
+
+.check label {
+    line-height: 19px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    font-family: "Oxygen", sans-serif;
+    color: #000000;
+}
+
+.radio {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 2.5em;
+    padding-right: 25px;
+}
+
+.radio input {
+    cursor: pointer;
+}
+
+.buyPlan {
+    margin-top: 30px;
+    text-align: center;
+    margin-right: 22px;
+}
+
+.purchaseBtnTwo {
+    width: 100%;
+    background-color: #af38d6;
+    border-radius: 5px;
+    border-color: #af38d6;
+    outline: #af38d6;
+    height: 38px;
+}
+
+.purchaseBtnTwo:active {
+    background-color: #af38d6 !important;
+}
+
+.purchaseBtnTwo:hover {
+    background-color: #af38d6;
+    border-color: #af38d6;
+}
+
+.arrowBtn {
+    padding-left: 1px !important;
+    margin-top: -1px !important;
+}
+
+
+@media screen and (min-width: 992px) {
+    .resp {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .desk {
+        display: none;
+    }
+
+    .container {
+        display: none;
+    }
+}

@@ -1,0 +1,245 @@
+.your_cart {
+  margin-top: 150px;
+}
+
+.home_color_head {
+  font-family: "Oxygen", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #000000;
+  opacity: 0.4;
+}
+
+.linkDevice_color_head {
+  font-family: "Oxygen", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #af38d6;
+}
+
+.orderLine {
+  content: "";
+  width: 100%;
+  height: 1px;
+  border: 1px solid #da49f1;
+  opacity: 0.3;
+  margin-bottom: 15px;
+}
+
+.linkDevice_heading {
+  font-family: "Oxygen", sans-serif;
+  font-weight: 700;
+  font-size: 34px;
+  margin-top: 12px;
+  margin-bottom: 60px;
+  /* color: white; */
+}
+
+.product_list {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Oxygen", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  padding-bottom: 30px;
+}
+
+.price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price_list {
+  display: flex;
+  align-items: center;
+}
+
+.order_img {
+  display: flex;
+  align-items: center;
+}
+
+.price_number_close {
+  margin-left: -30px;
+}
+
+.productTitleDiv h2 {
+  font-family: "Oxygen", sans-serif;
+  font-weight: 400;
+  font-size: 22px;
+  padding-left: 30px;
+  color: white;
+}
+
+.price_number {
+  font-family: "Oxygen", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.price_number_total {
+  font-family: "Oxygen", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.minus,
+.plus {
+  width: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  font-family: "Oxygen", sans-serif;
+  font-weight: 400;
+  font-size: 22px;
+}
+
+.inpt {
+  margin-top: 5px;
+  height: 34px;
+  width: 50px;
+  text-align: center;
+  font-size: 26px;
+  border: unset;
+  border-radius: 4px;
+  display: inline-block;
+  vertical-align: middle;
+  font-family: "Oxygen", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #af38d6;
+}
+
+.noItem {
+  margin-top: 200px;
+  display: flex;
+  justify-content: center;
+  font-size: 40px;
+  font-family: "Oxygen";
+  font-weight: 400;
+}
+
+/* NEW DESIGN */
+.cartDiv {
+  display: flex;
+}
+
+.cartRow {
+  background-color: red;
+  width: 70%;
+}
+
+.priceRow {
+  margin-top: 22px;
+}
+
+.priceQuantityHead {
+  color: rgba(255, 255, 255, 0.60);
+  font-family: "Oxygen";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.quantityRow {
+  margin-top: 13px;
+}
+
+.priceTag {
+  color: white;
+  font-family: "Oxygen";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+/* Responsive */
+
+@media screen and (min-width: 1025px) {
+  .order_section_image {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .price_list {
+    display: none;
+  }
+
+  .product_list {
+    display: none;
+  }
+
+  .order_section_image {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 35px;
+    margin-top: 35px;
+  }
+
+  .price_number_responsive {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .price_number_close_responsive {
+    margin-left: 15px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+  }
+
+  .price_number_close_responsive button {
+    font-size: 16px !important;
+  }
+
+  .price_number_close_responsive h2 {
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    padding-top: 4px;
+    margin-left: -3px;
+  }
+
+  .price_number_res {
+    padding-top: 15px;
+    padding-bottom: 30px;
+    font-size: 20px;
+  }
+
+  .number_responsive {
+    border: 1px solid #af38d6;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+  }
+
+  .number_responsive div {
+    margin-top: -5px;
+    display: flex;
+    align-items: center;
+  }
+
+  .orderLine_responsive {
+    content: "";
+    width: 100%;
+    height: 1px;
+    border: 1px solid #da49f1;
+    opacity: 0.3;
+    margin-bottom: 15px;
+  }
+
+  .orderLine {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .noItem {
+    font-size: 20px;
+  }
+}

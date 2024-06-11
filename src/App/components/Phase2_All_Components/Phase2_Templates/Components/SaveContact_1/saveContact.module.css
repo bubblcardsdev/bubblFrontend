@@ -1,0 +1,14 @@
+.contact_btn {
+  background-color: #1F87FA;
+  border-radius: 5px;
+  font-family: "Oxygen";
+  font-weight: 700;
+  font-size: 14px;
+  width: 152px;
+  height: 41px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: white;
+}

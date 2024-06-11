@@ -1,0 +1,7 @@
+.templatePlace {
+    max-width: 480px;
+    position: relative;
+    margin: 0 auto;
+    background-color: white;
+    width: 100%;
+}

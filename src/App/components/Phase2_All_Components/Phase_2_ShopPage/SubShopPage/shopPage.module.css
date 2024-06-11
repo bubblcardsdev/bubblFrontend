@@ -1,0 +1,400 @@
+.shopPageSection {
+    background-color: black;
+    /* overflow: hidden; */
+}
+
+.background {
+    /* overflow: hidden; */
+    position: relative;
+    background-color: rgba(81, 81, 81, 0.09);
+}
+
+.container {
+    overflow: hidden;
+    /* width: 85.7vw */
+}
+
+.footerSectionInside {
+    width: 85.7vw;
+    margin: 0% auto;
+}
+
+.footerSection {
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(1deg, rgba(58, 73, 249, .88) -171.77%, rgba(129, 45, 226, .49) -22.73%, transparent 102.14%) !important;
+    padding-top: 35px;
+}
+
+
+.shopPageBackSection {
+    background-color: rgba(81, 81, 81, 0.09);
+    backdrop-filter: blur(0px);
+    border-bottom-left-radius: 210px;
+    border-bottom-right-radius: 210px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+
+}
+
+
+
+.testimonialSection {
+    margin-top: 30vh;
+}
+
+.navigateDiv {
+    width: 85.7vw;
+    margin: 0 auto;
+    z-index: 2;
+    position: relative;
+}
+
+.cardWidthDiv {
+    max-width: 1235px;
+    margin: 0 auto;
+    padding-left: 40px;
+}
+
+.shopPageDiv {
+    max-width: 85.7vw;
+    margin: 0 auto;
+    padding-left: 40px;
+
+}
+
+.shopBreadCrumbs {
+    display: flex;
+    gap: 5px;
+    margin-top: 20px;
+    z-index: 1;
+    position: relative;
+    /* margin-left: 92px; */
+
+}
+
+.homeLink a {
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 14px;
+    color: white;
+}
+
+.shopLink a {
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 14px;
+    color: #AB39D2;
+}
+
+.bubblHeading {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.bubblName {
+    background: linear-gradient(to right, rgba(66, 70, 247), rgba(127, 46, 227));
+    -webkit-background-clip: text;
+    color: transparent;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 56px;
+    font-weight: 700;
+}
+
+.bubblSubHead {
+    color: #F5F5F7;
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 42px;
+    padding-bottom: 113px;
+
+}
+
+.cardContainer {
+    max-width: 1235px;
+    margin: 0 auto;
+    padding-left: 40px;
+}
+
+.individualContainer {
+    margin-top: 71px;
+    margin-bottom: 64px;
+}
+
+.individualHead {
+    color: #FFFFFF;
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 600;
+    font-size: 40px;
+    text-align: center;
+}
+
+.individualSubHead {
+    color: #FFFFFF;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 300;
+    font-size: 40px;
+    text-align: center;
+}
+
+.individualSubHeading {
+    color: #FFFFFF;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    font-size: 22px;
+    text-align: center;
+    margin-top: 11px;
+    margin-bottom: 64px;
+}
+
+.individualDiv {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.individualContent {
+    color: #FFFFFF;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.125rem, 0.9839rem + 0.3226vw, 1.5rem);
+    text-align: center;
+    width: 50vw;
+    margin: 0% auto;
+    position: relative;
+    z-index: 1;
+}
+
+.line {
+    border-top: 1px solid #635DD4;
+    margin: 0% auto;
+    margin-top: 114px;
+}
+
+.customSection {
+    margin-top: 82px;
+}
+
+
+.bundleComp {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+.cardFunction {
+    position: relative;
+    margin-top: 30vh;
+}
+
+.customDiv {
+    display: flex;
+    justify-content: center;
+    margin-top: 8vh;
+}
+
+.customDiv>ul>li .react-multi-carousel-item {
+    background: red !important;
+}
+
+.react-multi-carousel-list {
+    background-color: orange !important;
+}
+
+.footerSection {
+    margin-top: 211px;
+}
+
+@media screen and (max-width:1245px) {
+    .shopPageDiv {
+        padding-left: 0px;
+    }
+
+    .shopPageBackSection {
+        border-bottom-left-radius: 117px;
+        border-bottom-right-radius: 117px;
+    }
+
+    .bubblHeading {
+        margin-top: 10vh;
+    }
+
+    .bubblSubHead {
+        padding-bottom: 60px;
+    }
+
+    .testimonialSection {
+        margin-top: 10vh;
+    }
+
+    .testimonialSectionResp {
+        margin-top: 20vh;
+        margin-bottom: 10vh;
+    }
+
+
+
+    .shopBreadCrumbs {
+        margin-left: 50px;
+    }
+
+}
+
+@media screen and (min-width:1201px) {
+    .shopPageResponsive {
+        display: none;
+    }
+}
+
+@media screen and (max-width:1202px) {
+    .web {
+        display: none !important;
+    }
+
+    .shopBreadCrumbs {
+        margin-top: 0px;
+    }
+
+    .bubblSubHead {
+        padding-bottom: 0px;
+    }
+}
+
+@media screen and (max-width:999px) {
+    .individualContent {
+        /* margin-left: 95px;
+        margin-right: 76px; */
+        margin-bottom: 36px;
+    }
+
+    .cardFunction {
+        margin-top: 96px;
+    }
+
+    .shopPageBackSection {
+        margin-top: 65px;
+        margin-bottom: 65px;
+    }
+
+    .background {
+        background-color: transparent;
+    }
+
+    .individualContainer {
+        margin-top: 26px;
+    }
+
+    .bubblSubHead {
+        padding-bottom: 0px;
+    }
+
+    .bubblName {
+        font-size: 40px;
+    }
+
+    .bubblSubHead {
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .individualContainer {
+        margin-top: 26px;
+        margin-bottom: 32px;
+    }
+
+    .individualSubHead {
+        font-size: 26px;
+    }
+
+    .quantity {
+        padding-top: 22px;
+    }
+
+    .testimonialSection {
+        margin-top: 10vh;
+    }
+
+    .cardFunctionResp {
+
+        width: 85.4vw;
+        margin: 0 auto;
+        padding-top: 100px;
+    }
+
+
+}
+
+@media screen and (max-width:610px) {
+    .shopPageBackSection {
+        border-bottom-left-radius: 96px;
+        border-bottom-right-radius: 96px;
+    }
+
+    .cardFunction {
+        margin-top: 91px;
+    }
+
+    .cards_prod_img img {
+        width: 50%;
+        margin-left: 90px;
+    }
+
+    .bubblHeading {
+        margin-top: 0vh;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .individualSubHead {
+        font-size: 24px;
+    }
+
+    .individualContent {
+        font-size: clamp(1.125rem, 0.9839rem + 0.3226vw, 1.5rem);
+        margin-bottom: 32px;
+        width: 86vw;
+        margin-top: 2vh
+    }
+
+    .individualContainer {
+        margin-bottom: 32px;
+    }
+
+    .cardFunction {
+        margin-bottom: 40px;
+    }
+
+}
+
+
+@media screen and (max-width:425px) {
+    .shopPageBackSection {
+        border-bottom-left-radius: 74px;
+        border-bottom-right-radius: 74px;
+    }
+
+    .individualContent {
+        margin-left: 28px;
+        margin-right: 28px;
+        margin-bottom: 32px;
+    }
+
+    .cardFunction {
+        margin-top: 91px;
+    }
+}
+
+
+@media screen and (max-width:390px) {
+    .individualSubHead {
+        font-size: 22px;
+    }
+
+    .individualContent {
+        font-size: 12px;
+        margin-bottom: 32px;
+    }
+}

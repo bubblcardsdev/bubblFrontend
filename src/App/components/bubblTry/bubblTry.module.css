@@ -1,0 +1,27 @@
+.line {
+  border-left: 1px solid rgba(4, 4, 4, 0.53);
+  height: 40px;
+}
+
+.trybubbtn {
+  font-weight: 400;
+  font-size: 14px;
+  color: white;
+  padding: 16px 25px;
+  background-image: linear-gradient(#d35470, #e5686f, #e5686f);
+  border-radius: 5px;
+  border-color: transparent;
+}
+
+.bubbl_try {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+  padding-bottom: 40px;
+}
+
+.bubbl {
+  font-weight: 700;
+}

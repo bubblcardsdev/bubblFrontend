@@ -1,0 +1,32 @@
+.otp_group {
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  column-gap: 10px;
+  margin-top: 20px;
+  padding-bottom: 10px;
+}
+
+.otp_input {
+  width: 100%;
+  height: 60px;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-bottom: 1px solid black;
+  background-color: unset;
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 1;
+}
+.otp_input:focus-visible,
+.otp_group:focus-visible {
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 1px solid#AF38D6;
+  background-color: unset;
+  outline: unset;
+}

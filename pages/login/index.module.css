@@ -1,0 +1,586 @@
+@import url("https://fonts.googleapis.com/css2?family=Oxygen:wght@300;700&family=Source+Sans+Pro:wght@700&display=swap");
+
+.sign-up-page {
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+}
+
+@media screen and (max-width: 768px) {
+  .sign-up-page {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.first_name,
+.last_name,
+.email,
+.password,
+.confirmPassword {
+  margin-bottom: 10px;
+}
+
+.nextBtn {
+  width: 100%;
+}
+
+.logo {
+  font-size: 24px;
+  margin-top: 40px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  font-family: "Oxygen", sans-serif;
+}
+
+.login_leftheading {
+  font-size: 48px;
+  width: 396px;
+  font-weight: 400px;
+  font-family: "Oxygen", sans-serif;
+}
+
+.google {
+  margin-top: -3px;
+}
+
+.google>div>div>div>div {
+  border: 1px solid #1d1a1a !important;
+}
+
+.google>div>div>div>div>div {
+  outline: 1px solid #ffffff !important;
+  border-color: 1px solid #ffffff !important;
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+}
+
+.google>div>div>div>div>div:hover {
+  background-color: transparent !important;
+  border-color: 1px solid #ffffff !important;
+  background: #ffffff !important;
+}
+
+.google>div>div>div>div>div:active {
+  background-color: transparent !important;
+  border-color: 1px solid #ffffff !important;
+  background: #ffffff !important;
+}
+
+.google>div span {
+  display: none;
+}
+
+.facebook button {
+  align-items: center;
+  padding: 0px;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  justify-content: center;
+  border-radius: 3px !important;
+  padding-left: 7px;
+  margin-top: -5px;
+}
+
+.kep-login-facebook {
+  height: 30px;
+}
+
+.login-page {
+  background-repeat: repeat;
+  background-color: black;
+}
+
+.contentContainer {
+  margin-top: 20px;
+  background-color: #18171E;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 0;
+}
+
+.websiteContainer {
+  color: white
+}
+
+.websiteContainer span {
+  color: #af38d6
+}
+
+@media screen and (min-width: 1500px) {
+  .login-page {
+    height: 100vh;
+  }
+}
+
+.nfc_card {
+  font-size: 38px;
+  font-family: "Oxygen", sans-serif;
+  padding-top: 105px;
+  padding-left: 37px;
+  padding-right: 265px;
+  padding-bottom: 106px;
+  background-color: white;
+  border-radius: 9px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.card_list {
+  font-size: 26px;
+  font-family: "Oxygen", sans-serif;
+  margin-bottom: 130px;
+}
+
+/* right */
+.login_right {
+  background: #18171E;
+  border-radius: 20px;
+  padding-bottom: 30px;
+  /* backdrop-filter: blur(10px); */
+}
+
+.right_heading {
+  font-family: "Oxygen", sans-serif;
+  font-weight: 300;
+  font-size: 32px;
+  line-height: 40px;
+  text-align: center;
+  color: #ffffff;
+  padding-top: 20px;
+  padding-bottom: 0px;
+}
+
+.forgotheading {
+  font-family: "Oxygen", sans-serif;
+  font-weight: 300;
+  font-size: 32px;
+  line-height: 40px;
+  text-align: center;
+  color: #fcfcfc;
+  padding-top: 33px;
+}
+
+.loginrt_line {
+  border-top: 2px solid black;
+  width: 488px;
+  margin-bottom: 71px;
+}
+
+.welcome {
+  text-align: center;
+  font-size: 32px;
+  padding-bottom: 17px;
+  width: 100%;
+  margin: auto;
+  font-family: "Oxygen", sans-serif;
+}
+
+.please_login {
+  font-size: 16px;
+  color: black;
+  opacity: 40%;
+  padding-bottom: 55px;
+  text-align: center;
+  font-family: "Oxygen", sans-serif;
+}
+
+.message {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 35px;
+  margin-top: 15px;
+}
+
+.no_account {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  font-family: "Oxygen", sans-serif;
+}
+
+.social {
+  display: flex;
+  justify-content: space-evenly;
+  padding-bottom: 25px;
+  align-items: center;
+}
+
+.login_right {
+  padding-left: 46px;
+  padding-right: 62px;
+}
+
+.emailBar {
+  border: 1px solid #d1d1d1;
+  border-radius: 5px;
+  background-color: unset;
+  font-family: "Oxygen", sans-serif;
+  width: 100%;
+  color: white;
+  font-weight: 400;
+  font-size: 13px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 16px;
+}
+
+.emailBar:focus {
+  background-color: unset;
+  box-shadow: unset;
+  outline: 1px solid #af38d6;
+}
+
+.passwordBar:focus {
+  background-color: unset;
+  box-shadow: unset;
+  outline: 1px solid #af38d6;
+  color: white;
+}
+
+.passwordBar {
+  border: 1px solid #d1d1d1;
+  border-radius: 5px;
+  background-color: unset;
+  font-family: "Oxygen", sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 40px;
+  width: 396px;
+  color: white;
+}
+
+.message {
+  background-color: unset;
+  font-family: "Oxygen", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+}
+
+.remember {
+  color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.forgotPsw {
+  font-family: "Oxygen", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  color: #af38d6;
+}
+
+.nextBtn {
+  background-color: #af38d6;
+  outline-color: #af38d6;
+  border: unset;
+  margin-bottom: 25px;
+  font-family: "Oxygen", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.nextBtn:disabled {
+  background-color: #af38d6;
+  outline-color: #af38d6;
+  border: unset;
+  font-size: 16px;
+  font-family: "Oxygen", sans-serif;
+  font-weight: 700;
+}
+
+.nextBtn:active {
+  background-color: #af38d6 !important;
+  outline-color: #af38d6;
+  border: unset;
+  font-family: "Oxygen", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.nextBtn:focus-visible {
+  background-color: #af38d6;
+  box-shadow: unset;
+}
+
+.nextBtn:hover {
+  background-color: #af38d6;
+  outline-color: #af38d6;
+  border: unset;
+  font-family: "Oxygen", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.loginUsing {
+  font-family: "Oxygen", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  margin-bottom: 33px;
+  color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+}
+
+.logo {
+  text-align: center;
+}
+
+.signup {
+  color: #af38d6;
+  cursor: pointer;
+}
+
+.inputHead {
+  font-family: "Oxygen", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  margin-bottom: 8px;
+  margin-top: 16px;
+  color: #ffffff;
+}
+
+.input_container {
+  display: flex;
+}
+
+.forgotPas {
+  font-family: "Oxygen", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  text-decoration: none;
+  color: #af38d6;
+}
+
+@media screen and (max-width: 1025px) {
+  .signUp_fieldName {
+    gap: 24px;
+  }
+
+  .errorMessage {
+    padding-left: 20px;
+    background-size: 11px 11px;
+    background-position-y: 3px;
+    font-size: 9px;
+  }
+
+  .fields {
+    padding-top: 7px;
+    padding-bottom: 7px;
+  }
+
+  .emailBar {
+    padding-top: 7px;
+    padding-bottom: 7px;
+  }
+
+  .passwordBar {
+    padding-top: 7px;
+    padding-bottom: 7px;
+  }
+
+  .right_heading {
+    font-size: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .forgotheading {
+    font-size: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .login_page {
+    height: 100vh;
+  }
+}
+
+.eye-icon {
+  position: absolute;
+  top: 8px;
+  right: 15px;
+  cursor: pointer;
+}
+
+.emailBar {
+  position: relative;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 40px;
+}
+
+.emailBar::placeholder {
+  color: rgba(224, 224, 224, 0.5);
+  background-repeat: no-repeat;
+}
+
+.passwordBar::placeholder {
+  color: rgba(224, 224, 224, 0.5);
+  background-repeat: no-repeat;
+}
+
+.errorMessage {
+  margin-bottom: 0px;
+  position: absolute;
+  background-repeat: no-repeat;
+  padding-left: 16px;
+  background-size: 12px 12px;
+  background-position-y: 2px;
+  font-size: 12px;
+}
+
+.forgotPas:hover {
+  color: #af38d6;
+}
+
+@media screen and (max-width: 1440px) {
+  .right_heading {
+    padding-bottom: 15px;
+  }
+
+  .nextBtn {
+    margin-top: 0px !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .sign-up-page {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .logo {
+    margin-top: 15px;
+  }
+
+  .login-page {
+    height: 100vh;
+  }
+
+  .sign-up-page {
+    flex-wrap: unset;
+  }
+}
+
+.check {
+  margin-bottom: 0px;
+}
+
+.forgotpasw {
+  font-family: "Oxygen";
+  font-weight: 400;
+  font-size: 14px;
+  color: #e3e3e3;
+  text-align: center;
+  margin-bottom: 80px;
+  margin-top: 10px;
+}
+
+.newpasw {
+  font-family: "Oxygen";
+  font-weight: 400;
+  width: 351px;
+  font-size: 14px;
+  color: #787878;
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.space {
+  margin-bottom: 50px;
+}
+
+.cancel {
+  font-family: "Oxygen", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  color: #af38d6;
+  margin-bottom: 0px;
+}
+
+.gap {
+  margin-top: 150px;
+}
+
+.gaptwo {
+  margin-top: 75px;
+}
+
+.frgtpas {
+  text-align: -webkit-center;
+}
+
+.eye-icon {
+  position: absolute;
+  top: 8px;
+  right: 15px;
+  cursor: pointer;
+}
+
+.mailImage {
+  padding-top: 130px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.checkmail {
+  font-family: "Oxygen", sans-serif;
+  font-weight: 300;
+  font-size: 32px;
+  line-height: 40px;
+  margin-bottom: 20px;
+  color: #eaeaea;
+  text-align: center;
+}
+
+.check {
+  color: #d1d1d1
+}
+
+.mailcont {
+  font-family: "Oxygen", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: #787878;
+  width: 241px;
+  padding-bottom: 100px;
+  margin-left: 66px;
+  margin-right: 70px;
+}
+
+@media screen and (max-width: 500px) {
+  .passwordBar {
+    width: 100% !important;
+  }
+
+  .login_right {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .mailcont {
+    margin-left: 32px;
+    margin-right: 32px;
+  }
+
+  .forgotpasw {
+    width: unset;
+  }
+
+  .email {
+    width: 315px;
+  }
+}

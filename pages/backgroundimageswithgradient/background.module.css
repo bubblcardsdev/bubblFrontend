@@ -1,0 +1,150 @@
+.parallaxBackground {
+    position: absolute;
+    overflow: hidden;
+}
+
+.background1,
+.background2,
+.background3 {
+    position: absolute;
+    width: 20vw;
+    /* Use viewport width units for responsive sizing */
+    height: 20vw;
+    /* Adjusted for responsiveness */
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -10px;
+    /* Adjusted for responsiveness */
+}
+
+.gradientBackground::before,
+.gradient1 {
+    content: "";
+    position: absolute;
+    width: 30vw;
+    /* Adjust according to your design */
+    height: 30vw;
+    /* Adjust according to your design */
+    border-radius: 50%;
+    z-index: -20;
+    /* Adjust z-index if necessary */
+    filter: blur(5vw);
+    /* Adjust blur effect based on design */
+    background: radial-gradient(circle at 50% 60%, rgba(129, 45, 226, 0.3) 50%, rgba(62, 62, 224, 0.5) 100%);
+}
+
+.gradient1 {
+    width: 30vw;
+    /* Adjust according to your design */
+    height: 30vw;
+    /* Adjust according to your design */
+    background: radial-gradient(circle at 50% 60%, rgba(129, 45, 226, 0.7) 20%, rgba(62, 62, 224, 0.9) 100%);
+}
+
+.background1 {
+    background-image: url('../../images/Phase_2_All_Assets/home_page/Asset13.png');
+    animation: parallax3 5s linear infinite alternate;
+    filter: blur(5px);
+}
+
+.background2 {
+    width: 40vw;
+    /* Adjust according to your design */
+    height: 40vw;
+    /* Adjust according to your design */
+    background-image: url('../../images/Phase_2_All_Assets/home_page/3.png');
+    animation: parallax3 5s linear infinite alternate;
+    filter: blur(5px);
+}
+
+.background3 {
+    background-image: url('../../images/Phase_2_All_Assets/home_page/PurpleGradientBubbles10.png');
+    animation: parallax3 5s linear infinite alternate;
+    filter: blur(9px);
+}
+
+/* @keyframes parallax1 {
+    0% {
+        transform: translate(-2vw, -2vw);
+    }
+
+    50% {
+        transform: translate(2vw, 2vw);
+    }
+
+    100% {
+        transform: translate(-2vw, -2vw);
+    }
+}
+
+@keyframes parallax2 {
+    0% {
+        transform: translate(-1vw, -1vw);
+    }
+
+    50% {
+        transform: translate(1vw, 1vw);
+    }
+
+    100% {
+        transform: translate(-1vw, -1vw);
+    }
+}
+
+@keyframes parallax3 {
+    0% {
+        transform: translate(-1.6vw, -1.6vw);
+    }
+
+    50% {
+        transform: translate(1.6vw, 1.6vw);
+    }
+
+    100% {
+        transform: translate(-1.6vw, -1.6vw);
+    }
+} */
+
+/* Media Queries for Responsiveness */
+
+@media (max-width: 768px) {
+
+    .background1,
+    .background2,
+    .background3 {
+        width: 30vw;
+        /* Adjust sizes for smaller screens */
+        height: 30vw;
+        /* Adjust sizes for smaller screens */
+    }
+
+    .gradientBackground::before,
+    .gradient1 {
+        width: 30vw;
+        /* Adjust sizes for smaller screens */
+        height: 30vw;
+        /* Adjust sizes for smaller screens */
+    }
+}
+
+@media (max-width: 576px) {
+
+    .background1,
+    .background2,
+    .background3 {
+        width: 40vw;
+        /* Adjust sizes for even smaller screens */
+        height: 40vw;
+        /* Adjust sizes for even smaller screens */
+    }
+
+    .gradientBackground::before,
+    .gradient1 {
+        width: 40vw;
+        /* Adjust sizes for even smaller screens */
+        height: 40vw;
+        /* Adjust sizes for even smaller screens */
+    }
+}
+
+/* Add more media queries as needed */

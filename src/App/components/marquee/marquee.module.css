@@ -1,0 +1,73 @@
+.marqueeContainer {
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+}
+
+.marqueeText {
+    white-space: nowrap;
+    animation: marquee-scroll 15s linear infinite;
+    display: inline-block;
+    position: relative;
+    color: white;
+}
+
+
+
+.blinkText {
+    animation: blink 0.5s infinite;
+    /* Adjust the duration as needed */
+}
+
+@keyframes blink {
+    0% {
+        color: white;
+    }
+
+    50% {
+        color: #af38d6;
+    }
+
+    100% {
+        color: white;
+    }
+}
+
+.marqueeText {
+    font-size: 18px;
+    font-family: "Oxygen", sans-serif;
+}
+
+
+.marqueeText span {
+    color: #af38d6;
+    font-size: 18px;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 700;
+}
+
+@keyframes marquee-scroll {
+    from {
+        transform: translateX(70%);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .marqueeContainer {
+        padding-top: 35px;
+    }
+
+    @keyframes marquee-scroll {
+        from {
+            transform: translateX(50%);
+        }
+
+        to {
+            transform: translateX(-100%);
+        }
+    }
+}

@@ -1,0 +1,231 @@
+.functionContainer h1 {
+    display: flex;
+    justify-content: center;
+    color: #FFFFFF;
+    font-size: clamp(1.25rem, -0.8333rem + 3.7037vw, 2.5rem);
+    font-weight: 700;
+    font-family: "Source Sans Pro", sans-serif;
+    margin-bottom: 47px;
+    overflow: hidden;
+}
+
+.backgroundContainer {
+    overflow: hidden;
+}
+
+
+.functionContainerMaster {
+    overflow: hidden;
+}
+
+.functionContainer {
+    /* width: 85.7vw; */
+    margin: 0 auto;
+}
+
+.imageCompanyDivResponsive {
+    background-color: #000000;
+}
+
+.imageDiv {
+    text-align: center;
+}
+
+.imageCompanyDiv {
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    z-index: 1;
+    /* width: 70vw; */
+    margin: 0% auto;
+}
+
+.imageCompanyDiv p {
+    color: #FFFFFF;
+    font-size: clamp(0.75rem, 0.125rem + 1.1111vw, 1.125rem);
+    font-family: "Oxygen", sans-serif;
+    font-weight: 600;
+}
+
+.gridItem p {
+    color: #FFFFFF;
+    font-size: 22px;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 700;
+}
+
+
+.imageCompanyDivResponsiveContainer h4 {
+    font-family: "Oxygen", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+    padding-top: 44px;
+    padding-bottom: 48px;
+    color: white;
+    line-height: 22px;
+}
+
+.together {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3vh;
+    padding-bottom: 50px;
+}
+
+
+@media screen and (min-width: 1024px) and (max-width: 3000px) {
+    .imageCompanyDivResponsiveContainer {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    .gridContent {
+        font-size: 14px;
+    }
+
+}
+
+@media screen and (min-width:1500px) and (max-width:2500px) {
+    .functionContainer {
+        margin: 0% auto;
+    }
+
+    .imageCompanyDiv {
+        width: 50vw
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    /* .imageCompanyDivResponsiveContainer {
+        display: none;
+    } */
+}
+
+@media screen and (max-width: 1200px) {
+    .gridContent {
+        font-size: 16px;
+        text-align: center;
+    }
+
+
+}
+
+@media screen and (max-width: 1199px) {
+    .imageCompanyDivResponsiveContainer h4 {
+        font-size: 26px;
+        line-height: 35px;
+    }
+
+
+
+
+    .gridItem {
+        text-align: center;
+    }
+}
+
+
+
+@media screen and (max-width:992px) {
+    .imageCompanyDiv {
+        display: none;
+    }
+
+    .functionContainer h1 {
+        font-size: 24px;
+    }
+
+    .gridItem p {
+        font-size: 14px;
+    }
+
+    .gridItem {
+        width: 165px;
+        height: 94px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .gridContent {
+        font-size: 10px;
+        text-align: center;
+        margin-top: 0px;
+    }
+
+    .gridItem {
+        width: 165px;
+        height: 94px;
+    }
+
+}
+
+
+
+@media screen and (max-width:597px) {
+    .gridContent {
+        font-size: 15px;
+        margin-left: -10px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    .gridContent {
+        font-size: 14px;
+    }
+
+    .gridItem p {
+        font-size: 12px;
+    }
+
+    .imageCompanyDivResponsive h4 {
+        font-size: 21px;
+        line-height: 26px;
+    }
+
+    .gridItem {
+        font-size: 12px;
+        /* margin-left: -10px; */
+        width: 84px;
+        height: 85px;
+    }
+
+    .functionContainer h1 {
+        font-size: 26px;
+    }
+}
+
+@media screen and (max-width:491px) {
+    .functionContainer h1 {
+        display: flex;
+        justify-content: center;
+        color: #FFFFFF;
+        font-size: 26px;
+        font-weight: 700;
+        font-family: "Source Sans Pro", sans-serif;
+        margin-bottom: 47px;
+
+    }
+
+    .gridContent {
+        font-size: 12px;
+        margin-left: -10px;
+    }
+
+
+}
+
+
+@media screen and (max-width:425px) {
+    .gridContent {
+        font-size: 10px;
+        margin-left: -10px;
+    }
+
+    .gridItem p {
+        font-size: 12px;
+    }
+}

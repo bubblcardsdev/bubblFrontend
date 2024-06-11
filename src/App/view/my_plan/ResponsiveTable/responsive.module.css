@@ -1,0 +1,586 @@
+.tables {
+    background-image: url("../../../../../images/Phase_2_All_Assets/responsivePro.svg");
+    margin-left: 37px;
+    margin-right: 37px;
+}
+
+.tableDiv {
+    margin-top: 34px;
+}
+
+.freeIcon {
+    color: #FFF;
+    text-align: center;
+    font-family: Oxygen;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: capitalize;
+}
+
+.freeIcon span {
+    color: #CC17FF;
+
+}
+
+.lineFeatureRes {
+    background: #635DD4;
+    height: 0.5px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    width: auto;
+}
+
+.androidText h4 {
+    color: #FFF;
+    text-align: center;
+    font-family: "Oxygen";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: capitalize;
+}
+
+
+
+
+
+
+
+
+
+
+
+.responsiveTableBackground {
+    border-radius: 20px;
+    background: linear-gradient(140deg, rgba(129, 45, 226, 0.34) 0.6%, rgba(129, 45, 226, 0.34) 39.66%, rgba(58, 73, 249, 0.34) 98.25%);
+    display: flex;
+    width: 85.7vw;
+    margin: 0% auto;
+}
+
+/* .featureCol {
+    padding-right: 0px !important;
+} */
+
+.featureDiv {
+    height: 71px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.featureHeading {
+    color: #FFF;
+    text-align: center;
+    font-family: "Oxygen";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: capitalize;
+    height: 80px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    /* color: #FFF;
+    text-align: center;
+    font-family: "Oxygen";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: capitalize; */
+}
+
+.freeCol {
+    background: linear-gradient(109deg, rgba(203, 186, 233, 0.05) -30.58%, rgba(193, 179, 231, 0.25) 71.18%);
+    border-width: 1px;
+    border: rgba(255, 255, 255, 0.60);
+    opacity: 0.75;
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    margin-right: 12px;
+
+}
+
+.proCol {
+    background: linear-gradient(109deg, rgba(129, 45, 226, 0.48) -30.58%, rgba(58, 73, 249, 0.48) 71.18%);
+    border-width: 1px;
+    border: rgba(255, 255, 255, 0.60);
+    opacity: 0.75;
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+}
+
+.freeImageHeadDiv img {
+    width: 30px !important;
+}
+
+.freeImageHeadDiv p {
+    color: #FFF;
+    text-align: center;
+    font-family: "Oxygen";
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.freeImageHeadDiv span {
+    color: #CC17FF;
+    font-family: Oxygen;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+
+.proImageHeadDiv img {
+    width: 30px !important;
+}
+
+.proImageHeadDiv p {
+    color: #FFF;
+    text-align: center;
+    font-family: "Oxygen";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.proImageHeadDiv span {
+    background: linear-gradient(92deg, #812DE2 57.26%, #3A49F9 102.22%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: "Oxygen";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+
+
+
+
+
+
+/* .tables h2 {
+    font-family: "Oxygen", sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    padding-bottom: 10px;
+    padding-left: 25px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(92deg, #812DE2 1.06%, #3A49F9 99.41%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.tables p {
+    font-family: "Oxygen", sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    color: black;
+} */
+
+.proHeading {
+    background: linear-gradient(92deg, #812DE2 57.26%, #3A49F9 102.22%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: "Oxygen";
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: capitalize;
+}
+
+/* .tables h3 {
+    font-family: "Oxygen", sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    padding-left: 15px;
+    color: white;
+}
+
+.tables h3 span {
+    color:
+        #932FAF;
+}
+
+.tables {
+    display: flex;
+}
+
+.tables h4 {
+    color: #FFF;
+    font-family: "Oxygen";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+} */
+
+
+.bubblProImage {
+    /* background-image: url("../../../../../../../../images/Phase_2_All_Assets/bubblPro.svg"); */
+    width: 790px;
+    height: 977px;
+}
+
+.bubblImageContainer {
+    display: flex;
+}
+
+.featureDiv {
+    width: 68%;
+}
+
+.featuresFreeHead>div,
+.featuresProHead>div {
+    margin-top: 5px;
+}
+
+.featuresFreeHead,
+.featuresProHead {
+    /* background: linear-gradient(109deg, rgba(203, 186, 233, 0.05) -30.58%, rgba(193, 179, 231, 0.25) 71.18%); */
+
+    border-width: 1px;
+    border: rgba(255, 255, 255, 0.60);
+
+    opacity: 0.34;
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px 10px 10px;
+    border-radius: 10px;
+}
+
+/* .featureDiv h2 {
+    background: linear-gradient(92deg, #812DE2 1.06%, #3A49F9 99.41%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    font-family: Oxygen;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: capitalize;
+  } */
+
+.chipTag {
+    margin-top: 22px;
+    margin-left: 44px;
+}
+
+.lineFeature {
+    background: #635DD4;
+    width: 263px;
+    height: 0.5px;
+    margin-top: 22px;
+    margin-bottom: 21px;
+}
+
+.chipTag p {
+    color: #FFF;
+    font-family: "Oxygen", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+}
+
+.lineFeature {
+    background: #635DD4;
+    height: 0.5px;
+    margin-top: 22px;
+    margin-bottom: 21px;
+    width: auto;
+}
+
+.bubblFreeDiv {
+    width: 45%;
+}
+
+.bubblImageDiv {
+    display: flex;
+    justify-content: space-between;
+    height: 83px;
+    align-items: center;
+}
+
+
+.freeImage {
+    margin-right: 22px;
+}
+
+.featureBgFree,
+.featureBgPro {
+    margin-top: 43px;
+}
+
+.featureBgFreeRes {
+    margin-top: 43px;
+}
+
+.featuresProHead .featuresProHead>div {
+    margin-top: 5px;
+}
+
+.featuresProHead {
+    /* background: linear-gradient(109deg, rgba(203, 186, 233, 0.05) -30.58%, rgba(193, 179, 231, 0.25) 71.18%); */
+    background: linear-gradient(92deg, #812DE2 57.26%, #3A49F9 102.22%);
+
+    border-width: 1px;
+    border: rgba(255, 255, 255, 0.60);
+
+    opacity: 0.34;
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px 10px 10px;
+    border-radius: 10px;
+}
+
+
+.featureBgFree>div,
+.featureBgPro>div {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 35px;
+}
+
+.featureBgFreeRes>div {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 28px;
+}
+
+.featureBgProRes>div {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 28px;
+}
+
+.featureBgFree,
+.featureBgPro {
+    margin-top: 43px;
+}
+
+.featureBgPro {
+    box-shadow: 0px 20px 24px -6px #DB973E2E;
+
+}
+
+.featureBgFreeRes,
+.featureBgProRes {
+    margin-top: 43px;
+    /* padding-left: 23px; */
+
+}
+
+.featureBgFree>div,
+.featureBgPro>div {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 35px;
+}
+
+.featuresPro {
+    padding-left: 25px;
+}
+
+.featuresBack {
+    /* background-image: url("../../../../../../../../images/Phase_2_All_Assets/bubblProTag.svg"); */
+    width: 344px;
+    height: 980px;
+}
+
+
+
+.featuresProRes {
+    padding-left: 25px;
+
+}
+
+.freeImageHeadDivRes span {
+    color: #CC17FF;
+    font-family: "Oxygen";
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.freeImageHeadDivRes img {
+    width: 30px !important;
+}
+
+.freeImageHeadDivRes p {
+    color: #FFF;
+    text-align: center;
+    font-family: "Oxygen";
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.androidTextRes h4 {
+    color: #FFF;
+    text-align: center;
+    font-family: "Oxygen";
+    font-size: 9px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: capitalize;
+}
+
+.proColRes {
+    border-radius: 15px;
+    margin-right: -4px;
+}
+
+.featureDivRes {
+    /* height: 71px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.featureDivRes {
+    width: 100%;
+}
+
+.proImageHeadDivRes img {
+    width: 30px !important;
+}
+
+.proImageHeadDivRes p {
+    color: #FFF;
+    text-align: center;
+    font-family: "Oxygen";
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.proImageHeadDivRes span {
+    background: linear-gradient(92deg, #812DE2 57.26%, #3A49F9 102.22%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: "Oxygen";
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 992px) {
+    .resp {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .desk {
+        display: none;
+    }
+}
+
+@media screen and (max-width:745px) {
+    .chipTag {
+        margin-left: 16px;
+    }
+}
+
+@media screen and (max-width:662px) {
+    .chipTag p {
+        font-size: 15px;
+    }
+}
+
+
+
+@media screen and (max-width:570px) {
+    .androidText h4 {
+        font-size: 14px;
+    }
+
+    .chipTag p {
+        font-size: 14px;
+    }
+
+}
+
+@media screen and (max-width:430px) {
+    .lineFeature {
+        margin-top: 10px;
+        margin-bottom: 21px;
+    }
+
+    .androidText {
+        font-size: 15px;
+
+    }
+}
+
+@media screen and (min-width:421px) {
+    .tables {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width:420px) {
+    .responsiveTableBackground {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width:380px) {
+    .chipTag {
+        margin-left: 9px !important;
+
+    }
+
+    .chipTag p {
+        font-size: 10px !important;
+    }
+
+}

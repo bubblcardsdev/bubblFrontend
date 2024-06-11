@@ -1,0 +1,38 @@
+.delete-container {
+  text-align: center;
+  margin: 10px;
+}
+.delete-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+}
+.delete-buttons-one {
+  margin-right: 10px;
+}
+.delete-img-circle {
+  height: 40px;
+  width: 40px;
+  background: #d9d9d9;
+  border-radius: 50%;
+  padding: 8px;
+  text-align: center;
+}
+.delete-close-img-circle {
+  height: 30px;
+  width: 30px;
+  background: #d9d9d9;
+  border-radius: 50%;
+  text-align: center;
+}
+.delete-img-circle-div-container {
+  display: flex;
+  justify-content: center;
+}
+.delete-close-img-circle-div-container {
+  display: flex;
+  justify-content: flex-end;
+}
+.delete-main-container {
+  margin: 10px;
+}

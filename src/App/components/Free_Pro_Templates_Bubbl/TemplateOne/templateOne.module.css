@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Tiro+Bangla:ital@0;1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Petrona&family=Sen:wght@400;700&family=Urbanist:ital@1&display=swap");
+
+.container {
+  max-height: 104%;
+  overflow: scroll;
+}
+
+.banner {
+  max-width: 480px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.banner_details {
+  position: relative;
+}
+
+.background_curve {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.header_image {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  position: absolute;
+  bottom: -5%;
+  width: 100%;
+  padding: 0 20px 0 20px;
+}
+
+.profile_img_profile {
+  position: relative;
+  border-radius: 15px;
+}
+
+.live_img {
+  border-radius: 15px;
+}
+
+.profile {
+  border-radius: 10px;
+  z-index: 10000;
+}
+
+.logo_brand {
+  z-index: 1;
+}
+
+.mobile_template {
+  position: relative;
+  max-width: 480px;
+  margin: -8px auto;
+}
+
+.bubble_container {
+  padding: 35px 20px 0 20px;
+}
+
+.header_details {
+  padding-top: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.header_name {
+  display: flex;
+  flex-direction: column;
+}
+
+.header_name h2 {
+  font-weight: 700;
+  font-size: 28px;
+  margin-bottom: 0;
+  max-width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-wrap: nowrap;
+}
+
+.header_name p {
+  font-weight: 400;
+  font-size: 14px;
+  margin-bottom: 0;
+  margin-top: 8px;
+  word-wrap: break-word;
+}
+
+.contact_paragraph {
+  font-weight: 400;
+  font-size: 16px;
+  padding-top: 20px;
+  line-height: 18px;
+  max-width: 270px;
+  word-wrap: break-word;
+  margin-bottom: 0;
+}
+
+.contact_div {
+  margin: 24px 0px 31px 0px;
+}
+
+.contact_info,
+.social_info {
+  margin-top: 40px;
+}
+
+.socialDiv {
+  margin-top: 40px;
+}
+
+.social_headings {
+  margin-bottom: 18px;
+}
+
+.contact_info_payment {
+  margin-top: 30px;
+}
+
+@media screen and (max-width: 4000px) {
+  .header_name h2 {
+    max-width: 300px;
+  }
+
+  .header_name p {
+    max-width: 270px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .header_name h2 {
+    max-width: 300px;
+  }
+
+  .header_name p {
+    max-width: 250px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .header_name h2 {
+    max-width: 280px;
+  }
+
+  .header_name p {
+    max-width: 250px;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .header_name h2 {
+    max-width: 270px;
+  }
+
+  .header_name p {
+    max-width: 230px;
+  }
+
+}

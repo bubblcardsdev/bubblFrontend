@@ -1,0 +1,252 @@
+.shippingHeading {
+  font-family: "Oxygen", sans-serif;
+  font-weight: 700;
+  font-size: 34px;
+  margin-top: 12px;
+  margin-bottom: 60px;
+}
+
+.shipping {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.18);
+  border-radius: 45px;
+  padding: 15px 0 15px 30px;
+}
+
+.shipping h1 {
+  font-family: "Oxygen", sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  margin-left: 15px;
+}
+
+.navigation {
+  padding-top: 150px;
+  font-family: "Oxygen", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.linkDevice_color_head {
+  color: #af38d6;
+}
+
+.home_color_head {
+  margin-top: 100px;
+  opacity: 0.4;
+  color: black;
+}
+
+.paymentSummary {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  margin-bottom: 80px;
+  justify-content: space-between;
+}
+
+.Summary h5 {
+  font-family: "Oxygen", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #6b6b6b;
+  margin-top: 40px;
+  margin-bottom: 5px;
+}
+
+.line {
+  border-top: 1px solid #af38d6;
+  opacity: 0.5;
+}
+
+.Summary {
+  background-color: white;
+  width: 100%;
+  height: 390px;
+  padding: 30px 40px;
+}
+
+.Summary h3 {
+  font-family: "Oxygen", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: #474747;
+  margin-bottom: 50px;
+}
+
+.subtotal p:first-of-type {
+  font-family: "Oxygen", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  opacity: 0.5;
+  padding-bottom: 24px;
+}
+
+.subtotal p::nth-child(2) {
+  font-family: "Oxygen", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.offer span {
+  color: red;
+}
+
+.offer {
+  font-family: "Oxygen", sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  padding-top: 5px;
+}
+
+.subtotal {
+  display: flex;
+  justify-content: space-between;
+}
+
+.totalInr {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* margin-top: 30px; */
+  margin-top: 5px;
+}
+
+.totalInr p:first-of-type {
+  font-family: "Oxygen", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.totalInr p:nth-child(2) {
+  font-family: "Oxygen", sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+}
+
+.bankingChargesNote {
+  margin-top: 5px;
+  font-size: 9px;
+  font-family: "Oxygen", sans-serif;
+}
+
+.bankingChargesNote span {
+  color: red;
+}
+
+.checkoutbtn {
+  display: flex;
+  align-items: center;
+  font-family: "Oxygen", sans-serif;
+  justify-content: center;
+  font-weight: 400;
+  font-size: 14px;
+  width: 100%;
+  margin-top: 37px;
+  background-color: #af38d6;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+.checkoutbtn:hover {
+  background: #af38d6;
+  color: white;
+  box-shadow: 0px 0px 4px rgb(0 0 0 / 25%);
+}
+
+.checkoutbtn:active {
+  background-color: #af38d6 !important;
+  color: white !important;
+  border-color: #af38d6 !important;
+  box-shadow: 0px 0px 4px rgb(0 0 0 / 25%) !important;
+}
+
+.checkoutbtn span {
+  padding-left: 10px;
+  padding-top: 5px;
+}
+
+.static_btn {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: white;
+  padding: 10px 35px 10px 35px;
+  z-index: 1;
+}
+
+.checkoutbtn_fixed {
+  font-family: "Oxygen", sans-serif;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  color: white;
+  cursor: pointer;
+  opacity: 1;
+  border-radius: 0;
+  display: flex;
+  background-color: #af38d6;
+  border-radius: 5px;
+  align-items: center;
+  padding: 10px 20px 10px 20px;
+}
+
+.checkoutbtn_fixed:hover {
+  background: #af38d6;
+  color: white;
+  box-shadow: 0px 0px 4px rgb(0 0 0 / 25%);
+}
+
+.checkoutbtn_fixed:active {
+  background-color: #af38d6 !important;
+  color: white !important;
+  border-color: #af38d6 !important;
+  box-shadow: 0px 0px 4px rgb(0 0 0 / 25%) !important;
+}
+
+.price p {
+  color: black;
+  font-family: "Oxygen", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.price a {
+  text-decoration: none;
+  font-family: "Oxygen", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  color: #4d4d4d;
+}
+
+/* Responsive */
+
+@media screen and (min-width: 1025px) {
+  .static_btn {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .checkoutbtn {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .Summary {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .Summary {
+    margin-top: 40px;
+  }
+}

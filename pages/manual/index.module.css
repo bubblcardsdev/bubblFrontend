@@ -1,0 +1,137 @@
+/* Desktop */
+.ManualImg {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* Mobile */
+.manualMobile {
+    background: #242424;
+}
+
+.manualDesk {
+    background-color: black !important;
+}
+
+.MobileSec {
+    padding-bottom: 80px;
+}
+
+.Logo {
+    padding-top: 40px;
+    padding-bottom: 60px;
+    padding-left: 26px;
+}
+
+.Man1 {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    position: relative;
+    margin-left: -40px;
+}
+
+.numberText {
+    position: absolute;
+    left: 80px;
+}
+
+
+.PhoneImg {
+    width: 122px;
+    height: 249px;
+}
+
+.textColors h1 {
+    margin: 0 auto;
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 14px;
+    color: white;
+    padding-top: 20px;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.textColors p {
+    margin: 0 auto;
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 13px;
+    color: white;
+    max-width: 300px;
+    line-height: 1.4;
+    text-align: center;
+    padding: 12px 10px 20px 12px;
+}
+
+.footerManual {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 60px;
+}
+
+.DownLink a {
+    text-decoration: none;
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 14px;
+    color: white;
+    cursor: pointer;
+}
+
+.footer_style {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* cursor: pointer; */
+}
+
+.footer_style_text p {
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 13px;
+    color: white;
+}
+
+/* Responsive */
+@media screen and (max-width: 1330px) {
+    .footerManual {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 60px 0 60px;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .manualDesk {
+        display: none;
+    }
+
+    .footerManual {
+        flex-wrap: wrap;
+        margin: 0 auto;
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .manualMobile {
+        display: none;
+    }
+}
+
+
+
+@media screen and (max-width:350px) {
+    .numberText {
+        position: absolute;
+        left: 50px;
+    }
+
+}

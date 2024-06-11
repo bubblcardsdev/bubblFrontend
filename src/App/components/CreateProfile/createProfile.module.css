@@ -1,0 +1,154 @@
+.device_header {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.device_header_profile {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.form-control:focus {
+  color: white;
+  background-color: #fff;
+  border-color: #86b7fe;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem red !important;
+}
+
+.device_img_div {
+  width: 70%;
+  height: 100%;
+  background-color: lightgray;
+  margin-top: 10px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+  padding-top: 140px;
+}
+
+/* profile verified page css */
+.success_alignment {
+  margin-top: 4%;
+}
+
+.suceessImg {
+  display: flex;
+  justify-content: center;
+}
+
+.successImg_msg {
+  display: flex;
+  justify-content: center;
+  font-weight: 700;
+  height: 10vh;
+  font-family: "Oxygen";
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.successImg_createName {
+  display: flex;
+  justify-content: center;
+  color: #000000;
+  opacity: 0.6;
+  font-family: "Oxygen";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.create_profile_btn {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.card_header {
+  margin: 57px 0px 30px 0px;
+  padding: 60px 25px 25px 25px;
+  background: #ffffff;
+  box-shadow: 0px 0px 4px rgb(0 0 0 / 25%);
+  border-radius: 20px;
+  padding-bottom: 80px;
+}
+
+.link_icon_background {
+  height: 35px;
+  background-color: #af38d6;
+  border-radius: 50%;
+  margin-left: 34%;
+  padding: 8px;
+  width: 35px;
+}
+
+.device_header_linkedDevice {
+  font-weight: 600;
+  font-family: "Oxygen";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.profile_icon {
+  height: 30px;
+  margin-left: 20px;
+}
+
+/* .linkDevice {
+  font-size: 16px;
+  font-weight: 600;
+} */
+.profileName_btn {
+  background-color: #af38d6;
+  border-color: #af38d6;
+}
+
+.profileName_btn:hover {
+  background-color: #af38d6;
+}
+
+.profileName_btn:focus {
+  background-color: #af38d6;
+}
+
+.linkDeviceBtn {
+  color: #af38d6;
+  background-color: #fff;
+  border-color: #af38d6;
+  margin-left: 20px;
+}
+
+.linkDeviceBtn:active {
+  background-color: #fff;
+  border-color: #fff;
+}
+
+.linkDeviceBtn:hover {
+  background-color: #fff;
+  border-color: #af38d6;
+  color: #af38d6;
+}
+
+.container_div {
+  padding: 70px 0px 20px 0px;
+  background-color: #f5f5f7;
+}
+
+/* Mobile responsive Background color */
+@media screen and (max-width: 500px) {
+  .card_header {
+    box-shadow: 0px 0px 0px #f5f5f7;
+    border-color: transparent;
+    background: #f5f5f7;
+  }
+
+  .card_header {
+    padding-bottom: 0px;
+    padding: 25px 0 25px 0;
+  }
+
+  .successImg_msg {
+    text-align: center;
+    font-size: 21px;
+  }
+}

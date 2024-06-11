@@ -1,0 +1,710 @@
+.nameCustomizationSection {
+    padding-left: 27px;
+}
+
+.oldPrices {
+    text-decoration: line-through;
+    -webkit-text-decoration-color: #af38d6;
+    text-decoration-color: #af38d6;
+    text-decoration-thickness: 1.5px;
+}
+
+.container {
+    background-color: black;
+    overflow: hidden;
+}
+
+.backGroundContainer {
+    overflow: hidden;
+}
+
+.nameContainer {
+    width: 85.7vw;
+    margin: 0% auto;
+    position: relative;
+
+}
+
+.footerSectionInside {
+    width: 85.7vw;
+    margin: 0% auto;
+}
+
+.footerContainer {
+    background: linear-gradient(1deg, rgba(58, 73, 249, .88) -171.77%, rgba(129, 45, 226, .49) -22.73%, transparent 102.14%) !important;
+    padding-top: 35px;
+}
+
+/* Utilities */
+
+.mt-130 {
+    margin-top: 130px;
+}
+
+.mb-50 {
+    margin-bottom: 50px;
+}
+
+.top-15 {
+    top: 15%;
+}
+
+/* End of Utilities */
+
+.breadcrumbs {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 50px;
+}
+
+.home_color_head {
+    color: rgb(255, 255, 255);
+    opacity: 0.8;
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.linkDevice_color_head {
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 14px;
+    color: #af38d6;
+}
+
+.right_heading h2 {
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 24px;
+    color: white;
+}
+
+.right_heading p {
+    max-width: 360px;
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 14px;
+    margin-top: 6px;
+    color: rgb(188, 188, 188);
+}
+
+.materials h3 {
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 18px;
+    margin-top: 40px;
+    margin-bottom: 18px;
+    color: white;
+}
+
+.material_list {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    position: relative;
+}
+
+.material_individual p {
+    text-align: center;
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 16px;
+    color: white;
+}
+
+.select_pattern {
+    display: flex;
+    flex-wrap: wrap;
+    cursor: pointer;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.dynamic_section_front h3 {
+    position: absolute;
+    margin-top: 46px;
+    color: red;
+    display: inline-block;
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.cardsImage {
+    border-radius: 20px;
+}
+
+.dynamic_section {
+    left: 0%;
+    padding-left: 20px;
+}
+
+.carousel-indicators {
+    margin-bottom: 0rem !important;
+}
+
+.select_pattern>span>span>img {
+    margin-right: 30px;
+}
+
+.select_pattern_img {
+    margin-right: 10px;
+    /* margin-bottom: 20px; */
+}
+
+.select_metal_section {
+    display: flex;
+}
+
+.circle,
+.circle:hover,
+.circle:active,
+.circle:focus {
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    background-color: transparent !important;
+}
+
+/* Select Color */
+
+.select_metalBlack,
+.select_metalGrey {
+    display: inline-block;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.select_metalBlack {
+    background-color: black;
+}
+
+.select_metalGrey {
+    background-color: #727272;
+}
+
+.right_heading_responsive h2 {
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 24px;
+    color: #ffffff;
+}
+
+.right_heading_responsive p {
+    max-width: 360px;
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 14px;
+    margin-top: 6px;
+    color: #ffffff;
+}
+
+
+/* Customize Details */
+.custom_details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+}
+
+.customization_details_left h2,
+.customization_details_right h2 {
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 16px;
+    margin-top: 40px;
+    color: white;
+}
+
+.customization_details_left p,
+.customization_details_right p {
+    font-family: "Oxygen";
+    font-weight: 300;
+    font-size: 12px;
+    max-width: 162px;
+    padding-top: 4px;
+    padding-bottom: 14px;
+    color: white;
+}
+
+.footerContainer {
+    margin-top: 15vh;
+}
+
+.font_dropdown {
+    width: 100%;
+    background-color: transparent;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    border-color: #696969;
+}
+
+.font_dropdown:hover,
+.font_dropdown:active,
+.font_dropdown:focus-visible {
+    background-color: transparent !important;
+    border-color: #696969 !important;
+    color: black !important;
+}
+
+.font_dropdown_section>div {
+    width: 100%
+}
+
+.customization_details_left h3,
+.customization_details_right h3 {
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 18px;
+    margin-top: 46px;
+
+}
+
+.minus,
+.plus {
+    width: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    font-size: 22px;
+    color: white;
+}
+
+.input {
+    margin-top: 1px;
+    height: 34px;
+    width: 50px;
+    text-align: center;
+    font-size: 26px;
+    border: unset;
+    border-radius: 4px;
+    display: inline-block;
+    vertical-align: middle;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: #af38d6;
+}
+
+.customization_details_right h4 {
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 22px;
+    color: white;
+}
+
+.customization_details_right span {
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 12px;
+    color: #AF38D6;
+}
+
+.cartButton {
+    border: 1px solid;
+    border-radius: 50px !important;
+
+    border: 1px solid #812DE2;
+
+    font-size: 14px;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 500;
+    width: 246px;
+    height: 40px;
+    color: white;
+    background-color: transparent;
+}
+
+.cartButton:focus-visible,
+.cartButton:active,
+.cartButton:hover {
+    background-color: transparent !important;
+    border: 1px solid #812DE2;
+}
+
+.enterName input {
+    border-color: #696969;
+}
+
+.leftCrd {
+    position: relative;
+    margin-top: -110px;
+}
+
+.placeholder_color::placeholder {
+    color: #ffffff !important;
+}
+
+.responsive_nameCustom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    z-index: 1000;
+    position: relative
+}
+
+.dynamic_name {
+    font-size: 32px;
+    padding-left: 30px;
+    display: flex;
+}
+
+.dynamic_name_details {
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    color: #ffffff;
+}
+
+.custom-carousel-left-arrow {
+    margin-top: 20px;
+}
+
+.dynamic_section {
+    bottom: 130px;
+}
+
+.dynamic_section_metal {
+    bottom: 14.5rem;
+    left: 1.2rem;
+}
+
+.responsive_materials {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #AF38D6;
+    font-family: "Oxygen";
+    font-weight: 500;
+    font-size: 18px;
+    margin-bottom: 35px;
+}
+
+.slider h3 {
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 18px;
+    padding-bottom: 20px;
+}
+
+.responsive_materials button {
+    text-decoration: none;
+    border-radius: 0;
+    border-bottom: 2px solid transparent;
+    color: #AF38D6;
+}
+
+.responsive_materials button:hover {
+    color: #AF38D6 !important;
+    opacity: 1;
+    cursor: pointer;
+    border-bottom: 2px solid #AF38D6;
+}
+
+.responsive_materials .active {
+    border-bottom: 2px solid #AF38D6;
+}
+
+.responsive_materials>div {
+    padding-bottom: 5px;
+}
+
+.number {
+    height: 38px;
+    width: 106px;
+    border-radius: 10px;
+    border: 1px solid linear-gradient(to right, rgba(203, 186, 223, 0.05), rgba(193, 179, 231, 0.25));
+    background: linear-gradient(to right, rgba(203, 186, 223, 0.05), rgba(193, 179, 231, 0.25));
+    padding-left: 0.6vw;
+}
+
+.buttonsContainer {
+    display: flex;
+    gap: 2vw;
+    margin-top: 5vh;
+}
+
+.cartButtonBuyNow {
+    background: linear-gradient(109deg,
+            rgba(129, 45, 226),
+            rgba(58, 73, 249));
+    /* background: linear-gradient(to right,
+            rgba(129, 45, 226),
+            rgba(58, 73, 249)); */
+    font-size: 14px;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 500;
+    width: 35%;
+    height: 40px;
+    color: white;
+    border-radius: 20px;
+
+}
+
+.buttonContainerResp {
+    display: flex;
+    gap: 20vw
+}
+
+.price_resp h4 {
+    font-family: "Oxygen";
+    font-weight: 500;
+    font-size: 16px;
+    color: white;
+    margin-left: 1vw;
+}
+
+.price_resp span {
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 10px;
+    color: #AF38D6;
+}
+
+@media screen and (min-width: 501px) {
+    .buttonContainerResp {
+        display: none;
+    }
+}
+
+
+/* Responsive */
+@media screen and (min-width: 1200px) {
+    .right_heading_responsive {
+        display: none;
+    }
+
+    .static_btn {
+        display: none;
+    }
+
+
+
+}
+
+@media screen and (max-width:1199px) {
+    .breadcrumbs {
+        margin-bottom: 10px;
+        display: none;
+    }
+
+    .customization_details {
+        margin: inherit;
+    }
+
+    .right_heading_responsive {
+        margin-bottom: 30px;
+    }
+
+    .right_heading {
+        display: none;
+    }
+
+    .head_resp {
+        display: none;
+    }
+
+    .slider {
+        margin-top: 0px;
+        margin-bottom: 10px;
+    }
+
+    .checkOutBtn_fixed {
+        font-family: "Oxygen", sans-serif;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 14px;
+        color: white;
+        cursor: pointer;
+        opacity: 1;
+        border-radius: 0;
+        display: flex;
+        background: linear-gradient(109deg,
+                rgba(129, 45, 226),
+                rgba(58, 73, 249));
+        border-radius: 20px;
+        align-items: center;
+        padding: 10px 60px 10px 60px;
+    }
+
+    .price_resp p {
+        color: rgb(255, 255, 255);
+        font-family: "Oxygen", sans-serif;
+        font-weight: 700;
+        font-size: 20px;
+    }
+
+    .static_btn {
+        position: fixed;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100vw;
+        background-color: rgb(24, 23, 30);
+        padding: 10px 35px 10px 35px;
+        z-index: 1;
+    }
+
+    /* .cartButton {
+        display: none;
+    } */
+}
+
+
+@media screen and (min-width: 575px) {
+    .responsive_materials {
+        display: none;
+    }
+
+    .slider {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .responsive_nameCustom {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .material_list {
+        display: none;
+    }
+
+    /* .pattern_section {
+        display: none;
+    } */
+
+    .dynamic_name {
+        font-size: 18px;
+        padding-left: 20px;
+    }
+}
+
+@media screen and (min-width: 501px) {
+
+    .quantity,
+    .number_resp {
+        display: none;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .custom_details {
+        flex-direction: column;
+    }
+
+    .cartButtonBuyNow {
+        width: 90%;
+    }
+
+
+    .customization_details_left,
+    .customization_details_right {
+        width: 100%;
+    }
+
+    .customization_details_left p {
+        max-width: 100%;
+    }
+
+    .customization_details_right h3 {
+        display: none;
+    }
+
+    .customization_details_right h4 {
+        display: none;
+    }
+
+    .quantity_responsive,
+    .number {
+        display: none;
+    }
+
+    .customization_details_right h2 {
+        margin-top: 20px;
+    }
+
+    .leftCrd {
+        margin-top: 0px;
+    }
+
+    .dynamic_section {
+        bottom: 115px;
+    }
+
+    .dynamic_section_metal {
+        bottom: 13rem;
+    }
+
+    .select_pattern {
+        display: flex;
+        justify-content: center;
+    }
+
+    .materials h3 {
+        margin-top: 5vh;
+    }
+
+    .number_resp {
+        background: linear-gradient(to right, rgba(203, 186, 223, 0.05), rgba(193, 179, 231, 0.25));
+        border-radius: 10px;
+        width: 30vw;
+        padding: 1vw;
+        padding-left: 2vw;
+    }
+
+    .navigationContainer {
+        padding-top: 25px;
+    }
+
+}
+
+@media screen and (max-width: 450px) {
+    .dynamic_section {
+        bottom: 100px;
+    }
+
+    .dynamic_section_metal {
+        bottom: 12rem;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .dynamic_section_metal {
+        bottom: 10.5rem;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .dynamic_section {
+        bottom: 90px;
+    }
+
+    .dynamic_section_metal {
+        bottom: 9.5rem;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .dynamic_section {
+        bottom: 80px;
+    }
+
+    .dynamic_section_metal {
+        bottom: 8.5rem;
+    }
+
+    .checkOutBtn_fixed {
+        font-size: 12px;
+        padding: 10px 30px 10px 30px;
+    }
+}

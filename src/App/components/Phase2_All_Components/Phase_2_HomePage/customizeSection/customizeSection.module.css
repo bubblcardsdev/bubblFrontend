@@ -1,0 +1,131 @@
+.customizeContainer p {
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    font-weight: 700;
+    font-family: "Source Sans Pro", sans-serif;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.customizeContainer {
+    position: relative;
+    z-index: 1
+}
+
+.customizeDiv {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.customizeSubContent {
+    text-align: center;
+    font-size: clamp(1.125rem, 0.9839rem + 0.3226vw, 1.5rem);
+    color: white;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 300;
+    /* width: 70%; */
+    width: 821px;
+}
+
+.buttonDiv {
+    display: flex;
+    justify-content: center;
+}
+
+.buttonShop {
+    background: linear-gradient(94deg, #812DE2 0%, #3A49F9 100%);
+    /* background: linear-gradient(to right,
+            rgba(129, 45, 226),
+            rgba(58, 73, 249)); */
+    border-radius: 86.5px;
+    display: flex;
+    gap: 17px;
+    justify-content: center;
+    align-items: center;
+    border-color: transparent;
+    height: 50px;
+    font-size: 16px;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 700;
+    width: 224px;
+}
+
+.buttonShop p {
+    margin-bottom: 0px;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: #ffffff;
+    padding: 1px
+}
+
+.chooseVideoDiv {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+.chooseVideo {
+    width: 420px;
+    height: 420px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+@media screen and (max-width:1025px) {
+    .customizeContainer p {
+        font-size: 35px;
+        margin-bottom: 12px;
+    }
+
+    .customizeSubContent {
+        font-size: 20px;
+        /* margin-bottom: 41px; */
+    }
+
+    .buttonShop p {
+        font-size: 14px;
+        margin-bottom: 0px;
+
+    }
+
+}
+
+@media screen and (max-width:789px) {
+    .customizeSubContent {
+        font-size: 18px;
+    }
+
+}
+
+@media screen and (max-width:425px) {
+    .customizeContainer p {
+        font-size: 32px;
+    }
+
+    .customizeSubContent {
+        font-size: 14px;
+    }
+
+    .chooseVideo {
+        width: 329px;
+        height: 448px;
+    }
+
+    .buttonShop {
+        width: 213px;
+        height: 43px;
+    }
+
+    .buttonShop p {
+        font-size: 14px;
+        margin-bottom: 0px;
+
+    }
+
+}

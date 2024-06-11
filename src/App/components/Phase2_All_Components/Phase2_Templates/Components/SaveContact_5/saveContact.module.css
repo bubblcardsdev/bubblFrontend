@@ -1,0 +1,15 @@
+.contact_btn {
+  background: linear-gradient(94deg, #DD38D8 0.21%, #4B57FF 99.89%);
+  border-radius: 5px;
+  font-family: "Oxygen";
+  font-weight: 700;
+  font-size: 14px;
+  width: 200px;
+  height: 41px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: white;
+  border: none;
+}

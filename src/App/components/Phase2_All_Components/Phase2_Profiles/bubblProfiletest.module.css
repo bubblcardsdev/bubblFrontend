@@ -1,0 +1,2193 @@
+@import url("https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&family=Source+Sans+Pro:wght@700&display=swap");
+
+.profileSection {
+    background-color: black;
+    overflow: hidden;
+}
+
+.profileLandingPage {
+    /* width: 85.7vw; */
+    max-width: 1235px;
+    margin: 0 auto;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+}
+
+.backgroundContainer {
+    position: relative;
+}
+
+.profileNameDiv {
+    font-size: 2vw;
+    color: #BEBEBE;
+}
+
+.breadCrumbs {
+    display: flex;
+    gap: 5px;
+    margin-top: 20px;
+    padding-left: 40px;
+}
+
+.link1 a {
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.80);
+
+}
+
+.link2 a {
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 14px;
+    color: #AF38D6;
+}
+
+.hrLineTagTop {
+    margin: 0 auto;
+    /* margin-top: 36px; */
+    margin-bottom: 40px;
+    width: 40vw;
+    height: 0.7px;
+    background: #FFF;
+
+    /* margin-left: 3.125vw; */
+}
+
+.profileInformationDiv {
+    margin-top: 70px;
+}
+
+.profileInformationDiv h1 {
+    color: #FFF;
+    text-align: center;
+    font-family: "Oxygen";
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: normal;
+    text-align: center;
+    padding-bottom: 4vh;
+}
+
+.profileInformationDiv h1 span {
+    color: #FFF;
+    text-align: center;
+    font-family: "Oxygen";
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-align: center;
+    padding-bottom: 4vh;
+}
+
+.createProfileHeading {
+    color: #CBCBCB;
+    font-family: "Oxygen";
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-align: center;
+}
+
+.profileSubContent {
+    margin-top: 9px;
+    color: #FFF;
+    text-align: center;
+    font-family: Oxygen;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.profileSubContent span {
+    color: #AF38D6;
+
+}
+
+.profileBtnDiv {
+    margin-top: 26px;
+    padding-bottom: 42px;
+    text-align: center;
+}
+
+.profileBtn {
+    width: 206px;
+    height: 48px;
+    border-radius: 5px;
+    background: #AF38D6;
+    border: none;
+    color: #FFF;
+    font-family: "Oxygen", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.profileBtn:hover {
+    background: #AF38D6;
+}
+
+.profileBtn:active {
+    background: #AF38D6 !important;
+}
+
+.hrLineTag {
+    margin-top: 36px;
+    margin-bottom: 40px;
+    /* width: 69.72vw; */
+    height: 0.7px;
+    background: #FFF;
+    /* margin-left: 3.125vw; */
+}
+
+.editProfileBtn {
+    display: flex;
+    gap: 37px;
+    margin-left: 35px;
+    padding-bottom: 38px;
+}
+
+.linkTag {
+    margin-top: 14px;
+    color: #FFF;
+    font-family: "Oxygen";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.footerDiv {
+    padding-top: 200px;
+}
+
+.linkTag span {
+    color: #AF38D6;
+    text-decoration-line: underline;
+    font-weight: 700;
+}
+
+.profileCreateBtn {
+    border-radius: 15px;
+    border: 1px solid #AF38D6;
+    width: 167px;
+    height: 46px;
+    background: none
+}
+
+.profileCreateBtn:hover,
+.profileCreateBtn:active,
+.profileCreateBtn:focus-visible {
+    background: transparent !important;
+    border: 1px solid #AF38D6 !important;
+}
+
+.linkDeviceBtn {
+    border-radius: 15px;
+    border: 1px solid #AF38D6;
+    width: 167px;
+    height: 46px;
+    background: #AF38D6;
+}
+
+.footerSectionInside {
+    width: 85.7vw;
+    margin: 0% auto;
+}
+
+.footerSection {
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(1deg, rgba(58, 73, 249, .88) -171.77%, rgba(129, 45, 226, .49) -22.73%, transparent 102.14%) !important;
+    padding-top: 35px;
+}
+
+.linkDeviceBtn:hover {
+    background: #AF38D6;
+    border: none
+}
+
+.linkDeviceBtn:active {
+    background: #AF38D6 !important;
+    border: none !important;
+}
+
+.hrLine {
+    background: #FFF;
+    /* width: 986px; */
+    height: 0.6px;
+    margin-left: 199px;
+}
+
+
+.LandingPage {
+    background-color: #f5f5f7;
+}
+
+.navBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f5f5f7;
+}
+
+.navbar_bg {
+    background: #f5f5f7;
+}
+
+.dropdown-menu {
+    min-width: fit-content;
+}
+
+.navLink {
+    display: flex;
+    justify-content: space-between;
+    gap: 42px;
+    align-items: center;
+}
+
+.nav_link {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: "Oxygen", sans-serif;
+    margin-right: 40px;
+    color: black;
+    margin-bottom: 0px;
+    cursor: pointer;
+    text-transform: uppercase;
+    padding-top: 10px;
+}
+
+.nav_linkt {
+    text-decoration: none;
+    font-size: 14px;
+    color: black;
+    font-weight: 400;
+    font-family: "Oxygen", sans-serif;
+    margin-bottom: 0px;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: 50px 0px;
+    padding-top: 10px;
+}
+
+.nav_link:hover {
+    color: #af38d6;
+}
+
+.logo_hamburger {
+    padding-top: 60px;
+}
+
+.hamburger_line {
+    border: 0.5px solid rgba(175, 56, 214, 0.6);
+    width: 100%;
+    margin: 20px 0 20px 0;
+}
+
+.hamburger_footer {
+    font-size: 12px;
+    font-weight: 400;
+    font-family: "Oxygen", sans-serif;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.badges {
+    display: flex;
+    justify-content: space-between;
+    gap: 27px;
+}
+
+.navBar {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 15px;
+    padding-bottom: 13px;
+}
+
+.silderRow {
+    display: flex;
+}
+
+.loader {
+    background-color: black;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.purchase-device-btn-div {
+    margin-top: 30px;
+}
+
+.buyPlan {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.buyPlanTwo {
+    margin-top: 131px;
+    text-align: center;
+    bottom: 97px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 30px;
+}
+
+.purchaseBtn {
+    width: 220px;
+    background-color: #af38d6;
+    border-radius: 5px;
+    border-color: #af38d6;
+    outline: #af38d6;
+}
+
+.purchaseBtnTwo {
+    width: 100%;
+    background-color: #af38d6;
+    border-radius: 5px;
+    border-color: #af38d6;
+    outline: #af38d6;
+    height: 38px;
+}
+
+.purchaseBtnTwo:active {
+    background-color: #af38d6 !important;
+}
+
+.purchaseBtnTwo:hover {
+    background-color: #af38d6;
+    border-color: #af38d6;
+}
+
+.purchaseBtn:active {
+    background-color: #af38d6 !important;
+}
+
+.purchaseBtn:hover {
+    background-color: #af38d6;
+}
+
+
+.swiper_word {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.swiperContainer {
+    width: 750px;
+}
+
+.swiper_content {
+    font-size: 10px;
+}
+
+.swiper-slide .swiper-slide-next {
+    width: 900px !important;
+}
+
+.newCreateProfile {
+    color: white;
+}
+
+.newCreateProfile:hover {
+    color: white;
+}
+
+.dropdownBackground {
+    border-radius: 0px 0px 14px 14px;
+    background: #212028;
+    box-shadow: 3px 4px 5.2px 0px rgba(27, 26, 31, 0.74);
+}
+
+.dropdownText {
+    color: white;
+    /* text-decoration-line: underline; */
+    padding-top: 10px
+}
+
+.lineText {
+    margin-top: 5px;
+    background: #BEBEBE;
+    width: 80px;
+    height: 0.4px;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* css for circle in  Work flow page */
+.worknumber_align {
+    font-family: "Montserrat";
+    font-weight: 700;
+    font-size: 92px;
+    text-align: center;
+    opacity: 0.7;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
+        -1px -1px 0 #000;
+    color: #f5f5f7;
+}
+
+.number_div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.workingword_align {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 0px;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    text-align: center;
+    color: #000000;
+    max-width: 230px;
+    margin: 0 auto;
+}
+
+/* css for the craete proile content */
+.profile_content {
+    text-align: center;
+    font-family: "Oxygen", sans-serif;
+
+    font-weight: 700;
+    font-size: 18px;
+    color: #000000;
+}
+
+.profile_contentt {
+    text-align: center;
+    font-family: "Oxygen", sans-serif;
+
+    font-weight: 400;
+    font-size: 18px;
+    color: #000000;
+    margin-top: 2px;
+}
+
+.profile_contentt span {
+    font-family: "Oxygen", sans-serif;
+
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 23px;
+    text-align: center;
+    color: #af38d6;
+}
+
+.profile_content_btn {
+    text-align: center;
+    margin-top: 45px;
+    margin-bottom: 140px;
+}
+
+.purchaseBtn {
+    border: none;
+}
+
+/* Plan */
+.yourPlan h2 {
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 36px;
+    margin-top: 140px;
+    padding-bottom: 10px;
+}
+
+.yourPlan p {
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 18px;
+    padding-bottom: 43px;
+    opacity: 0.7;
+    padding-left: 4px;
+}
+
+.yourPlan p span {
+    font-size: 18px;
+    color: #af38d6;
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.create_profile_header {
+    font-family: "Oxygen", sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    color: #0d071a;
+    margin-top: 60px;
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+.upgrade {
+    font-family: "Oxygen", sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    color: #0d071a;
+    margin-top: 141px;
+    text-align: left;
+    margin-bottom: 18px;
+}
+
+
+/* Your profile css */
+.search_div {
+    background-color: #ededed;
+    padding: 9px;
+}
+
+.search_icon_alignment {
+    margin-top: 10px;
+}
+
+.DropdownArrow_align {
+    margin-right: 20px;
+}
+
+.filter_btn {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.filter_img {
+    margin-top: 2px !important;
+}
+
+/* upgrade plan css */
+.premium_alignment_div {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.premium_alignment_btn {
+    background-color: #d9d9d9;
+    padding: 3px;
+}
+
+.current_plan {
+    font-family: "Oxygen", sans-serif;
+    margin-bottom: 64px;
+    font-weight: 400;
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.planName {
+    font-family: "Oxygen", sans-serif;
+
+    font-weight: 700;
+    font-size: 18px;
+    color: #af38d6;
+}
+
+.buy_plan_btn {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.freeCard_height {
+    height: 100%;
+}
+
+.mode {
+    margin-top: 20px;
+}
+
+.modeCard {
+    height: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #000000;
+    font-weight: 600;
+}
+
+.plan_div {
+    margin-top: 6%;
+    margin-bottom: 6%;
+    font-family: "Montserrat";
+}
+
+/*  */
+.profile_drvice_div {
+    display: flex;
+    background-color: #efefef;
+    width: 65%;
+    padding: 30px;
+    margin-left: 23%;
+    justify-content: space-evenly;
+}
+
+.profile_first_div {
+    width: 7px;
+}
+
+.profile_sec_div {
+    display: flex;
+}
+
+.profile_third_div {
+    width: 25%;
+    display: flex;
+}
+
+.circle_device {
+    height: 60px;
+    width: 60px;
+    background-color: #d9d9d9;
+    border-radius: 50%;
+}
+
+.square_device {
+    height: 50px;
+    width: 100px;
+    background-color: #d9d9d9;
+}
+
+.device_qty {
+    font-size: 14px;
+    color: #00000099;
+}
+
+.qty_div {
+    margin-left: 10px;
+}
+
+.profile_table .table>thead {
+    background-color: red;
+}
+
+/* .swiper-button-prev,
+.swiper-button-next {
+display: none !important;
+} */
+.swiper-button-next {
+    display: none;
+}
+
+.table_device_div {
+    width: 91px;
+    height: 44px;
+    left: 130px;
+    top: 866px;
+    background: #cccccc;
+    border-radius: 10px;
+}
+
+.your_devices {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.dropdown,
+.dropdown:hover,
+.dropdown:focus-visible,
+.dropdown:active {
+    background-color: unset !important;
+    border: unset;
+}
+
+.table_active_btn {
+    background-color: lightgrey;
+    border-radius: 30px;
+    text-align: center;
+    padding: 5px;
+    width: 60%;
+}
+
+.logo {
+    margin-top: 8px;
+}
+
+.iconsNav {
+    background-color: white;
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    text-align: center;
+    padding-top: 4px;
+    margin-left: 10px;
+}
+
+.iconsNav:hover {
+    background-color: #af38d6;
+    transition: 0.4s;
+}
+
+.nav_image {
+    cursor: pointer;
+    padding: 5px;
+    margin-top: -2px;
+}
+
+.nav_image:hover {
+    filter: brightness(100);
+    transition: 0.4s;
+}
+
+.iconsNavt {
+    background-color: white;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+}
+
+.bubblBanner {
+    background-repeat: no-repeat;
+    background-position-x: right;
+    padding-bottom: 40px;
+    margin-top: 65px;
+}
+
+.userName {
+    font-family: "Oxygen", sans-serif;
+    font-weight: 700;
+    font-size: 44px;
+    color: white;
+    padding-top: 30px;
+    padding-bottom: 12px;
+}
+
+.userParaOne {
+    font-family: "Oxygen", sans-serif;
+
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 25px;
+    color: #ffffff;
+    max-width: 402px;
+    padding-bottom: 25px;
+}
+
+.userParaOne span {
+    font-weight: 700;
+}
+
+.userParaTwo {
+    font-family: "Oxygen", sans-serif;
+
+    font-weight: 400;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.bannerBanner {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 60px;
+}
+
+.arrowBtn {
+    padding-left: 1px !important;
+    margin-top: -1px !important;
+}
+
+.button {
+    margin-top: -3px;
+    margin-left: -3px;
+}
+
+.dropdown-toggle {
+    display: none;
+}
+
+.iconsNavt:hover {
+    background-color: #af38d6;
+}
+
+.barDivide {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* card */
+.card_header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #0b0711;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    align-items: center;
+}
+
+.bubblfree {
+    font-family: "Oxygen", sans-serif;
+    font-weight: 700;
+    font-size: 27px;
+    margin-top: 8px;
+    color: #ffffff;
+}
+
+.cardCont {
+    padding-top: 40px;
+    margin-bottom: 20px;
+    font-family: "Oxygen", sans-serif;
+    max-width: 265px;
+    font-weight: 400;
+    font-size: 16px;
+    color: #000000;
+}
+
+.cardContContact {
+    font-family: "Oxygen", sans-serif;
+    max-width: 265px;
+    font-weight: 400;
+    font-size: 16px;
+    color: #000000;
+}
+
+.list {
+    display: flex;
+    gap: 8px;
+    padding-bottom: 18px;
+}
+
+.listTwo {
+    display: flex;
+    gap: 8px;
+    padding-bottom: 10px;
+}
+
+.lists {
+    font-family: "Oxygen", sans-serif;
+    text-transform: capitalize;
+    font-weight: 700;
+    font-size: 16px;
+    color: #000000;
+    margin-bottom: 0px;
+}
+
+.card_bottom {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.card {
+    height: 1203px;
+    background-color: white;
+    position: relative;
+}
+
+.lblCartCount {
+    font-size: 12px;
+    /* color: #fff; */
+    padding: 0 5px;
+    vertical-align: top;
+}
+
+/* .toggleResponsive {
+  display: none;
+} */
+
+@media screen and (max-width: 1024px) {
+    .card {
+        width: 296px;
+    }
+
+    .toggleResponsive {
+        display: none;
+    }
+
+    .hrLineTagTop {
+        display: none;
+    }
+}
+
+.line {
+    margin-bottom: 35px;
+}
+
+.workflow {
+    text-align: center;
+    margin-top: 35px;
+    border-top: 2px solid white;
+    max-width: 100%;
+}
+
+.fourModes {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 72px;
+}
+
+.plan_mode {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.grid {
+    display: flex;
+    gap: 42px;
+}
+
+.cardHead {
+    font-family: "Oxygen", sans-serif;
+
+    font-weight: 700;
+    font-size: 28px;
+    color: #af38d6;
+}
+
+.cardContent {
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    margin-top: 14px;
+    margin-bottom: 35px;
+    color: #000000;
+    width: 289px;
+}
+
+.trymode {
+    font-family: "Oxygen", sans-serif;
+
+    font-weight: 600;
+    font-size: 14px;
+    color: #af38d6;
+    margin-bottom: 0px;
+}
+
+.cardRight {
+    align-self: center;
+}
+
+.dropdown::after {
+    color: transparent;
+}
+
+.Wflow {
+    display: flex;
+    justify-content: space-around;
+    margin-top: -20px;
+}
+
+.wrokFlowLine {
+    border-top: 2px solid white;
+    max-width: 1102px;
+    margin-top: -19px;
+}
+
+.workflow {
+    position: relative;
+}
+
+/* Resposnive */
+.workflow_responsive {
+    border: 1px solid white;
+    position: relative;
+}
+
+.Wflow_responsive {
+    display: flex;
+    justify-content: space-around;
+    margin-top: -20px;
+    position: relative;
+}
+
+/* Responisve end */
+.verified {
+    display: flex;
+    gap: 25px;
+    padding-left: 25px;
+}
+
+.modes {
+    margin-bottom: 5px;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+}
+
+.check {
+    display: flex;
+    gap: 10px;
+    margin-top: 40px;
+}
+
+.radio {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 2.5em;
+    padding-right: 25px;
+}
+
+.radio input {
+    cursor: pointer;
+}
+
+.form-check-input {
+    border-color: black;
+}
+
+.form-check-input:checked {
+    border-color: black !important;
+    background-color: rgb(207, 89, 223) !important;
+}
+
+.vector {
+    display: flex;
+    gap: 5px;
+}
+
+.multiple_cards {
+    display: flex;
+    padding-top: 16px;
+    padding-left: 16px;
+    justify-content: space-between;
+}
+
+.multiple_cards img {
+    min-width: fit-content !important;
+    width: fit-content !important;
+}
+
+.deviceNumber {
+    display: flex;
+    margin-right: 20px;
+    align-items: center;
+}
+
+.dropdown_fix2 {
+    padding-left: 0px;
+}
+
+.activeFix {
+    margin-right: 20px;
+    align-items: center;
+    margin-top: 2px;
+}
+
+.deviceNumber_div {
+    color: rgba(255, 255, 255, 0.50);
+    font-family: "Oxygen";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.deviceStatus_div {
+    color: rgba(255, 255, 255, 0.50);
+    font-family: "Oxygen";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 20px;
+}
+
+.deviceStatus_div_status {
+    color: rgba(255, 255, 255, 0.50);
+    font-family: "Oxygen";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    /* margin-top: 20px; */
+}
+
+.imageBackground {
+    width: 100px;
+    height: 100px;
+    box-shadow: 10px red;
+    background: #fafafa;
+    box-shadow: 0px 4px 35px rgb(0 133 255 / 25%);
+    border-radius: 50%;
+    padding: 21px;
+}
+
+.number_tag {
+    /* color: rgba(255, 255, 255, 0.50); */
+    color: white;
+
+    font-family: "Oxygen";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    display: flex;
+    margin-top: 5px;
+
+}
+
+.activeSpan {
+    margin-top: 6px;
+}
+
+.inActiveSpan {
+    margin-top: 6px;
+}
+
+.number_tag_inactive {
+    color: rgba(255, 255, 255, 0.50);
+    font-family: "Oxygen";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    display: flex;
+    margin-top: 5px;
+}
+
+.image_div {
+    margin-right: 23px;
+}
+
+.card_alignment {
+    margin-bottom: 60px;
+    margin-top: 12px;
+}
+
+.active_green {
+    background: green;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 8px 8px 8px 0px;
+}
+
+.active_red {
+    background: red;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 8px 8px 8px 0px;
+}
+
+.profileName_value {
+    background: #AF38D6;
+    padding: 1px;
+    margin-left: 23px;
+    height: 34px;
+    color: white;
+    width: fit-content;
+    display: flex;
+    border-radius: 7px 7px 0px 0px;
+
+}
+
+.responsiveCard {
+    border-radius: 14px;
+    background: #1E1D24;
+    box-shadow: 3px 4px 5.2px 0px rgba(27, 26, 31, 0.74);
+    padding: 17px 15px 25px 11px;
+}
+
+.responsiveCard p {
+    color: white;
+    font-size: 12px;
+    /* padding-bottom: 3vh; */
+    width: 70vw;
+}
+
+.responsiveCard p span {
+    font-weight: bold;
+    color: #AF38D6;
+}
+
+.deviceTag {
+    width: 279px;
+    color: #FFF;
+    font-family: "Oxygen";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    margin-bottom: 21px;
+}
+
+.deviceTag span {
+    color: #AF38D6;
+    font-family: "Oxygen";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-decoration-line: underline;
+
+}
+
+.hr_profile_div_css {
+    border-left: 1px solid rgba(255, 255, 255, 0.6);
+    height: 19px;
+    margin-top: 8px;
+    margin-left: 10px;
+}
+
+.profile_name {
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 6px 7px 0px 8px;
+}
+
+.device_profile_name {
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 18px;
+    color: #ffffff;
+}
+
+.dropdown_fix {
+    color: white;
+    margin-top: -2px;
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.deviceNumber_id {
+    color: #FFF;
+    font-family: "Oxygen";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 4px;
+    overflow: hidden;
+    max-width: 8ch;
+    text-overflow: clip;
+    flex-wrap: nowrap;
+    height: 24px;
+}
+
+/* .dropdown_toggle::after {
+    content: none;
+    font-weight: bolder;
+} */
+
+.dot_img {
+    position: relative;
+    z-index: 1;
+}
+
+.yourProfileContainer {
+    text-align: center;
+}
+
+.yourProfile_Heading {
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 36px;
+    text-transform: capitalize;
+    color: #0d071a;
+    padding: 141px 0px 18px 0px;
+}
+
+.template_first {
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 18px;
+    color: #000000;
+    margin-top: 41px;
+}
+
+.template_second {
+    font-family: "Oxygen", sans-serif;
+
+    font-size: 16px;
+    color: #000000;
+}
+
+.bubblDevices {
+    font-family: "Oxygen", sans-serif;
+
+    font-weight: 700;
+    font-size: 18px;
+    color: #af38d6;
+}
+
+.dropdown-toggle::after {
+    color: #af38d6;
+}
+
+.media-div-btn {
+    margin: 45px 0px 135px 0px;
+}
+
+.media-save-btn {
+    background-color: #af38d6;
+    border-color: #af38d6;
+    font-family: "Oxygen";
+    font-weight: 400;
+    height: 42px;
+    font-size: 14px;
+}
+
+.media-save-btn:hover {
+    background: #af38d6;
+    border-color: #af38d6;
+    box-shadow: 1px -1px 25px -2px rgba(189, 189, 189, 1);
+}
+
+.media-save-btn:first-child:active {
+    background: #af38d6;
+    border-color: #af38d6;
+}
+
+.media-save-btn:focus {
+    background: #af38d6;
+    border-color: #af38d6;
+}
+
+.powerfulfour {
+    margin-left: 30px;
+    font-weight: 400;
+    font-family: "Oxygen", sans-serif;
+    margin-bottom: 15px;
+    color: black;
+}
+
+.thirdcard {
+    text-align: center;
+    padding-top: 36px;
+    max-width: 264px;
+    margin: 0 auto;
+}
+
+.check label {
+    line-height: 19px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    font-family: "Oxygen", sans-serif;
+    color: #000000;
+}
+
+.card_div {
+    border-radius: 20px;
+    background: rgb(41, 41, 50, 0.4);
+    box-shadow: 0px 7px 21px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    border: none;
+}
+
+
+
+.carousel_content {
+    text-align: left;
+    position: initial;
+}
+
+.carousel_responsive {
+    margin-bottom: 200px;
+}
+
+.carousel_content h3 {
+    font-weight: 700;
+    font-size: 28px;
+    font-family: "Oxygen", sans-serif;
+    color: #af38d6;
+    padding-bottom: 14px;
+}
+
+.carousel_content p {
+    font-weight: 400;
+    font-size: 16px;
+    font-family: "Oxygen", sans-serif;
+    color: black;
+}
+
+.carousel_bg {
+    background-color: white;
+    height: 600px;
+    padding: 20px 0px 40px 0px;
+}
+
+.carousel_img {
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 20px;
+}
+
+.try_now {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: inherit;
+    font-weight: 600;
+    font-size: 14px;
+    font-family: "Oxygen", sans-serif;
+    color: #af38d6;
+    padding-top: 30px;
+}
+
+.calculateBenefits {
+    display: flex;
+}
+
+.range__slider {
+    width: 100%;
+}
+
+.profileContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border: 2px solid #AF38D6;
+    border-radius: 5px;
+    padding-left: 2vw;
+    width: 55vw;
+    margin-left: 6.8vw;
+    margin-top: 3vh;
+    margin-bottom: 2.5vh;
+}
+
+.profileContainer p {
+    font-size: 16px;
+    width: 14vw;
+}
+
+.vertical_line {
+    border-left: 1px solid white;
+    width: 1vw;
+    height: 3vh;
+}
+
+.buttonsContainer {
+    display: flex;
+    justify-content: flex-start;
+    gap: 2.5vw;
+    margin-left: 6.8vw;
+    height: 5vh;
+    margin-bottom: 5vh;
+}
+
+.editButtonResp {
+    color: white;
+    border: 2px solid #AF38D6;
+    border-radius: 5px;
+    padding: 2vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 26vw;
+    font-size: 14px;
+}
+
+.linkButtonResp {
+    display: flex;
+    color: white;
+    background-color: #AF38D6;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    width: 26vw;
+    font-size: 14px;
+}
+
+.linkButton {
+    display: flex;
+    color: white;
+    background-color: #AF38D6;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    width: 167px;
+    font-size: 14px;
+}
+
+/* @media screen and (min-width: 1500px) {
+    .hrLineTag {
+        width: 68vw;
+    }
+} */
+
+
+@media screen and (max-width: 1024px) {
+    .worknumber_align {
+        font-size: 60px;
+    }
+
+    .workingword_align {
+        font-size: 16px;
+    }
+
+    .thirdcard {
+        width: 250px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .modes {
+        font-size: 14px;
+    }
+
+    .bubblfree {
+        font-size: 18px;
+    }
+
+    /* .hrLineTag {
+        width: 799px;
+
+    } */
+
+}
+
+@media screen and (min-width: 992px) {
+    .nav_reponsive_cart {
+        display: none;
+    }
+
+    .nav_reponsive {
+        display: none;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .fourModes {
+        display: flex;
+        flex-wrap: wrap;
+        padding-bottom: 0;
+    }
+
+    .grid {
+        margin-bottom: 40px;
+    }
+
+    .navBar {
+        display: none;
+    }
+
+    .deviceNumber_id {
+        overflow: hidden;
+        max-width: 8ch;
+        text-overflow: ellipsis;
+        flex-wrap: nowrap;
+        display: flex;
+        height: 24px;
+        font-size: 16px;
+    }
+
+}
+
+/* @media screen and (max-width:991px) {
+    .hrLineTag {
+        width: 633px;
+    }
+} */
+
+
+@media screen and (min-width: 769px) {
+    .nav_link_hamburger {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .responsiveCard {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .profileName_value {
+        display: none;
+    }
+
+    .card_div_desktop {
+        display: none;
+    }
+
+    .yourProfilefulldiv {
+        margin: 0% auto;
+    }
+
+    .bubblBanner {
+        background-position: bottom 0px right -70px;
+        margin-top: 0;
+    }
+
+    .buyPlanTwo {
+        margin-top: 110px;
+    }
+
+    .thirdcard {
+        margin-top: 25px;
+    }
+
+    .userName {
+        font-size: 35px;
+    }
+
+    .userParaOne {
+        font-size: 17px;
+    }
+
+    .userParaTwo {
+        font-size: 16px;
+    }
+
+    .nav_responsive {
+        display: flex;
+        align-items: center;
+    }
+
+    .iconsNav {
+        background-color: transparent;
+        margin-left: -8px;
+    }
+
+    .iconsNav:hover {
+        background-color: transparent;
+    }
+
+    .nav_image:hover {
+        filter: none;
+    }
+
+    .footerDiv {
+        padding-top: 40px;
+    }
+
+    .iconsNavt {
+        background-color: white;
+        border-radius: 50%;
+        text-align: center;
+    }
+
+    .nav_reponsive {
+        display: flex;
+        align-items: center;
+    }
+
+    .responsive-navbar-nav>div {
+        padding-right: 0;
+    }
+
+    .nav_link_responsive {
+        display: flex;
+        align-items: flex-start !important;
+    }
+
+    .navbar_bg {
+        background-color: white;
+        width: 100%;
+        margin: 0 auto;
+        border-radius: 5px;
+    }
+
+    .nav_link {
+        font-size: 18px;
+        font-weight: 400;
+        color: black;
+        text-transform: capitalize;
+    }
+
+    .nav_linkt {
+        font-size: 18px;
+        background-position: 0px 0px;
+        font-weight: 400;
+        color: black;
+    }
+
+    .icons_hide {
+        display: none;
+    }
+
+    .nav_link_hamburger {
+        display: block;
+    }
+
+    .nav_image {
+        margin-top: -4px;
+    }
+
+    .hamburger_resp {
+        margin-top: 3px;
+    }
+
+    .hamburger_footer {
+        margin-bottom: 15px;
+        padding-top: 8px;
+    }
+
+    .bannerBanner {
+        display: flex;
+        flex-wrap: wrap;
+        padding-top: 150px;
+    }
+
+    .mode {
+        display: none;
+    }
+
+    .deviceNumber_responsive {
+        display: flex;
+        width: 35vw;
+        justify-content: space-around;
+    }
+
+
+    .activeFix {
+        margin-top: 10px;
+    }
+
+    .active_tag {
+        font-size: 10px;
+    }
+
+    .number_tag_inactive {
+        font-size: 12px;
+    }
+
+    .active_green {
+        width: 15px;
+        height: 15px;
+        /* margin: 8px 8px 8px 11px; */
+    }
+
+    .number_tag_responsive {
+        margin-top: 5px;
+        align-items: center;
+        font-family: "Oxygen";
+        font-weight: 700;
+        font-size: 16px;
+        color: white;
+        display: flex;
+    }
+
+    .linkBtnResponsiveDiv {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .linkDeviceBtnResponsive {
+        width: 116px;
+        height: 32px;
+        border-radius: 7px;
+        background: #AF38D6;
+        border: none;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        color: #FFF;
+        font-family: "Oxygen";
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+
+    .linkDeviceBtnResponsive:hover {
+        background: #AF38D6 !important;
+    }
+
+    .linkDeviceBtnResponsive :active {
+        background: #AF38D6 !important;
+    }
+
+    .profileNameValueResponsive {
+        /* background-color: #603ff0; */
+        margin-left: 23px;
+        width: 210px;
+        height: 35px;
+        color: white;
+        display: flex;
+        border: 1px solid #AF38D6;
+        border-radius: 5px;
+        /* padding: 8px 8px 10px 10px; */
+        margin-bottom: 31px;
+    }
+
+    .deviceNumber {
+        margin-right: 0;
+    }
+
+    .deviceNumber_resp {
+        padding-left: 30px;
+        padding-bottom: 42px;
+    }
+
+    .image_div {
+        margin-right: 12px;
+    }
+
+    .multiple_cards {
+        align-items: center;
+    }
+
+    /* .dot_img {
+        margin-top: -56px;
+    } */
+
+    .card_div {
+        border-radius: 30px;
+    }
+}
+
+@media screen and (min-width:564px) {
+    .profileContentResponsive {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width:565px) {
+    .profileInformationDiv {
+        display: none;
+    }
+
+    .createProfileHeadingResp {
+        color: #CBCBCB;
+        font-family: "Oxygen";
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        padding-bottom: 5px;
+    }
+
+    .profileContentResponsive {
+        padding-left: 27px;
+        margin-top: 5vh;
+    }
+
+    .welcomeContent {
+        color: #FFF;
+        font-family: "Oxygen";
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+    }
+
+    .userNameRes {
+        color: #FFF;
+        font-family: "Oxygen";
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-bottom: 7px;
+    }
+
+    .contentRes {
+        color: #FFF;
+        font-family: "Oxygen";
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin-bottom: 20px;
+    }
+
+    .contentRes span {
+        font-weight: 700;
+
+    }
+
+    .profileBtnRes {
+        margin-bottom: 43px;
+    }
+
+    .profBtn {
+        border-radius: 7px;
+        background: #AF38D6;
+        width: 116px;
+        height: 32px;
+        color: #FFF;
+        font-family: "Oxygen";
+        font-size: 10px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        border: none;
+    }
+
+    .profBtn:active {
+        background: #AF38D6 !important;
+        border: none;
+
+    }
+
+    .profBtn:hover {
+        background: #AF38D6;
+        border: none;
+
+    }
+
+}
+
+@media screen and (min-width: 501px) {
+    .userName_reponsive {
+        display: none;
+    }
+
+
+}
+
+@media screen and (max-width: 500px) {
+    .barDivide_text>div {
+        margin: 0 auto;
+        width: 290px;
+    }
+
+    .userName {
+        display: none;
+    }
+
+    .userName_reponsive {
+        font-family: "Oxygen", sans-serif;
+        font-weight: 700;
+        font-size: 32px;
+        color: white;
+        padding-top: 0px;
+        display: block;
+    }
+
+    .bubblBanner {
+        background-position-y: bottom;
+        height: 120vh;
+        background-position: bottom 0px right -70px;
+    }
+}
+
+@media screen and (min-width: 431px) {
+
+    .workflow_responsive,
+    .Wflow_responsive {
+        display: none;
+    }
+
+    .carousel_responsive {
+        display: none;
+    }
+
+    .carousel_bg {
+        display: none;
+    }
+
+    .logo_hamburger,
+    .hamburger_footer,
+    .hamburger_line {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .bubblBanner {
+        height: 125vh;
+        background-position: bottom 0px right -95px;
+    }
+
+    .userParaOne {
+        padding-top: 10px;
+        max-width: 340px;
+    }
+
+    .workingword_align {
+        width: 100%;
+        margin-top: -10px;
+    }
+
+    .worknumber_align {
+        padding-top: 30px;
+    }
+
+    .number_section {
+        flex-direction: column;
+        margin-top: -80px;
+    }
+
+    .workflow,
+    .Wflow {
+        display: none;
+    }
+
+    .workflow_responsive_section {
+        display: flex;
+        justify-content: center;
+        margin-top: 80px;
+    }
+
+    .Wflow_responsive {
+        flex-direction: column;
+        margin-right: 40px;
+        margin-left: -24px;
+    }
+
+    .fourModes {
+        display: none;
+    }
+
+    .create_profile_header {
+        font-size: 30px;
+        margin-top: 120px;
+    }
+
+    .upgrade {
+        font-size: 26px;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .bubblBanner {
+        height: 115vh;
+        background-position: bottom 0px right -117px;
+    }
+
+    .bannerBanner {
+        display: flex;
+        padding-top: 100px;
+    }
+
+    .logo {
+        margin-top: 0px;
+    }
+}
+
+.mode__resp {
+    display: none;
+}
+
+/* Mobile responsive Background color */
+@media screen and (max-width: 500px) {
+    .card_header {
+        box-shadow: 0px 0px 0px #ffffff;
+        border-color: transparent;
+    }
+
+    .thirdcard {
+        width: 299px;
+        margin-top: 0px;
+    }
+
+    .buyPlanTwo {
+        margin-top: 55px;
+    }
+
+    .multiple_cards {
+        padding: 40px 0px 5px 0px;
+    }
+
+    .banner_imag {
+        padding-top: 20px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .mode__resp {
+        display: block;
+    }
+
+    .card_header {
+        gap: 10px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+    }
+
+    .cards_resp {
+        background-color: white;
+    }
+
+    .bubblfree {
+        font-size: 19px;
+    }
+
+    .mode {
+        display: none;
+    }
+
+    .breadCrumbs {
+        display: none;
+    }
+}
+
+.mode__resp {
+    margin-top: 22px;
+}
+
+.gap {
+    margin-top: 22px;
+}
+
+@media screen and (max-width: 1400px) {
+    .buyPlanTwo {
+        bottom: 75px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .buyPlanTwo {
+        bottom: 18px;
+    }
+}
+
+@media screen and (max-width: 1025px) {
+    .buyPlanTwo {
+        bottom: 63px;
+    }
+}
+
+@media screen and (max-width:992px) {
+    .buyPlanTwo {
+        text-align: center;
+        bottom: 0;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        width: initial;
+        padding: 0 30px;
+        margin-top: 40px;
+        margin-bottom: 20px;
+    }
+}

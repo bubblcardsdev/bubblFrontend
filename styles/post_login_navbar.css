@@ -1,0 +1,29 @@
+.navbar-expand-lg .navbar-nav .dropdown-menu {
+  min-width: 100%;
+}
+.navbar-expand-lg .navbar-nav {
+  align-items: center;
+}
+.navbar-brand {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.navbar-toggler {
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: inherit;
+  padding-left: 0px;
+}
+.navbar-toggler:focus {
+  box-shadow: 0 0 0;
+}
+.navbar-toggler:hover {
+  margin-top: 1px;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar-brand {
+    margin-top: 7px;
+  }
+}

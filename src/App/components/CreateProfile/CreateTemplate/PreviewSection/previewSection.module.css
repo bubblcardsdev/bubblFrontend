@@ -1,0 +1,93 @@
+/* The screen (or content) of the device */
+
+.smartphone {
+  position: relative;
+  width: 320px;
+  aspect-ratio: 0.5;
+  height: 600px;
+  margin: 0 auto;
+  overflow: scroll;
+  border-radius: 40px;
+  margin-top: 50px;
+  box-shadow: 0px 0px 0px 11px black, 0px 0px 0px 13px black,
+    0px 0px 0px 15px black;
+  background: black;
+}
+
+.smartphone:before,
+.smartphone:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.smartphone:after {
+  bottom: 7px;
+  top: 0px;
+  width: 50%;
+  height: 18px;
+  background-color: #1f1f1f;
+  border-radius: 0 0 14px 14px;
+  z-index: 10000;
+}
+
+.smartphone_camera,
+.smartphone_speaker {
+  position: absolute;
+  display: block;
+  color: transparent;
+}
+
+.smartphone_speaker {
+  top: 0px;
+  left: 48%;
+  transform: translate(-50%, 6px);
+  height: 8px;
+  width: 15%;
+  background-color: #101010;
+  border-radius: 8px;
+  box-shadow: inset 0px -3px 3px 0px rgba(256, 256, 256, 0.2);
+  z-index: 100;
+}
+
+.smartphone_camera {
+  left: 6%;
+  top: 0px;
+  transform: translate(180px, 4px);
+  width: 12px;
+  height: 12px;
+  background-color: #101010;
+  border-radius: 12px;
+  box-shadow: inset 0px -3px 2px 0px rgba(256, 256, 256, 0.2);
+  z-index: 100;
+}
+
+.smartphone_camera:after {
+  content: "";
+  position: absolute;
+  background-color: #2d4d76;
+  width: 6px;
+  height: 6px;
+  top: 2px;
+  left: 0px;
+  top: 3px;
+  left: 3px;
+  display: block;
+  border-radius: 4px;
+}
+
+
+@media screen and (max-width: 768px) {
+  .smartphone {
+    margin-top: 40px;
+    margin-bottom: 50px;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .image_head {
+    display: none;
+  }
+}

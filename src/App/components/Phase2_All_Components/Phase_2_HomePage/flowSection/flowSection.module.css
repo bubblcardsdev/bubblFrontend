@@ -1,0 +1,203 @@
+.flowHeading {
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1rem, -0.3333rem + 2.3704vw, 1.8rem);
+    width: 15.4vw;
+    color: #f8f8f8;
+    margin-top: 16px;
+    line-height: normal;
+    /* margin-bottom: 17px; */
+}
+
+.headerContainer {
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    margin-bottom: 8vh;
+}
+
+.contentContainer {
+    font-size: clamp(1.625rem, 1.4519rem + 0.8654vw, 2.75rem);
+    color: #f8f8f8;
+    font-weight: 700;
+    text-align: center;
+    font-family: "Source Sans Pro", sans-serif;
+}
+
+.secondflowHeading {
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1rem, -0.3333rem + 2.3704vw, 1.8rem);
+    width: 13.4vw;
+    color: #f8f8f8;
+    margin-top: 16px;
+    line-height: normal;
+}
+
+.flowContent {
+    font-family: "Oxygen";
+    font-weight: 300;
+    font-size: clamp(0.75rem, 0.3333rem + 0.7407vw, 1rem);
+    width: 20.4vw;
+    color: #f8f8f8;
+    margin-bottom: 21px;
+    margin-top: 1.5vh;
+}
+
+.line {
+    border-top: 1px solid #e04ff2;
+    width: 250px;
+    padding-bottom: 10px;
+    margin-top: 22px;
+}
+
+.flowSectionContainer {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.cardHeading {
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 22px;
+    text-align: left;
+    color: #020202;
+    padding-bottom: 20px;
+    padding-left: 20px;
+}
+
+.bubblNumberDiv {
+    display: flex;
+}
+
+.numberDiv {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2vw;
+    font-weight: bold;
+    border: 1px solid white;
+    color: white;
+    margin-top: 32px;
+    margin-left: -54px;
+    margin-right: 15px;
+
+
+}
+
+@media screen and (min-width:991px) {
+    .responsiveContainer {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 992px) {
+    .flowSectionContainer {
+        display: none;
+    }
+
+    .ChooseHeading {
+        margin-bottom: 12px;
+        color: white;
+        font-size: 22px;
+        font-weight: 700;
+        text-align: center;
+        font-family: "Source Sans Pro", sans-serif;
+    }
+
+    .lineDiv {
+
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    .lineResponsive {
+        border: 1px solid #E04FF2;
+        width: 271px;
+        text-align: center;
+    }
+
+    .videCenterDiv {
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .videoDes {
+        width: 80%;
+        color: white;
+        text-align: center;
+        font-size: 14px;
+        font-family: "Oxygen", sans-serif;
+        font-weight: 400;
+    }
+
+    .roundCircle {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        border: 1px solid #ffffff;
+        color: #fff;
+        text-align: center;
+        line-height: 30px;
+    }
+
+    /* .flowHeading,
+    .flowContent,
+    .line {
+        width: auto;
+    } */
+}
+
+@media screen and (min-width: 1600px) {
+
+    .secondflowHeading,
+    .flowHeading {
+        width: 8vw;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .flowContent {
+        font-size: 12px;
+    }
+
+    .flowHeading,
+    .secondflowHeading,
+    .flowContent {
+        width: 100%;
+        line-height: normal;
+    }
+
+    .line {
+        width: 100%;
+    }
+
+    .videoDes {
+        width: 80%;
+        color: white;
+        text-align: center;
+        font-size: 14px;
+        font-family: "Oxygen", sans-serif;
+        font-weight: 400;
+        margin-bottom: 45px;
+    }
+
+    .roundCircle {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        border: 1px solid #ffffff;
+        color: #fff;
+        text-align: center;
+        line-height: 30px;
+    }
+
+}

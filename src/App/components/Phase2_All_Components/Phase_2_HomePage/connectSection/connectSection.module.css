@@ -1,0 +1,219 @@
+.connectContainer {
+    display: flex;
+    /* gap: 7.7vw; */
+}
+
+.videoStyle {
+    width: 32vw;
+    margin-top: -210px;
+}
+
+.connectTag {
+    width: 100%;
+    margin-top: -10vh;
+}
+
+.connectTag h1 {
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.375rem, -1.3333rem + 5.4vw, 6rem);
+    color: transparent;
+    background: linear-gradient(90deg, #7F2EE3 0%, #4246F7 81.68%);
+    background-clip: text;
+    margin-left: -8px;
+
+}
+
+.businessCard {
+    color: #F5F5F7;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.25rem, -0.3463rem + 3.6486vw, 2.9375rem);
+}
+
+.businessTag {
+    margin-top: 20px;
+}
+
+.businessTag p {
+    color: #FFFFFF;
+    font-family: "Oxygen", sans-serif;
+    font-family: 300;
+    font-size: clamp(1.125rem, 0.9839rem + 0.3226vw, 1.5rem);
+}
+
+.buttonShop {
+    background: linear-gradient(to right,
+            rgba(129, 45, 226),
+            rgba(58, 73, 249));
+    border-radius: 86.5px;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 700;
+    font-size: clamp(0.625rem, 0rem + 1.1111vw, 1rem);
+    color: #ffffff;
+    display: flex;
+    gap: 1vw;
+    justify-content: center;
+    align-items: center;
+    margin-top: 42px;
+    border-color: transparent;
+    width: 193px;
+    height: 50px;
+}
+
+.buttonShop p {
+    margin-bottom: 0px;
+}
+
+
+@media screen and (min-width:1025px) {
+
+    .responsiveContainer {
+        display: none;
+    }
+
+
+
+
+
+}
+
+@media screen and (max-width:1024px) {
+    .connectContainer {
+        display: none;
+    }
+
+    .videoResDiv {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        margin-top: 31px;
+    }
+
+    .videoResponsive {
+        width: 336px;
+        height: 357px;
+    }
+
+}
+
+@media screen and (max-width:1024px) {
+    .responsiveContainer {
+        /* padding-left: 20px; */
+        /* padding-right: 20px; */
+
+    }
+
+    .responsiveConnectSec {
+        display: flex;
+        justify-content: center;
+    }
+
+    .responsiveConnectContainer h1 {
+        font-family: "Source Sans Pro", sans-serif;
+        font-weight: 700;
+        font-size: 48px;
+        background-image: linear-gradient(to left,
+                rgba(66, 70, 247),
+                rgba(127, 46, 227));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+
+    .responsiveConnectContainer p {
+        color: #F5F5F7;
+        font-family: "Oxygen", sans-serif;
+        font-weight: 300;
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .responsiveHead {
+        margin-top: 31px;
+        color: white;
+        font-size: 20px;
+        text-align: center;
+        font-family: "Oxygen", sans-serif;
+        font-weight: 400;
+    }
+
+    .buttonResDiv {
+        display: flex;
+        justify-content: center;
+        margin-top: 28px;
+
+    }
+
+    .buttonShopRes {
+        background: linear-gradient(to right,
+                rgba(129, 45, 226),
+                rgba(58, 73, 249));
+        border-radius: 86.5px;
+        font-family: "Oxygen", sans-serif;
+        font-weight: 700;
+        font-size: 12px;
+        color: #ffffff;
+        display: flex;
+        gap: 17px;
+        justify-content: center;
+        align-items: center;
+        border-color: transparent;
+        width: 168px;
+        height: 44px;
+    }
+}
+
+@media screen and (max-width:506px) {
+    .responsiveConnectContainer h1 {
+        font-size: 32px;
+    }
+
+    .responsiveConnectContainer p {
+        font-size: 24px;
+    }
+
+    .videoResponsive {
+        width: 260px;
+        height: 336px;
+    }
+
+    .responsiveHead {
+        font-size: 14px;
+        width: 85%;
+        margin: 0% auto;
+    }
+
+    .connectTag h1 {
+        width: 30%;
+    }
+}
+
+
+@media screen and (max-width:426px) {
+    .responsiveConnectContainer h1 {
+        font-size: 38px;
+    }
+
+    .responsiveConnectContainer p {
+        font-size: 24px;
+    }
+
+    .responsiveHead {
+        font-size: 14px;
+    }
+
+}
+
+
+@media screen and (max-width:417px) {
+    .responsiveConnectContainer h1 {
+        font-size: 32px;
+    }
+
+    .responsiveConnectContainer p {
+        font-size: 20px;
+    }
+
+
+}

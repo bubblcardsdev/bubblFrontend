@@ -1,0 +1,889 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Oxygen&family=Poppins:wght@700&family=Readex+Pro:wght@400;500;700&display=swap');
+
+.FreeTemplateOneLite {
+    max-width: 400px;
+    background: linear-gradient(180deg, #FFF 0%, #E9E9E9 100%);
+    min-height: 100vh;
+}
+
+/* Template Banner */
+.BannerImg {
+    background-color: rgb(144, 0, 255);
+    height: 173px;
+    border-bottom-right-radius: 500px;
+    margin-bottom: 100px;
+}
+
+/* User Image and B Icon */
+.UserImg {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    position: relative;
+}
+
+.ProfileImg img {
+    height: 200px !important;
+    width: 200px !important;
+    border-radius: 50% !important;
+}
+
+.userProfileEdit {
+    background-color: rgb(144, 0, 255);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 30px;
+    display: flex;
+    margin-left: 160px;
+    cursor: pointer;
+}
+
+.userProfileEdit img {
+    width: 18px !important;
+}
+
+.B_Img {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.B_Img img {
+    padding-top: 20px !important;
+    padding-right: 30px !important;
+    visibility: hidden;
+}
+
+/* Total Padding for box */
+.templateOutline {
+    padding: 25px 40px 35px 40px;
+}
+
+.templateActions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Save Contact */
+.templateSaveContact a,
+.templateSaveContact a:hover,
+.templateSaveContact a:active {
+    background-color: rgb(144, 0, 255);
+    border: rgb(144, 0, 255);
+    border-radius: 5px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 14px;
+    width: 152px;
+    height: 41px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+}
+
+/* Share and Qr */
+.Share_Qr {
+    display: flex;
+    gap: 18px;
+    padding-top: 10px;
+}
+
+.Share {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: rgb(144, 0, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+}
+
+.Qr {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: rgb(144, 0, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.SaveLogo {
+    background-color: #AB39D2 !important;
+    border: 1px solid #AB39D2 !important;
+    color: white !important;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    width: 100%;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.LogoUploadInput {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    flex-direction: column;
+}
+
+.errorMsg {
+    display: flex;
+    justify-content: center;
+    padding-top: 5px;
+    padding-bottom: 20px;
+}
+
+.LogoUploadInput input {
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+
+.CropBody {
+    padding: 30px;
+    background-color: #1E1D24;
+    border-radius: 20px;
+}
+
+.CropBodyHeader {
+    padding: 0;
+    padding-bottom: 20px;
+}
+
+.ImageCrop {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 18px;
+    color: #AB39D2;
+    /* margin-top: 20px; */
+}
+
+.CustomCloseButton {
+    cursor: pointer;
+}
+
+
+
+/* Logo Upload */
+.LogoBrand {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-color: #E6E6E6;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.qrImgLogo {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    width: 60%;
+}
+
+.qrImg {
+    /* width: 100px; */
+    height: auto;
+}
+
+.QrEdit {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 5px;
+    margin-left: 70px;
+    background-color: rgb(144, 0, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* User Details Header */
+
+.templateUserDetails {
+    padding-top: 24px;
+}
+
+.templateUserDetails h2 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 16px;
+    color: #4F4F4F;
+}
+
+.templateUserDetails h3 {
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    color: #4F4F4F;
+}
+
+.templateUserDetails p {
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    color: #2D2D2D;
+    /* width: 280px; */
+    overflow: hidden;
+    word-break: break-word;
+}
+
+.FirstName {
+    overflow-wrap: anywhere;
+}
+
+.FirstName,
+.RoleName {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    padding-bottom: 8px;
+}
+
+.Description {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.Description p {
+    width: 280px;
+}
+
+.FirstName img,
+.RoleName img,
+.Description img {
+    cursor: pointer;
+    display: flex;
+}
+
+.FirstNameEdit,
+.RoleNameEdit,
+.DesEdit {
+    margin-bottom: 5px;
+}
+
+.FirstNameEdit input {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 18px;
+    color: #4F4F4F;
+    /* overflow: hidden;
+    max-width: 30ch;
+    text-overflow: ellipsis; */
+
+}
+
+.PencilEdit {
+    display: flex;
+    vertical-align: center;
+    cursor: pointer;
+}
+
+.input_line,
+.input_line:focus-visible {
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+    background-color: transparent;
+    width: 270px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    padding-left: 0;
+    resize: none;
+}
+
+
+
+.error {
+    color: red;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 12px;
+}
+
+/* Common for Contact and Social information */
+
+.ContactInformation {
+    padding-top: 20px;
+}
+
+
+.PaymentInformation h2 {
+    color: #4F4F4F;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 18px;
+    padding-bottom: 25px;
+}
+
+.ContactInformation h2 {
+    color: #4F4F4F;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 18px;
+    padding-bottom: 25px;
+}
+
+.SocialInformation h2 {
+    color: #4F4F4F;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 18px;
+}
+
+.ContactInformationDetails>div,
+.SocialInformationDetails>a {
+    margin-bottom: 14px;
+}
+
+.ContactAction,
+.SocialAction {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+/* Contact  Information */
+.Left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 50px;
+    background-color: #FFFFFF;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.Middle {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 8px;
+    background-color: #FFFFFF;
+    width: 100%;
+    height: 50px;
+
+}
+
+.Right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(144, 0, 255);
+    width: 60px;
+    height: 50px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    cursor: pointer;
+}
+
+.ContactInformationDetails p {
+    color: #0B0B0B;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 14px;
+    overflow: hidden;
+    max-width: 22ch;
+    text-overflow: ellipsis;
+}
+
+.CommonHead {
+    margin-bottom: 20px;
+}
+
+.CommonSecView {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-top: 20px;
+    cursor: pointer;
+}
+
+.CommonSecView h3 {
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.CommonSecViewLocation {
+    padding-top: 10px;
+    cursor: pointer;
+}
+
+.CommonSecViewLocation h3 {
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 16px;
+    text-decoration: none;
+    padding-bottom: 10px;
+}
+
+.CommonSecViewLocation p {
+    color: white;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    text-decoration: none;
+    padding-bottom: 25px;
+}
+
+.IconsCall {
+    display: flex;
+    vertical-align: center;
+}
+
+.ContactEdit {
+    display: flex;
+    align-items: center;
+    padding-bottom: 25px;
+    gap: 10px;
+}
+
+.ContactEditImg {
+    display: flex;
+    vertical-align: center;
+    cursor: pointer;
+}
+
+/* Social Information */
+
+.SocialInformation {
+    padding-top: 20px;
+}
+
+.SocialLeft {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 50px;
+    background-color: #FFFFFF;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.SocialMiddle {
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 8px;
+    background-color: #FFFFFF;
+    width: 100%;
+    height: 50px;
+    flex-direction: column;
+    padding: 5px 0 0px 0;
+}
+
+.SocialRight {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(144, 0, 255);
+    width: 60px;
+    height: 50px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.SocialInformationDetails p {
+    color: #0B0B0B;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 14px;
+
+}
+
+.SocialInformationDetails span {
+    color: #0B0B0B;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 12px;
+    overflow: hidden;
+    max-width: 30ch;
+    text-overflow: ellipsis;
+    height: 20px;
+}
+
+.SocialEdit {
+    display: flex;
+    align-items: center;
+    padding-bottom: 25px;
+    gap: 10px;
+}
+
+.SocialEditImg {
+    display: flex;
+    vertical-align: center;
+    cursor: pointer;
+}
+
+.SocialHeader {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 30px;
+}
+
+.step2Details {
+    background-color: #1E1D24 !important;
+    padding: 50px 40px 30px 40px;
+}
+
+.step2DetailsView {
+    background-color: #1E1D24 !important;
+    padding: 50px 40px 20px 40px;
+}
+
+.step2DetailsView h2 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 22px;
+    color: white;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.step2Details h2 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 18px;
+    color: white;
+    margin-bottom: 11px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.step2Details p {
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 12px;
+    color: white;
+}
+
+.line {
+    content: "";
+    width: -webkit-fill-available;
+    height: 1px;
+    border: 1px solid #9B9B9B;
+    position: absolute;
+    margin-right: 30px;
+    margin-bottom: 30px;
+}
+
+.line_View {
+    content: "";
+    width: -webkit-fill-available;
+    height: 1px;
+    border: 1px solid #9B9B9B;
+    position: absolute;
+    margin-right: 30px;
+}
+
+.checked_box h3 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 14px;
+    color: white;
+    padding-top: 15px;
+    padding-bottom: 5px;
+}
+
+.checkToggle {
+    height: 16px;
+}
+
+.ModalClose,
+.ModalClose:hover,
+.ModalClose:active {
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    color: white;
+    text-transform: capitalize;
+    background-color: transparent !important;
+    border: transparent;
+}
+
+.ModalSave,
+.ModalSave:hover {
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    color: white;
+    text-transform: capitalize;
+    background-color: #AB39D2 !important;
+    border-radius: 5px;
+    width: 136px;
+    height: 40px;
+    border: transparent;
+
+}
+
+.ActionModal_Social {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    text-align: center;
+    gap: 35px;
+    padding-top: 40px;
+    padding-bottom: 30px;
+}
+
+.SocailSec {
+    margin-top: 30px;
+}
+
+.placeholder_head {
+    color: white;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    width: 75px;
+}
+
+
+.placeholder_text input,
+.placeholder_text input:focus {
+    background-color: white;
+    color: black;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+}
+
+.placeholder_text input::placeholder {
+    color: #B9B9B9;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.placeholder_text_msg textarea,
+.placeholder_text_msg textarea:focus {
+    background-color: white;
+    color: black;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.placeholder_text_msg textarea::placeholder {
+    color: #B9B9B9;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+/* Payment */
+
+.PaymentInformation {
+    padding-top: 20px;
+}
+
+.PaymentInformationDetails {
+    display: flex;
+    gap: 12px;
+}
+
+.PaymentBg {
+    background-color: #F4F4F4;
+    width: 55px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.PaymentInformationHead {
+    display: flex;
+    gap: 12px;
+}
+
+.DigitalEditImg {
+    cursor: pointer;
+}
+
+.DigitalEditImg img {
+    display: flex;
+    vertical-align: center;
+    cursor: pointer;
+}
+
+/* Footer Pro Banner */
+
+/* .SubscribePro {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    gap: 30px;
+    margin-top: 35px;
+}
+
+.SubscribePro {
+    background-color: white;
+    height: 120px;
+    display: flex;
+    padding-bottom: 40px;
+}
+
+.SubscribePro h2 {
+    color: #0B0B0B;
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.BubblText {
+    color: #0B0B0B;
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.ProText {
+    color: #DB973E;
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.SubscribeText {
+    margin-top: 40px;
+} */
+
+
+
+/* Footer */
+.TemplateFooter {
+    margin-top: 35px;
+    text-align: center;
+    border-top: 1px solid black;
+    padding-top: 15px;
+}
+
+.TemplateFooter p {
+    color: #0B0B0B;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    padding: 14px 0 0px 0;
+}
+
+.TemplateFooter h3 {
+    color: #0B0B0B;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 13px;
+}
+
+.SubscribeText a {
+    width: 113px;
+    height: 37px;
+    border-radius: 6px;
+    background: linear-gradient(96deg, #11427D 3.06%, #663EF7 100%);
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    border: none;
+    margin-top: 15px;
+}
+
+@media screen and (max-width: 500px) {
+    .templateOutline {
+        padding: 10px 20px 35px 20px;
+    }
+
+    .FreeTemplateOneLite {
+        width: 100%;
+    }
+
+    .UserImg {
+        padding-top: 0px;
+    }
+
+    .ProfileImg img {
+        width: 210px !important;
+        height: 210px !important;
+    }
+
+    .userProfileEdit {
+        margin-left: 165px;
+    }
+
+    .ContactInformationDetails p {
+        overflow: hidden;
+        max-width: 19ch;
+        text-overflow: ellipsis;
+    }
+
+    .SocialInformationDetails span {
+        overflow: hidden;
+        max-width: 25ch;
+        text-overflow: ellipsis;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .LogoUploadInput input {
+        width: 280px;
+    }
+}

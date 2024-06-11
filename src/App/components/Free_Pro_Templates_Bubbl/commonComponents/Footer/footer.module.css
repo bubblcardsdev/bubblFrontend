@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
+
+.black_bg {
+  height: 51px;
+  max-width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.black_bg p {
+  color: white;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 100%;
+  text-align: center;
+}

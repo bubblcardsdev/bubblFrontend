@@ -1,0 +1,124 @@
+.clientContainer h1 {
+    font-size: clamp(1.625rem, 1.4519rem + 0.8654vw, 2.75rem);
+    color: #f8f8f8;
+    font-weight: 700;
+    text-align: center;
+    font-family: "Source Sans Pro", sans-serif;
+    padding-bottom: 5vh;
+    padding-right: 1.5vw;
+}
+
+.imageGap {
+    display: flex;
+    gap: 4vw;
+    margin: 0 auto;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.imageDiv {
+    padding: 7px;
+    /* border: 1px solid red; */
+    /* border-radius: 10px !important; */
+    /* border: 1px solid;
+    padding: 7px; */
+    /* border-image: linear-gradient(to top,
+            rgba(193, 179, 231, 0.25),
+            rgba(203, 186, 233, 0.05));
+    border-image-slice: 1; */
+    font-size: 14px;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 500;
+    color: white;
+    align-items: center;
+    display: flex;
+    /* background-color: red; */
+
+}
+
+@media screen and (min-width:1025px) {
+    .imageGapResponsive {
+        display: none;
+    }
+
+    .imageDivLastDiv {
+        display: none;
+    }
+
+
+}
+
+@media screen and (max-width:1024px) {
+    .imageGap {
+        display: none;
+    }
+
+    .imageGapResponsive {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 30px 0;
+    }
+
+    .clientContainer h1 {
+        margin-bottom: 20px;
+    }
+
+    .imageDiv {
+        margin-left: 20px;
+        width: 111px;
+
+    }
+
+
+    .imageDivLastDiv {
+        display: flex;
+        justify-content: center;
+        margin-top: 14px;
+    }
+
+    .imageDivLast {
+        display: flex;
+        align-items: center;
+        padding: 7px;
+        /* border: 1px solid red; */
+        border-radius: 10px !important;
+        /* border: 1px solid; */
+        padding: 5px;
+        /* width: 80%; */
+        /* border-image: linear-gradient(to top,
+                rgba(193, 179, 231, 0.25),
+                rgba(203, 186, 233, 0.05)); */
+        align-items: center;
+        justify-content: center;
+        border-image-slice: 1;
+        font-size: 14px;
+        font-family: "Oxygen", sans-serif;
+        font-weight: 500;
+        color: white;
+        background: linear-gradient(109deg, rgba(203, 186, 233, 0.05) -30.58%, rgba(193, 179, 231, 0.25) 71.18%);
+        ;
+        width: 25vw;
+
+    }
+
+
+    @media screen and (max-width: 600px) {
+        .imageDiv {
+            margin-left: 0px;
+            /* margin-top: 1vh; */
+        }
+
+        /* .imageGap {
+            display: none;
+        } */
+
+        .clientContainer h1 {
+            font-size: 30px;
+            margin-bottom: 4vh;
+        }
+
+    }
+
+
+}
