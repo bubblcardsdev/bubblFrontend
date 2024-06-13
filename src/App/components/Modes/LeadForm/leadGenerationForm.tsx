@@ -183,30 +183,22 @@ function LeadGenerationForm({ show, firstName, designation, deviceId }: any) {
                 <p className={styles.nameDiv}>Phone</p>
 
                 <div className={styles.urlLinkDiv}>
-                  <PhoneInput
-                    country="in"
-                    placeholder="Enter your mobile number"
-                    countryCodeEditable
-                    enableSearch
-                    onChange={(value, country) => {
-                      assignNumber(value, country as CountryData);
-                      setErrorMessage("");
-                    }}
-                    inputProps={{
-                      required: true,
-                      autoFocus: true,
-                      style: {
-                        color: "#000000", // Ensure text remains black
-                      },
-                    }}
-                    containerStyle={{
-                      width: "100%",
-                    }}
-                    inputStyle={{
-                      width: "100%",
-                      color: "#FFFFFF", // Ensure text remains black
-                    }}
-                  />
+                  <div className={styles.urlLinkDivCustom}>
+                    <PhoneInput
+                      country="in"
+                      placeholder="Enter your mobile number"
+                      countryCodeEditable
+                      enableSearch
+                      onChange={(value, country) => {
+                        assignNumber(value, country as CountryData);
+                        setErrorMessage("");
+                      }}
+                      inputProps={{
+                        required: true,
+                        autoFocus: true,
+                      }}
+                    />
+                  </div>
                 </div>
               </div>
             </div>

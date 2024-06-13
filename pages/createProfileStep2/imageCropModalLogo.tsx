@@ -10,7 +10,7 @@ import { Button, Col } from "react-bootstrap";
 import ReactCrop, { Crop } from "react-image-crop";
 import ButtonComp from "src/App/components/ui/CommonButtons/_commonbuttons";
 
-import styles from "./imageCrop.module.css";
+import styles from "./imageCropLogo.module.css";
 
 const loadingStates = {
   uploading: "uploading",
@@ -19,14 +19,11 @@ const loadingStates = {
 
 type CropSectionT = {
   // eslint-disable-next-line no-unused-vars
-  onSave: (_args: {
-    squareImgBlob: Blob;
-    rectangleImgBlob: Blob;
-  }) => Promise<void>;
+  onSave: (squareImgBlob: Blob) => Promise<void>;
   onSavedSuccess: any;
 };
 
-function CropSection({ onSave, onSavedSuccess }: CropSectionT) {
+function CropSectionLogo({ onSave, onSavedSuccess }: CropSectionT) {
   const [src, setSrc] = useState("");
   const [crop, setCrop] = useState<Crop>({
     unit: "%",
@@ -165,7 +162,7 @@ function CropSection({ onSave, onSavedSuccess }: CropSectionT) {
     }
   };
   const handleButtonClick = () => {
-    document.getElementById("fileInput")?.click();
+    document.getElementById("logoImgInput")?.click();
   };
   const onCropComplete = (selectedCrop: Crop) => {
     makeClientCrop(selectedCrop);
@@ -177,10 +174,7 @@ function CropSection({ onSave, onSavedSuccess }: CropSectionT) {
   const onSaveImage = () => {
     if (squareImgBlob && rectangleImgBlob) {
       setUploadingState(loadingStates.uploading);
-      onSave({
-        squareImgBlob,
-        rectangleImgBlob,
-      })
+      onSave(squareImgBlob)
         .then(() => {
           setUploadingState(loadingStates.completed);
           onSavedSuccess();
@@ -196,7 +190,7 @@ function CropSection({ onSave, onSavedSuccess }: CropSectionT) {
         {/* <input type="file" accept="image/*" onChange={onSelectFile} /> */}
         <div className={styles.DragDrop} onClick={handleButtonClick}>
           <label
-            htmlFor="fileInput"
+            htmlFor="logoImgInput"
             style={{
               width: "100%",
               height: "100%",
@@ -208,7 +202,7 @@ function CropSection({ onSave, onSavedSuccess }: CropSectionT) {
           <Button className={styles.UploadButton}>Click to Upload</Button>
           <input
             type="file"
-            id="fileInput"
+            id="logoImgInput"
             accept="image/*"
             onChange={onSelectFile}
             style={{ display: "none" }}
@@ -244,18 +238,6 @@ function CropSection({ onSave, onSavedSuccess }: CropSectionT) {
             </>
           )}
         </div>
-        {/* <div className={styles.title}>
-          {rectangleImgBlob && (
-            <>
-              <h6>Vertical Image</h6>
-              <img
-                alt="Crop"
-                style={{ width: "100%" }}
-                src={URL.createObjectURL(rectangleImgBlob)}
-              />
-            </>
-          )}
-        </div> */}
       </div>
 
       <Col xl={12} className={styles.savebtn_upload}>
@@ -270,4 +252,4 @@ function CropSection({ onSave, onSavedSuccess }: CropSectionT) {
   );
 }
 
-export default CropSection;
+export default CropSectionLogo;

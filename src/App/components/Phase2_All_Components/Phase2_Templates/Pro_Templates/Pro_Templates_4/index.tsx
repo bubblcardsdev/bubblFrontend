@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 /* eslint-disable no-unused-vars */
 /* eslint-disable jsx-a11y/no-autofocus */
 /* eslint-disable jsx-a11y/anchor-is-valid */
@@ -17,12 +18,17 @@ import Form from "react-bootstrap/Form";
 import { toast, ToastContainer } from "react-toastify";
 import SaveVCFContact from "src/App/helpers/saveContactHelper";
 import { IDeviceBranding } from "src/App/services/createProfileApi";
+import {
+  getUserPlan,
+  IPlanDetail,
+} from "src/App/services/myPlan/myPlanServices";
 import { PostTapDetails } from "src/App/services/tapApi";
 import { MODAL_TYPES, ModalT } from "types/modal";
 // eslint-disable-next-line no-unused-vars
 import { ProfileActionT, ProfileStateT } from "types/profile";
 
 import CropSection from "@/pages/createProfileStep2/imageCropModal";
+import CropSectionLogo from "@/pages/createProfileStep2/imageCropModalLogo";
 
 import customCloseButtonImage from "../../../../../../../images/Phase_2_All_Assets/comman_assets/close.png";
 import QrModal from "../../Components/QrModal/qrModal";
@@ -130,13 +136,30 @@ export default function ProTemplateFour({
     mediaLinks,
     phoneNumberField,
     websiteField,
+    phoneNumberCount,
+    emailIdFieldCount,
+    websiteFieldCount,
   } = useProfile({ userProfile, userProfileDispatch, getAllProfile });
   const router = useRouter();
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const handleQrClose = () => setQrShow(false);
   const handleQrShow = () => setQrShow(true);
-
+  const [showPfLogo, setShowLogo] = useState(false);
+  const handleCloseLogo = () => setShowLogo(false);
+  const handleShowLogo = () => setShowLogo(true);
+  const [userPlan, setUserPlan] = useState<null | IPlanDetail>(null);
+  useEffect(() => {
+    const userPlanPromise = getUserPlan();
+    if (userPlanPromise) {
+      userPlanPromise
+        .then((res) => res.data)
+        .then((data) => {
+          const { getPlans } = data;
+          setUserPlan(getPlans);
+        });
+    }
+  }, []);
   const handleShareIconClick = () => {
     if (!userName) {
       toast.info("No unique name is configured");
@@ -341,6 +364,32 @@ export default function ProTemplateFour({
           </Modal.Body>
         </div>
       </Modal>
+      {/* Upload Logo Image */}
+      <Modal
+        show={showPfLogo}
+        onHide={handleCloseLogo}
+        backdrop="static"
+        keyboard={false}
+        centered
+      >
+        <div className={styles.CropBody}>
+          <Modal.Header className={styles.CropBodyHeader}>
+            <Modal.Title className={styles.ImageCrop}>Upload Logo</Modal.Title>
+            <Image
+              src={customCloseButtonImage}
+              onClick={handleCloseLogo}
+              alt="Close"
+              className={styles.CustomCloseButton}
+            />
+          </Modal.Header>
+          <Modal.Body className={styles.modalDiv}>
+            <CropSectionLogo
+              onSave={handleQrSave}
+              onSavedSuccess={handleCloseLogo}
+            />
+          </Modal.Body>
+        </div>
+      </Modal>
       {/* Body Starts Here */}
       <section
         className={styles.FreeTemplateFour}
@@ -389,7 +438,7 @@ export default function ProTemplateFour({
                 }
               >
                 <div className={styles.qrImg}>
-                  {qrImage ? (
+                  {userPlan?.planId !== 1 && qrImage ? (
                     <img
                       src={qrImage}
                       alt="Logo"
@@ -404,14 +453,14 @@ export default function ProTemplateFour({
                     />
                   )}
                 </div>
-                {edit ? (
+                {edit && userPlan?.planId !== 1 ? (
                   <div className={styles.QrEdit} style={{ backgroundColor }}>
                     <Image
                       src={ProfileEditIcon}
                       alt="ProfileEditIcon"
                       width={12}
                       height={12}
-                      onClick={handleQrShow}
+                      onClick={handleShowLogo}
                     />
                   </div>
                 ) : (
@@ -777,45 +826,88 @@ export default function ProTemplateFour({
                     >
                       Contact Information
                     </h2>
+                    {/* Phone Number */}
                     {showPhoneNumber ? (
                       <div
                         className={styles.ContactAction}
                         onClick={() => handleClick(4)}
                       >
-                        {/* Phone Number */}
-
                         <div
                           className={styles.ContactActionAll}
                           style={{ backgroundColor }}
                         >
-                          <div className={styles.ContactActionBoth}>
-                            <div className={styles.Left}>
-                              <CallSVG color="white" />
-                            </div>
+                          {getAllProfile?.profilePhoneNumbers?.length > 1 ||
+                          phoneNumberCount > 1 ? (
                             <div
-                              className={styles.Middle}
+                              className={styles.ContactActionBoth}
                               onClick={() =>
-                                setModalType(MODAL_TYPES.mobileNumberEdit)
+                                setModalType(MODAL_TYPES.mobileNumberView)
                               }
                             >
-                              <p
-                                style={{
-                                  ...(mode === "dark" || mode === "light"
-                                    ? { color: "white" }
-                                    : {}),
-                                }}
-                              >
-                                {phoneNumberField &&
-                                phoneNumberField.phoneNumber ? (
-                                  phoneNumberField.phoneNumber
-                                ) : (
-                                  <span style={{ opacity: 0.5 }}>
-                                    Enter your number
-                                  </span>
-                                )}
-                              </p>
+                              <div className={styles.Left}>
+                                <CallSVG color="white" />
+                              </div>
+
+                              <div className={styles.Middle}>
+                                <p
+                                  style={{
+                                    ...(mode === "dark" || mode === "light"
+                                      ? { color: "white" }
+                                      : {}),
+                                  }}
+                                >
+                                  {getAllProfile?.profilePhoneNumbers[0]
+                                    ?.phoneNumber ||
+                                  (phoneNumberField &&
+                                    phoneNumberField.phoneNumber) ? (
+                                    getAllProfile?.profilePhoneNumbers?.[0]
+                                      ?.phoneNumber ||
+                                    phoneNumberField?.phoneNumber
+                                  ) : (
+                                    <span style={{ opacity: 0.5 }}>
+                                      Enter your number
+                                    </span>
+                                  )}
+                                </p>
+                              </div>
                             </div>
-                          </div>
+                          ) : (
+                            <a
+                              className={styles.ContactActionBoth}
+                              href={`tel:${
+                                getAllProfile?.profilePhoneNumbers?.[0]
+                                  ?.phoneNumber || phoneNumberField?.phoneNumber
+                              }`}
+                            >
+                              <div className={styles.Left}>
+                                <CallSVG color="white" />
+                              </div>
+
+                              <div className={styles.Middle}>
+                                <p
+                                  style={{
+                                    ...(mode === "dark" || mode === "light"
+                                      ? { color: "white" }
+                                      : {}),
+                                  }}
+                                >
+                                  {getAllProfile?.profilePhoneNumbers[0]
+                                    ?.phoneNumber ||
+                                  (phoneNumberField &&
+                                    phoneNumberField.phoneNumber) ? (
+                                    getAllProfile?.profilePhoneNumbers?.[0]
+                                      ?.phoneNumber ||
+                                    phoneNumberField?.phoneNumber
+                                  ) : (
+                                    <span style={{ opacity: 0.5 }}>
+                                      Enter your number
+                                    </span>
+                                  )}
+                                </p>
+                              </div>
+                            </a>
+                          )}
+
                           {edit ? (
                             <div
                               className={styles.Right}
@@ -834,7 +926,8 @@ export default function ProTemplateFour({
                                 height={30}
                               />
                             </div>
-                          ) : (
+                          ) : getAllProfile?.profilePhoneNumbers?.length > 1 ||
+                            phoneNumberCount > 1 ? (
                             <div
                               className={styles.Right}
                               onClick={() =>
@@ -849,6 +942,22 @@ export default function ProTemplateFour({
                                 color={mode === "dark" ? "white" : "white"}
                               />
                             </div>
+                          ) : (
+                            <a
+                              className={styles.Right}
+                              href={`tel:${
+                                getAllProfile?.profilePhoneNumbers?.[0]
+                                  ?.phoneNumber || phoneNumberField?.phoneNumber
+                              }`}
+                              style={{
+                                background:
+                                  buttonBackgroundMap[backgroundColor],
+                              }}
+                            >
+                              <DownSVG
+                                color={mode === "dark" ? "white" : "white"}
+                              />
+                            </a>
                           )}
                         </div>
                       </div>
@@ -866,33 +975,75 @@ export default function ProTemplateFour({
                           className={styles.ContactActionAll}
                           style={{ backgroundColor }}
                         >
-                          <div className={styles.ContactActionBoth}>
-                            <div className={styles.Left}>
-                              <MailSVG color="white" />
-                            </div>
+                          {getAllProfile?.profileEmails?.length > 1 ||
+                          emailIdFieldCount > 1 ? (
                             <div
-                              className={styles.Middle}
+                              className={styles.ContactActionBoth}
                               onClick={() =>
                                 setModalType(MODAL_TYPES.emailIdView)
                               }
                             >
-                              <p
-                                style={{
-                                  ...(mode === "dark" || mode === "light"
-                                    ? { color: "white" }
-                                    : {}),
-                                }}
+                              <div className={styles.Left}>
+                                <MailSVG color="white" />
+                              </div>
+                              <div
+                                className={styles.Middle}
+                                onClick={() =>
+                                  setModalType(MODAL_TYPES.emailIdView)
+                                }
                               >
-                                {emailIdField && emailIdField.emailId ? (
-                                  emailIdField.emailId
-                                ) : (
-                                  <span style={{ opacity: 0.5 }}>
-                                    Enter your website
-                                  </span>
-                                )}
-                              </p>
+                                <p
+                                  style={{
+                                    ...(mode === "dark" || mode === "light"
+                                      ? { color: "white" }
+                                      : {}),
+                                  }}
+                                >
+                                  {getAllProfile?.profileEmails[0]?.emailId ||
+                                  (emailIdField && emailIdField.emailId) ? (
+                                    getAllProfile?.profileEmails[0]?.emailId ||
+                                    emailIdField?.emailId
+                                  ) : (
+                                    <span style={{ opacity: 0.5 }}>
+                                      Enter your Mail id
+                                    </span>
+                                  )}
+                                </p>
+                              </div>
                             </div>
-                          </div>
+                          ) : (
+                            <a
+                              className={styles.ContactActionBoth}
+                              href={`mailto:${
+                                getAllProfile?.profileEmails?.[0]?.emailId ||
+                                emailIdField?.emailId
+                              }`}
+                            >
+                              <div className={styles.Left}>
+                                <MailSVG color="white" />
+                              </div>
+                              <div className={styles.Middle}>
+                                <p
+                                  style={{
+                                    ...(mode === "dark" || mode === "light"
+                                      ? { color: "white" }
+                                      : {}),
+                                  }}
+                                >
+                                  {getAllProfile?.profileEmails[0]?.emailId ||
+                                  (emailIdField && emailIdField.emailId) ? (
+                                    getAllProfile?.profileEmails[0]?.emailId ||
+                                    emailIdField?.emailId
+                                  ) : (
+                                    <span style={{ opacity: 0.5 }}>
+                                      Enter your Mail id
+                                    </span>
+                                  )}
+                                </p>
+                              </div>
+                            </a>
+                          )}
+
                           {edit ? (
                             <div
                               className={styles.Right}
@@ -911,7 +1062,8 @@ export default function ProTemplateFour({
                                 height={30}
                               />
                             </div>
-                          ) : (
+                          ) : getAllProfile?.profileEmails?.length > 1 ||
+                            emailIdFieldCount > 1 ? (
                             <div
                               className={styles.Right}
                               onClick={() =>
@@ -926,6 +1078,22 @@ export default function ProTemplateFour({
                                 color={mode === "dark" ? "white" : "white"}
                               />
                             </div>
+                          ) : (
+                            <a
+                              className={styles.Right}
+                              href={`mailto:${
+                                getAllProfile?.profileEmails?.[0]?.emailId ||
+                                emailIdField?.emailId
+                              }`}
+                              style={{
+                                background:
+                                  buttonBackgroundMap[backgroundColor],
+                              }}
+                            >
+                              <DownSVG
+                                color={mode === "dark" ? "white" : "white"}
+                              />
+                            </a>
                           )}
                         </div>
                       </div>
@@ -945,33 +1113,74 @@ export default function ProTemplateFour({
                           className={styles.ContactActionAll}
                           style={{ backgroundColor }}
                         >
-                          <div className={styles.ContactActionBoth}>
-                            <div className={styles.Left}>
-                              <WebSVG color="white" />
-                            </div>
+                          {getAllProfile?.profileWebsites?.length > 1 ||
+                          websiteFieldCount > 1 ? (
                             <div
-                              className={styles.Middle}
+                              className={styles.ContactActionBoth}
                               onClick={() =>
                                 setModalType(MODAL_TYPES.websiteView)
                               }
                             >
-                              <p
-                                style={{
-                                  ...(mode === "dark" || mode === "light"
-                                    ? { color: "white" }
-                                    : {}),
-                                }}
+                              <div className={styles.Left}>
+                                <WebSVG color="white" />
+                              </div>
+
+                              <div
+                                className={styles.Middle}
+                                onClick={() =>
+                                  setModalType(MODAL_TYPES.websiteView)
+                                }
                               >
-                                {websiteField && websiteField.website ? (
-                                  websiteField.website
-                                ) : (
-                                  <span style={{ opacity: 0.5 }}>
-                                    Enter your website
-                                  </span>
-                                )}
-                              </p>
+                                <p
+                                  style={{
+                                    ...(mode === "dark" || mode === "light"
+                                      ? { color: "white" }
+                                      : {}),
+                                  }}
+                                >
+                                  {websiteField && websiteField.website ? (
+                                    websiteField.website
+                                  ) : (
+                                    <span style={{ opacity: 0.5 }}>
+                                      Enter your website
+                                    </span>
+                                  )}
+                                </p>
+                              </div>
                             </div>
-                          </div>
+                          ) : (
+                            <a
+                              className={styles.ContactActionBoth}
+                              href={`${
+                                getAllProfile?.profileWebsites?.[0]?.website ||
+                                websiteField?.website
+                              }`}
+                              target="_blank"
+                              rel="noreferrer"
+                            >
+                              <div className={styles.Left}>
+                                <WebSVG color="white" />
+                              </div>
+
+                              <div className={styles.Middle}>
+                                <p
+                                  style={{
+                                    ...(mode === "dark" || mode === "light"
+                                      ? { color: "white" }
+                                      : {}),
+                                  }}
+                                >
+                                  {websiteField && websiteField.website ? (
+                                    websiteField.website
+                                  ) : (
+                                    <span style={{ opacity: 0.5 }}>
+                                      Enter your website
+                                    </span>
+                                  )}
+                                </p>
+                              </div>
+                            </a>
+                          )}
 
                           {edit ? (
                             <div
@@ -991,7 +1200,8 @@ export default function ProTemplateFour({
                                 height={30}
                               />
                             </div>
-                          ) : (
+                          ) : getAllProfile?.profileWebsites?.length > 1 ||
+                            websiteFieldCount > 1 ? (
                             <div
                               className={styles.Right}
                               onClick={() =>
@@ -1006,6 +1216,24 @@ export default function ProTemplateFour({
                                 color={mode === "dark" ? "white" : "white"}
                               />
                             </div>
+                          ) : (
+                            <a
+                              className={styles.Right}
+                              href={`${
+                                getAllProfile?.profileWebsites?.[0]?.website ||
+                                websiteField?.website
+                              }`}
+                              target="_blank"
+                              rel="noreferrer"
+                              style={{
+                                background:
+                                  buttonBackgroundMap[backgroundColor],
+                              }}
+                            >
+                              <DownSVG
+                                color={mode === "dark" ? "white" : "white"}
+                              />
+                            </a>
                           )}
                         </div>
                       </div>

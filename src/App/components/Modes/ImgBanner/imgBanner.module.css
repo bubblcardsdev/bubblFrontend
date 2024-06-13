@@ -14,7 +14,7 @@
 }
 
 .nameDiv {
-  /* margin-left: 23px; */
+  padding-left:15px;
   display: flex;
   align-items: center;
 }

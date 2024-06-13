@@ -528,7 +528,7 @@ function ShippingDetails() {
                   <div className={styles.totalInr}>
                     <p>
                       TOTAL <span>(Tax Included)</span>
-                    </p>
+                     (Tax Included)</p>
                     {shippingTotal === undefined ? (
                       <p>
                         ₹{Math.round(Number(cartTotal) + 0 + 0 + 0)}

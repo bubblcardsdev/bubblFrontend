@@ -15,7 +15,7 @@ import styles from "./calculateTree.module.css";
 
 function CalculateTree() {
   const [employeeCount, setEmployeeCount] = useState(10);
-  const [employeeCost, setEmployeeCost] = useState(0);
+  const [employeeCost, setEmployeeCost] = useState(1);
   const [printCount, setPrintCount] = useState(1000);
   const [printCost, setPrintCost] = useState(0);
 
@@ -33,7 +33,7 @@ function CalculateTree() {
   const employeeCountHandler: ChangeEventHandler<HTMLInputElement> = (e) => {
     const value = +e.target.value;
     setEmployeeCount(value);
-    setEmployeeCost(treesFormula);
+    setEmployeeCost(Math.floor(value / 50));
   };
 
   const printCountHandler: ChangeEventHandler<HTMLInputElement> = (e) => {

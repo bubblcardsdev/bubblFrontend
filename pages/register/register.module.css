@@ -263,6 +263,7 @@
   background-repeat: repeat;
   background-color: black;
   width: 100vw;
+  height: 100vh
 }
 
 @media screen and (max-width: 1300px) {

@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 /* eslint-disable no-unused-vars */
 /* eslint-disable jsx-a11y/no-autofocus */
 /* eslint-disable jsx-a11y/anchor-is-valid */
@@ -17,10 +18,15 @@ import Form from "react-bootstrap/Form";
 import { toast, ToastContainer } from "react-toastify";
 import SaveVCFContact from "src/App/helpers/saveContactHelper";
 import { IDeviceBranding } from "src/App/services/createProfileApi";
+import {
+  getUserPlan,
+  IPlanDetail,
+} from "src/App/services/myPlan/myPlanServices";
 import { PostTapDetails } from "src/App/services/tapApi";
 import { MODAL_TYPES } from "types/modal";
 
 import CropSection from "@/pages/createProfileStep2/imageCropModal";
+import CropSectionLogo from "@/pages/createProfileStep2/imageCropModalLogo";
 
 import customCloseButtonImage from "../../../../../../../images/Phase_2_All_Assets/comman_assets/close.png";
 import QrModal from "../../Components/QrModal/qrModal";
@@ -123,6 +129,9 @@ export default function ProTemplateTwo({
   const handleShow = () => setShow(true);
   const handleQrClose = () => setQrShow(false);
   const handleQrShow = () => setQrShow(true);
+  const [showPfLogo, setShowLogo] = useState(false);
+  const handleCloseLogo = () => setShowLogo(false);
+  const handleShowLogo = () => setShowLogo(true);
   const router = useRouter();
   const handleShareIconClick = () => {
     if (!userName) {
@@ -133,7 +142,18 @@ export default function ProTemplateTwo({
     navigator.clipboard.writeText(textToCopy);
     toast.success(`Copied "${textToCopy}" to clipboard!`, { autoClose: 3000 });
   };
-
+  const [userPlan, setUserPlan] = useState<null | IPlanDetail>(null);
+  useEffect(() => {
+    const userPlanPromise = getUserPlan();
+    if (userPlanPromise) {
+      userPlanPromise
+        .then((res) => res.data)
+        .then((data) => {
+          const { getPlans } = data;
+          setUserPlan(getPlans);
+        });
+    }
+  }, []);
   const handlePaymentClick = (paymentMethod: any) => {
     navigator.clipboard.writeText(paymentMethod);
     toast.success(`Copied ${paymentMethod} to clipboard!`, { autoClose: 3000 });
@@ -326,6 +346,32 @@ export default function ProTemplateTwo({
           </Modal.Header>
           <Modal.Body className={styles.modalDiv}>
             <CropSection onSave={handleSave} onSavedSuccess={handleClose} />
+          </Modal.Body>
+        </div>
+      </Modal>
+      {/* Upload Logo Image */}
+      <Modal
+        show={showPfLogo}
+        onHide={handleCloseLogo}
+        backdrop="static"
+        keyboard={false}
+        centered
+      >
+        <div className={styles.CropBody}>
+          <Modal.Header className={styles.CropBodyHeader}>
+            <Modal.Title className={styles.ImageCrop}>Upload Logo</Modal.Title>
+            <Image
+              src={customCloseButtonImage}
+              onClick={handleCloseLogo}
+              alt="Close"
+              className={styles.CustomCloseButton}
+            />
+          </Modal.Header>
+          <Modal.Body className={styles.modalDiv}>
+            <CropSectionLogo
+              onSave={handleQrSave}
+              onSavedSuccess={handleCloseLogo}
+            />
           </Modal.Body>
         </div>
       </Modal>
@@ -640,7 +686,7 @@ export default function ProTemplateTwo({
                   }
                 >
                   <div className={styles.qrImg}>
-                    {qrImage ? (
+                    {userPlan?.planId !== 1 && qrImage ? (
                       <img
                         src={qrImage}
                         alt="Logo"
@@ -655,14 +701,14 @@ export default function ProTemplateTwo({
                       />
                     )}
                   </div>
-                  {edit ? (
+                  {edit && userPlan?.planId !== 1 ? (
                     <div className={styles.QrEdit} style={{ backgroundColor }}>
                       <Image
                         src={ProfileEditIcon}
                         alt="ProfileEditIcon"
                         width={12}
                         height={12}
-                        onClick={handleQrShow}
+                        onClick={handleShowLogo}
                       />
                     </div>
                   ) : (
@@ -780,12 +826,28 @@ export default function ProTemplateTwo({
                         className={styles.ContactInfo}
                         onClick={() => handleClick(4)}
                       >
-                        <CallSVG
-                          onClick={() =>
-                            setModalType(MODAL_TYPES.mobileNumberView)
-                          }
-                          color={backgroundColor || "rgb(31, 135, 250)"}
-                        />
+                        {getAllProfile?.profilePhoneNumbers?.length > 1 ||
+                        phoneNumberCount > 1 ? (
+                          <CallSVG
+                            onClick={() =>
+                              setModalType(MODAL_TYPES.mobileNumberView)
+                            }
+                            color={backgroundColor || "rgb(31, 135, 250)"}
+                          />
+                        ) : (
+                          <a
+                            href={`tel:${
+                              getAllProfile?.profilePhoneNumbers?.[0]
+                                ?.phoneNumber || phoneNumberField?.phoneNumber
+                            }`}
+                          >
+                            <CallSVG
+                              onClick={() => {}}
+                              color={backgroundColor || "rgb(31, 135, 250)"}
+                            />
+                          </a>
+                        )}
+
                         {edit ? (
                           <span
                             onClick={() =>
@@ -796,7 +858,8 @@ export default function ProTemplateTwo({
                           >
                             <Image src={PencilView} alt="pencil" />
                           </span>
-                        ) : (
+                        ) : getAllProfile?.profilePhoneNumbers?.length > 1 ||
+                          phoneNumberCount > 1 ? (
                           <span
                             className={styles.ContactNumber}
                             onClick={() =>
@@ -806,21 +869,50 @@ export default function ProTemplateTwo({
                           >
                             {phoneNumberCount}
                           </span>
+                        ) : (
+                          <a
+                            className={styles.ContactNumber}
+                            href={`tel:${
+                              getAllProfile?.profilePhoneNumbers?.[0]
+                                ?.phoneNumber || phoneNumberField?.phoneNumber
+                            }`}
+                            style={{ backgroundColor }}
+                          >
+                            {phoneNumberCount}
+                          </a>
                         )}
                       </div>
                     ) : (
                       ""
                     )}
-
+                    {/* Email */}
                     {showEmailIds ? (
                       <div
                         className={styles.ContactInfo}
                         onClick={() => handleClick(5)}
                       >
-                        <MailSVG
-                          onClick={() => setModalType(MODAL_TYPES.emailIdView)}
-                          color={backgroundColor || "rgb(31, 135, 250)"}
-                        />
+                        {getAllProfile?.profileEmails?.length > 1 ||
+                        emailIdFieldCount > 1 ? (
+                          <MailSVG
+                            onClick={() =>
+                              setModalType(MODAL_TYPES.emailIdView)
+                            }
+                            color={backgroundColor || "rgb(31, 135, 250)"}
+                          />
+                        ) : (
+                          <a
+                            href={`mailto:${
+                              getAllProfile?.profileEmails?.[0]?.emailId ||
+                              emailIdField?.emailId
+                            }`}
+                          >
+                            <MailSVG
+                              onClick={() => {}}
+                              color={backgroundColor || "rgb(31, 135, 250)"}
+                            />
+                          </a>
+                        )}
+
                         {edit ? (
                           <span
                             className={styles.ContactNumber}
@@ -831,7 +923,8 @@ export default function ProTemplateTwo({
                           >
                             <Image src={PencilView} alt="pencil" />
                           </span>
-                        ) : (
+                        ) : getAllProfile?.profileEmails?.length > 1 ||
+                          emailIdFieldCount > 1 ? (
                           <span
                             className={styles.ContactNumber}
                             onClick={() =>
@@ -841,11 +934,23 @@ export default function ProTemplateTwo({
                           >
                             {emailIdFieldCount}
                           </span>
+                        ) : (
+                          <a
+                            className={styles.ContactNumber}
+                            href={`mailto:${
+                              getAllProfile?.profileEmails?.[0]?.emailId ||
+                              emailIdField?.emailId
+                            }`}
+                            style={{ backgroundColor }}
+                          >
+                            {emailIdFieldCount}
+                          </a>
                         )}
                       </div>
                     ) : (
                       ""
                     )}
+                    {/* Website */}
                     {showWebsite ? (
                       <div
                         className={styles.ContactInfo}
@@ -853,10 +958,29 @@ export default function ProTemplateTwo({
                           handleClick(6);
                         }}
                       >
-                        <WebSVG
-                          onClick={() => setModalType(MODAL_TYPES.websiteView)}
-                          color={backgroundColor || "rgb(31, 135, 250)"}
-                        />
+                        {getAllProfile?.profileWebsites?.length > 1 ||
+                        websiteFieldCount > 1 ? (
+                          <WebSVG
+                            onClick={() =>
+                              setModalType(MODAL_TYPES.websiteView)
+                            }
+                            color={backgroundColor || "rgb(31, 135, 250)"}
+                          />
+                        ) : (
+                          <a
+                            href={`${
+                              getAllProfile?.profileWebsites?.[0]?.website ||
+                              websiteField?.website
+                            }`}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            <WebSVG
+                              onClick={() => {}}
+                              color={backgroundColor || "rgb(31, 135, 250)"}
+                            />
+                          </a>
+                        )}
 
                         {edit ? (
                           <span
@@ -868,7 +992,8 @@ export default function ProTemplateTwo({
                           >
                             <Image src={PencilView} alt="pencil" />
                           </span>
-                        ) : (
+                        ) : getAllProfile?.profileWebsites?.length > 1 ||
+                          websiteFieldCount > 1 ? (
                           <span
                             className={styles.ContactNumber}
                             onClick={() =>
@@ -878,6 +1003,19 @@ export default function ProTemplateTwo({
                           >
                             {websiteFieldCount}
                           </span>
+                        ) : (
+                          <a
+                            className={styles.ContactNumber}
+                            href={`${
+                              getAllProfile?.profileWebsites?.[0]?.website ||
+                              websiteField?.website
+                            }`}
+                            target="_blank"
+                            style={{ backgroundColor }}
+                            rel="noreferrer"
+                          >
+                            {websiteFieldCount}
+                          </a>
                         )}
                       </div>
                     ) : (

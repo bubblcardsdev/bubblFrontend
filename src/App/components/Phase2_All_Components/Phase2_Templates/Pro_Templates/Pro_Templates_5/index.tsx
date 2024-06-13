@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 /* eslint-disable no-unused-vars */
 /* eslint-disable jsx-a11y/no-autofocus */
 /* eslint-disable jsx-a11y/anchor-is-valid */
@@ -17,12 +18,17 @@ import Form from "react-bootstrap/Form";
 import { toast, ToastContainer } from "react-toastify";
 import SaveVCFContact from "src/App/helpers/saveContactHelper";
 import { IDeviceBranding } from "src/App/services/createProfileApi";
+import {
+  getUserPlan,
+  IPlanDetail,
+} from "src/App/services/myPlan/myPlanServices";
 import { PostTapDetails } from "src/App/services/tapApi";
 import { MODAL_TYPES, ModalT } from "types/modal";
 // eslint-disable-next-line no-unused-vars
 import { ProfileActionT, ProfileStateT } from "types/profile";
 
 import CropSection from "@/pages/createProfileStep2/imageCropModal";
+import CropSectionLogo from "@/pages/createProfileStep2/imageCropModalLogo";
 
 import customCloseButtonImage from "../../../../../../../images/Phase_2_All_Assets/comman_assets/close.png";
 import QrModal from "../../Components/QrModal/qrModal";
@@ -211,7 +217,21 @@ export default function ProTemplateFive({
   const handleShow = () => setShow(true);
   const handleQrClose = () => setQrShow(false);
   const handleQrShow = () => setQrShow(true);
-
+  const [showPfLogo, setShowLogo] = useState(false);
+  const handleCloseLogo = () => setShowLogo(false);
+  const handleShowLogo = () => setShowLogo(true);
+  const [userPlan, setUserPlan] = useState<null | IPlanDetail>(null);
+  useEffect(() => {
+    const userPlanPromise = getUserPlan();
+    if (userPlanPromise) {
+      userPlanPromise
+        .then((res) => res.data)
+        .then((data) => {
+          const { getPlans } = data;
+          setUserPlan(getPlans);
+        });
+    }
+  }, []);
   const handleShareIconClick = () => {
     if (!userName) {
       toast.info("No unique name is configured");
@@ -433,6 +453,32 @@ export default function ProTemplateFive({
           </Modal.Body>
         </div>
       </Modal>
+      {/* Upload Logo Image */}
+      <Modal
+        show={showPfLogo}
+        onHide={handleCloseLogo}
+        backdrop="static"
+        keyboard={false}
+        centered
+      >
+        <div className={styles.CropBody}>
+          <Modal.Header className={styles.CropBodyHeader}>
+            <Modal.Title className={styles.ImageCrop}>Upload Logo</Modal.Title>
+            <Image
+              src={customCloseButtonImage}
+              onClick={handleCloseLogo}
+              alt="Close"
+              className={styles.CustomCloseButton}
+            />
+          </Modal.Header>
+          <Modal.Body className={styles.modalDiv}>
+            <CropSectionLogo
+              onSave={handleQrSave}
+              onSavedSuccess={handleCloseLogo}
+            />
+          </Modal.Body>
+        </div>
+      </Modal>
       {/* Body Starts Here */}
       <section className={styles.FreeTemplateFive}>
         <div
@@ -587,7 +633,7 @@ export default function ProTemplateFive({
                         </div>
                         <div className={styles.LogoBrand}>
                           <div className={styles.qrImg}>
-                            {qrImage ? (
+                            {userPlan?.planId !== 1 && qrImage ? (
                               <img
                                 src={qrImage}
                                 alt="Logo"
@@ -602,7 +648,7 @@ export default function ProTemplateFive({
                               />
                             )}
                           </div>
-                          {edit ? (
+                          {edit && userPlan?.planId !== 1 ? (
                             <div
                               className={styles.QrEdit}
                               style={{
@@ -614,7 +660,7 @@ export default function ProTemplateFive({
                                 alt="ProfileEditIcon"
                                 width={12}
                                 height={12}
-                                onClick={handleQrShow}
+                                onClick={handleShowLogo}
                               />
                             </div>
                           ) : (
@@ -776,12 +822,25 @@ export default function ProTemplateFive({
                             className={styles.ContactInfo}
                             onClick={() => handleClick(4)}
                           >
-                            <CallSVG
-                              onClick={() =>
-                                setModalType(MODAL_TYPES.mobileNumberView)
-                              }
-                              color="white"
-                            />
+                            {getAllProfile?.profilePhoneNumbers?.length > 1 ||
+                            phoneNumberCount > 1 ? (
+                              <CallSVG
+                                onClick={() =>
+                                  setModalType(MODAL_TYPES.mobileNumberView)
+                                }
+                                color="white"
+                              />
+                            ) : (
+                              <a
+                                href={`tel:${
+                                  getAllProfile?.profilePhoneNumbers?.[0]
+                                    ?.phoneNumber ||
+                                  phoneNumberField?.phoneNumber
+                                }`}
+                              >
+                                <CallSVG onClick={() => {}} color="white" />
+                              </a>
+                            )}
                             {edit ? (
                               <span
                                 onClick={() =>
@@ -794,7 +853,8 @@ export default function ProTemplateFive({
                               >
                                 <Image src={PencilView} alt="pencil" />
                               </span>
-                            ) : (
+                            ) : getAllProfile?.profilePhoneNumbers?.length >
+                                1 || phoneNumberCount > 1 ? (
                               <span
                                 className={styles.ContactNumber}
                                 style={{
@@ -806,6 +866,20 @@ export default function ProTemplateFive({
                               >
                                 {phoneNumberCount}
                               </span>
+                            ) : (
+                              <a
+                                className={styles.ContactNumber}
+                                href={`tel:${
+                                  getAllProfile?.profilePhoneNumbers?.[0]
+                                    ?.phoneNumber ||
+                                  phoneNumberField?.phoneNumber
+                                }`}
+                                style={{
+                                  background: bgColor,
+                                }}
+                              >
+                                {phoneNumberCount}
+                              </a>
                             )}
                           </div>
                         ) : (
@@ -816,12 +890,24 @@ export default function ProTemplateFive({
                             className={styles.ContactInfo}
                             onClick={() => handleClick(5)}
                           >
-                            <MailSVG
-                              color="white"
-                              onClick={() =>
-                                setModalType(MODAL_TYPES.emailIdView)
-                              }
-                            />
+                            {getAllProfile?.profileEmails?.length > 1 ||
+                            emailIdFieldCount > 1 ? (
+                              <MailSVG
+                                color="white"
+                                onClick={() =>
+                                  setModalType(MODAL_TYPES.emailIdView)
+                                }
+                              />
+                            ) : (
+                              <a
+                                href={`mailto:${
+                                  getAllProfile?.profileEmails?.[0]?.emailId ||
+                                  emailIdField?.emailId
+                                }`}
+                              >
+                                <MailSVG color="white" onClick={() => {}} />
+                              </a>
+                            )}
                             {edit ? (
                               <span
                                 className={styles.ContactNumber}
@@ -834,7 +920,8 @@ export default function ProTemplateFive({
                               >
                                 <Image src={PencilView} alt="pencil" />
                               </span>
-                            ) : (
+                            ) : getAllProfile?.profileEmails?.length > 1 ||
+                              emailIdFieldCount > 1 ? (
                               <span
                                 className={styles.ContactNumber}
                                 style={{
@@ -846,6 +933,19 @@ export default function ProTemplateFive({
                               >
                                 {emailIdFieldCount}
                               </span>
+                            ) : (
+                              <a
+                                className={styles.ContactNumber}
+                                href={`mailto:${
+                                  getAllProfile?.profileEmails?.[0]?.emailId ||
+                                  emailIdField?.emailId
+                                }`}
+                                style={{
+                                  background: bgColor,
+                                }}
+                              >
+                                {emailIdFieldCount}
+                              </a>
                             )}
                           </div>
                         ) : (
@@ -858,12 +958,26 @@ export default function ProTemplateFive({
                               handleClick(6);
                             }}
                           >
-                            <WebSVG
-                              color="white"
-                              onClick={() =>
-                                setModalType(MODAL_TYPES.websiteView)
-                              }
-                            />
+                            {getAllProfile?.profileWebsites?.length > 1 ||
+                            websiteFieldCount > 1 ? (
+                              <WebSVG
+                                color="white"
+                                onClick={() =>
+                                  setModalType(MODAL_TYPES.websiteView)
+                                }
+                              />
+                            ) : (
+                              <a
+                                href={`${
+                                  getAllProfile?.profileWebsites?.[0]
+                                    ?.website || websiteField?.website
+                                }`}
+                                target="_blank"
+                                rel="noreferrer"
+                              >
+                                <WebSVG color="white" onClick={() => {}} />
+                              </a>
+                            )}
 
                             {edit ? (
                               <span
@@ -877,7 +991,8 @@ export default function ProTemplateFive({
                               >
                                 <Image src={PencilView} alt="pencil" />
                               </span>
-                            ) : (
+                            ) : getAllProfile?.profileWebsites?.length > 1 ||
+                              websiteFieldCount > 1 ? (
                               <span
                                 className={styles.ContactNumber}
                                 style={{
@@ -889,6 +1004,21 @@ export default function ProTemplateFive({
                               >
                                 {websiteFieldCount}
                               </span>
+                            ) : (
+                              <a
+                                className={styles.ContactNumber}
+                                href={`${
+                                  getAllProfile?.profileWebsites?.[0]
+                                    ?.website || websiteField?.website
+                                }`}
+                                target="_blank"
+                                style={{
+                                  background: bgColor,
+                                }}
+                                rel="noreferrer"
+                              >
+                                {websiteFieldCount}
+                              </a>
                             )}
                           </div>
                         ) : (

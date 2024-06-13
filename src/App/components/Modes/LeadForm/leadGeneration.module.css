@@ -10,10 +10,9 @@
 
 .imageHrLine {
   margin-top: 30px;
-  width: 361px;
+  width:100%;
   height: 0.3px;
   background: #FFF;
-  margin-left: 26px;
 }
 
 .url-close-img-circle {
@@ -58,6 +57,13 @@
   border-bottom: 1px solid rgba(175, 56, 214, 0.8);
   margin-top: 10px;
   display: flex;
+}
+
+.urlLinkDivCustom input {
+  background-color: transparent !important;
+  color: white !important;
+  width: 100% !important;
+  border: 1px solid transparent !important;
 }
 
 .contactDividerDiv {

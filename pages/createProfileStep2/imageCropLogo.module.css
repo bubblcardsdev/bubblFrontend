@@ -1,0 +1,208 @@
+.modalDiv {
+    margin: 10px;
+}
+
+.cropImage {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+
+.savebtn {
+    width: 100%;
+    background-color: #af38d6;
+    border-color: #af38d6;
+}
+
+.savebtn:hover,
+.savebtn:focus-visible,
+.savebtn:active {
+    background-color: #af38d6;
+    border-color: #af38d6;
+}
+
+.UploadButton,
+.UploadButton:hover,
+.UploadButton:focus-visible,
+.UploadButton:active {
+    background-color: transparent !important;
+    border: transparent !important;
+    color: #AB39D2;
+}
+
+.image_upload {
+    display: flex;
+    justify-content: center;
+}
+
+.select_file {
+    margin-top: 30px;
+}
+
+.slider {
+    margin-top: 30px;
+}
+
+.slider input {
+    width: 100%;
+    cursor: pointer;
+}
+
+.slider p {
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.select_file p {
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.savebtn_upload {
+    width: 100%;
+    margin-top: 30px;
+}
+
+.savebtn_upload button:active,
+.savebtn_upload button:focus-visible,
+.savebtn_upload button:disabled {
+    background-color: #af38d6 !important;
+    border-color: #af38d6 !important;
+    box-shadow: none;
+}
+
+.select_file input {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.chooseFile {
+    margin-bottom: 20px;
+}
+
+.imageCropped {
+    display: flex;
+
+}
+
+.title h6 {
+    text-align: center;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.title {
+    margin-right: 10px;
+}
+
+.errorFileSize {
+    color: red;
+}
+
+.DragDrop {
+    width: 250px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    border: 2px dashed white;
+    align-items: center;
+    margin-top: 50px;
+    border-radius: 3px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.DragDrop p {
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 12px;
+    cursor: pointer;
+    color: white;
+    padding-top: 5px;
+}
+
+.ActionModal {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    text-align: center;
+    gap: 35px;
+    padding-top: 40px;
+    padding-bottom: 30px;
+}
+
+.ModalClose,
+.ModalClose:hover,
+.ModalClose:active {
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 14px;
+    color: white;
+    text-transform: capitalize;
+    background-color: transparent !important;
+    border: none;
+}
+
+.ModalSave,
+.ModalSave:hover,
+.ModalSave:focus-visible,
+.ModalSave:not(.btn-check)+.btn:active {
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 14px;
+    color: white !important;
+    text-transform: capitalize;
+    background-color: #AB39D2 !important;
+    border-radius: 5px;
+    width: 136px;
+    height: 40px;
+    border: none;
+    border-color: transparent;
+
+}
+
+.UploadAction {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+}
+
+.DragDrop span {
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 12px;
+    color: #AB39D2;
+    text-decoration: underline;
+
+}
+
+.UploadIcon {
+    cursor: pointer;
+}
+
+@media screen and (max-width:500px) {
+    .title h6 {
+        font-size: 14px;
+    }
+
+
+}
+
+@media screen and (max-width:375px) {
+    .title h6 {
+        font-size: 10px;
+    }
+
+
+}

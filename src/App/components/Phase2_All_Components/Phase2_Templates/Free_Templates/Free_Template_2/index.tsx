@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable no-unused-vars */
 /* eslint-disable jsx-a11y/no-autofocus */
@@ -13,10 +14,15 @@ import Form from "react-bootstrap/Form";
 import { toast, ToastContainer } from "react-toastify";
 import SaveVCFContact from "src/App/helpers/saveContactHelper";
 import { IDeviceBranding } from "src/App/services/createProfileApi";
+import {
+  getUserPlan,
+  IPlanDetail,
+} from "src/App/services/myPlan/myPlanServices";
 import { PostTapDetails } from "src/App/services/tapApi";
 import { MODAL_TYPES } from "types/modal";
 
 import CropSection from "@/pages/createProfileStep2/imageCropModal";
+import CropSectionLogo from "@/pages/createProfileStep2/imageCropModalLogo";
 
 import customCloseButtonImage from "../../../../../../../images/Phase_2_All_Assets/comman_assets/close.png";
 import QrModal from "../../Components/QrModal/qrModal";
@@ -126,13 +132,31 @@ export default function FreeTemplateTwo({
     phoneNumberField,
     socialMediaNames,
     websiteField,
+    phoneNumberCount,
+    emailIdFieldCount,
+    websiteFieldCount,
   } = useProfile({ userProfile, userProfileDispatch, getAllProfile });
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const handleQrClose = () => setQrShow(false);
   const handleQrShow = () => setQrShow(true);
+  const [showPfLogo, setShowLogo] = useState(false);
+  const handleCloseLogo = () => setShowLogo(false);
+  const handleShowLogo = () => setShowLogo(true);
+  const [userPlan, setUserPlan] = useState<null | IPlanDetail>(null);
 
+  useEffect(() => {
+    const userPlanPromise = getUserPlan();
+    if (userPlanPromise) {
+      userPlanPromise
+        .then((res) => res.data)
+        .then((data) => {
+          const { getPlans } = data;
+          setUserPlan(getPlans);
+        });
+    }
+  }, []);
   const handleShareIconClick = () => {
     if (!userName) {
       toast.info("No unique name is configured");
@@ -338,6 +362,32 @@ export default function FreeTemplateTwo({
           </Modal.Header>
           <Modal.Body className={styles.modalDiv}>
             <CropSection onSave={handleSave} onSavedSuccess={handleClose} />
+          </Modal.Body>
+        </div>
+      </Modal>
+      {/* Upload Logo */}
+      <Modal
+        show={showPfLogo}
+        onHide={handleCloseLogo}
+        backdrop="static"
+        keyboard={false}
+        centered
+      >
+        <div className={styles.CropBody}>
+          <Modal.Header className={styles.CropBodyHeader}>
+            <Modal.Title className={styles.ImageCrop}>Upload Logo</Modal.Title>
+            <Image
+              src={customCloseButtonImage}
+              onClick={handleCloseLogo}
+              alt="Close"
+              className={styles.CustomCloseButton}
+            />
+          </Modal.Header>
+          <Modal.Body className={styles.modalDiv}>
+            <CropSectionLogo
+              onSave={handleQrSave}
+              onSavedSuccess={handleCloseLogo}
+            />
           </Modal.Body>
         </div>
       </Modal>
@@ -566,7 +616,7 @@ export default function FreeTemplateTwo({
                     }
                   >
                     <div className={styles.qrImg}>
-                      {qrImage ? (
+                      {userPlan?.planId !== 1 && qrImage ? (
                         <img
                           src={qrImage}
                           alt="Logo"
@@ -582,7 +632,7 @@ export default function FreeTemplateTwo({
                       )}
                     </div>
 
-                    {edit ? (
+                    {edit && userPlan?.planId !== 1 ? (
                       <div
                         className={styles.QrEdit}
                         style={{ backgroundColor }}
@@ -592,7 +642,7 @@ export default function FreeTemplateTwo({
                           alt="ProfileEditIcon"
                           width={12}
                           height={12}
-                          onClick={handleQrShow}
+                          onClick={handleShowLogo}
                         />
                       </div>
                     ) : (
@@ -785,9 +835,11 @@ export default function FreeTemplateTwo({
                     </h2>
                     {/* Phone Number */}
                     {showPhoneNumber ? (
-                      <div className={styles.ContactAction}>
+                      <div
+                        className={styles.ContactAction}
+                        onClick={() => handleClick(4)}
+                      >
                         <div
-                          onClick={() => handleClick(4)}
                           className={styles.ContactActionAll}
                           style={
                             mode === "dark"
@@ -798,41 +850,76 @@ export default function FreeTemplateTwo({
                               : {}
                           }
                         >
-                          <div
-                            className={styles.ContactActionBoth}
-                            onClick={() =>
-                              setModalType(MODAL_TYPES.mobileNumberView)
-                            }
-                          >
+                          <div className={styles.ContactActionBoth}>
                             <div className={styles.Left}>
                               <CallSVG
                                 color={backgroundColor || "rgb(245, 50, 50)"}
                               />
                             </div>
-                            <div className={styles.Middle}>
-                              <p
-                                style={
-                                  mode === "dark"
-                                    ? {
-                                        color: "white",
-                                      }
-                                    : {}
+                            {getAllProfile?.profilePhoneNumbers?.length > 1 ||
+                            phoneNumberCount > 1 ? (
+                              <div
+                                className={styles.Middle}
+                                onClick={() =>
+                                  setModalType(MODAL_TYPES.mobileNumberView)
                                 }
                               >
-                                {getAllProfile?.profilePhoneNumbers[0]
-                                  ?.phoneNumber ||
-                                (phoneNumberField &&
-                                  phoneNumberField.phoneNumber) ? (
+                                <p
+                                  style={
+                                    mode === "dark"
+                                      ? {
+                                          color: "white",
+                                        }
+                                      : {}
+                                  }
+                                >
+                                  {getAllProfile?.profilePhoneNumbers[0]
+                                    ?.phoneNumber ||
+                                  (phoneNumberField &&
+                                    phoneNumberField.phoneNumber) ? (
+                                    getAllProfile?.profilePhoneNumbers?.[0]
+                                      ?.phoneNumber ||
+                                    phoneNumberField?.phoneNumber
+                                  ) : (
+                                    <span style={{ opacity: 0.5 }}>
+                                      Enter your number
+                                    </span>
+                                  )}
+                                </p>
+                              </div>
+                            ) : (
+                              <a
+                                className={styles.Middle}
+                                href={`tel:${
                                   getAllProfile?.profilePhoneNumbers?.[0]
                                     ?.phoneNumber ||
                                   phoneNumberField?.phoneNumber
-                                ) : (
-                                  <span style={{ opacity: 0.5 }}>
-                                    Enter your number
-                                  </span>
-                                )}
-                              </p>
-                            </div>
+                                }`}
+                              >
+                                <p
+                                  style={
+                                    mode === "dark"
+                                      ? {
+                                          color: "white",
+                                        }
+                                      : {}
+                                  }
+                                >
+                                  {getAllProfile?.profilePhoneNumbers[0]
+                                    ?.phoneNumber ||
+                                  (phoneNumberField &&
+                                    phoneNumberField.phoneNumber) ? (
+                                    getAllProfile?.profilePhoneNumbers?.[0]
+                                      ?.phoneNumber ||
+                                    phoneNumberField?.phoneNumber
+                                  ) : (
+                                    <span style={{ opacity: 0.5 }}>
+                                      Enter your number
+                                    </span>
+                                  )}
+                                </p>
+                              </a>
+                            )}
                           </div>
                           {edit ? (
                             <div
@@ -866,7 +953,8 @@ export default function FreeTemplateTwo({
                                 />
                               )}
                             </div>
-                          ) : (
+                          ) : getAllProfile?.profilePhoneNumbers?.length > 1 ||
+                            phoneNumberCount > 1 ? (
                             <div
                               className={styles.Right}
                               onClick={() =>
@@ -886,6 +974,27 @@ export default function FreeTemplateTwo({
                                 color={backgroundColor || "rgb(245, 50, 50)"}
                               />
                             </div>
+                          ) : (
+                            <a
+                              className={styles.Right}
+                              href={`tel:${
+                                getAllProfile?.profilePhoneNumbers?.[0]
+                                  ?.phoneNumber || phoneNumberField?.phoneNumber
+                              }`}
+                              style={
+                                mode === "dark"
+                                  ? {
+                                      background: "#2D2D2D",
+                                      filter:
+                                        "drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))",
+                                    }
+                                  : {}
+                              }
+                            >
+                              <DownSVG
+                                color={backgroundColor || "rgb(245, 50, 50)"}
+                              />
+                            </a>
                           )}
                         </div>
                       </div>
@@ -913,32 +1022,63 @@ export default function FreeTemplateTwo({
                                 color={backgroundColor || "rgb(245, 50, 50)"}
                               />
                             </div>
-                            <div
-                              className={styles.Middle}
-                              onClick={() =>
-                                setModalType(MODAL_TYPES.emailIdView)
-                              }
-                            >
-                              <p
-                                style={
-                                  mode === "dark"
-                                    ? {
-                                        color: "white",
-                                      }
-                                    : {}
+                            {getAllProfile?.profileEmails?.length > 1 ||
+                            emailIdFieldCount > 1 ? (
+                              <div
+                                className={styles.Middle}
+                                onClick={() =>
+                                  setModalType(MODAL_TYPES.emailIdView)
                                 }
                               >
-                                {getAllProfile?.profileEmails[0]?.emailId ||
-                                (emailIdField && emailIdField.emailId) ? (
-                                  getAllProfile?.profileEmails[0]?.emailId ||
+                                <p
+                                  style={
+                                    mode === "dark"
+                                      ? {
+                                          color: "white",
+                                        }
+                                      : {}
+                                  }
+                                >
+                                  {getAllProfile?.profileEmails[0]?.emailId ||
+                                  (emailIdField && emailIdField.emailId) ? (
+                                    getAllProfile?.profileEmails[0]?.emailId ||
+                                    emailIdField?.emailId
+                                  ) : (
+                                    <span style={{ opacity: 0.5 }}>
+                                      Enter your Mail id
+                                    </span>
+                                  )}
+                                </p>
+                              </div>
+                            ) : (
+                              <a
+                                className={styles.Middle}
+                                href={`mailto:${
+                                  getAllProfile?.profileEmails?.[0]?.emailId ||
                                   emailIdField?.emailId
-                                ) : (
-                                  <span style={{ opacity: 0.5 }}>
-                                    Enter your Mail id
-                                  </span>
-                                )}
-                              </p>
-                            </div>
+                                }`}
+                              >
+                                <p
+                                  style={
+                                    mode === "dark"
+                                      ? {
+                                          color: "white",
+                                        }
+                                      : {}
+                                  }
+                                >
+                                  {getAllProfile?.profileEmails[0]?.emailId ||
+                                  (emailIdField && emailIdField.emailId) ? (
+                                    getAllProfile?.profileEmails[0]?.emailId ||
+                                    emailIdField?.emailId
+                                  ) : (
+                                    <span style={{ opacity: 0.5 }}>
+                                      Enter your Mail id
+                                    </span>
+                                  )}
+                                </p>
+                              </a>
+                            )}
                           </div>
                           {edit ? (
                             <div
@@ -972,7 +1112,8 @@ export default function FreeTemplateTwo({
                                 />
                               )}
                             </div>
-                          ) : (
+                          ) : getAllProfile?.profileEmails?.length > 1 ||
+                            emailIdFieldCount > 1 ? (
                             <div
                               className={styles.Right}
                               onClick={() =>
@@ -992,6 +1133,27 @@ export default function FreeTemplateTwo({
                                 color={backgroundColor || "rgb(245, 50, 50)"}
                               />
                             </div>
+                          ) : (
+                            <a
+                              className={styles.Right}
+                              href={`mailto:${
+                                getAllProfile?.profileEmails?.[0]?.emailId ||
+                                emailIdField?.emailId
+                              }`}
+                              style={
+                                mode === "dark"
+                                  ? {
+                                      background: "#2D2D2D",
+                                      filter:
+                                        "drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))",
+                                    }
+                                  : {}
+                              }
+                            >
+                              <DownSVG
+                                color={backgroundColor || "rgb(245, 50, 50)"}
+                              />
+                            </a>
                           )}
                         </div>
                       </div>
@@ -1021,32 +1183,65 @@ export default function FreeTemplateTwo({
                                 color={backgroundColor || "rgb(245, 50, 50)"}
                               />
                             </div>
-                            <div
-                              className={styles.Middle}
-                              onClick={() =>
-                                setModalType(MODAL_TYPES.websiteView)
-                              }
-                            >
-                              <p
-                                style={
-                                  mode === "dark"
-                                    ? {
-                                        color: "white",
-                                      }
-                                    : {}
+                            {getAllProfile?.profileWebsites?.length > 1 ||
+                            websiteFieldCount > 1 ? (
+                              <div
+                                className={styles.Middle}
+                                onClick={() =>
+                                  setModalType(MODAL_TYPES.websiteView)
                                 }
                               >
-                                {getAllProfile?.profileWebsites[0]?.website ||
-                                (websiteField && websiteField?.website) ? (
-                                  getAllProfile?.profileWebsites[0]?.website ||
-                                  websiteField?.website
-                                ) : (
-                                  <span style={{ opacity: 0.5 }}>
-                                    Enter your website
-                                  </span>
-                                )}
-                              </p>
-                            </div>
+                                <p
+                                  style={
+                                    mode === "dark"
+                                      ? {
+                                          color: "white",
+                                        }
+                                      : {}
+                                  }
+                                >
+                                  {getAllProfile?.profileWebsites[0]?.website ||
+                                  (websiteField && websiteField?.website) ? (
+                                    getAllProfile?.profileWebsites[0]
+                                      ?.website || websiteField?.website
+                                  ) : (
+                                    <span style={{ opacity: 0.5 }}>
+                                      Enter your website
+                                    </span>
+                                  )}
+                                </p>
+                              </div>
+                            ) : (
+                              <a
+                                className={styles.Middle}
+                                href={`${
+                                  getAllProfile?.profileWebsites?.[0]
+                                    ?.website || websiteField?.website
+                                }`}
+                                target="_blank"
+                                rel="noreferrer"
+                              >
+                                <p
+                                  style={
+                                    mode === "dark"
+                                      ? {
+                                          color: "white",
+                                        }
+                                      : {}
+                                  }
+                                >
+                                  {getAllProfile?.profileWebsites[0]?.website ||
+                                  (websiteField && websiteField?.website) ? (
+                                    getAllProfile?.profileWebsites[0]
+                                      ?.website || websiteField?.website
+                                  ) : (
+                                    <span style={{ opacity: 0.5 }}>
+                                      Enter your website
+                                    </span>
+                                  )}
+                                </p>
+                              </a>
+                            )}
                           </div>
 
                           {edit ? (
@@ -1081,7 +1276,8 @@ export default function FreeTemplateTwo({
                                 />
                               )}
                             </div>
-                          ) : (
+                          ) : getAllProfile?.profileWebsites?.length > 1 ||
+                            websiteFieldCount > 1 ? (
                             <div
                               className={styles.Right}
                               onClick={() =>
@@ -1101,6 +1297,29 @@ export default function FreeTemplateTwo({
                                 color={backgroundColor || "rgb(245, 50, 50)"}
                               />
                             </div>
+                          ) : (
+                            <a
+                              className={styles.Right}
+                              href={`${
+                                getAllProfile?.profileWebsites?.[0]?.website ||
+                                websiteField?.website
+                              }`}
+                              target="_blank"
+                              rel="noreferrer"
+                              style={
+                                mode === "dark"
+                                  ? {
+                                      background: "#2D2D2D",
+                                      filter:
+                                        "drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))",
+                                    }
+                                  : {}
+                              }
+                            >
+                              <DownSVG
+                                color={backgroundColor || "rgb(245, 50, 50)"}
+                              />
+                            </a>
                           )}
                         </div>
                       </div>

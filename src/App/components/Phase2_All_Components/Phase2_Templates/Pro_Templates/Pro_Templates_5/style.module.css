@@ -18,10 +18,11 @@
     display: flex;
     justify-content: center;
     width: 100%;
+    border-radius: 10px;
 }
 
 .qrImg {
-    width: 90px;
+    /* width: 90px; */
     height: auto;
 }
 
@@ -180,13 +181,14 @@
 
 .LogoBrand {
     width: 100px;
-    height: 100px;
+    height: 90px;
     display: flex;
     background-color: white;
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    /* padding: 10px; */
     position: relative;
+    border-radius: 10px;
 }
 
 
@@ -351,7 +353,7 @@
 
 .PencilEditDes {
     cursor: pointer;
-    width: 50px;
+    width: 120px;
 }
 
 .QrEdit {

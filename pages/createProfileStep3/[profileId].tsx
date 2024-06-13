@@ -82,7 +82,7 @@ import styles from "./createProfileStep3.module.css";
 type ThemeT = "light" | "dark";
 type TemplateIdsT = 1 | 2 | 3 | 4 | 5;
 
-const getImageSize = async (imageFile: File) =>
+const getImageSize = async (imageFile: File | Blob) =>
   new Promise<{ width: number; height: number }>((resolve) => {
     const objectUrl = URL.createObjectURL(imageFile);
     const img = new Image();
@@ -492,22 +492,18 @@ function CreateProfileStep3() {
     setProfileImage(profImage);
   };
 
-  const QrUpload: ChangeEventHandler<HTMLInputElement> = async (event) => {
-    const { target } = event;
-    const { files } = target;
-    const ImageQr = files ? files[0] : null;
-    if (!ImageQr) {
-      return;
-    }
+  const QrUpload = async (imageQr: Blob) => {
+    // const { target } = event;
+    // const { files } = target;
+    // const ImageQr = files ? files[0] : null;
     const formData = new FormData();
 
     formData.append("profileId", profileId);
-    formData.append("brandingLogo", ImageQr);
+    formData.append("brandingLogo", imageQr);
 
-    const { width, height } = await getImageSize(ImageQr);
+    const { width, height } = await getImageSize(imageQr);
     if (width > 5000 || height > 5000) {
       const list = new DataTransfer();
-      target.files = list.files;
       setImageError("Image Size should be 5000x5000 or smaller");
       return;
     }
