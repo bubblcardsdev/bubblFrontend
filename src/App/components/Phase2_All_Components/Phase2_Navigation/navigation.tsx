@@ -84,6 +84,7 @@ function Navigation(props: NavigationProps) {
   const handleLogout = () => {
     // Add logic for handling logout click
     removeAccessToken();
+    localStorage.removeItem("cart");
     router.push("/login");
     setShowDropdown(false);
   };

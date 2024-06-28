@@ -144,16 +144,18 @@ export default function ProTemplateTwo({
   };
   const [userPlan, setUserPlan] = useState<null | IPlanDetail>(null);
   useEffect(() => {
-    const userPlanPromise = getUserPlan();
-    if (userPlanPromise) {
-      userPlanPromise
-        .then((res) => res.data)
-        .then((data) => {
-          const { getPlans } = data;
-          setUserPlan(getPlans);
-        });
+    if (edit) {
+      const userPlanPromise = getUserPlan();
+      if (userPlanPromise) {
+        userPlanPromise
+          .then((res) => res.data)
+          .then((data) => {
+            const { getPlans } = data;
+            setUserPlan(getPlans);
+          });
+      }
     }
-  }, []);
+  }, [edit]);
   const handlePaymentClick = (paymentMethod: any) => {
     navigator.clipboard.writeText(paymentMethod);
     toast.success(`Copied ${paymentMethod} to clipboard!`, { autoClose: 3000 });

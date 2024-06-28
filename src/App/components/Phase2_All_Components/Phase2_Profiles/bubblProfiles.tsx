@@ -87,13 +87,14 @@ function YourProfile() {
 
   let indexNumber = 0;
   const arrColors = ["#603FF0", "#00CC99", "#FF3300", "#FEBF25"]; // colors for profile name div
-
+  
   // function for profile page
   const EditProfilePage = (payload: any) => {
     const ProfileId = payload?.Profile?.id ? payload?.Profile?.id : payload;
     const DeviceLinkId = payload?.id;
 
     localStorage.setItem("deviceLinkId", DeviceLinkId);
+    // jwt decrypt 
     router.replace({
       pathname: `/createProfileStep3/${ProfileId}`,
       // query: { deviceId },

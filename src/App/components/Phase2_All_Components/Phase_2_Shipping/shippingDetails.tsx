@@ -34,6 +34,7 @@ import { getShipping } from "src/App/services/payments";
 import { shippingDetails } from "src/App/services/shippingDetails";
 import {
   addCartItem,
+  clearCartItems,
   getCartItems,
 } from "src/App/services/shopPage/shopServices";
 
@@ -318,13 +319,13 @@ function ShippingDetails() {
               fontStyle: allItems[i].fontStyle,
               name: allItems[i].name,
               price: allItems[i].price,
-              quanitiy: allItems[i].quantity,
+              quanitiy: allItems[i].quantity || allItems[i]?.quanitiy,
             };
 
             const response = await AddCartApi(itemObj);
           } else if (allItems[i]?.deviceType?.includes("Full Custom")) {
             const fullItemObj = {
-              quantity: allItems[i].quantity,
+              quantity: allItems[i].quantity || allItems[i]?.quanitiy,
               price: allItems[i].price,
               deviceColor: allItems[i]?.deviceColor,
               deviceType: allItems[i]?.deviceType,
@@ -351,6 +352,8 @@ function ShippingDetails() {
           const details = await shippingDetails(shipObj, orderId, country);
           const response = details?.data.success;
           if (response) {
+            localStorage.removeItem("cart");
+            localStorage.removeItem("AddData");
             proceedPayment(orderId);
           }
         }
@@ -528,7 +531,7 @@ function ShippingDetails() {
                   <div className={styles.totalInr}>
                     <p>
                       TOTAL <span>(Tax Included)</span>
-                     (Tax Included)</p>
+                    </p>
                     {shippingTotal === undefined ? (
                       <p>
                         ₹{Math.round(Number(cartTotal) + 0 + 0 + 0)}

@@ -130,16 +130,18 @@ export default function FreeTemplateOne({
     val2 = updateAddress.replace(/,/g, "+");
   }
   useEffect(() => {
-    const userPlanPromise = getUserPlan();
-    if (userPlanPromise) {
-      userPlanPromise
-        .then((res) => res.data)
-        .then((data) => {
-          const { getPlans } = data;
-          setUserPlan(getPlans);
-        });
+    if (edit) {
+      const userPlanPromise = getUserPlan();
+      if (userPlanPromise) {
+        userPlanPromise
+          .then((res) => res.data)
+          .then((data) => {
+            const { getPlans } = data;
+            setUserPlan(getPlans);
+          });
+      }
     }
-  }, []);
+  }, [edit]);
   const handleShareIconClick = () => {
     if (!userName) {
       toast.info("No unique name is configured");
@@ -404,8 +406,8 @@ export default function FreeTemplateOne({
                     <Image
                       src={profileImage?.square}
                       alt="UserImage"
-                      width={120}
-                      height={120}
+                      width={150}
+                      height={150}
                     />
                   ) : (
                     <Image src={UserImg} alt="Dummy" width={120} height={120} />

@@ -38,6 +38,24 @@ export const getCartItems = async () => {
   }
 };
 
+export const getCartItem = async () => {
+  const headers = {
+    "Content-Type": "application/json",
+    authorization: getAccessToken(),
+  };
+  try {
+    const res = await axios.get("cart/all", { headers: headers });
+    const response = res?.data.data.cart.Carts;
+    const images = res?.data.data.deviceImages;
+    const productPrice = res?.data.data.productPrice;
+    // usestate(response);
+    return { response, images, productPrice };
+  } catch (e) {
+    console.log(e);
+    return null;
+  }
+};
+
 export const cancelCart = async (cancelObject: any) => {
   const headers = {
     "Content-Type": "application/json",

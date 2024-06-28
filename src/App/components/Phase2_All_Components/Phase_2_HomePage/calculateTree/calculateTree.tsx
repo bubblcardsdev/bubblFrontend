@@ -19,6 +19,7 @@ function CalculateTree() {
   const [printCount, setPrintCount] = useState(1000);
   const [printCost, setPrintCost] = useState(0);
 
+  // eslint-disable-next-line no-unused-vars
   const treesFormula = Math.round(employeeCount * 0.025);
 
   useEffect(() => {

@@ -219,7 +219,12 @@ function CardProductList() {
             cartVAlues.productColor === selectColor &&
             cartVAlues.productType === "Card"
           ) {
-            return { ...cartVAlues, quantity: cartVAlues.quantity + itemCount };
+            return {
+              ...cartVAlues,
+              quantity: cartVAlues.quantity + itemCount,
+              productPrice:
+                individuals[0].price * (cartVAlues.quantity + itemCount),
+            };
           }
           return cartVAlues;
         });

@@ -138,7 +138,7 @@ function ProductListSocket() {
   const getCartLength = async () => {
     const getCart: any = getCartValue();
     const cartCount = JSON.parse(getCart);
-    setCartTotal(cartCount.length);
+    setCartTotal(cartCount?.length);
     setCartArray(cartCount);
   };
 

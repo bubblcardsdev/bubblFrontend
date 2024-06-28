@@ -47,6 +47,11 @@ export const getEmail = () => get(EMAIL);
 export const setEmail = (email: string) => set(EMAIL, email);
 export const removeEmail = () => remove(EMAIL);
 
+export const setAddDataFlag = (data: boolean) =>
+  localStorage.setItem("AddData", JSON.stringify(data));
+export const getAddDataFlag = () => get("AddData");
+export const removeAddDataFlag = () => remove("AddData");
+
 export const getcountryCode = () => get(COUNTRYCODE);
 export const setcountryCode = (countryCode: string) =>
   set(COUNTRYCODE, countryCode);

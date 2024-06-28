@@ -385,8 +385,9 @@ function CreateProfileStep3() {
             type: "update",
             payload: profile,
           });
-
-          setDeviceUidVal(deviceUid.deviceUid);
+          if (deviceUid) {
+            setDeviceUidVal(deviceUid);
+          }
 
           const profileImg = {
             square: profileImages.square || "",
@@ -402,26 +403,30 @@ function CreateProfileStep3() {
           setTemplateId(profile.Template.id);
           setTemplateChosen(profile.Template.id);
           setDeviceBrands(deviceBrandsData);
+          if (deviceBrandsData) {
+            const allDeviceBrandingForTemplateId = deviceBrandsData.filter(
+              (brandingData: any) =>
+                brandingData.templateId === profile.Template.id &&
+                brandingData.DeviceLinkId &&
+                brandingData.DeviceLinkId.toString() === deviceLinkId
+                  ? deviceLinkId
+                  : null
+            );
 
-          const allDeviceBrandingForTemplateId = deviceBrandsData.filter(
-            (brandingData: any) =>
-              brandingData.templateId === profile.Template.id &&
-              brandingData.DeviceLinkId.toString() === deviceLinkId
-          );
-
-          const deviceBrandingData =
-            allDeviceBrandingForTemplateId[
-              allDeviceBrandingForTemplateId.length - 1
-            ];
-
-          if (deviceBrandingData && updatedTemplateColors[0]) {
-            setDeviceBranding({
-              ...deviceBrandingData,
-              brandingBackGroundColor:
-                deviceBrandingData.brandingBackGroundColor ||
-                updatedTemplateColors[0],
-            });
+            const deviceBrandingData =
+              allDeviceBrandingForTemplateId[
+                allDeviceBrandingForTemplateId.length - 1
+              ];
+            if (deviceBrandingData && updatedTemplateColors[0]) {
+              setDeviceBranding({
+                ...deviceBrandingData,
+                brandingBackGroundColor:
+                  deviceBrandingData.brandingBackGroundColor ||
+                  updatedTemplateColors[0],
+              });
+            }
           }
+
           setDataLoaded(true);
         })
         .catch((error) => {

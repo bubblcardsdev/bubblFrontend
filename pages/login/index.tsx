@@ -30,6 +30,7 @@ import {
   getShippingDetails,
   removeRouteVal,
   setAccessToken,
+  setAddDataFlag,
   setclaimName,
   setExperimentTime,
   setfirstName,
@@ -182,7 +183,7 @@ function Login() {
                       fontStyle: item.fontStyle,
                       name: item.name,
                       price: item.price,
-                      quanitiy: item.quanitiy,
+                      quanitiy: item.quantity || item.quanitiy,
                     };
 
                     // Return the promise from AddCartApi
@@ -190,7 +191,7 @@ function Login() {
                   }
                   if (item?.deviceType?.includes("Full Custom")) {
                     const fullItemObj = {
-                      quantity: item.quanitiy,
+                      quantity: item.quantity || item.quanitiy,
                       price: item.price,
                       deviceColor: item?.deviceColor,
                       deviceType: item?.deviceType,
@@ -231,6 +232,7 @@ function Login() {
                         router.query?.country
                       );
                     }
+                    setAddDataFlag(true);
 
                     router.push({
                       pathname: "/processPayment",
@@ -293,6 +295,7 @@ function Login() {
                 router.query?.country
               );
             }
+            setAddDataFlag(true);
 
             router.push({
               pathname: "/processPayment",
@@ -334,7 +337,7 @@ function Login() {
                     fontStyle: item.fontStyle,
                     name: item.name,
                     price: item.price,
-                    quanitiy: item.quanitiy,
+                    quanitiy: item.quantity || item.quanitiy,
                   };
 
                   // Return the promise from AddCartApi
@@ -342,7 +345,7 @@ function Login() {
                 }
                 if (item?.deviceType?.includes("Full Custom")) {
                   const fullItemObj = {
-                    quantity: item.quanitiy,
+                    quantity: item.quantity || item.quanitiy,
                     price: item.price,
                     deviceColor: item?.deviceColor,
                     deviceType: item?.deviceType,
@@ -383,6 +386,7 @@ function Login() {
                       router.query?.country
                     );
                   }
+                  setAddDataFlag(true);
 
                   router.push({
                     pathname: "/processPayment",
@@ -402,7 +406,8 @@ function Login() {
       } else {
         getProfiles().then((respDatas) => {
           if (respDatas?.success) {
-            respDatas?.data?.devices?.length >= 1
+            respDatas?.data?.devices?.length ||
+            respDatas?.data?.profiles?.length >= 1
               ? router.push("/bubblProfiles")
               : router.push("/createProfileStep1");
           }
@@ -438,6 +443,7 @@ function Login() {
               router.query?.country
             );
           }
+          setAddDataFlag(true);
 
           router.push({
             pathname: "/processPayment",
@@ -479,7 +485,7 @@ function Login() {
                   fontStyle: item.fontStyle,
                   name: item.name,
                   price: item.price,
-                  quanitiy: item.quanitiy,
+                  quanitiy: item.quanitiy || item.quantity,
                 };
 
                 // Return the promise from AddCartApi
@@ -487,7 +493,7 @@ function Login() {
               }
               if (item?.deviceType?.includes("Full Custom")) {
                 const fullItemObj = {
-                  quantity: item.quanitiy,
+                  quantity: item.quanitiy || item.quantity,
                   price: item.price,
                   deviceColor: item?.deviceColor,
                   deviceType: item?.deviceType,
@@ -528,6 +534,7 @@ function Login() {
                     router.query?.country
                   );
                 }
+                setAddDataFlag(true);
 
                 router.push({
                   pathname: "/processPayment",
@@ -588,6 +595,7 @@ function Login() {
                 router.query?.country
               );
             }
+            setAddDataFlag(true);
 
             router.push({
               pathname: "/processPayment",
@@ -677,7 +685,8 @@ function Login() {
                       orderId,
                       router.query?.country
                     );
-                  }
+                  };
+                  setAddDataFlag(true);
 
                   router.push({
                     pathname: "/processPayment",

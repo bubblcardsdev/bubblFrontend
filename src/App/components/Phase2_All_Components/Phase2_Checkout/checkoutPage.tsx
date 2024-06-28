@@ -10,12 +10,19 @@ import { useEffect, useRef, useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import {
   getAccessToken,
+  getAddDataFlag,
   getCartValue,
   getExperationTime,
+  removeAddDataFlag,
+  setAddDataFlag,
   setCartValue,
   setPriceValue,
 } from "src/App/helpers/local-storage";
-import { clearCartItems } from "src/App/services/shopPage/shopServices";
+import {
+  cancelCart,
+  clearCartItems,
+  getCartItem,
+} from "src/App/services/shopPage/shopServices";
 
 import ParallaxBackground from "@/pages/backgroundimageswithgradient/background";
 
@@ -29,7 +36,6 @@ import SubTotalComponent from "./subTotalComponent";
 
 function CheckOutPageFunc() {
   const router: any = useRouter();
-
   const [allCart, setAllCart] = useState<any>();
   const [priceTotal, setPriceTotal] = useState<any>();
   // State to manage whether navigation needs to be refreshed
@@ -45,7 +51,133 @@ function CheckOutPageFunc() {
     setRefreshNavigation(false);
   };
 
-  const getCartItems = () => {
+  // eslint-disable-next-line no-shadow
+  async function checkCart(
+    allCartData: any,
+    ApiCartData: any,
+    Images: any,
+    price: any
+  ) {
+    const ArrayData: Array<{
+      id: number;
+      itemPrice: number;
+      productColor: "";
+      productImage: "";
+      productPrice: number;
+      productStatus: boolean;
+      productType: "";
+      quantity: number;
+      orderId: any;
+      cartId: any;
+    }> = allCartData ? [...allCartData] : [];
+    // eslint-disable-next-line no-restricted-syntax
+    for (const Data of ApiCartData) {
+      // eslint-disable-next-line no-shadow
+      // console.log(allCartData, "aaaaa");
+      // eslint-disable-next-line no-unused-vars
+
+      // eslint-disable-next-line consistent-return
+      ArrayData.forEach((item, index) => {
+        if (
+          item.productColor === Data.productColor &&
+          item.productType === Data.productType
+        ) {
+          // eslint-disable-next-line no-return-assign
+          return (ArrayData[index] = {
+            ...item,
+            quantity: item.quantity + Data.quantity,
+            productPrice: item.productPrice + Data.productPrice * Data.quantity,
+          });
+        }
+        if (
+          item.productColor !== Data.productColor &&
+          item.productType !== Data.productType
+        ) {
+          return ArrayData.push({
+            itemPrice: price[index],
+            productColor: Data.productColor,
+            productImage: Images[index],
+            productPrice: price[index] * Data.quantity,
+            productType: Data.productType,
+            quantity: Data.quantity,
+            id: ArrayData.length + 1,
+            productStatus: true,
+            orderId: Data.orderId,
+            cartId: Data.id,
+          });
+        }
+      });
+    }
+    localStorage.setItem("cart", JSON.stringify(ArrayData));
+    const getCartVal: any = getCartValue();
+    const value = JSON.parse(getCartVal);
+    setAddDataFlag(true);
+    setAllCart(value);
+    let totalPrice = 0;
+    for (let i = 0; i < value?.length; i++) {
+      const item = value[i];
+
+      totalPrice += item.productPrice || item.price;
+    }
+    setPriceTotal(totalPrice);
+    setPriceValue(totalPrice);
+    // setAllCart(ArrayData);
+  }
+  async function UpdateCart(Apidata: any, Images: any, price: any) {
+    const ArrayData: Array<{
+      id: number;
+      itemPrice: number;
+      productColor: "";
+      productImage: "";
+      productPrice: number;
+      productStatus: boolean;
+      productType: "";
+      quantity: number;
+    }> = Apidata.map(
+      (
+        Data: {
+          itemPrice: any;
+          productPrice: number;
+          productColor: any;
+          productImage: any;
+          quantity: any;
+          productType: any;
+          orderId: any;
+          id: any;
+        },
+        index: number
+      ) => ({
+        id: index + 1,
+        itemPrice: price[index],
+        productColor: Data.productColor,
+        productImage: Images[index],
+        productPrice: price[index] * Data.quantity,
+        productType: Data.productType,
+        quantity: Data.quantity,
+        productStatus: true,
+        orderId: Data.orderId,
+        cartId: Data.id,
+      })
+    );
+    console.log(ArrayData, "aaaaa");
+
+    localStorage.setItem("cart", JSON.stringify(ArrayData));
+    const getCartVal: any = getCartValue();
+    const value = JSON.parse(getCartVal);
+    setAddDataFlag(true);
+    setAllCart(value);
+    let totalPrice = 0;
+    for (let i = 0; i < value?.length; i++) {
+      const item = value[i];
+
+      totalPrice += item.productPrice || item.price;
+    }
+    setPriceTotal(totalPrice);
+    setPriceValue(totalPrice);
+    window.location.reload();
+  }
+
+  const getCartItems = async () => {
     const getCartVal: any = getCartValue();
     const value = JSON.parse(getCartVal);
     setAllCart(value);
@@ -59,6 +191,37 @@ function CheckOutPageFunc() {
     setPriceValue(totalPrice);
   };
 
+  const updateCartItems = async () => {
+    const addData = getAddDataFlag();
+
+    const Apidata = await getCartItem(); // get cart items from table if its pending order
+
+    const getCartVal: any = getCartValue();
+    const value = JSON.parse(getCartVal);
+
+    if (Apidata && value === null && addData === null) {
+      UpdateCart(Apidata?.response, Apidata?.images, Apidata?.productPrice);
+    }
+    if (Apidata && value && addData === null) {
+      checkCart(
+        value,
+        Apidata?.response,
+        Apidata?.images,
+        Apidata?.productPrice
+      );
+    } else {
+      setAllCart(value);
+      let totalPrice = 0;
+      for (let i = 0; i < value?.length; i++) {
+        const item = value[i];
+
+        totalPrice += item.productPrice || item.price;
+      }
+      setPriceTotal(totalPrice);
+      setPriceValue(totalPrice);
+    }
+  };
+  // updateCartItems();
   const decrementCount = (productId: number) => {
     const getAllItems: any = getCartValue();
     const parseValue = JSON.parse(getAllItems);
@@ -95,15 +258,41 @@ function CheckOutPageFunc() {
     handleRefreshClick();
   };
   const deleteCartItems = (id: any) => {
-    const updatedCart = allCart?.filter((CartData: any) => CartData.id !== id);
-    setCartValue(updatedCart);
-    setAllCart(updatedCart);
-    getCartItems();
-    handleRefreshClick();
+    const token = getAccessToken() ?? "";
+    if (token) {
+      const updatedCart = allCart?.filter(
+        (CartData: any) => CartData.id !== id
+      );
+      const data = allCart?.filter((CartData: any) => CartData.id === id);
+      // eslint-disable-next-line no-shadow
+      const deleteData = data[0];
+
+      setCartValue(updatedCart);
+      setAllCart(updatedCart);
+      getCartItems();
+      cancelCart(deleteData);
+      removeAddDataFlag();
+      handleRefreshClick();
+    } else {
+      const updatedCart = allCart?.filter(
+        (CartData: any) => CartData.id !== id
+      );
+      setCartValue(updatedCart);
+      setAllCart(updatedCart);
+      getCartItems();
+      removeAddDataFlag();
+      handleRefreshClick();
+    }
   };
 
   useEffect(() => {
-    getCartItems();
+    const token = getAccessToken() ?? "";
+    if (token) {
+      updateCartItems();
+    } else {
+      getCartItems();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const tokenSetRef = useRef(false);
 
@@ -135,6 +324,7 @@ function CheckOutPageFunc() {
     const position = window.scrollY;
     setScrollPosition(position);
   };
+
   const { isFailed } = router.query;
   useEffect(() => {
     const failurePathRead = localStorage.getItem("failurePath");
@@ -143,9 +333,8 @@ function CheckOutPageFunc() {
       localStorage.setItem("failurePath", "");
     }
     if (isFailed === "1") {
-      localStorage.removeItem("cart");
-
       clearCartItems();
+      localStorage.removeItem("cart");
       getCartItems();
     }
     window.addEventListener("scroll", handleScroll);
