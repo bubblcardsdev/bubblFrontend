@@ -685,7 +685,7 @@ function Login() {
                       orderId,
                       router.query?.country
                     );
-                  };
+                  }
                   setAddDataFlag(true);
 
                   router.push({
@@ -754,7 +754,7 @@ function Login() {
                       },
                       pattern: {
                         // eslint-disable-next-line no-useless-escape
-                        value: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
+                        value: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/,
                         message: "Invalid email address",
                       },
                     })}

@@ -39,7 +39,7 @@ function EditAddressModal({
       ...currAddress,
       data: {
         ...currAddress.data,
-        [fieldName]: value,
+        [fieldName]: value.replace(/\s+/g, " ").trim(),
       },
       // error: {
       //   ...currAddress.error,

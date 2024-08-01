@@ -523,7 +523,7 @@ export default function FreeTemplateOne({
                   <div className={styles.Qr} style={{ backgroundColor }}>
                     <QrModal
                       saveIconBorderColor=""
-                      saveIconBackgroundColor=""
+                      saveIconBackgroundColor={backgroundColor}
                       qrImageUrl=""
                       linkVal={userName}
                     />
@@ -924,6 +924,7 @@ export default function FreeTemplateOne({
                       ) : (
                         <a
                           className={styles.Right}
+                          style={{ backgroundColor }}
                           href={`tel:${
                             getAllProfile?.profilePhoneNumbers?.[0]
                               ?.phoneNumber || phoneNumberField?.phoneNumber
@@ -1048,6 +1049,7 @@ export default function FreeTemplateOne({
                       ) : (
                         <a
                           className={styles.Right}
+                          style={{ backgroundColor }}
                           href={`mailto:${
                             getAllProfile?.profileEmails?.[0]?.emailId ||
                             emailIdField?.emailId
@@ -1177,6 +1179,7 @@ export default function FreeTemplateOne({
                       ) : (
                         <a
                           className={styles.Right}
+                          style={{ backgroundColor }}
                           href={`${
                             getAllProfile?.profileWebsites?.[0]?.website ||
                             websiteField?.website

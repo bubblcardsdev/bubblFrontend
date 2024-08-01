@@ -198,8 +198,12 @@ const fetchImageUrl = async (deviceUid: any) => {
   // if (profileImg && profileImg.square) {
   const idObj = { profileId: deviceUid };
   const urls = await getImageUrl(idObj);
-  console.log(urls, "urls");
-  return urls?.baseUrl;
+  if (urls && urls.baseUrl) {
+    return urls.baseUrl; // Return the baseUrl if it exists
+  }
+  return "";
+
+  // return urls?.baseUrl;
 
   // return null;
 };
@@ -212,10 +216,16 @@ async function getImage(profileImage: any, deviceUid: any) {
   // } else {
   imgUrl = await fetchImageUrl(deviceUid);
 
-  console.log("imgUrl: +", imgUrl);
   // }
 
-  imgUrl = await resizeBase64Image(imgUrl, 500, 500);
+  if (imgUrl) {
+    console.log("imgUrl:", imgUrl);
+    imgUrl = await resizeBase64Image(imgUrl, 500, 500);
+  } else {
+    imgUrl = "";
+  }
+
+  console.log("imgUrl: +", imgUrl);
 
   return imgUrl;
 }
@@ -229,6 +239,10 @@ function generateVCardV4(
   emails: any[],
   websiteURLs: any[],
   workAddress: string,
+  locality: string,
+  region: string,
+  postalCode: string,
+  country: string,
   socialMedia: any[]
 ) {
   console.log(
@@ -289,12 +303,14 @@ function generateVCardV4(
 
   let vCard = `BEGIN:VCARD
 VERSION:3.0
-N:${fullName || " "};;;;
-FN:${fullName || " "}
-ORG:${organization || ""}
-TITLE:${jobTitle || ""};
-PHOTO;ENCODING=b;TYPE=image/jpeg:${photoURL || ""}`;
-
+N:;${fullName};;;
+FN:${fullName}
+ORG:${organization}
+TITLE:${jobTitle}`;
+  if (photoURL) {
+    vCard += `
+PHOTO;ENCODING=b;TYPE=image/jpeg:${photoURL}`;
+  }
   // Adding phone numbers
   phoneNumbers.forEach((phoneNumber, index) => {
     vCard += `
@@ -307,17 +323,32 @@ TEL;TYPE=work,voice${index > 0 ? "," : ""}:${phoneNumber}`;
 EMAIL;TYPE=internet,work${index > 0 ? "," : ""}:${email}`;
   });
 
-  // Adding website URLs with labels
-  websiteURLs.forEach((website, index) => {
-    const url = website;
+  const addressSet = new Set(websiteURLs);
+
+  addressSet.forEach((url, index) => {
     const label = "Website";
     vCard += `
 item${index + 1}.URL;type=pref:${url}
 item${index + 1}.X-ABLabel:${label}`;
   });
 
-  vCard += `
-ADR;TYPE=work:${address || " your address"}`;
+  // Adding website URLs with labels
+  //   websiteURLs.slice(0, 1).forEach((website, index) => {
+  //     const url = website;
+  //     const label = "Website";
+  //     vCard += `
+  // item${index + 1}.URL;type=pref:${url}
+  // item${index + 1}.X-ABLabel:${label}`;
+  //   });
+
+  // console.log("address address", address);
+
+  if (address) {
+    // eslint-disable-next-line prefer-const
+    let workaddress = workAddress.replace(/\n/g, " ");
+    vCard += `
+ADR;TYPE=WORK:;;${workaddress};${locality};${region};${postalCode};${country}`;
+  }
 
   // Adding social media profiles
   socialMedia.forEach((profile, index) => {
@@ -400,7 +431,7 @@ async function SaveVCFContact(
 
   const profileImages = await getImage(profileImg, deviceUid);
 
-  console.log(profileImages, ":::: image");
+  // console.log(profileImages, ":::: image");
 
   // Check if profile image is available
 
@@ -415,14 +446,18 @@ async function SaveVCFContact(
   const formattedCountry = country || "";
 
   const vCardData = generateVCardV4(
-    `${formattedFirstName} ${formattedLastName}`,
+    formattedFirstName,
     formattedCompanyName,
     formattedDesignation,
     profileImages,
     phoneNumbers,
     emails,
     websiteUrl,
-    `${formattedAddress} ${formattedCity} ${formattedState} ${formattedCountry}`,
+    formattedAddress,
+    formattedCity,
+    formattedState,
+    "",
+    formattedCountry,
     socialMedia
   );
 

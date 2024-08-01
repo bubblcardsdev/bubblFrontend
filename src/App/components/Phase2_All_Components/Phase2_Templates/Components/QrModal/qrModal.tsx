@@ -21,6 +21,8 @@ function QrModal({
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  console.log(linkVal, qrImageUrl, "gggggg");
+
   return (
     <>
       <Modal show={show} onHide={handleClose} backdrop="static" centered>
@@ -36,7 +38,11 @@ function QrModal({
           </Button>
         </Modal.Header>
         <Modal.Body style={{ backgroundColor: "black" }}>
-          <QRCodeModal deviceIdQR={linkVal} qrImageUrl={qrImageUrl} />
+          <QRCodeModal
+            // eslint-disable-next-line no-unneeded-ternary
+            deviceIdQR={linkVal.deviceUid ? linkVal.deviceUid : linkVal}
+            qrImageUrl={qrImageUrl}
+          />
         </Modal.Body>
       </Modal>
 
