@@ -49,11 +49,10 @@ import { listingData } from "src/App/services/createProfileApi";
 import { DeviceT } from "src/App/services/shop";
 
 import styles from "@/pages/index.module.css";
-
+import Marquee from "src/App/components/marquee/marquee";
 import TestimonialComponent from "../src/App/components/Phase2_All_Components/Phase_2_HomePage/testimonialSection/testimonial";
 import UpArrow from "../src/App/components/Phase2_All_Components/Phase2_Templates/Images/assets_for_profile_templates/Common/up_white.png";
 import ParallaxBackground from "./backgroundimageswithgradient/background";
-import Marquee from "src/App/components/marquee/marquee";
 
 // Lazy loading the components
 const ClientSectionLazy = React.lazy(

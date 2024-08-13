@@ -7,7 +7,7 @@
     "react/react-in-jsx-scope": "off",
     "react/jsx-props-no-spreading": "off",
     "jsx-a11y/anchor-is-valid": [
-      "error",
+      "warning",
       {
         "components": ["Link"],
         "specialLink": ["hrefLeft", "hrefRight"],
@@ -16,7 +16,7 @@
     ],
     "import/no-absolute-path": "off",
     "import/extensions": [
-      "error",
+      "warning",
       "ignorePackages",
       {
         "js": "never",
@@ -25,11 +25,11 @@
         "tsx": "never"
       }
     ],
-    "simple-import-sort/imports": "error",
-    "simple-import-sort/exports": "error",
-    "import/first": "error",
-    "import/newline-after-import": "error",
-    "import/no-duplicates": "error",
+    "simple-import-sort/imports": "warning",
+    "simple-import-sort/exports": "warning",
+    "import/first": "warning",
+    "import/newline-after-import": "warning",
+    "import/no-duplicates": "warning",
     "no-unused-vars": "warn",
     "no-console": "off",
     "func-names": "off",

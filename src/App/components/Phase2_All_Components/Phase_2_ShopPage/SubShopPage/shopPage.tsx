@@ -16,7 +16,7 @@ import {
 import { DeviceT, getShop } from "src/App/services/shop";
 
 import ParallaxBackground from "@/pages/backgroundimageswithgradient/background";
-
+import Marquee from "src/App/components/marquee/marquee";
 import Right from "../../../../../../images/Phase_2_All_Assets/comman_assets/rightArr.svg";
 import BubblCustomSlider from "../../../homeslider/bubblCustomSlide";
 import HomeSlider from "../../../homeslider/Homeslider";
@@ -27,7 +27,6 @@ import TestimonialComponent from "../../Phase_2_HomePage/testimonialSection/test
 import Footer from "../../Phase2_Footer/footer";
 import BundleComponent from "../bundleCard/bundleComponent";
 import styles from "./shopPage.module.css";
-import Marquee from "src/App/components/marquee/marquee";
 
 function ShopComponent() {
   const [devices, setDevices] = useState<Record<
@@ -178,7 +177,7 @@ function ShopComponent() {
                 of futuristic networking.
               </p>
             </div>
-            <HomeSlider shopDetails={individuals} showDiscount={true} />
+            <HomeSlider shopDetails={individuals} showDiscount />
             {/* <ProductCards
               carouselItemIndex={undefined}
               shopDetails={individuals}
@@ -197,10 +196,7 @@ function ShopComponent() {
               </p>
               <div className={styles.customDiv}>
                 <Col xl={8} sm={7} xs={6} className={styles.customCol}>
-                  <BubblCustomSlider
-                    shopDetails={nameCustom}
-                    showDiscount={true}
-                  />
+                  <BubblCustomSlider shopDetails={nameCustom} showDiscount />
                 </Col>
               </div>
               <div className={styles.line} />
