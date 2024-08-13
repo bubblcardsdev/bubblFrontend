@@ -53,6 +53,7 @@ import styles from "@/pages/index.module.css";
 import TestimonialComponent from "../src/App/components/Phase2_All_Components/Phase_2_HomePage/testimonialSection/testimonial";
 import UpArrow from "../src/App/components/Phase2_All_Components/Phase2_Templates/Images/assets_for_profile_templates/Common/up_white.png";
 import ParallaxBackground from "./backgroundimageswithgradient/background";
+import Marquee from "src/App/components/marquee/marquee";
 
 // Lazy loading the components
 const ClientSectionLazy = React.lazy(
@@ -234,6 +235,7 @@ export default function Home() {
           <link rel="icon" href="/favicon.ico" />
           <link rel="canonical" href="https://bubbl.cards/" />
         </Head>
+
         <section
           className={`${styles.homePageSection} ${styles.parallaxBackground}`}
         >
@@ -253,6 +255,8 @@ export default function Home() {
             <div className={styles.navigationContainer}>
               {isTokenPresent ? <Navigation /> : <HomePageNavigation />}
             </div>
+
+            <Marquee />
 
             {/* Connect Section */}
             <section className={styles.connectSectionSec}>

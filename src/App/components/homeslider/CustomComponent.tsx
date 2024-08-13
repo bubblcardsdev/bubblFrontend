@@ -18,11 +18,13 @@ function CustomComponent({
   title,
   description,
   images,
+  showDiscount,
 }: {
   price: number;
   title: string;
   description: string;
   images: Record<string, string>;
+  showDiscount?: boolean;
 }) {
   const router = useRouter();
   const colors = useMemo(() => Object.keys(images), [images]);
@@ -54,6 +56,7 @@ function CustomComponent({
         images={images}
         // setColors={setColor}
         title="" // originalPrice={0}
+        showDiscount={showDiscount}
       />
       <div className={styles.quantity}>
         <p className={styles.heading}>Bubbl {title}</p>

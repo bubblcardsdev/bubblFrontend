@@ -14,7 +14,13 @@ import { DeviceT } from "src/App/services/shop";
 import CustomComponent from "./CustomComponent";
 import styles from "./slider.module.css";
 
-const BubblCustomSlider = ({ shopDetails }: { shopDetails: DeviceT[] }) => {
+const BubblCustomSlider = ({
+  shopDetails,
+  showDiscount,
+}: {
+  shopDetails: DeviceT[];
+  showDiscount?: boolean;
+}) => {
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 3000 },
@@ -49,6 +55,7 @@ const BubblCustomSlider = ({ shopDetails }: { shopDetails: DeviceT[] }) => {
               title={item?.type}
               description={item?.description}
               images={item?.images}
+              showDiscount={showDiscount}
             />
           ))}
         </Carousel>

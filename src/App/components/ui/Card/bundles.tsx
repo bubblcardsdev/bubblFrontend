@@ -20,6 +20,7 @@ export default function BundleCards({
   images,
   // setColors,
   title,
+  showDiscount,
 }: {
   price?: number;
   // originalPrice: number;
@@ -28,6 +29,7 @@ export default function BundleCards({
   images: Record<string, string>;
   // setColors: Dispatch<SetStateAction<string>>;
   title: string;
+  showDiscount?: boolean;
 }) {
   const responsive = {
     desktop: {
@@ -136,6 +138,14 @@ export default function BundleCards({
             <div className={styles.cards_prod_img}>
               <img src={images[color]} alt="cards" />
             </div>
+
+            {showDiscount && price && price > 0 && (
+              <div className={styles.discountContainer}>
+                <p className={styles.slashedPrice}>INR 999</p>
+                <span className={styles.discountText}>40% off</span>
+              </div>
+            )}
+
             {price && price > 0 ? (
               <div className={styles.rateDiv}>
                 <p className={styles.rate}>
@@ -163,6 +173,13 @@ export default function BundleCards({
               </div>
             ))} */}
             {/* </Carousel> */}
+
+            {showDiscount && price && price > 0 && (
+              <div className={styles.discountContainer}>
+                <p className={styles.slashedPrice}>INR 599</p>
+                <span className={styles.discountText}>43% off</span>
+              </div>
+            )}
 
             {price && price > 0 ? (
               <div className={styles.rateDiv}>

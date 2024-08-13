@@ -1,0 +1,33 @@
+.popupBg {
+    background: rgba(0, 0, 0, 0.55);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+}
+
+.popupContainer {
+    position: relative;
+    padding: 30px;
+}
+
+.popupImg {
+    width: 100%;
+    max-width: 400px;
+    display: block;
+    cursor: pointer;
+}
+
+.popupClose {
+    width: 30px;
+    position: absolute !important;
+    display: block;
+    top: -5px;
+    right: 5px;
+    cursor: pointer;
+}

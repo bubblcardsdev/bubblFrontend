@@ -27,6 +27,7 @@ import TestimonialComponent from "../../Phase_2_HomePage/testimonialSection/test
 import Footer from "../../Phase2_Footer/footer";
 import BundleComponent from "../bundleCard/bundleComponent";
 import styles from "./shopPage.module.css";
+import Marquee from "src/App/components/marquee/marquee";
 
 function ShopComponent() {
   const [devices, setDevices] = useState<Record<
@@ -128,6 +129,8 @@ function ShopComponent() {
               </div>
             </div>
 
+            <Marquee />
+
             <div className={styles.shopPageDiv}>
               {/* <div className={styles.shopBreadCrumbs}>
                 <div className={styles.homeLink}>
@@ -175,7 +178,7 @@ function ShopComponent() {
                 of futuristic networking.
               </p>
             </div>
-            <HomeSlider shopDetails={individuals} />
+            <HomeSlider shopDetails={individuals} showDiscount={true} />
             {/* <ProductCards
               carouselItemIndex={undefined}
               shopDetails={individuals}
@@ -194,7 +197,10 @@ function ShopComponent() {
               </p>
               <div className={styles.customDiv}>
                 <Col xl={8} sm={7} xs={6} className={styles.customCol}>
-                  <BubblCustomSlider shopDetails={nameCustom} />
+                  <BubblCustomSlider
+                    shopDetails={nameCustom}
+                    showDiscount={true}
+                  />
                 </Col>
               </div>
               <div className={styles.line} />

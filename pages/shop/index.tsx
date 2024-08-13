@@ -97,9 +97,8 @@ export default function Shop() {
         <div className={styles.wholepage}>
           <section className={styles.userprofile_sec}>
             <TitleBar />
-            {/* <div>
-              <Marquee />
-            </div> */}
+
+            <Marquee />
           </section>
           <section className={styles.navbar}>
             <div className="container">

@@ -168,7 +168,7 @@ input {
 }
 
 .accordion-button::after {
-  background-image: url("../../Bubbl_FrontEnd/images/Phase_2_All_Assets/home_page/accordianArrow.svg") !important;
+  /* background-image: url("../../Bubbl_FrontEnd/images/Phase_2_All_Assets/home_page/accordianArrow.svg") !important; */
   /* --bs-accordion-btn-icon-width: 16px !important; */
   /* padding-right: 24px; */
   margin-right: -55px;

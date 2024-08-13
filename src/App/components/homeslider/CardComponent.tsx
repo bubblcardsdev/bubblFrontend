@@ -12,11 +12,13 @@ function CardComponent({
   title,
   description,
   images,
+  showDiscount,
 }: {
   price: number;
   title: string;
   description: string;
   images: Record<string, string>;
+  showDiscount?: boolean;
 }) {
   const colors = useMemo(() => Object.keys(images), [images]);
   const [color, setColor] = useState(colors[0] || "");
@@ -35,6 +37,7 @@ function CardComponent({
         images={images}
         // setColors={setColor}
         title={title}
+        showDiscount={showDiscount}
       />
       <div className={styles.quantity}>
         <p className={styles.heading}>

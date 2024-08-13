@@ -4,9 +4,10 @@ function Marquee() {
   return (
     <div className={styles.marqueeContainer}>
       <div className={styles.marqueeText}>
-        “All you need is Love 💝 and a Bubbl card to share it!&nbsp;
+        “Let's celebrate the triumph of courage and determination on this
+        Independence Day!! &nbsp;
         <span className={styles.blinkText}>
-          Valentines Day Special - Buy 1 get 1 free”
+          Join the revolution, Enjoy upto 50% off site wide” &#127881;
         </span>
       </div>
     </div>
