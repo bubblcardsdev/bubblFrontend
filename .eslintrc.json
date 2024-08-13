@@ -7,7 +7,7 @@
     "react/react-in-jsx-scope": "off",
     "react/jsx-props-no-spreading": "off",
     "jsx-a11y/anchor-is-valid": [
-      "off",
+      "warning",
       {
         "components": ["Link"],
         "specialLink": ["hrefLeft", "hrefRight"],
@@ -16,7 +16,7 @@
     ],
     "import/no-absolute-path": "off",
     "import/extensions": [
-      "off",
+      "warning",
       "ignorePackages",
       {
         "js": "never",
@@ -25,12 +25,12 @@
         "tsx": "never"
       }
     ],
-    "simple-import-sort/imports": "off",
-    "simple-import-sort/exports": "off",
-    "import/first": "off",
-    "import/newline-after-import": "off",
-    "import/no-duplicates": "off",
-    "no-unused-vars": "off",
+    "simple-import-sort/imports": "warning",
+    "simple-import-sort/exports": "warning",
+    "import/first": "warning",
+    "import/newline-after-import": "warning",
+    "import/no-duplicates": "warning",
+    "no-unused-vars": "warning",
     "no-console": "off",
     "func-names": "off",
     "no-process-exit": "off",
@@ -43,7 +43,7 @@
       }
     ],
     "prettier/prettier": [
-      "off",
+      "warning",
       {
         "endOfLine": "auto"
       }
