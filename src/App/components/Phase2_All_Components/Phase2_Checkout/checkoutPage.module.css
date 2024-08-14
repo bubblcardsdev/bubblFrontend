@@ -80,10 +80,42 @@
 .listDivSection {
     background-image: linear-gradient(93deg, rgba(129, 45, 226, 0.34) -2.11%, rgba(129, 45, 226, 0.34) 42.09%, rgba(58, 73, 249, 0.34) 104.4%, rgba(58, 73, 249, 0.34) 104.4%);
     border-radius: 37px;
-    height: 191px;
+    /* height: 191px; */
     margin-bottom: 10px;
     position: relative;
     z-index: 1;
+}
+
+.discountContainer {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.itemPrice {
+    font-size: 14px;
+}
+
+@media screen and (min-width:768px) {
+    .discountContainer {
+        gap: 10px;
+    }
+
+    .slashedPrice {
+        font-size: 22px !important;
+    }
+}
+
+.slashedPrice {
+    color: #FFFFFF;
+    text-decoration: line-through;
+    font-size: 12px !important;
+}
+
+.discountText {
+    color: #AF38D6;
+    font-weight: 600;
+    font-size: 10px;
 }
 
 .promoCodeSection {
@@ -105,7 +137,6 @@
 }
 
 .qunatityDiv {
-    margin-top: 13px;
     display: flex;
     justify-content: center;
     justify-content: space-between;
@@ -129,6 +160,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    gap: 5px;
 }
 
 .deviceTypeDiv2 {
@@ -141,7 +173,6 @@
 }
 
 .priceDiv {
-    margin-top: 12px;
     display: flex;
     justify-content: center;
     justify-content: space-between;

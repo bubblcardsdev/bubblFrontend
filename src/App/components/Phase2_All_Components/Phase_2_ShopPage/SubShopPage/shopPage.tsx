@@ -283,6 +283,7 @@ function ShopComponent() {
                     <Navigation />
                   )}
                 </div>
+                <Marquee />
               </div>
             </div>
             <div className={styles.shopPageBackSection}>
@@ -329,7 +330,7 @@ function ShopComponent() {
                 </p>
               </div>
             </div>
-            <HomeSlider shopDetails={individuals} />
+            <HomeSlider shopDetails={individuals} showDiscount />
 
             {/* Custom */}
 
@@ -355,7 +356,7 @@ function ShopComponent() {
                 options. We offer custom branding and bulk orders for corporate
                 clients. Join us today!
               </p>
-              <BubblCustomSlider shopDetails={nameCustom} />
+              <BubblCustomSlider shopDetails={nameCustom} showDiscount />
             </div>
             <div className={styles.line} />
             {/* Bubbl Bundle */}

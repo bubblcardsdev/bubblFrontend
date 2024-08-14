@@ -147,9 +147,24 @@
     font-weight: 700;
     font-size: 18px;
     color: white;
-    margin-bottom: 23px;
 }
 
+.discountContainer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.slashedPrice {
+    color: #FFFFFF;
+    text-decoration: line-through;
+    font-size: 14px;
+}
+
+.discountText {
+    color: #AF38D6;
+    font-weight: 600;
+}
 
 .number {
     height: 38px;
@@ -205,6 +220,12 @@
 }
 
 
+.customization_details_right {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
 .customization_details_right h4 {
     font-family: "Oxygen";
     font-weight: 500;
@@ -216,7 +237,6 @@
     font-family: "Oxygen";
     font-weight: 400;
     font-size: 10px;
-    color: #AF38D6;
 }
 
 .checkOutBtn_fixed {

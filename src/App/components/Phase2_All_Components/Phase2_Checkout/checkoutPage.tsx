@@ -325,6 +325,8 @@ function CheckOutPageFunc() {
     setScrollPosition(position);
   };
 
+  const discountedTypes = ["Card", "Socket", "Tile", "Full Custom"];
+
   const { isFailed } = router.query;
   useEffect(() => {
     const failurePathRead = localStorage.getItem("failurePath");
@@ -349,6 +351,8 @@ function CheckOutPageFunc() {
   const rightPositions = [0, -27, 0];
   const leftPosition = [-5, 0, 18];
   const showGradients = [false, true, false];
+
+  console.log(allCart);
 
   return (
     <section className={styles.checkOutPageSection}>
@@ -411,6 +415,21 @@ function CheckOutPageFunc() {
                         <p>
                           {cartValues?.productType || cartValues?.deviceType}
                         </p>
+                        {(discountedTypes.includes(cartValues?.productType) ||
+                          discountedTypes.includes(cartValues?.deviceType)) && (
+                          <div className={styles.discountContainer}>
+                            <p className={styles.slashedPrice}>
+                              {discountedTypes.includes(cartValues?.deviceType)
+                                ? "INR 999"
+                                : "INR 599"}
+                            </p>
+                            <span className={styles.discountText}>
+                              {discountedTypes.includes(cartValues?.deviceType)
+                                ? "40% off"
+                                : "43% off"}
+                            </span>
+                          </div>
+                        )}
                         <div className={styles.priceDiv}>
                           <div className={styles.piceTag}>Price</div>
                           <div>₹ {cartValues?.itemPrice}</div>
@@ -509,6 +528,7 @@ function CheckOutPageFunc() {
                   <img src={value?.productImage} width="120px" />
                 </div>
               </Col>
+
               <Col
                 style={{
                   color: "white",
@@ -517,11 +537,26 @@ function CheckOutPageFunc() {
                 }}
               >
                 <p>{value?.productType}</p>
+
                 <div className={styles.priceDiv}>
                   <div className={styles.piceTag}>Price</div>
-                  <div>₹ {value?.itemPrice}</div>
-                </div>
 
+                  {(discountedTypes.includes(value?.productType) ||
+                    discountedTypes.includes(value?.deviceType)) && (
+                    <div className={styles.discountContainer}>
+                      <div className={styles.itemPrice}>
+                        ₹ {value?.itemPrice}
+                      </div>
+                      {/* <p className={styles.slashedPrice}>INR 599</p> */}
+                      <span className={styles.discountText}>
+                        {" "}
+                        {discountedTypes.includes(value?.deviceType)
+                          ? "40% off"
+                          : "43% off"}
+                      </span>
+                    </div>
+                  )}
+                </div>
                 <div className={styles.qunatityDiv}>
                   <div className={styles.piceTag}>Qunatity</div>
                   <div className={styles.quantityNumber}>

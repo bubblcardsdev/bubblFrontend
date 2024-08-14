@@ -412,8 +412,8 @@
 
      .cards_prod_img img {
          margin-left: 52px;
-         width: 283px;
-         height: 228px;
+         width: 230px;
+         height: 200px;
      }
 
      .cardOnes {
@@ -591,9 +591,8 @@
  @media screen and (max-width:400px) {
      .cards_prod_img img {
          margin-left: 52px;
-         width: 216px;
-         height: 224px;
-
+         width: 206px;
+         height: 206px;
      }
 
  }
