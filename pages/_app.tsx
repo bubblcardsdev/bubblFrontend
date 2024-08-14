@@ -24,7 +24,6 @@ function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
 
   const [popUpState, setPopUpState] = useState(false);
-  const [showPrompt, setShowPrompt] = useState(false);
 
   useEffect(() => {
     if (process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS) {
@@ -32,13 +31,8 @@ function MyApp({ Component, pageProps }: AppProps) {
         gtmId: process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS, // Replace with your actual GTM ID
       });
     }
-    const isInstagram = navigator.userAgent.includes("Instagram");
-    if (isInstagram) {
-      setShowPrompt(true);
-    }
-
     const popupShowPaths = ["/", "/shopPage"];
-    if (popupShowPaths.includes(router.pathname) && !isInstagram) {
+    if (popupShowPaths.includes(router.pathname)) {
       const popupdelayTime = router?.pathname === "/" ? 6000 : 3000;
       const timeoutId = setTimeout(() => {
         setPopUpState(true);
@@ -52,19 +46,6 @@ function MyApp({ Component, pageProps }: AppProps) {
     <ParallaxProvider>
       {popUpState && (
         <PromoPopup visible={popUpState} onHide={() => setPopUpState(false)} />
-      )}
-      {showPrompt && (
-        <div className="prompt">
-          <p>
-            It looks like you're using an in-app browser. For the best
-            experience, please open this site in your default web browser.
-          </p>
-          <button
-            onClick={() => (window.location.href = "https://bubbl.cards")}
-          >
-            Open in External Browser
-          </button>
-        </div>
       )}
       <Component {...pageProps} />
     </ParallaxProvider>
