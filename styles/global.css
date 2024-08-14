@@ -352,3 +352,35 @@ input[type="number"]::-webkit-outer-spin-button {
 /* .carousel-inner {
   overflow: inherit;
 } */
+
+.prompt {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 355656546546;
+  gap: 10px;
+}
+
+.prompt p {
+  color: white;
+  max-width: 500px;
+  padding: 24px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.prompt button {
+  background: #462ae1;
+  border: none;
+  outline: none;
+  height: 40px;
+  padding-inline: 12px;
+  color: white;
+}
