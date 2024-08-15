@@ -122,6 +122,7 @@ export default function RegisterPage() {
     watch,
     setError,
   } = useForm<IFormInputs>({ mode: "onChange" });
+  const [isInsatagram, setIsInsatagram] = useState(false);
 
   const email = getValues("email");
 
@@ -229,6 +230,9 @@ export default function RegisterPage() {
 
   useEffect(() => {
     clearErrors("serverEmail");
+    if (navigator?.userAgent.includes("Instagram")) {
+      setIsInsatagram(true);
+    }
   }, [clearErrors, email]);
 
   const [firstNameField, lastNameField] = formConfig
@@ -453,28 +457,35 @@ export default function RegisterPage() {
                     </Button>
                   </div>
 
-                  <p className={styles.loginUsing}>or sign up using</p>
-                  <div className={styles.social}>
-                    <div className={styles.google}>
-                      <GoogleOAuthProvider clientId="381109639208-5a8i0egsdut082f395brann2n340lbpe.apps.googleusercontent.com">
-                        <GoogleLogin onSuccess={responseMessage} useOneTap />
-                      </GoogleOAuthProvider>
-                    </div>
-                    <div className={styles.facebook}>
-                      <FacebookLogin
-                        appId="1173697296846078"
-                        textButton=""
-                        fields="id,name,email"
-                        scope="public_profile,email"
-                        responseType="token"
-                        callback={responseFacebook}
-                        icon="fa-facebook"
-                      />
-                    </div>
-                    <a href={linkedVal}>
-                      <Image src={linkdin} alt="bubbl" />
-                    </a>
-                  </div>
+                  {!isInsatagram && (
+                    <>
+                      <p className={styles.loginUsing}>or sign up using</p>
+                      <div className={styles.social}>
+                        <div className={styles.google}>
+                          <GoogleOAuthProvider clientId="381109639208-5a8i0egsdut082f395brann2n340lbpe.apps.googleusercontent.com">
+                            <GoogleLogin
+                              onSuccess={responseMessage}
+                              useOneTap
+                            />
+                          </GoogleOAuthProvider>
+                        </div>
+                        <div className={styles.facebook}>
+                          <FacebookLogin
+                            appId="1173697296846078"
+                            textButton=""
+                            fields="id,name,email"
+                            scope="public_profile,email"
+                            responseType="token"
+                            callback={responseFacebook}
+                            icon="fa-facebook"
+                          />
+                        </div>
+                        <a href={linkedVal}>
+                          <Image src={linkdin} alt="bubbl" />
+                        </a>
+                      </div>
+                    </>
+                  )}
                   <p className={styles.alreadyacct}>
                     Already have an account?{" "}
                     <Link href="/login">
