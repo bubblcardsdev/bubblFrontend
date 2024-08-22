@@ -6,6 +6,11 @@ export type RegisterDetailsT = {
   serverEmail: string;
 };
 
+export type verifyEmailOTP = {
+  otp: string;
+  email: string;
+};
+
 export type LoginDetailsT = {
   firstName: string;
   lastName: string;

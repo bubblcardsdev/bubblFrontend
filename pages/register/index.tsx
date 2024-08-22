@@ -164,7 +164,7 @@ export default function RegisterPage() {
       if (data.success) {
         setEmail(registerData.email);
         updateClaimName(registerData.email);
-        router.replace("register/verified");
+        router.replace(`register/${registerData?.email}`);
         return;
       }
 

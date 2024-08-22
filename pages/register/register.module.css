@@ -106,7 +106,7 @@
 
 .loginrt_msg {
   text-align: center;
-  padding-bottom: 120px;
+  padding-bottom: 40px;
   font-family: "Oxygen", sans-serif;
 
   font-weight: 700;
@@ -120,7 +120,7 @@
   font-weight: 400;
   font-size: 18px;
   color: #af38d6;
-  padding-bottom: 145px;
+  padding-bottom: 80px;
 }
 
 .afterotp {
@@ -152,7 +152,7 @@
 .verify {
   text-align: center;
   margin-bottom: 25px;
-  margin-top: 83px;
+  margin-top: 25px;
 }
 
 .resend {
@@ -263,14 +263,13 @@
   background-repeat: repeat;
   background-color: black;
   width: 100vw;
-  height: 100vh
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-@media screen and (max-width: 1300px) {
-  .login_page {
-    height: auto;
-  }
-}
 
 .loginPageBubbl {
   padding-top: 30px;
@@ -700,9 +699,9 @@
     margin-bottom: 26px;
   }
 
-  .linkotp {
+  /* .linkotp {
     padding-bottom: 170px;
-  }
+  } */
 }
 
 .verify_phnNum {

@@ -1,5 +1,5 @@
 /* eslint-disable import/no-unresolved */
-import { RegisterDetailsT } from "types/register";
+import { RegisterDetailsT, verifyEmailOTP } from "types/register";
 
 import axios from "../helpers/axios";
 import { getAccessToken } from "../helpers/local-storage";
@@ -10,6 +10,13 @@ export const registerUser = (registerDetails: RegisterDetailsT) =>
   axios
     .post<{ data: any; success: boolean }>("/register", {
       ...registerDetails,
+    })
+    .then((res) => res.data);
+
+export const verifyEmailOtp = (verifyEmailOtpDetails: verifyEmailOTP) =>
+  axios
+    .post<{ data: any; success: boolean }>("/verifyemailOtp", {
+      ...verifyEmailOtpDetails,
     })
     .then((res) => res.data);
 
@@ -70,14 +77,16 @@ export const verifyEmail = (emailVerificationId: string) =>
       return { error: error || message };
     });
 
-export const login = (email: string, password: string) =>
+export const login = (email: string, password: string, router: any) =>
   axios
     .post<GenericResponseT>("/login", { email, password })
     .then((res) => res.data)
     .then((data) => {
       const { message, token, firstName, lastName, error } = data.data;
       if (data.success) {
-        return { token, firstName, lastName };
+        if (data?.data?.emailVerified) {
+          return { token, firstName, lastName };
+        } else router.push(`/register/${email}`);
       }
       return { error: error || message };
     });

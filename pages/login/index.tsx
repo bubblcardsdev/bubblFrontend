@@ -132,7 +132,7 @@ function Login() {
 
   // eslint-disable-next-line no-shadow
   const onSubmit: SubmitHandler<FormInputsT> = async ({ email, password }) => {
-    login(email, password).then(async (respData) => {
+    login(email, password, router).then(async (respData) => {
       const { token, firstName, lastName, error } = respData;
 
       if (token) {
