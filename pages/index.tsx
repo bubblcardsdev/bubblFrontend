@@ -254,6 +254,7 @@ export default function Home() {
             <div className={styles.navigationContainer}>
               {isTokenPresent ? <Navigation /> : <HomePageNavigation />}
             </div>
+            <Marquee />
             {/* Connect Section */}
             <section className={styles.connectSectionSec}>
               <Suspense fallback={<div>Loading...</div>}>

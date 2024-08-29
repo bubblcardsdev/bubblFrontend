@@ -224,7 +224,7 @@
 .customization_details_right {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 5px;
 }
 
 .customization_details_right h4 {
