@@ -40,6 +40,7 @@ function EditWebsiteModal({
     data: initialWebsite,
     errors: {},
   });
+  console.log(userProfile, "profile");
   const [isEnabled, setEnabled] = useState(userProfile.data.websiteEnable);
 
   const handleEmailChange = (value: string, index: number) => {
@@ -101,7 +102,7 @@ function EditWebsiteModal({
                     type="email"
                     placeholder="https://website.com/"
                     value={websiteLink.website}
-                    disabled={!isEnabled}
+                    // disabled={!isEnabled}
                     maxLength={50}
                     onChange={(e) => {
                       handleEmailChange(e.target.value, idx);

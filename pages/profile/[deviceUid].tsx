@@ -164,7 +164,7 @@ function TapComponent() {
         setPage("profile");
       } else {
         getDeviceIdFromStorage();
-        setPage("register");
+        router.push("/register");
       }
     }
   };
@@ -376,13 +376,12 @@ function TapComponent() {
   }
 
   function RenderPage() {
-    let render = null;
     if (page === "register") {
-      render = <RegisterPage />;
+      return <RegisterPage />;
     } else if (page === "profile") {
-      render = <ApplyTemplate />;
+      return <ApplyTemplate />;
     }
-    return render;
+    return <RegisterPage />;
   }
 
   return <RenderPage />;
