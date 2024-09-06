@@ -162,9 +162,10 @@ export default function RegisterPage() {
     setIsSubmitting(true);
     registerUser(registerDataNew).then((data) => {
       if (data.success) {
-        setEmail(registerData.email);
-        updateClaimName(registerData.email);
-        router.replace(`register/${registerData?.email}`);
+        const email = registerData?.email?.toLocaleLowerCase();
+        setEmail(email);
+        updateClaimName(email);
+        router.replace(`register/${email}`);
         return;
       }
 
