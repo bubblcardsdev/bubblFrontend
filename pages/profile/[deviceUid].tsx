@@ -21,7 +21,7 @@ import { getDirectUrlMode } from "src/App/services/modes";
 import { PostTapDetails } from "src/App/services/tapApi";
 import { getUniqueName } from "src/App/services/unique";
 import { MODAL_TYPES, ModalT } from "types/modal";
-
+import LoaderScreen from "src/App/components/lottie/lottie";
 import RegisterPage from "../register";
 
 export interface typeProfileI {
@@ -374,16 +374,21 @@ function TapComponent() {
       </div>
     );
   }
-
   function RenderPage() {
-    if (page === "register") {
-      return <RegisterPage />;
-    } else if (page === "profile") {
-      return <ApplyTemplate />;
-    }
-    return <RegisterPage />;
-  }
+    const renderContent = () => {
+      switch (page) {
+        case "register":
+          return <RegisterPage />;
+        case "profile":
+          return <ApplyTemplate />;
 
+        default:
+          return <RegisterPage />; 
+      }
+    };
+    const content = renderContent();
+    return <LoaderScreen>{content}</LoaderScreen>;
+  }
   return <RenderPage />;
 }
 export default TapComponent;
