@@ -39,7 +39,7 @@ function EditAddressModal({
       ...currAddress,
       data: {
         ...currAddress.data,
-        [fieldName]: value.replace(/\s+/g, " ").trim(),
+        [fieldName]: value.replace(/\s+/g, " "),
       },
       // error: {
       //   ...currAddress.error,
@@ -71,14 +71,14 @@ function EditAddressModal({
         city,
         country,
       } = address.data;
-      if (!addressValue || !state || !zipCode || !city || !country) {
+      if (!city || !country) {
         // If any field is empty, set the error and return
         setAddress((prevState) => ({
           ...prevState,
           error: {
-            address: !addressValue ? "Address is required" : "",
-            state: !state ? "State is required" : "",
-            zipCode: !zipCode ? "Zipcode is required" : "",
+            address: "",
+            state: "",
+            zipCode: "",
             city: !city ? "City is required" : "",
             country: !country ? "Country is required" : "",
           },
