@@ -383,11 +383,11 @@ function TapComponent() {
           return <ApplyTemplate />;
 
         default:
-          return <RegisterPage />; 
+          return <></>;
       }
     };
     const content = renderContent();
-    return <LoaderScreen>{content}</LoaderScreen>;
+    return content;
   }
   return <RenderPage />;
 }

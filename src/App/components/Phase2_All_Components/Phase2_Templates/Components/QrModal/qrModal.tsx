@@ -5,6 +5,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import QrOutlined from "../../Free_Templates/Free_Template_2/Components/icons/qr";
 
 import Qr from "../../Images/assets_for_profile_templates/Common/Qr.svg";
 import QRCodeModal from "../Qr/qr";
@@ -13,6 +14,7 @@ import styles from "./qrModal.module.css";
 function QrModal({
   saveIconBorderColor,
   saveIconBackgroundColor,
+  qrComponent,
   qrImageUrl,
   linkVal,
 }: any) {
@@ -20,8 +22,6 @@ function QrModal({
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
-  console.log(linkVal, qrImageUrl, "gggggg");
 
   return (
     <>
@@ -46,7 +46,12 @@ function QrModal({
         </Modal.Body>
       </Modal>
 
-      <div className={styles.buttons}>
+      <div
+        className={styles.buttons}
+        style={{
+          backgroundColor: "transparent",
+        }}
+      >
         <p
           onClick={() => {
             handleShow();
@@ -54,10 +59,14 @@ function QrModal({
           className={styles.contact_black_btntwo}
           style={{
             // border: `1px solid ${saveIconBorderColor}`,
-            backgroundColor: saveIconBackgroundColor,
+            backgroundColor: "tranparent",
           }}
         >
-          <Image src={Qr} alt="QrIcon" width={24} height={24} />
+          {qrComponent ? (
+            qrComponent
+          ) : (
+            <Image src={Qr} alt="QrIcon" width={24} height={24} />
+          )}
         </p>
       </div>
     </>

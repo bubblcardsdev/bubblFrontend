@@ -2,7 +2,11 @@ import { ChangeEvent, Dispatch, FocusEvent, useState } from "react";
 import { IProfile } from "src/App/services/createProfileApi";
 import { ProfileActionT, ProfileStateT } from "types/profile";
 
-type FieldNames = "firstName" | "designation" | "shortDescription";
+type FieldNames =
+  | "firstName"
+  | "designation"
+  | "shortDescription"
+  | "companyName";
 
 const SOCIAL_SITE_MAP = {
   INSTAGRAM: 1,
@@ -259,6 +263,11 @@ function useProfile({
         editField({ fieldName: "shortDescription" });
       }
     },
+    companyName: () => {
+      if (editingFieldName === null) {
+        editField({ fieldName: "companyName" });
+      }
+    },
   };
 
   const inputChangeHandlers = {
@@ -280,13 +289,19 @@ function useProfile({
         value: event.target.value,
         errorMessage: "Description is required",
       }),
+    companyName: (event: ChangeEvent<HTMLInputElement>) =>
+      handleFieldChange({
+        fieldName: "companyName",
+        value: event.target.value,
+        errorMessage: "company Name is required",
+      }),
   };
 
   const blurHandlerHelper = (
     fieldName: FieldNames,
     event: FocusEvent<HTMLInputElement>
   ) => {
-    let key: "name" | "job" | "desc" | null = null;
+    let key: "name" | "job" | "desc" | "companyName" | null = null;
     switch (fieldName) {
       case "firstName":
         key = "name";
@@ -296,6 +311,9 @@ function useProfile({
         break;
       case "shortDescription":
         key = "desc";
+        break;
+      case "companyName":
+        key = "companyName";
         break;
       default:
         break;
@@ -315,6 +333,8 @@ function useProfile({
       blurHandlerHelper("designation", event),
     desc: (event: FocusEvent<HTMLInputElement>) =>
       blurHandlerHelper("shortDescription", event),
+    companyName: (event: FocusEvent<HTMLInputElement>) =>
+      blurHandlerHelper("companyName", event),
   };
 
   return {

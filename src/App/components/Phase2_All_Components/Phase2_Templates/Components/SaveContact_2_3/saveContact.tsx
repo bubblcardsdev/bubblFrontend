@@ -32,7 +32,7 @@ function SaveContactUnique({
 
   const [isDownloading, setIsDownloading] = useState(false);
 
-  const handleClick = async (e: any) => {
+  const handleClickSave = async (e: any) => {
     const vcfdata = await SaveVCFContact(
       firstName,
       lastName,
@@ -70,9 +70,9 @@ function SaveContactUnique({
     <div>
       <button
         type="button"
-        className={styles.contact_btn}
+        className={styles.rupy_save_contact_button}
         onClick={(e: any) => {
-          handleClick(e);
+          handleClickSave(e);
           handleClickEvent(3);
         }}
         style={{
