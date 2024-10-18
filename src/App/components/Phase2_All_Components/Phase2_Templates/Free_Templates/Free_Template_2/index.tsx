@@ -74,6 +74,8 @@ import PhonePay from "./Components/icons/phonepay_icon";
 import GooglePay from "./Components/icons/googlepay_icons";
 import Paytm_icon from "./Components/icons/paytm_icon";
 import { style } from "@mui/system";
+import WebsiteIcon from "./Components/icons/website";
+import MapsIcon from "./Components/icons/maps";
 const bannerMap = {
   "#F53232": Banner1,
   "#0082E1": Banner2,
@@ -345,6 +347,8 @@ export default function FreeTemplateTwo({
   const modal_types: any = {
     4: MODAL_TYPES.mobileNumberEdit,
     5: MODAL_TYPES.emailIdEdit,
+    6: MODAL_TYPES.websiteEdit,
+    7: MODAL_TYPES.addressEdit,
   };
   const onEdit = (e: any, type: number) => {
     e.stopPropagation();
@@ -377,6 +381,16 @@ export default function FreeTemplateTwo({
           getAllProfile?.profileEmails?.[0]?.emailId || emailIdField?.emailId
         }`,
         "_self"
+      );
+  };
+
+  const onWebsiteClick = () => {
+    if (websiteFieldCount > 1) {
+      setModalType(MODAL_TYPES.websiteView);
+    } else
+      window.open(
+        getAllProfile?.profileWebsites?.[0]?.website || websiteField?.website,
+        "_blank"
       );
   };
 
@@ -526,7 +540,7 @@ export default function FreeTemplateTwo({
         >
           <div className={styles.rupy_logo_parent}>
             {/* User Profile Image */}
-            <div className={styles.ProfileImg}>
+            <div>
               {profileImage?.square && profileImage.square !== "" ? (
                 <Image
                   className={styles.rupy_logo_img}
@@ -542,9 +556,16 @@ export default function FreeTemplateTwo({
                   alt="Dummy"
                   width={120}
                   height={120}
+                  style={{
+                    borderColor: backgroundColor ?? "#B13DFF",
+                    borderWidth: 3,
+                    borderStyle: "solid",
+                    borderRadius: 20,
+                  }}
                 />
               )}
             </div>
+
             {/* User Profile Edit Icon Container */}
             {edit ? (
               <div
@@ -622,117 +643,120 @@ export default function FreeTemplateTwo({
                     </div>
                   )}
                 </div>
-                {/* designation */}
                 <div>
-                  {editingFieldName === "designation" ? (
-                    <div className={styles.RoleNameEdit}>
-                      <input
-                        type="text"
-                        value={userProfile && userProfile?.data?.designation}
-                        className={styles.input_line}
-                        autoFocus
-                        onChange={inputChangeHandlers.job}
-                        onBlur={inputBlurHandlers.job}
-                        maxLength={30}
-                        style={mode === "dark" ? { color: "white" } : {}}
-                      />
-                      {userProfile?.error?.designation && (
-                        <div className={styles.error}>
-                          {userProfile?.error?.designation}
-                        </div>
-                      )}
-                    </div>
-                  ) : (
-                    <div className={styles.RoleName}>
-                      <h3 style={mode === "dark" ? { color: "white" } : {}}>
-                        {getAllProfile?.designation
-                          ? getAllProfile?.designation
-                          : (userProfile && userProfile?.data?.designation) ||
-                            "Designation"}
-                      </h3>
-                      {edit ? (
-                        <div
-                          onClick={editHandlers.job}
-                          className={styles.PencilEdit}
-                        >
-                          {mode === "dark" ? (
-                            <Image
-                              src={PencilView}
-                              alt="PencilDark"
-                              width={25}
-                              height={25}
-                            />
-                          ) : (
-                            <Image
-                              src={PencilViewBlack}
-                              alt="PencilWhite"
-                              width={25}
-                              height={25}
-                            />
+                  {/* designation */}
+                  <div className={styles.rupy_job_container}>
+                    {editingFieldName === "designation" ? (
+                      <div className={styles.RoleNameEdit}>
+                        <input
+                          type="text"
+                          value={userProfile && userProfile?.data?.designation}
+                          className={styles.input_line}
+                          autoFocus
+                          onChange={inputChangeHandlers.job}
+                          onBlur={inputBlurHandlers.job}
+                          maxLength={30}
+                          style={mode === "dark" ? { color: "white" } : {}}
+                        />
+                        {userProfile?.error?.designation && (
+                          <div className={styles.error}>
+                            {userProfile?.error?.designation}
+                          </div>
+                        )}
+                      </div>
+                    ) : (
+                      <div className={styles.RoleName}>
+                        <h3 style={mode === "dark" ? { color: "white" } : {}}>
+                          {getAllProfile?.designation
+                            ? getAllProfile?.designation
+                            : (userProfile && userProfile?.data?.designation) ||
+                              "Designation"}
+                        </h3>
+                        {edit ? (
+                          <div
+                            onClick={editHandlers.job}
+                            className={styles.PencilEdit}
+                          >
+                            {mode === "dark" ? (
+                              <Image
+                                src={PencilView}
+                                alt="PencilDark"
+                                width={25}
+                                height={25}
+                              />
+                            ) : (
+                              <Image
+                                src={PencilViewBlack}
+                                alt="PencilWhite"
+                                width={25}
+                                height={25}
+                              />
+                            )}
+                          </div>
+                        ) : (
+                          ""
+                        )}
+                      </div>
+                    )}
+
+                    {/* company name */}
+                    <div>
+                      {editingFieldName === "companyName" ? (
+                        <div className={styles.RoleNameEdit}>
+                          <input
+                            type="text"
+                            value={
+                              getAllProfile?.companyName ||
+                              (userProfile && userProfile?.data?.companyName)
+                            }
+                            className={styles.input_line}
+                            autoFocus
+                            onChange={inputChangeHandlers.companyName}
+                            onBlur={inputBlurHandlers.companyName}
+                            maxLength={30}
+                            style={mode === "dark" ? { color: "white" } : {}}
+                          />
+                          {userProfile?.error?.companyName && (
+                            <div className={styles.error}>
+                              {userProfile?.error?.companyName}
+                            </div>
                           )}
                         </div>
                       ) : (
-                        ""
-                      )}
-                    </div>
-                  )}
-                </div>
-                {/* company name */}
-                <div>
-                  {editingFieldName === "companyName" ? (
-                    <div className={styles.RoleNameEdit}>
-                      <input
-                        type="text"
-                        value={
-                          getAllProfile?.companyName ||
-                          (userProfile && userProfile?.data?.companyName)
-                        }
-                        className={styles.input_line}
-                        autoFocus
-                        onChange={inputChangeHandlers.companyName}
-                        onBlur={inputBlurHandlers.companyName}
-                        maxLength={30}
-                        style={mode === "dark" ? { color: "white" } : {}}
-                      />
-                      {userProfile?.error?.companyName && (
-                        <div className={styles.error}>
-                          {userProfile?.error?.companyName}
-                        </div>
-                      )}
-                    </div>
-                  ) : (
-                    <div className={styles.RoleName}>
-                      <h3 style={mode === "dark" ? { color: "white" } : {}}>
-                        {getAllProfile?.companyName ||
-                          (userProfile && userProfile?.data?.companyName) ||
-                          "Company Name"}
-                      </h3>
-                      {edit ? (
-                        <div
-                          onClick={editHandlers.companyName}
-                          className={styles.PencilEdit}
-                        >
-                          {mode === "dark" ? (
-                            <Image
-                              src={PencilView}
-                              alt="PencilDark"
-                              width={25}
-                              height={25}
-                            />
+                        <div className={styles.RoleName}>
+                          <h3 style={mode === "dark" ? { color: "white" } : {}}>
+                            {getAllProfile?.companyName ||
+                              (userProfile && userProfile?.data?.companyName) ||
+                              "Company Name"}
+                          </h3>
+                          {edit ? (
+                            <div
+                              onClick={editHandlers.companyName}
+                              className={styles.PencilEdit}
+                            >
+                              {mode === "dark" ? (
+                                <Image
+                                  src={PencilView}
+                                  alt="PencilDark"
+                                  width={25}
+                                  height={25}
+                                />
+                              ) : (
+                                <Image
+                                  src={PencilViewBlack}
+                                  alt="PencilWhite"
+                                  width={25}
+                                  height={25}
+                                />
+                              )}
+                            </div>
                           ) : (
-                            <Image
-                              src={PencilViewBlack}
-                              alt="PencilWhite"
-                              width={25}
-                              height={25}
-                            />
+                            ""
                           )}
                         </div>
-                      ) : (
-                        ""
                       )}
                     </div>
-                  )}
+                  </div>
                 </div>
               </div>
               <div
@@ -748,10 +772,10 @@ export default function FreeTemplateTwo({
                     />
                   ) : (
                     <Image
-                      src={mode === "dark" ? LogoWhite : LogoWhite}
+                      src={mode === "dark" ? LogoWhite : LogoBlue}
                       alt="Logo"
-                      width={40}
-                      height={40}
+                      width={80}
+                      height={22}
                     />
                   )}
                 </div>
@@ -1031,6 +1055,157 @@ export default function FreeTemplateTwo({
                       </div>
                     )}
                   </div>
+                  {/* Website */}
+                  <div
+                    style={
+                      mode === "dark"
+                        ? {
+                            paddingRight: edit ? "10px" : "0",
+                            background: "#3B3B3B",
+                            color: "#fff",
+                          }
+                        : {
+                            paddingRight: edit ? "10px" : "0",
+                            background: "rgba(235, 235, 235, 0.70)",
+                          }
+                    }
+                    className={styles.socialMediaShareParentContainer}
+                    onClick={(e: any) => {
+                      onWebsiteClick();
+                      handleClick(6);
+                    }}
+                  >
+                    <div className={styles.socialMediaShareInnerContainer}>
+                      <WebsiteIcon />
+                      <div className={styles.shareInfoContentContainer}>
+                        <p className={styles.shareInfoContent_mail}>
+                          {getAllProfile?.profileWebsites?.[0]?.website ||
+                            websiteField?.website}
+                        </p>
+                      </div>
+                    </div>
+                    {edit ? (
+                      <Image
+                        src={mode === "dark" ? PencilView : PencilViewBlack}
+                        alt="PencilWhite"
+                        width={25}
+                        height={25}
+                        className={styles.pointer}
+                        onClick={(e: any) => onEdit(e, 6)}
+                      />
+                    ) : (
+                      <div
+                        style={{
+                          height: "100%",
+                          width: "35px",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          borderRadius: "0 5px 5px 0px",
+                          background: mode === "dark" ? "#292929" : "#E2E2E2",
+                        }}
+                      >
+                        <RightArrow
+                          className={styles.pointer}
+                          onClick={() => onWebsiteClick()}
+                          color={backgroundColor ?? "#007AFF"}
+                        />
+                      </div>
+                    )}
+                  </div>
+                  {/* Location */}
+
+                  {(showAddress || edit) && (
+                    <div
+                      style={
+                        mode === "dark"
+                          ? {
+                              paddingRight: edit ? "10px" : "0",
+                              background: "#3B3B3B",
+                              color: "#fff",
+                            }
+                          : {
+                              paddingRight: edit ? "10px" : "0",
+                              background: "rgba(235, 235, 235, 0.70)",
+                            }
+                      }
+                      className={styles.socialMediaShareParentContainer}
+                      onClick={(e: any) => {
+                        handleClick(7);
+                        setModalType(MODAL_TYPES.addressView);
+                        window.open(
+                          `https://www.google.com/maps/search/?api=1&query=${
+                            val2 || ""
+                          }+${getAllProfile?.city || userProfile?.data?.city}+${
+                            getAllProfile?.country || userProfile?.data?.country
+                          }`,
+                          "_blank"
+                        );
+                      }}
+                    >
+                      <div className={styles.socialMediaShareInnerContainer}>
+                        <MapsIcon />
+                        <div className={styles.shareInfoContentContainer}>
+                          <p className={styles.shareInfoContent_mail}>
+                            {getAllProfile?.city || userProfile?.data?.city ? (
+                              `${
+                                getAllProfile?.city || userProfile?.data?.city
+                              }, ${
+                                getAllProfile?.country ||
+                                userProfile?.data?.country
+                              }`
+                            ) : (
+                              <span style={{ opacity: 0.5 }}>
+                                Enter city and country
+                              </span>
+                            )}
+                          </p>
+                        </div>
+                      </div>
+                      {edit ? (
+                        <Image
+                          src={mode === "dark" ? PencilView : PencilViewBlack}
+                          alt="PencilWhite"
+                          width={25}
+                          height={25}
+                          className={styles.pointer}
+                          onClick={(e: any) => onEdit(e, 7)}
+                        />
+                      ) : (
+                        <div
+                          style={{
+                            height: "100%",
+                            width: "35px",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            borderRadius: "0 5px 5px 0px",
+                            background: mode === "dark" ? "#292929" : "#E2E2E2",
+                          }}
+                        >
+                          <RightArrow
+                            className={styles.pointer}
+                            onClick={(e: any) => {
+                              handleClick(7);
+                              setModalType(MODAL_TYPES.addressView);
+                              window.open(
+                                `https://www.google.com/maps/search/?api=1&query=${
+                                  val2 || ""
+                                }+${
+                                  getAllProfile?.city || userProfile?.data?.city
+                                }+${
+                                  getAllProfile?.country ||
+                                  userProfile?.data?.country
+                                }`,
+                                "_blank"
+                              );
+                            }}
+                            color={backgroundColor ?? "#007AFF"}
+                          />
+                        </div>
+                      )}
+                    </div>
+                  )}
                 </div>
               </div>
               <div className={styles.socialLink_text_container}>
