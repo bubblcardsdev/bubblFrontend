@@ -321,8 +321,12 @@ function useProfile({
     if (key) {
       inputChangeHandlers[key](event);
     }
-    if (event.target.value.trim()) {
+    if (key == "desc") {
       setEditingFieldName(null);
+    } else {
+      if (event.target.value.trim()) {
+        setEditingFieldName(null);
+      }
     }
   };
 
