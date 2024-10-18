@@ -344,7 +344,7 @@ function CreateProfileStep3() {
   const [deviceLinkId, setDeviceLinkId] = useState<any>();
 
   const [imageError, setImageError] = useState("");
-  const [deviceUidVal, setDeviceUidVal] = useState<string>("");
+  const [deviceUidVal, setDeviceUidVal] = useState<any>("");
 
   const handleScroll = () => {
     if (window.scrollY > 20) {
@@ -798,7 +798,6 @@ function CreateProfileStep3() {
         });
     }
   }, []);
-
   const handleUserName = (e: any) => {};
 
   let modal: React.ReactNode = null;
@@ -922,7 +921,7 @@ function CreateProfileStep3() {
           handleSave={handleSaveImage}
           handleQrSave={QrUpload}
           qrImage={logo}
-          userName={userName || deviceUidVal}
+          userName={userName || deviceUidVal?.deviceUid}
           getAllProfile={undefined}
           modeId={undefined}
           imageError={imageError}
@@ -944,7 +943,7 @@ function CreateProfileStep3() {
           handleSave={handleSaveImage}
           handleQrSave={QrUpload}
           qrImage={logo}
-          userName={userName || deviceUidVal}
+          userName={userName || deviceUidVal?.deviceUid}
           getAllProfile={undefined}
           modeId={undefined}
           imageError={imageError}
@@ -965,7 +964,7 @@ function CreateProfileStep3() {
           handleSave={handleSaveImage}
           handleQrSave={QrUpload}
           qrImage={logo}
-          userName={userName || deviceUidVal}
+          userName={userName || deviceUidVal?.deviceUid}
           getAllProfile={undefined}
           modeId={undefined}
           imageError={imageError}
@@ -986,7 +985,7 @@ function CreateProfileStep3() {
           handleSave={handleSaveImage}
           handleQrSave={QrUpload}
           qrImage={logo}
-          userName={userName || deviceUidVal}
+          userName={userName || deviceUidVal?.deviceUid}
           getAllProfile={undefined}
           modeId={undefined}
           imageError={imageError}
@@ -1007,7 +1006,7 @@ function CreateProfileStep3() {
           handleSave={handleSaveImage}
           handleQrSave={QrUpload}
           qrImage={logo}
-          userName={userName || deviceUidVal}
+          userName={userName || deviceUidVal?.deviceUid}
           getAllProfile={undefined}
           modeId={undefined}
           imageError={imageError}

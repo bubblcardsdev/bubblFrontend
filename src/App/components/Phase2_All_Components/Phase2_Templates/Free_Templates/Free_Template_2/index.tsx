@@ -76,6 +76,7 @@ import Paytm_icon from "./Components/icons/paytm_icon";
 import { style } from "@mui/system";
 import WebsiteIcon from "./Components/icons/website";
 import MapsIcon from "./Components/icons/maps";
+import ClientSection from "../../../Phase_2_HomePage/clientSection/clientSection";
 const bannerMap = {
   "#F53232": Banner1,
   "#0082E1": Banner2,
@@ -1208,410 +1209,440 @@ export default function FreeTemplateTwo({
                   )}
                 </div>
               </div>
-              <div className={styles.socialLink_text_container}>
-                <div>
-                  <h5 style={mode === "dark" ? { color: "white" } : {}}>
-                    Social Links
-                  </h5>
+              {(showSocialMediaSection || edit) && (
+                <div className={styles.socialLink_text_container}>
+                  <div>
+                    <h5 style={mode === "dark" ? { color: "white" } : {}}>
+                      Social Links
+                    </h5>
+                  </div>
+                  <div className={styles.socialLink_edit_container}>
+                    {edit && (
+                      <Image
+                        src={mode === "dark" ? PencilView : PencilViewBlack}
+                        alt="PencilWhite"
+                        width={25}
+                        height={25}
+                        className={styles.pointer}
+                        onClick={() => setModalType(MODAL_TYPES.socialEdit)}
+                        style={{ border: "1px solid red" }}
+                      />
+                    )}
+                  </div>
                 </div>
-                <div className={styles.socialLink_edit_container}>
-                  {edit && (
-                    <Image
-                      src={mode === "dark" ? PencilView : PencilViewBlack}
-                      alt="PencilWhite"
-                      width={25}
-                      height={25}
-                      className={styles.pointer}
-                      onClick={() => setModalType(MODAL_TYPES.socialEdit)}
-                      style={{ border: "1px solid red" }}
-                    />
-                  )}
-                </div>
-              </div>
+              )}
               <div className={styles.socialMediaShareParent}>
-                <div
-                  style={
-                    mode === "dark"
-                      ? {
-                          background: "#3B3B3B",
-                          color: "#fff",
-                        }
-                      : {
-                          background: "rgba(235, 235, 235, 0.70)",
-                        }
-                  }
-                  className={styles.socialMediaShareParentContainer}
-                  onClick={() => {
-                    onSocialClick(mediaLinks?.instaLink);
-                  }}
-                >
-                  <div className={styles.socialMediaShareInnerContainer}>
-                    <Instagram_icon />
-                    <div className={styles.shareInfoContentContainer}>
-                      <h2 className={styles.shareInfoTitle}>Instagram</h2>
-                    </div>
-                  </div>
+                {mediaLinks?.instaLink && mediaLinks?.instaLink.length > 5 && (
                   <div
-                    style={{
-                      height: "100%",
-                      width: "35px",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      borderRadius: "0 5px 5px 0px",
-                      background: mode === "dark" ? "#292929" : "#E2E2E2",
-                    }}
-                  >
-                    <RightArrow
-                      className={styles.pointer}
-                      color={backgroundColor ?? "#007AFF"}
-                    />
-                  </div>
-                </div>
-                <div
-                  style={
-                    mode === "dark"
-                      ? {
-                          background: "#3B3B3B",
-                          color: "#fff",
-                        }
-                      : {
-                          background: "rgba(235, 235, 235, 0.70)",
-                        }
-                  }
-                  className={styles.socialMediaShareParentContainer}
-                  onClick={() => {
-                    onSocialClick(mediaLinks?.twitterLink);
-                  }}
-                >
-                  <div className={styles.socialMediaShareInnerContainer}>
-                    <Twitter_icon />
-                    <div className={styles.shareInfoContentContainer}>
-                      <h2 className={styles.shareInfoTitle}>Twitter</h2>
-                    </div>
-                  </div>
-                  <div
-                    style={{
-                      height: "100%",
-                      width: "35px",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      borderRadius: "0 5px 5px 0px",
-                      background: mode === "dark" ? "#292929" : "#E2E2E2",
-                    }}
-                  >
-                    <RightArrow
-                      className={styles.pointer}
-                      color={backgroundColor ?? "#007AFF"}
-                    />
-                  </div>
-                </div>
-                <div
-                  style={
-                    mode === "dark"
-                      ? {
-                          background: "#3B3B3B",
-                          color: "#fff",
-                        }
-                      : {
-                          background: "rgba(235, 235, 235, 0.70)",
-                        }
-                  }
-                  className={styles.socialMediaShareParentContainer}
-                  onClick={() => {
-                    onSocialClick(mediaLinks?.linkedInLink);
-                  }}
-                >
-                  <div className={styles.socialMediaShareInnerContainer}>
-                    <Linkedin_icon />
-                    <div className={styles.shareInfoContentContainer}>
-                      <h2 className={styles.shareInfoTitle}>Linked in</h2>
-                    </div>
-                  </div>
-                  <div
-                    style={{
-                      height: "100%",
-                      width: "35px",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      borderRadius: "0 5px 5px 0px",
-                      background: mode === "dark" ? "#292929" : "#E2E2E2",
-                    }}
-                  >
-                    <RightArrow
-                      className={styles.pointer}
-                      color={backgroundColor ?? "#007AFF"}
-                    />
-                  </div>{" "}
-                </div>
-                <div
-                  style={
-                    mode === "dark"
-                      ? {
-                          background: "#3B3B3B",
-                          color: "#fff",
-                        }
-                      : {
-                          background: "rgba(235, 235, 235, 0.70)",
-                        }
-                  }
-                  className={styles.socialMediaShareParentContainer}
-                  onClick={() => {
-                    onSocialClick(mediaLinks?.youtubeLink);
-                  }}
-                >
-                  <div className={styles.socialMediaShareInnerContainer}>
-                    <Youtube />
-                    <div className={styles.shareInfoContentContainer}>
-                      <h2 className={styles.shareInfoTitle}>Youtube</h2>
-                    </div>
-                  </div>
-                  <div
-                    style={{
-                      height: "100%",
-                      width: "35px",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      borderRadius: "0 5px 5px 0px",
-                      background: mode === "dark" ? "#292929" : "#E2E2E2",
-                    }}
-                  >
-                    <RightArrow
-                      className={styles.pointer}
-                      color={backgroundColor ?? "#007AFF"}
-                    />
-                  </div>
-                </div>
-                <div
-                  style={
-                    mode === "dark"
-                      ? {
-                          background: "#3B3B3B",
-                          color: "#fff",
-                        }
-                      : {
-                          background: "rgba(235, 235, 235, 0.70)",
-                        }
-                  }
-                  className={styles.socialMediaShareParentContainer}
-                  onClick={() => {
-                    onSocialClick(mediaLinks?.facebookLink);
-                  }}
-                >
-                  <div className={styles.socialMediaShareInnerContainer}>
-                    <Facebook />
-                    <div className={styles.shareInfoContentContainer}>
-                      <h2 className={styles.shareInfoTitle}>FaceBook</h2>
-                    </div>
-                  </div>
-                  <div
-                    style={{
-                      height: "100%",
-                      width: "35px",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      borderRadius: "0 5px 5px 0px",
-                      background: mode === "dark" ? "#292929" : "#E2E2E2",
-                    }}
-                  >
-                    <RightArrow
-                      className={styles.pointer}
-                      color={backgroundColor ?? "#007AFF"}
-                    />
-                  </div>
-                </div>
-                <div
-                  style={
-                    mode === "dark"
-                      ? {
-                          background: "#3B3B3B",
-                          color: "#fff",
-                        }
-                      : {
-                          background: "rgba(235, 235, 235, 0.70)",
-                        }
-                  }
-                  className={styles.socialMediaShareParentContainer}
-                  onClick={() => {
-                    onSocialClick(mediaLinks?.whatsAppLink);
-                  }}
-                >
-                  <div className={styles.socialMediaShareInnerContainer}>
-                    <Whatsapp />
-                    <div className={styles.shareInfoContentContainer}>
-                      <h2 className={styles.shareInfoTitle}>WhatsApp</h2>
-                    </div>
-                  </div>
-                  <div
-                    style={{
-                      height: "100%",
-                      width: "35px",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      borderRadius: "0 5px 5px 0px",
-                      background: mode === "dark" ? "#292929" : "#E2E2E2",
-                    }}
-                  >
-                    <RightArrow
-                      className={styles.pointer}
-                      color={backgroundColor ?? "#007AFF"}
-                    />
-                  </div>
-                </div>
-              </div>
-              <div className={styles.socialLink_text_container}>
-                <div>
-                  <h5 style={mode === "dark" ? { color: "white" } : {}}>
-                    Digital Payments
-                  </h5>
-                </div>
-                <div>
-                  {edit && (
-                    <Image
-                      src={mode === "dark" ? PencilView : PencilViewBlack}
-                      alt="PencilWhite"
-                      width={25}
-                      height={25}
-                      className={styles.pointer}
-                      onClick={() => setModalType(MODAL_TYPES.digitalEdit)}
-                    />
-                  )}
-                </div>
-              </div>
-              <div className={styles.socialMediaShareParent}>
-                <div
-                  style={
-                    mode === "dark"
-                      ? {
-                          background: "#3B3B3B",
-                          color: "#fff",
-                        }
-                      : {
-                          background: "rgba(235, 235, 235, 0.70)",
-                        }
-                  }
-                  className={styles.socialMediaShareParentContainer}
-                  onClick={() => {
-                    handlePaymentClick(digitalPayments.gPay.digitalPaymentLink);
-                    handleClick(13);
-                  }}
-                >
-                  <div className={styles.socialMediaShareInnerContainer}>
-                    <GooglePay />
-                    <div className={styles.shareInfoContentContainer}>
-                      <h2 className={styles.shareInfoTitle}>Google Pay</h2>
-                    </div>
-                  </div>
-                  <div
-                    style={{
-                      height: "100%",
-                      width: "35px",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      borderRadius: "0 5px 5px 0px",
-                      background: mode === "dark" ? "#292929" : "#E2E2E2",
-                    }}
-                  >
-                    <RightArrow
-                      className={styles.pointer}
-                      color={backgroundColor ?? "#007AFF"}
-                    />
-                  </div>
-                </div>
-
-                <div
-                  style={
-                    mode === "dark"
-                      ? {
-                          background: "#3B3B3B",
-                          color: "#fff",
-                        }
-                      : {
-                          background: "rgba(235, 235, 235, 0.70)",
-                        }
-                  }
-                  className={styles.socialMediaShareParentContainer}
-                  onClick={() => {
-                    handlePaymentClick(
-                      digitalPayments.phonePe.digitalPaymentLink
-                    );
-                    handleClick(14);
-                  }}
-                >
-                  <div className={styles.socialMediaShareInnerContainer}>
-                    <PhonePay />
-                    <div className={styles.shareInfoContentContainer}>
-                      <h2 className={styles.shareInfoTitle}>Phone Pay</h2>
-                    </div>
-                  </div>
-                  <div
-                    style={{
-                      height: "100%",
-                      width: "35px",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      borderRadius: "0 5px 5px 0px",
-                      background: mode === "dark" ? "#292929" : "#E2E2E2",
-                    }}
-                  >
-                    <RightArrow
-                      className={styles.pointer}
-                      color={backgroundColor ?? "#007AFF"}
-                    />
-                  </div>
-                </div>
-
-                <div
-                  className={styles.socialMediaShareParentContainer}
-                  style={
-                    mode === "dark"
-                      ? {
-                          background: "#3B3B3B",
-                          color: "#fff",
-                        }
-                      : {
-                          background: "rgba(235, 235, 235, 0.70)",
-                        }
-                  }
-                >
-                  <div
-                    className={styles.socialMediaShareInnerContainer}
+                    style={
+                      mode === "dark"
+                        ? {
+                            background: "#3B3B3B",
+                            color: "#fff",
+                          }
+                        : {
+                            background: "rgba(235, 235, 235, 0.70)",
+                          }
+                    }
+                    className={styles.socialMediaShareParentContainer}
                     onClick={() => {
-                      handlePaymentClick(
-                        digitalPayments.payTm.digitalPaymentLink
-                      );
-                      handleClick(15);
+                      onSocialClick(mediaLinks?.instaLink);
                     }}
                   >
-                    <Paytm_icon />
-                    <div className={styles.shareInfoContentContainer}>
-                      <h2 className={styles.shareInfoTitle}>Paytm</h2>
+                    <div className={styles.socialMediaShareInnerContainer}>
+                      <Instagram_icon />
+                      <div className={styles.shareInfoContentContainer}>
+                        <h2 className={styles.shareInfoTitle}>Instagram</h2>
+                      </div>
+                    </div>
+                    <div
+                      style={{
+                        height: "100%",
+                        width: "35px",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        borderRadius: "0 5px 5px 0px",
+                        background: mode === "dark" ? "#292929" : "#E2E2E2",
+                      }}
+                    >
+                      <RightArrow
+                        className={styles.pointer}
+                        color={backgroundColor ?? "#007AFF"}
+                      />
                     </div>
                   </div>
+                )}
+                {mediaLinks?.twitterLink && mediaLinks?.twitterLink.length > 5 && (
                   <div
-                    style={{
-                      height: "100%",
-                      width: "35px",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      borderRadius: "0 5px 5px 0px",
-                      background: mode === "dark" ? "#292929" : "#E2E2E2",
+                    style={
+                      mode === "dark"
+                        ? {
+                            background: "#3B3B3B",
+                            color: "#fff",
+                          }
+                        : {
+                            background: "rgba(235, 235, 235, 0.70)",
+                          }
+                    }
+                    className={styles.socialMediaShareParentContainer}
+                    onClick={() => {
+                      onSocialClick(mediaLinks?.twitterLink);
                     }}
                   >
-                    <RightArrow
-                      className={styles.pointer}
-                      color={backgroundColor ?? "#007AFF"}
-                    />
+                    <div className={styles.socialMediaShareInnerContainer}>
+                      <Twitter_icon />
+                      <div className={styles.shareInfoContentContainer}>
+                        <h2 className={styles.shareInfoTitle}>Twitter</h2>
+                      </div>
+                    </div>
+                    <div
+                      style={{
+                        height: "100%",
+                        width: "35px",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        borderRadius: "0 5px 5px 0px",
+                        background: mode === "dark" ? "#292929" : "#E2E2E2",
+                      }}
+                    >
+                      <RightArrow
+                        className={styles.pointer}
+                        color={backgroundColor ?? "#007AFF"}
+                      />
+                    </div>
+                  </div>
+                )}
+                {mediaLinks?.linkedInLink &&
+                  mediaLinks?.linkedInLink.length > 5 && (
+                    <div
+                      style={
+                        mode === "dark"
+                          ? {
+                              background: "#3B3B3B",
+                              color: "#fff",
+                            }
+                          : {
+                              background: "rgba(235, 235, 235, 0.70)",
+                            }
+                      }
+                      className={styles.socialMediaShareParentContainer}
+                      onClick={() => {
+                        onSocialClick(mediaLinks?.linkedInLink);
+                      }}
+                    >
+                      <div className={styles.socialMediaShareInnerContainer}>
+                        <Linkedin_icon />
+                        <div className={styles.shareInfoContentContainer}>
+                          <h2 className={styles.shareInfoTitle}>Linked in</h2>
+                        </div>
+                      </div>
+                      <div
+                        style={{
+                          height: "100%",
+                          width: "35px",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          borderRadius: "0 5px 5px 0px",
+                          background: mode === "dark" ? "#292929" : "#E2E2E2",
+                        }}
+                      >
+                        <RightArrow
+                          className={styles.pointer}
+                          color={backgroundColor ?? "#007AFF"}
+                        />
+                      </div>{" "}
+                    </div>
+                  )}
+                {mediaLinks?.youtubeLink && mediaLinks?.youtubeLink.length > 5 && (
+                  <div
+                    style={
+                      mode === "dark"
+                        ? {
+                            background: "#3B3B3B",
+                            color: "#fff",
+                          }
+                        : {
+                            background: "rgba(235, 235, 235, 0.70)",
+                          }
+                    }
+                    className={styles.socialMediaShareParentContainer}
+                    onClick={() => {
+                      onSocialClick(mediaLinks?.youtubeLink);
+                    }}
+                  >
+                    <div className={styles.socialMediaShareInnerContainer}>
+                      <Youtube />
+                      <div className={styles.shareInfoContentContainer}>
+                        <h2 className={styles.shareInfoTitle}>Youtube</h2>
+                      </div>
+                    </div>
+                    <div
+                      style={{
+                        height: "100%",
+                        width: "35px",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        borderRadius: "0 5px 5px 0px",
+                        background: mode === "dark" ? "#292929" : "#E2E2E2",
+                      }}
+                    >
+                      <RightArrow
+                        className={styles.pointer}
+                        color={backgroundColor ?? "#007AFF"}
+                      />
+                    </div>
+                  </div>
+                )}
+                {mediaLinks?.facebookLink &&
+                  mediaLinks?.facebookLink.length > 5 && (
+                    <div
+                      style={
+                        mode === "dark"
+                          ? {
+                              background: "#3B3B3B",
+                              color: "#fff",
+                            }
+                          : {
+                              background: "rgba(235, 235, 235, 0.70)",
+                            }
+                      }
+                      className={styles.socialMediaShareParentContainer}
+                      onClick={() => {
+                        onSocialClick(mediaLinks?.facebookLink);
+                      }}
+                    >
+                      <div className={styles.socialMediaShareInnerContainer}>
+                        <Facebook />
+                        <div className={styles.shareInfoContentContainer}>
+                          <h2 className={styles.shareInfoTitle}>FaceBook</h2>
+                        </div>
+                      </div>
+                      <div
+                        style={{
+                          height: "100%",
+                          width: "35px",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          borderRadius: "0 5px 5px 0px",
+                          background: mode === "dark" ? "#292929" : "#E2E2E2",
+                        }}
+                      >
+                        <RightArrow
+                          className={styles.pointer}
+                          color={backgroundColor ?? "#007AFF"}
+                        />
+                      </div>
+                    </div>
+                  )}
+                {mediaLinks?.whatsAppLink &&
+                  mediaLinks?.whatsAppLink.length > 5 && (
+                    <div
+                      style={
+                        mode === "dark"
+                          ? {
+                              background: "#3B3B3B",
+                              color: "#fff",
+                            }
+                          : {
+                              background: "rgba(235, 235, 235, 0.70)",
+                            }
+                      }
+                      className={styles.socialMediaShareParentContainer}
+                      onClick={() => {
+                        onSocialClick(mediaLinks?.whatsAppLink);
+                      }}
+                    >
+                      <div className={styles.socialMediaShareInnerContainer}>
+                        <Whatsapp />
+                        <div className={styles.shareInfoContentContainer}>
+                          <h2 className={styles.shareInfoTitle}>WhatsApp</h2>
+                        </div>
+                      </div>
+                      <div
+                        style={{
+                          height: "100%",
+                          width: "35px",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          borderRadius: "0 5px 5px 0px",
+                          background: mode === "dark" ? "#292929" : "#E2E2E2",
+                        }}
+                      >
+                        <RightArrow
+                          className={styles.pointer}
+                          color={backgroundColor ?? "#007AFF"}
+                        />
+                      </div>
+                    </div>
+                  )}
+              </div>
+              {(showDigitalPaymentSection || edit) && (
+                <div className={styles.socialLink_text_container}>
+                  <div>
+                    <h5 style={mode === "dark" ? { color: "white" } : {}}>
+                      Digital Payments
+                    </h5>
+                  </div>
+                  <div>
+                    {edit && (
+                      <Image
+                        src={mode === "dark" ? PencilView : PencilViewBlack}
+                        alt="PencilWhite"
+                        width={25}
+                        height={25}
+                        className={styles.pointer}
+                        onClick={() => setModalType(MODAL_TYPES.digitalEdit)}
+                      />
+                    )}
                   </div>
                 </div>
+              )}
+              <div className={styles.socialMediaShareParent}>
+                {digitalPayments.gPay.digitalPaymentLink &&
+                  digitalPayments.gPay.digitalPaymentLink.length > 5 && (
+                    <div
+                      style={
+                        mode === "dark"
+                          ? {
+                              background: "#3B3B3B",
+                              color: "#fff",
+                            }
+                          : {
+                              background: "rgba(235, 235, 235, 0.70)",
+                            }
+                      }
+                      className={styles.socialMediaShareParentContainer}
+                      onClick={() => {
+                        handlePaymentClick(
+                          digitalPayments.gPay.digitalPaymentLink
+                        );
+                        handleClick(13);
+                      }}
+                    >
+                      <div className={styles.socialMediaShareInnerContainer}>
+                        <GooglePay />
+                        <div className={styles.shareInfoContentContainer}>
+                          <h2 className={styles.shareInfoTitle}>Google Pay</h2>
+                        </div>
+                      </div>
+                      <div
+                        style={{
+                          height: "100%",
+                          width: "35px",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          borderRadius: "0 5px 5px 0px",
+                          background: mode === "dark" ? "#292929" : "#E2E2E2",
+                        }}
+                      >
+                        <RightArrow
+                          className={styles.pointer}
+                          color={backgroundColor ?? "#007AFF"}
+                        />
+                      </div>
+                    </div>
+                  )}
+
+                {digitalPayments.phonePe.digitalPaymentLink &&
+                  digitalPayments.phonePe.digitalPaymentLink.length > 5 && (
+                    <div
+                      style={
+                        mode === "dark"
+                          ? {
+                              background: "#3B3B3B",
+                              color: "#fff",
+                            }
+                          : {
+                              background: "rgba(235, 235, 235, 0.70)",
+                            }
+                      }
+                      className={styles.socialMediaShareParentContainer}
+                      onClick={() => {
+                        handlePaymentClick(
+                          digitalPayments.phonePe.digitalPaymentLink
+                        );
+                        handleClick(14);
+                      }}
+                    >
+                      <div className={styles.socialMediaShareInnerContainer}>
+                        <PhonePay />
+                        <div className={styles.shareInfoContentContainer}>
+                          <h2 className={styles.shareInfoTitle}>Phone Pay</h2>
+                        </div>
+                      </div>
+                      <div
+                        style={{
+                          height: "100%",
+                          width: "35px",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          borderRadius: "0 5px 5px 0px",
+                          background: mode === "dark" ? "#292929" : "#E2E2E2",
+                        }}
+                      >
+                        <RightArrow
+                          className={styles.pointer}
+                          color={backgroundColor ?? "#007AFF"}
+                        />
+                      </div>
+                    </div>
+                  )}
+
+                {digitalPayments.payTm.digitalPaymentLink &&
+                  digitalPayments.payTm.digitalPaymentLink.length > 5 && (
+                    <div
+                      className={styles.socialMediaShareParentContainer}
+                      style={
+                        mode === "dark"
+                          ? {
+                              background: "#3B3B3B",
+                              color: "#fff",
+                            }
+                          : {
+                              background: "rgba(235, 235, 235, 0.70)",
+                            }
+                      }
+                    >
+                      <div
+                        className={styles.socialMediaShareInnerContainer}
+                        onClick={() => {
+                          handlePaymentClick(
+                            digitalPayments.payTm.digitalPaymentLink
+                          );
+                          handleClick(15);
+                        }}
+                      >
+                        <Paytm_icon />
+                        <div className={styles.shareInfoContentContainer}>
+                          <h2 className={styles.shareInfoTitle}>Paytm</h2>
+                        </div>
+                      </div>
+                      <div
+                        style={{
+                          height: "100%",
+                          width: "35px",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          borderRadius: "0 5px 5px 0px",
+                          background: mode === "dark" ? "#292929" : "#E2E2E2",
+                        }}
+                      >
+                        <RightArrow
+                          className={styles.pointer}
+                          color={backgroundColor ?? "#007AFF"}
+                        />
+                      </div>
+                    </div>
+                  )}
               </div>
 
               {/* Footer */}
