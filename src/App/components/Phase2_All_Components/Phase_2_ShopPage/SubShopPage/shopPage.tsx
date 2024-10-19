@@ -128,7 +128,7 @@ function ShopComponent() {
               </div>
             </div>
 
-            <Marquee />
+            {/* <Marquee /> */}
 
             <div className={styles.shopPageDiv}>
               {/* <div className={styles.shopBreadCrumbs}>
@@ -284,7 +284,7 @@ function ShopComponent() {
                   )}
                 </div>
               </div>
-              <Marquee />
+              {/* <Marquee /> */}
             </div>
             <div className={styles.shopPageBackSection}>
               {/* <div className={styles.shopBreadCrumbs}>
@@ -321,7 +321,7 @@ function ShopComponent() {
             <div className={styles.individualContainer}>
               <p className={styles.individualHead}>
                 Bubbl <span className={styles.individualSubHead}>Basics</span>
-              </p>
+              </p> 
               <div className={styles.individualDiv}>
                 <p className={styles.individualContent}>
                   Pick from our line of Bubbl- Basics - Affordable, Eco-friendly
@@ -382,7 +382,7 @@ function ShopComponent() {
                     showImage2
                     showImage3
                     showGradients={showGradients}
-                  />
+                  /> 
                 </div>
                 <div className={styles.bundleComp}>
                   <Col xl={4} sm={4} xs={10}>
