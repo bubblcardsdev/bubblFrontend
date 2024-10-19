@@ -98,7 +98,7 @@ export default function Shop() {
           <section className={styles.userprofile_sec}>
             <TitleBar />
 
-            <Marquee />
+            {/* <Marquee /> */}
           </section>
           <section className={styles.navbar}>
             <div className="container">

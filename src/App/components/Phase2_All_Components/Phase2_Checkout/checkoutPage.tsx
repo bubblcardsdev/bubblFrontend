@@ -421,12 +421,12 @@ function CheckOutPageFunc() {
                             <p className={styles.slashedPrice}>
                               {discountedTypes.includes(cartValues?.deviceType)
                                 ? "INR 999"
-                                : "INR 599"}
+                                : "INR 699"}
                             </p>
                             <span className={styles.discountText}>
                               {discountedTypes.includes(cartValues?.deviceType)
-                                ? "40% off"
-                                : "43% off"}
+                                ? "20.02% off"
+                                : "28.61% off"}
                             </span>
                           </div>
                         )}
@@ -553,8 +553,8 @@ function CheckOutPageFunc() {
                       <span className={styles.discountText}>
                         {" "}
                         {discountedTypes.includes(value?.deviceType)
-                          ? "40% off"
-                          : "43% off"}
+                          ? "20.02% off"
+                          : "28.61% off"}
                       </span>
                     </div>
                   )}
