@@ -30,14 +30,10 @@ function CustomComponent({
   const colors = useMemo(() => Object.keys(images), [images]);
   const [color, setColor] = useState(colors[0] || "");
   let finalPrice: number = price;
-  let discount: any = 20.02;
-  let originalPrice: any = 999;
   if (title === "Name Custom") {
-    finalPrice = 649;
-    discount = 18.77;
-    originalPrice = 799;
+    finalPrice 
+    
   }
-
   const customClick = (title: string) => {
     const token = getAccessToken();
     // if (token !== null) {
@@ -50,18 +46,15 @@ function CustomComponent({
     //   router.push("/login");
     // }
   };
-
   return (
     <div className={styles.bundlecards}>
       <BundleCards
         price={finalPrice}
-        discount={discount}
-        salesPrice={originalPrice}
-        // colors={colors}
+         // colors={colors}
         selectedColor={color}
         images={images}
         // setColors={setColor}
-        title="" // originalPrice={0}
+        title={title} // originalPrice={0}
         showDiscount={showDiscount}
       />
       <div className={styles.quantity}>

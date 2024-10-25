@@ -85,11 +85,17 @@ function NameCustomizationDetails({
             <option value="muller">Muller</option>
             <option value="romeliosans">Romeliosans</option>
           </Form.Select>
-          <h3>Price</h3>
-          <h4>
-            ₹&nbsp;{priceValue}
-            <span>&nbsp; Per Card</span>
-          </h4>
+          <div className={styles.price}>
+            <h3>Price</h3>
+            <div className={styles.discountContainer}>
+              <p className={styles.slashedPrice}>INR 799</p>
+              <span className={styles.discountText}>18.77% off</span>
+            </div>
+            <h4>
+              ₹&nbsp; {priceValue}
+              <span>&nbsp; Per Card</span>
+            </h4>
+          </div>
         </Col>
       </Col>
       {/* Responsive for Add Product */}
@@ -126,13 +132,17 @@ function NameCustomizationDetails({
           </div>
         </div>
 
-        <div className={styles.price_resp}>
-          <h3>Price</h3>
-          <h4>
-            ₹&nbsp;{priceValue}
-            <span>&nbsp; Per Card</span>
-          </h4>
-        </div>
+         <div className={styles.price}>
+            <h3>Price</h3>
+            <div className={styles.discountContainer}>
+              <p className={styles.slashedPrice}>INR 799</p>
+              <span className={styles.discountText}>18.77% off</span>
+            </div>
+            <h4>
+              ₹&nbsp; {priceValue}
+              <span>&nbsp; Per Card</span>
+            </h4>
+          </div>
       </div>
 
       <div className={styles.buttonsContainer}>

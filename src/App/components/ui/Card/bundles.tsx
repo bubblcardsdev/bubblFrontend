@@ -14,9 +14,7 @@ import styles from "./bundle.module.css";
 
 export default function BundleCards({
   price,
-  discount,
-  salesPrice,
-  // originalPrice,
+ 
   selectedColor,
   // colors = [],
   images,
@@ -25,9 +23,6 @@ export default function BundleCards({
   showDiscount,
 }: {
   price?: number;
-  discount?: any;
-  salesPrice?: any;
-  originalPriceone?: any;
   // originalPrice: number;
   // colors?: string[];
   selectedColor: string;
@@ -143,11 +138,15 @@ export default function BundleCards({
             <div className={styles.cards_prod_img}>
               <img src={images[color]} alt="cards" />
             </div>
-
             {showDiscount && price && price > 0 && (
               <div className={styles.discountContainer}>
-                <p className={styles.slashedPrice}>INR {salesPrice}</p>
-                <span className={styles.discountText}>{discount}% off</span>
+                {/* <p className={styles.slashedPrice}>INR {salesPrice}</p> */}
+                <p className={styles.slashedPrice}>
+                  INR{title === "Name Custom" ? 999 : 799}
+                </p>
+                <span className={styles.discountText}>
+                  {title === "Name Custom" ? 18.77 : 20.02}%
+                </span>
               </div>
             )}
             {price && price > 0 ? (
@@ -171,7 +170,7 @@ export default function BundleCards({
               <img src={images[color]} alt="cards" />
             </div>
 
-            {/* {value.map((img) => (
+            {/*  {value.map((img) => (
               <div className={styles.cards_prod_img}>
                 <img src={images[color]} alt="cards" />
               </div>

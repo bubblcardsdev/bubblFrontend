@@ -325,7 +325,13 @@ function CheckOutPageFunc() {
     setScrollPosition(position);
   };
 
-  const discountedTypes = ["Card", "Socket", "Tile", "Full Custom"];
+  const discountedTypes = [
+    "Card",
+    "Socket",
+    "Tile",
+    "Full Custom",
+    "NC-Pattern",
+  ];
 
   const { isFailed } = router.query;
   useEffect(() => {
@@ -425,8 +431,9 @@ function CheckOutPageFunc() {
                             </p>
                             <span className={styles.discountText}>
                               {discountedTypes.includes(cartValues?.deviceType)
-                                ? "20.02% off"
+                                ? "18.77% off"
                                 : "28.61% off"}
+                                
                             </span>
                           </div>
                         )}
@@ -553,7 +560,9 @@ function CheckOutPageFunc() {
                       <span className={styles.discountText}>
                         {" "}
                         {discountedTypes.includes(value?.deviceType)
-                          ? "20.02% off"
+                          ? value?.deviceType == "NC-Pattern"
+                            ? "18.77% off"
+                            : "20.02% off"
                           : "28.61% off"}
                       </span>
                     </div>
