@@ -1034,7 +1034,7 @@ export default function FreeTemplateTwo({
                         width={25}
                         height={25}
                         className={styles.pointer}
-                        onClick={(e: any) => onEdit(e, 4)}
+                        onClick={(e: any) => onEdit(e, 5)}
                       />
                     ) : (
                       <div
