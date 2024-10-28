@@ -379,7 +379,7 @@ function FullyCustomization() {
                   {/* Update same function for responsive its down */}
                   <div className={styles.discountContainer}>
                     <p className={styles.slashedPrice}>INR 999</p>
-                    <span className={styles.discountText}>40% off</span>
+                    <span className={styles.discountText}>20.02% off</span>
                   </div>
                   <h4>
                     ₹&nbsp; {pirceVal?.price}

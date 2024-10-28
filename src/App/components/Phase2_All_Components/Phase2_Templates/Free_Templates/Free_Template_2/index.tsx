@@ -1034,7 +1034,7 @@ export default function FreeTemplateTwo({
                         width={25}
                         height={25}
                         className={styles.pointer}
-                        onClick={(e: any) => onEdit(e, 4)}
+                        onClick={(e: any) => onEdit(e, 5)}
                       />
                     ) : (
                       <div
@@ -1057,63 +1057,75 @@ export default function FreeTemplateTwo({
                     )}
                   </div>
                   {/* Website */}
-                  <div
-                    style={
-                      mode === "dark"
-                        ? {
-                            paddingRight: edit ? "10px" : "0",
-                            background: "#3B3B3B",
-                            color: "#fff",
-                          }
-                        : {
-                            paddingRight: edit ? "10px" : "0",
-                            background: "rgba(235, 235, 235, 0.70)",
-                          }
-                    }
-                    className={styles.socialMediaShareParentContainer}
-                    onClick={(e: any) => {
-                      onWebsiteClick();
-                      handleClick(6);
-                    }}
-                  >
-                    <div className={styles.socialMediaShareInnerContainer}>
-                      <WebsiteIcon />
-                      <div className={styles.shareInfoContentContainer}>
-                        <p className={styles.shareInfoContent_mail}>
-                          {getAllProfile?.profileWebsites?.[0]?.website ||
-                            websiteField?.website}
-                        </p>
+                  {(showWebsite || edit) && (
+                    <div
+                      style={
+                        mode === "dark"
+                          ? {
+                              paddingRight: edit ? "10px" : "0",
+                              background: "#3B3B3B",
+                              color: "#fff",
+                            }
+                          : {
+                              paddingRight: edit ? "10px" : "0",
+                              background: "rgba(235, 235, 235, 0.70)",
+                            }
+                      }
+                      className={styles.socialMediaShareParentContainer}
+                      onClick={(e: any) => {                   
+                        onWebsiteClick();
+                        handleClick(6);
+                      }}
+                    >
+                      <div className={styles.socialMediaShareInnerContainer}>
+                        <WebsiteIcon />
+                        <div className={styles.shareInfoContentContainer}>
+                          <p className={styles.shareInfoContent_mail}>
+                            {getAllProfile?.profileWebsites[0]?.website ||
+                            (websiteField && websiteField?.website) ? (
+                              getAllProfile?.profileWebsites[0]?.website ||
+                              websiteField?.website
+                            ) : (
+                              <span style={{ opacity: 0.5 }}>
+                                Enter your website
+                              </span>
+                            )}
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                    {edit ? (
-                      <Image
-                        src={mode === "dark" ? PencilView : PencilViewBlack}
-                        alt="PencilWhite"
-                        width={25}
-                        height={25}
-                        className={styles.pointer}
-                        onClick={(e: any) => onEdit(e, 6)}
-                      />
-                    ) : (
-                      <div
-                        style={{
-                          height: "100%",
-                          width: "35px",
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          borderRadius: "0 5px 5px 0px",
-                          background: mode === "dark" ? "#292929" : "#E2E2E2",
-                        }}
-                      >
-                        <RightArrow
+                      {edit ? (
+                        <Image
+                          src={mode === "dark" ? PencilView : PencilViewBlack}
+                          alt="PencilWhite"
+                          width={25}
+                          height={25}
                           className={styles.pointer}
-                          onClick={() => onWebsiteClick()}
-                          color={backgroundColor ?? "#007AFF"}
+                          onClick={(e: any) => onEdit(e, 6)}
                         />
-                      </div>
-                    )}
-                  </div>
+                      ) : (
+                        <div
+                          style={{
+                            height: "100%",
+                            width: "35px",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            borderRadius: "0 5px 5px 0px",
+                            background: mode === "dark" ? "#292929" : "#E2E2E2",
+                          }}
+                        >
+                          <RightArrow
+                            className={styles.pointer}
+                            onClick={(e: any) => {
+                              handleClick(6);
+                              onWebsiteClick();
+                            }}
+                            color={backgroundColor ?? "#007AFF"}
+                          />
+                        </div>
+                      )}
+                    </div>
+                  )}
                   {/* Location */}
 
                   {(showAddress || edit) && (
