@@ -142,7 +142,7 @@ export default function BundleCards({
               <div className={styles.discountContainer}>
                 {/* <p className={styles.slashedPrice}>INR {salesPrice}</p> */}
                 <p className={styles.slashedPrice}>
-                  INR{title === "Name Custom" ? 999 : 799}
+                  INR{title === "Name Custom" ? 799 : 1299}
                 </p>
                 <span className={styles.discountText}>
                   {title === "Name Custom" ? 18.77 : 20.02}%

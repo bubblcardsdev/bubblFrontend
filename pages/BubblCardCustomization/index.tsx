@@ -374,11 +374,12 @@ function FullyCustomization() {
                     </span>
                   </div>
                 </div>
+                {/* full name custom */}
                 <div className={styles.price}>
                   <h3>Price</h3>
                   {/* Update same function for responsive its down */}
                   <div className={styles.discountContainer}>
-                    <p className={styles.slashedPrice}>INR 999</p>
+                    <p className={styles.slashedPrice}>INR 1299</p>
                     <span className={styles.discountText}>20.02% off</span>
                   </div>
                   <h4>

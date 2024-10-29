@@ -40,7 +40,7 @@ function QrModal({
         <Modal.Body style={{ backgroundColor: "black" }}>
           <QRCodeModal
             // eslint-disable-next-line no-unneeded-ternary
-            deviceIdQR={linkVal.deviceUid ? linkVal.deviceUid : linkVal}
+            deviceIdQR={linkVal ?.deviceUid ? linkVal.deviceUid : linkVal}
             qrImageUrl={qrImageUrl}
           />
         </Modal.Body>

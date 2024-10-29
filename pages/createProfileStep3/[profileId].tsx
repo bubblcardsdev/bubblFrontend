@@ -359,7 +359,6 @@ function CreateProfileStep3() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -789,6 +788,7 @@ function CreateProfileStep3() {
 
   useEffect(() => {
     const userPlanPromise = getUserPlan();
+
     if (userPlanPromise) {
       userPlanPromise
         .then((res) => res.data)
@@ -798,7 +798,6 @@ function CreateProfileStep3() {
         });
     }
   }, []);
-  const handleUserName = (e: any) => {};
 
   let modal: React.ReactNode = null;
 
@@ -1020,6 +1019,27 @@ function CreateProfileStep3() {
   }
   // }
 
+  const proValidater = (purchase: any, template: any) => {
+    if (
+      purchase &&
+      purchase?.toString()?.length > 0 &&
+      purchase?.toString()?.toLowerCase() !== "free"
+    ) {
+      switch (template) {
+        case 3:
+          setShowTemp3Modal(true);
+          break;
+        case 4:
+          setShowTemp4Modal(true);
+          break;
+        case 5:
+          setShowTemp5Modal(true);
+          break;
+      }
+    } else {
+      toast.info("Upgrade to BubblPRO !!");
+    }
+  };
   return (
     <>
       {modal}
@@ -1115,7 +1135,10 @@ function CreateProfileStep3() {
                       <div>
                         <p
                           className={styles.buttonPreview}
-                          onClick={() => setShowTemp3Modal(true)}
+                          // onClick={() => setShowTemp3Modal(true)}
+                          onClick={() =>
+                            proValidater(userPlan?.subscriptionType, 3)
+                          }
                         >
                           Preview
                         </p>
@@ -1144,7 +1167,10 @@ function CreateProfileStep3() {
                       <div>
                         <p
                           className={styles.buttonPreview}
-                          onClick={() => setShowTemp4Modal(true)}
+                          // onClick={() => setShowTemp4Modal(true)}
+                          onClick={() =>
+                            proValidater(userPlan?.subscriptionType, 4)
+                          }
                         >
                           Preview
                         </p>
@@ -1173,7 +1199,10 @@ function CreateProfileStep3() {
                       <div>
                         <p
                           className={styles.buttonPreview}
-                          onClick={() => setShowTemp5Modal(true)}
+                          // onClick={() => setShowTemp5Modal(true)}
+                          onClick={() =>
+                            proValidater(userPlan?.subscriptionType, 5)
+                          }
                         >
                           Preview
                         </p>
@@ -1219,7 +1248,7 @@ function CreateProfileStep3() {
                       profileData?.data?.data?.deviceBranding.filter(
                         (dataVal: any) =>
                           dataVal.templateId === templateChosen &&
-                          dataVal.DeviceLinkId.toString() === deviceLinkId
+                          dataVal?.DeviceLinkId?.toString() === deviceLinkId
                       );
 
                     const activeTemplateBranding =

@@ -114,21 +114,27 @@ function EditSocialModal({
     ].reduce<SocialMediaLinksT>((acc: SocialMediaLinksT, id) => {
       let link = socialMediaLinks.data[id].socialMediaName;
       let prefix = "";
+      let identifier = "";
       switch (id) {
         case 1:
           prefix = "https://www.instagram.com/";
+          identifier = "instagram";
           break;
         case 2:
           prefix = "https://www.facebook.com/";
+          identifier = "facebook";
           break;
         case 3:
           prefix = "https://www.twitter.com/";
+          identifier = "twitter";
           break;
         case 4:
           prefix = "https://www.youtube.com/";
+          identifier = "youtube";
           break;
         case 5:
           prefix = "https://www.linkedin.com/in/";
+          identifier = "linkedin";
           break;
         case 6:
           // NOTE: Using phone number as url
@@ -137,7 +143,7 @@ function EditSocialModal({
           break;
       }
 
-      if (prefix && link && !link.startsWith(prefix)) {
+      if (prefix && link && !link.includes(identifier)) {
         link = prefix + link;
       }
       return {
