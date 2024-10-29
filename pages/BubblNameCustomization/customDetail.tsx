@@ -88,7 +88,7 @@ function NameCustomizationDetails({
           <div className={styles.price}>
             <h3>Price</h3>
             <div className={styles.discountContainer}>
-              <p className={styles.slashedPrice}>INR 799</p>
+              <p className={styles.slashedPrice}>INR 1299</p>
               <span className={styles.discountText}>18.77% off</span>
             </div>
             <h4>
@@ -135,7 +135,7 @@ function NameCustomizationDetails({
          <div className={styles.price}>
             <h3>Price</h3>
             <div className={styles.discountContainer}>
-              <p className={styles.slashedPrice}>INR 799</p>
+              <p className={styles.slashedPrice}>INR 1299</p>
               <span className={styles.discountText}>18.77% off</span>
             </div>
             <h4>

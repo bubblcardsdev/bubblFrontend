@@ -426,12 +426,12 @@ function CheckOutPageFunc() {
                           <div className={styles.discountContainer}>
                             <p className={styles.slashedPrice}>
                               {discountedTypes.includes(cartValues?.deviceType)
-                                ? "INR 999"
+                                ? "INR 1299"
                                 : "INR 699"}
                             </p>
                             <span className={styles.discountText}>
                               {discountedTypes.includes(cartValues?.deviceType)
-                                ? "18.77% off"
+                                ? "20.02% off"
                                 : "28.61% off"}
                                 
                             </span>

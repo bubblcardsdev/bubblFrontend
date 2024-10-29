@@ -1072,7 +1072,7 @@ export default function FreeTemplateTwo({
                             }
                       }
                       className={styles.socialMediaShareParentContainer}
-                      onClick={(e: any) => {                   
+                      onClick={(e: any) => {
                         onWebsiteClick();
                         handleClick(6);
                       }}
@@ -1430,7 +1430,7 @@ export default function FreeTemplateTwo({
                       <div className={styles.socialMediaShareInnerContainer}>
                         <Facebook />
                         <div className={styles.shareInfoContentContainer}>
-                          <h2 className={styles.shareInfoTitle}>FaceBook</h2>
+                          <h2 className={styles.shareInfoTitle}>Facebook</h2>
                         </div>
                       </div>
                       <div
@@ -1466,7 +1466,9 @@ export default function FreeTemplateTwo({
                       }
                       className={styles.socialMediaShareParentContainer}
                       onClick={() => {
-                        onSocialClick(mediaLinks?.whatsAppLink);
+                        const whatsappURL = `https://wa.me/${mediaLinks.whatsAppLink}`;
+                        onSocialClick(whatsappURL); // Optional if you still want to handle analytics or tracking
+                        window.open(whatsappURL, "_blank"); // Open the WhatsApp link in a new tab
                       }}
                     >
                       <div className={styles.socialMediaShareInnerContainer}>
