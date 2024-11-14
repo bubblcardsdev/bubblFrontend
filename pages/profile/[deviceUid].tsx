@@ -230,10 +230,11 @@ function TapComponent() {
           getUrlValue.includes("https://") ||
           getUrlValue.includes("http://")
         ) {
-          window.open(getUrlValue, "_blank", "noreferrer");
-        } else {
-          window.open(`https://${getUrlValue}`, "_blank", "noreferrer");
-        }
+          window.open(getUrlValue, "_self", "noreferrer");
+        } 
+        // else {
+        //   window.open(`https://${getUrlValue}`, "_blank", "noreferrer");
+        // }
       }
     }
 

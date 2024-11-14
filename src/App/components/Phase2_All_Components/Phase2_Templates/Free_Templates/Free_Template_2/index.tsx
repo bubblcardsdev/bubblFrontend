@@ -765,7 +765,7 @@ export default function FreeTemplateTwo({
                 style={mode === "dark" ? { backgroundColor: "#1E1E1E" } : {}}
               >
                 <div className={styles.qrImg}>
-                  {userPlan?.planId !== 1 && qrImage ? (
+                  {userPlan?.planId === 2 && qrImage ? (
                     <img
                       src={qrImage}
                       alt="Logo"
@@ -781,7 +781,7 @@ export default function FreeTemplateTwo({
                   )}
                 </div>
 
-                {edit && userPlan?.planId !== 1 ? (
+                {edit && userPlan?.planId === 2 ? (
                   <div className={styles.QrEdit} style={{ backgroundColor }}>
                     <Image
                       src={ProfileEditIcon}
