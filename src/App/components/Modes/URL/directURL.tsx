@@ -61,7 +61,7 @@ function DirectURLForm({
     const inValidWordTwo = "bubbl.cards/profile/";
 
     const websiteRegex =
-      /^(?:(https?|ftp):\/\/)?(?:www\.)?([a-zA-Z0-9-]+(\.[a-zA-Z]{2,})+)(\/[a-zA-Z0-9-._~:/?#[\]@!$&'()*+,;=]*)?$/;
+      /^(?:(https?|ftp):\/\/)?(?:www\.)?([a-zA-Z0-9-]+(\.[a-zA-Z]{2,})+)(\/[a-zA-Z0-9-._~:/?#[\]@!$&%'()*+,;=]*)?$/;
 
     if (e.target.value.includes(invalidWord || inValidWordTwo)) {
       setUrlError("You can not add this");
@@ -120,7 +120,7 @@ function DirectURLForm({
             <div className={styles.imageHrLine} />
 
             {/* direct form */}
-            <h5 className={styles.url_headings}>Direct URL</h5>
+            <h5 className={styles.url_headings}> Direct URL</h5>
             <div className={styles.urlLinkDiv}>
               <InputComp
                 className={styles.inputDiv}

@@ -232,9 +232,9 @@ function TapComponent() {
         ) {
           window.open(getUrlValue, "_self", "noreferrer");
         } 
-        // else {
-        //   window.open(`https://${getUrlValue}`, "_blank", "noreferrer");
-        // }
+        else {
+          window.open(`https://${getUrlValue}`, "_self", "noreferrer");
+        }
       }
     }
 

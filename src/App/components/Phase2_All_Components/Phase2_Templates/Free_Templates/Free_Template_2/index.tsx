@@ -121,7 +121,7 @@ export default function FreeTemplateTwo({
   deviceId: any;
 }) {
   const mode = deviceBranding?.darkMode ? "dark" : "light";
-  let backgroundColor: string | undefined;
+  var backgroundColor: string | undefined;
   const router = useRouter();
 
   if (deviceBranding !== undefined) {
@@ -129,7 +129,7 @@ export default function FreeTemplateTwo({
   } else {
     backgroundColor = "#007AFF";
   }
-  const [showPf, setShow] = useState(false);
+    const [showPf, setShow] = useState(false);
   const [qrShow, setQrShow] = useState(false);
   const updateAddress = userProfile?.data?.address || getAllProfile?.address;
   let val2 = "";
@@ -153,7 +153,6 @@ export default function FreeTemplateTwo({
     emailIdFieldCount,
     websiteFieldCount,
   } = useProfile({ userProfile, userProfileDispatch, getAllProfile });
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const handleQrClose = () => setQrShow(false);
@@ -164,7 +163,7 @@ export default function FreeTemplateTwo({
   const [userPlan, setUserPlan] = useState<null | IPlanDetail>(null);
 
   useEffect(() => {
-    if (edit) {
+    // if (edit) {
       const userPlanPromise = getUserPlan();
       if (userPlanPromise) {
         userPlanPromise
@@ -177,7 +176,7 @@ export default function FreeTemplateTwo({
             console.log(error);
           });
       }
-    }
+    // }
   }, [edit]);
   const handleShareIconClick = () => {
     if (!userName) {
@@ -701,7 +700,7 @@ export default function FreeTemplateTwo({
                     )}
 
                     {/* company name */}
-                    <div>
+                    {/* <div>
                       {editingFieldName === "companyName" ? (
                         <div className={styles.RoleNameEdit}>
                           <input
@@ -756,7 +755,7 @@ export default function FreeTemplateTwo({
                           )}
                         </div>
                       )}
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
@@ -764,8 +763,9 @@ export default function FreeTemplateTwo({
                 className={styles.LogoBrand}
                 style={mode === "dark" ? { backgroundColor: "#1E1E1E" } : {}}
               >
+                {/* logo upload */}
                 <div className={styles.qrImg}>
-                  {userPlan?.planId === 2 && qrImage ? (
+                  {userPlan?.planId ===2 && qrImage ? (
                     <img
                       src={qrImage}
                       alt="Logo"
@@ -781,7 +781,7 @@ export default function FreeTemplateTwo({
                   )}
                 </div>
 
-                {edit && userPlan?.planId === 2 ? (
+                {(edit && userPlan?.planId === 2 )? (
                   <div className={styles.QrEdit} style={{ backgroundColor }}>
                     <Image
                       src={ProfileEditIcon}
@@ -796,10 +796,11 @@ export default function FreeTemplateTwo({
                 )}
               </div>
             </div>
+            {/* contact save */}
             <div className={styles.ruby_share_container}>
               <button
                 className={styles.rupy_save_contact_button}
-                style={{ background: backgroundColor ?? "#B13DFF" }}
+                style={{ background: backgroundColor || "#007AFF" }}
                 onClick={(e: any) => {
                   handleClickSave(e);
                   handleClickEvent(3);
@@ -822,7 +823,7 @@ export default function FreeTemplateTwo({
               >
                 <ShareOutlined
                   className={styles.share_icon}
-                  color={backgroundColor ?? "#B13DFF"}
+                  color={backgroundColor || "#007AFF"}
                 />
               </div>
               <div
@@ -849,7 +850,7 @@ export default function FreeTemplateTwo({
                     qrComponent={
                       <QrOutlined
                         className={styles.share_icon}
-                        color={backgroundColor ?? "#B13DFF"}
+                        color={backgroundColor || "#007AFF"}
                       />
                     }
                   />
@@ -859,7 +860,7 @@ export default function FreeTemplateTwo({
             {/* description */}
             <div className={styles.descriptionContainer}>
               <div>
-                <VerticalDivider color={backgroundColor ?? "#B13DFF"} />
+                <VerticalDivider color={backgroundColor || "#007AFF"} />
               </div>
               <div className={styles.shortDescription_text_container}>
                 {editingFieldName === "shortDescription" ? (
@@ -993,7 +994,7 @@ export default function FreeTemplateTwo({
                         <RightArrow
                           className={styles.pointer}
                           onClick={() => onCallClick()}
-                          color={backgroundColor ?? "#007AFF"}
+                          color={backgroundColor || "#007AFF"}
                         />
                       </div>
                     )}
@@ -1051,7 +1052,7 @@ export default function FreeTemplateTwo({
                         <RightArrow
                           className={styles.pointer}
                           onClick={() => onMailClick()}
-                          color={backgroundColor ?? "#007AFF"}
+                          color={backgroundColor || "#007AFF"}
                         />
                       </div>
                     )}
@@ -1120,7 +1121,7 @@ export default function FreeTemplateTwo({
                               handleClick(6);
                               onWebsiteClick();
                             }}
-                            color={backgroundColor ?? "#007AFF"}
+                            color={backgroundColor || "#007AFF"}
                           />
                         </div>
                       )}
@@ -1213,7 +1214,7 @@ export default function FreeTemplateTwo({
                                 "_blank"
                               );
                             }}
-                            color={backgroundColor ?? "#007AFF"}
+                            color={backgroundColor || "#007AFF"}
                           />
                         </div>
                       )}
@@ -1280,7 +1281,7 @@ export default function FreeTemplateTwo({
                     >
                       <RightArrow
                         className={styles.pointer}
-                        color={backgroundColor ?? "#007AFF"}
+                        color={backgroundColor || "#007AFF"}
                       />
                     </div>
                   </div>
@@ -1321,7 +1322,7 @@ export default function FreeTemplateTwo({
                     >
                       <RightArrow
                         className={styles.pointer}
-                        color={backgroundColor ?? "#007AFF"}
+                        color={backgroundColor || "#007AFF"}
                       />
                     </div>
                   </div>
@@ -1363,7 +1364,7 @@ export default function FreeTemplateTwo({
                       >
                         <RightArrow
                           className={styles.pointer}
-                          color={backgroundColor ?? "#007AFF"}
+                          color={backgroundColor || "#007AFF"}
                         />
                       </div>{" "}
                     </div>
@@ -1404,7 +1405,7 @@ export default function FreeTemplateTwo({
                     >
                       <RightArrow
                         className={styles.pointer}
-                        color={backgroundColor ?? "#007AFF"}
+                        color={backgroundColor || "#007AFF"}
                       />
                     </div>
                   </div>
@@ -1446,7 +1447,7 @@ export default function FreeTemplateTwo({
                       >
                         <RightArrow
                           className={styles.pointer}
-                          color={backgroundColor ?? "#007AFF"}
+                          color={backgroundColor || "#007AFF"}
                         />
                       </div>
                     </div>
@@ -1490,7 +1491,7 @@ export default function FreeTemplateTwo({
                       >
                         <RightArrow
                           className={styles.pointer}
-                          color={backgroundColor ?? "#007AFF"}
+                          color={backgroundColor || "#007AFF"}
                         />
                       </div>
                     </div>
@@ -1558,7 +1559,7 @@ export default function FreeTemplateTwo({
                       >
                         <RightArrow
                           className={styles.pointer}
-                          color={backgroundColor ?? "#007AFF"}
+                          color={backgroundColor || "#007AFF"}
                         />
                       </div>
                     </div>
@@ -1604,7 +1605,7 @@ export default function FreeTemplateTwo({
                       >
                         <RightArrow
                           className={styles.pointer}
-                          color={backgroundColor ?? "#007AFF"}
+                          color={backgroundColor || "#007AFF"}
                         />
                       </div>
                     </div>
@@ -1652,7 +1653,7 @@ export default function FreeTemplateTwo({
                       >
                         <RightArrow
                           className={styles.pointer}
-                          color={backgroundColor ?? "#007AFF"}
+                          color={backgroundColor || "#007AFF"}
                         />
                       </div>
                     </div>
