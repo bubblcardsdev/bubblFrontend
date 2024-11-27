@@ -163,7 +163,7 @@ export default function FreeTemplateTwo({
   const [userPlan, setUserPlan] = useState<null | IPlanDetail>(null);
 
   useEffect(() => {
-    // if (edit) {
+    if (edit) {
       const userPlanPromise = getUserPlan();
       if (userPlanPromise) {
         userPlanPromise
@@ -176,7 +176,7 @@ export default function FreeTemplateTwo({
             console.log(error);
           });
       }
-    // }
+    }
   }, [edit]);
   const handleShareIconClick = () => {
     if (!userName) {
