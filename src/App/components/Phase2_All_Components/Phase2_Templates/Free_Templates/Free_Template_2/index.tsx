@@ -198,18 +198,33 @@ export default function FreeTemplateTwo({
       clickAction: clickId,
     };
   };
+  const getPhoneNumbersWithCountryCode = (getAllProfile:any, userProfile:any) => {
+    try {
+      if (getAllProfile?.profilePhoneNumbers) {
+        return getAllProfile.profilePhoneNumbers;
+      }
+        if (userProfile?.data?.profilePhoneNumbers?.length) {
+        return userProfile.data.profilePhoneNumbers.map((phone:any, index:number) => ({
+          ...phone,
+          phoneNumber: `${phone?.countryCode || ''} ${phone?.phoneNumber || ''}`.trim(),
+        }));
+      }
+        return [];
+    } catch (error) {
+      console.error("Error retrieving profile phone numbers:", error);
+      return [];
+    }
+  };
   const handleClickSave = async (e: any) => {
+    console.log(getAllProfile,'profile',userProfile)
     const firstName =
       getAllProfile?.firstName || (userProfile && userProfile?.data?.firstName);
     const vcfdata = await SaveVCFContact(
       firstName,
       getAllProfile?.lastName || (userProfile && userProfile?.data?.lastName),
-      getAllProfile?.companyName ||
-        (userProfile && userProfile?.data?.companyName),
-      getAllProfile?.designation ||
-        (userProfile && userProfile?.data?.designation),
-      getAllProfile?.profilePhoneNumbers ||
-        (userProfile && userProfile?.data?.profilePhoneNumbers),
+      getAllProfile?.companyName || (userProfile && userProfile?.data?.companyName),
+      getAllProfile?.designation || (userProfile && userProfile?.data?.designation),
+      getPhoneNumbersWithCountryCode(getAllProfile, userProfile),
       profileImage?.square,
       getAllProfile?.address || (userProfile && userProfile?.data?.address),
       getAllProfile?.profileSocialMediaLinks ||

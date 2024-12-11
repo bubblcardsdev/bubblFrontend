@@ -99,11 +99,10 @@ function EditWebsiteModal({
                 </div>
                 <div className={styles.placeholder_text}>
                   <Form.Control
-                    type="email"
+                    type="text"
                     placeholder="https://website.com/"
                     value={websiteLink.website}
                     // disabled={!isEnabled}
-                    maxLength={50}
                     onChange={(e) => {
                       handleEmailChange(e.target.value, idx);
                     }}

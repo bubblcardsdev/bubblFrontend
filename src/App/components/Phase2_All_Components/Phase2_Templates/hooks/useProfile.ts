@@ -249,24 +249,24 @@ function useProfile({
 
   const editHandlers = {
     name: () => {
-      if (editingFieldName === null) {
+      // if (editingFieldName === null  ) {
         editField({ fieldName: "firstName" });
-      }
+      // }
     },
     job: () => {
-      if (editingFieldName === null) {
+      // if (editingFieldName === null) {
         editField({ fieldName: "designation" });
-      }
+      // }
     },
     desc: () => {
-      if (editingFieldName === null) {
+      // if (editingFieldName === null) {
         editField({ fieldName: "shortDescription" });
-      }
+      // }
     },
     companyName: () => {
-      if (editingFieldName === null) {
+      // if (editingFieldName === null) {
         editField({ fieldName: "companyName" });
-      }
+      // }
     },
   };
 
