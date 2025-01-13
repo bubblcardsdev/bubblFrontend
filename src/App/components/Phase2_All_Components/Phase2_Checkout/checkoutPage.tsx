@@ -433,7 +433,6 @@ function CheckOutPageFunc() {
                               {discountedTypes.includes(cartValues?.deviceType)
                                 ? "20.02% off"
                                 : "28.61% off"}
-                                
                             </span>
                           </div>
                         )}
@@ -513,7 +512,13 @@ function CheckOutPageFunc() {
                   xl={4}
                   className={styles.promoCodeSection}
                 >
-                  <SubTotalComponent priceValue={priceTotal} />
+                  <SubTotalComponent
+                    priceValue={priceTotal}
+                    quantity={allCart?.reduce(
+                      (a: number, b: any) => a + Number(b["quantity"] || 0),
+                      0
+                    )}
+                  />
                 </Col>
               </Row>
             </>
@@ -620,7 +625,13 @@ function CheckOutPageFunc() {
               xl={4}
               className={styles.promoCodeSection}
             >
-              <SubTotalComponent priceValue={priceTotal} />
+              <SubTotalComponent
+                priceValue={priceTotal}
+                quantity={allCart?.reduce(
+                  (a: number, b: any) => a + Number(b["quantity"] || 0),
+                  0
+                )}
+              />
             </Col>
           </Row>
         </div>

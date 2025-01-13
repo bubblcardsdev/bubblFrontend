@@ -1,7 +1,6 @@
-/* eslint-disable no-unused-vars */
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { useState } from "react";
 import { Button } from "react-bootstrap";
 import { toast, ToastContainer } from "react-toastify";
 
@@ -11,11 +10,35 @@ import styles from "./checkoutPage.module.css";
 
 type Props = {
   priceValue: number | undefined;
+  quantity?: number;
 };
 
-function SubTotalComponent({ priceValue }: Props) {
+function SubTotalComponent({ priceValue, quantity }: Props) {
   const router = useRouter();
   const [promoCode, setPromoCode] = useState("");
+  const [priceData, setPriceData] = useState({
+    totalPrice: 0,
+    discount: 0,
+  });
+
+  // DISCOUNT LOGIC
+  useEffect(() => {
+    let totalPrice = Number(priceValue || 0);
+
+    if (quantity === 1) {
+      totalPrice = totalPrice * 0.6; // 40% Discount
+    } else if (quantity === 2) {
+      totalPrice = totalPrice * 0.5; // 50% Discount
+    } else {
+      totalPrice = totalPrice * 0.4; // 60% Discount
+    }
+
+    const newPriceData = {
+      totalPrice: Math.round(totalPrice),
+      discount: Math.round((priceValue ?? 0) - totalPrice),
+    };
+    setPriceData(newPriceData);
+  }, [quantity, priceValue]);
 
   const handleApplyPromo = () => {
     const isValid = promoCode === "VALID";
@@ -24,6 +47,7 @@ function SubTotalComponent({ priceValue }: Props) {
       toast.error("Invalid promo code!");
     }
   };
+
   return (
     <>
       <div className={styles.promoSection}>
@@ -32,6 +56,8 @@ function SubTotalComponent({ priceValue }: Props) {
           <input
             className={styles.inputDiv}
             placeholder="Enter your promo code "
+            value={promoCode}
+            onChange={(e) => setPromoCode(e.target.value)}
           />
           <ButtonComp
             label="Apply"
@@ -41,7 +67,6 @@ function SubTotalComponent({ priceValue }: Props) {
         </div>
         <div className={styles.subtotal}>
           <p>Subtotal :</p>
-
           {priceValue !== undefined ? (
             <p className={styles.totalValue}>₹ {priceValue}</p>
           ) : null}
@@ -50,12 +75,16 @@ function SubTotalComponent({ priceValue }: Props) {
           <p>Shipping :</p>
           <p className={styles.totalValue}>Free</p>
         </div>
+        <div className={styles.shipping}>
+          <p>Discount :</p>
+          <p className={styles.totalValue}>- ₹ {priceData.discount}</p>
+        </div>
         <div className={styles.line} />
         <div className={styles.totalInr}>
           <p>
             TOTAL <br /> <span>(INR)</span>
           </p>
-          {priceValue !== undefined ? <p>₹ {priceValue}</p> : null}
+          {priceData ? <p>₹ {priceData.totalPrice}</p> : null}
         </div>
         <div className={styles.applyButton}>
           <Button onClick={() => router.push("/shippingDetails")}>
@@ -64,8 +93,9 @@ function SubTotalComponent({ priceValue }: Props) {
           </Button>
         </div>
       </div>
-      <ToastContainer position="bottom-right" />
+      <ToastContainer />
     </>
   );
 }
-export default SubTotalComponent;
+
+export default React.memo(SubTotalComponent);

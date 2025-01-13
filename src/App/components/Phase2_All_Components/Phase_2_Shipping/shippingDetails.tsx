@@ -53,6 +53,8 @@ import styles from "./shippingDetails.module.css";
 function ShippingDetails() {
   const [cartState, setCartState] = useState<any>();
   const [cartTotal, setCartTotal] = useState(0);
+  const [discount, setDiscount] = useState(0);
+  const [total,setTotal]=useState(0)
   const [shipObj, setShipObj] = useState<any>();
   const [shippingCost, setShippingCost] = useState<any>();
   const [shippingTotal, setShippingTotal] = useState<any>();
@@ -394,8 +396,33 @@ function ShippingDetails() {
     submitPayment(isInvalid);
   };
 
+  const getDiscount=()=>{
+    let items=localStorage.getItem("cart") as string
+
+   const cartItems:any[]=JSON.parse(items);
+
+    const totalQuantity=cartItems.reduce((a,b)=>a+b.quantity,0);
+    const totalPrice=cartItems.reduce((a,b)=>a+(b.itemPrice*b.quantity),0);
+
+    let tempTotal=0;
+
+    if(totalQuantity===1){
+      tempTotal=totalPrice*0.6;//40% DISCOUNT
+    }else if(totalQuantity===2){  
+      tempTotal=totalPrice*0.5;//50% DISCOUNT
+    }else{
+      tempTotal=totalPrice*0.4;//60% DISCOUNT
+    }
+
+    setTotal(totalPrice)
+    setCartTotal(Math.round(tempTotal))
+    setDiscount(Math.round((totalPrice ?? 0) - tempTotal))
+
+  }
+
   useEffect(() => {
     getCart();
+    getDiscount();
   }, [isSubmitClicked]);
 
   const tokenSetRef = useRef(false);
@@ -505,7 +532,7 @@ function ShippingDetails() {
 
                   <div className={styles.subtotal}>
                     <p>Subtotal :</p>
-                    <p className={styles.cartTotalValue}>₹ {cartTotal}</p>
+                    <p className={styles.cartTotalValue}>₹ {total}</p>
                   </div>
                   <div className={styles.subtotal}>
                     <p>Shipping :</p>
@@ -517,6 +544,10 @@ function ShippingDetails() {
                   <div className={styles.subtotal}>
                     <p>Promotion Applied :</p>
                     <p className={styles.cartTotalValue}>₹ 00.00</p>
+                  </div>
+                  <div className={styles.subtotal}>
+                    <p>Discount :</p>
+                    <p className={styles.cartTotalValue}>- ₹ {discount}</p>
                   </div>
                   {/* <div className={styles.subtotal}>
                     <p>Tax:</p>
