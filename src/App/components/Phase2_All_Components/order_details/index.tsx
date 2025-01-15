@@ -58,8 +58,9 @@ function OrderDetailsPage() {
     const token = getAccessToken();
     const getOrderResponse: any = token
       ? await getOrdersDetails(OrederObj)
-      : getOrdersDetailsNonUser(OrederObj);
-    setOrderDetails(getOrderResponse?.data.order);
+      : await getOrdersDetailsNonUser(OrederObj);
+    console.log(getOrderResponse);
+    setOrderDetails(getOrderResponse?.data?.order);
     setImage(getOrderResponse?.data?.deviceImages);
     setDeviceName(getOrderResponse?.data?.displayNames);
     getCartValue();
@@ -81,7 +82,9 @@ function OrderDetailsPage() {
   };
 
   useEffect(() => {
-    OrderDetailsFunc();
+    if (router?.query?.orderId) {
+      OrderDetailsFunc();
+    }
   }, [router]);
 
   useEffect(() => {
