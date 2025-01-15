@@ -13,7 +13,10 @@ import {
   getAddDataFlag,
   getCartValue,
   getExperationTime,
+  getShippingDetails,
   removeAddDataFlag,
+  removeCartValue,
+  removeShippingDetails,
   setAddDataFlag,
   setCartValue,
   setPriceValue,
@@ -21,6 +24,7 @@ import {
 import {
   cancelCart,
   clearCartItems,
+  clearNonUserCartItems,
   getCartItem,
 } from "src/App/services/shopPage/shopServices";
 
@@ -340,10 +344,22 @@ function CheckOutPageFunc() {
       router.push("/myPlanPage");
       localStorage.setItem("failurePath", "");
     }
-    if (isFailed === "1") {
-      clearCartItems();
-      localStorage.removeItem("cart");
-      getCartItems();
+    if (isFailed == "1") {
+      const token = getAccessToken();
+      const shippingDetails: any = getShippingDetails();
+
+      if (token) {
+        clearCartItems();
+        localStorage.removeItem("cart");
+        getCartItems();
+      } else {
+        if (shippingDetails && shippingDetails.length > 0) {
+          const shipObj = JSON.parse(shippingDetails);
+          clearNonUserCartItems({ email: shipObj?.emailId });
+        }
+        removeShippingDetails();
+        removeCartValue();
+      }
     }
     window.addEventListener("scroll", handleScroll);
 
@@ -433,7 +449,6 @@ function CheckOutPageFunc() {
                               {discountedTypes.includes(cartValues?.deviceType)
                                 ? "20.02% off"
                                 : "28.61% off"}
-                                
                             </span>
                           </div>
                         )}

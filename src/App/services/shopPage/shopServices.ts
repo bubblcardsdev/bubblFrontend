@@ -134,3 +134,15 @@ export const clearCartItems = async () => {
     return null;
   }
 };
+
+export const clearNonUserCartItems = async (data: any) => {
+  try {
+    const res = await axios.post("cart/nonUser/clearItems", data);
+    const response = res?.data;
+
+    return { response };
+  } catch (e) {
+    console.log(e);
+    return null;
+  }
+};
