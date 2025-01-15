@@ -7,6 +7,7 @@ import { getShipping, initialtePay } from "src/App/services/payments";
 import {
   getAccessToken,
   getPriceValue,
+  getShippingDetails,
   removeCheckLogin,
   removeShippingDetails,
 } from "../../src/App/helpers/local-storage";
@@ -35,14 +36,18 @@ function InitatePay() {
     const shippingCharge = shippingCost;
     const planType =
       router.query?.planType === undefined ? 0 : Number(router.query?.planType);
+    const shippingDetail: any = getShippingDetails();
     const payObj = {
       orderId: Number(orderId),
       value:
-        orderTypeReq === "0" ? Math.round(cartTotal) : getPlanPrice(planType),
+        orderTypeReq === "1" ? getPlanPrice(planType) : Math.round(cartTotal),
       orderType: orderTypeReq, // set 0 for shop orders and 1 for plan upgrades
       planType: planType,
       shippingCost: shippingCharge,
-      token: btoa(getAccessToken()!),
+      token:
+        orderTypeReq == "2"
+          ? btoa(getAccessToken()!)
+          : btoa(shippingDetail?.emailId),
     };
     if (shippingCharge !== undefined) {
       const response = await initialtePay(payObj);
@@ -103,10 +108,13 @@ function InitatePay() {
     await getShippingCharge();
     await htmlString();
   }
+
   useEffect(() => {
     findCartTotal();
     removeCheckLogin();
-    removeShippingDetails();
+    if (getAccessToken()) {
+      removeShippingDetails();
+    }
   }, [countryData, shippingCost, cartTotal]);
 
   return <div dangerouslySetInnerHTML={{ __html: htmlContent }} />;

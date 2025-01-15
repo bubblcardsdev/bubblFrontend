@@ -24,18 +24,30 @@ import {
   getExperationTime,
   getPriceValue,
   getRouteValue,
+  getShippingDetails,
   removeRouteVal,
   setCheckLogin,
   setShippingDetails,
 } from "src/App/helpers/local-storage";
-import { AddFullyCustomApi } from "src/App/services/fullyCustom/fullyCustomCards";
-import { AddCartApi } from "src/App/services/nameCustom/nameCustom";
+import {
+  AddFullyCustomApi,
+  AddFullyCustomNonUserApi,
+} from "src/App/services/fullyCustom/fullyCustomCards";
+import {
+  AddCartApi,
+  AddCartNonUserApi,
+} from "src/App/services/nameCustom/nameCustom";
 import { getShipping } from "src/App/services/payments";
-import { shippingDetails } from "src/App/services/shippingDetails";
+import {
+  shippingDetails,
+  shippingDetailsNonUser,
+} from "src/App/services/shippingDetails";
 import {
   addCartItem,
+  addNonUserCartItem,
   clearCartItems,
   getCartItems,
+  getNonUserCartItems,
 } from "src/App/services/shopPage/shopServices";
 
 import ParallaxBackground from "@/pages/backgroundimageswithgradient/background";
@@ -281,83 +293,234 @@ function ShippingDetails() {
   };
 
   const submitPayment = async (isSuccess: boolean) => {
-    if (isSuccess) {
-      const checkToken = await getAccessToken();
-      if (checkToken === null) {
-        setCheckLogin(true);
-        const shipObjApi = {
-          orderId: orderId,
-          firstName: shipObj.firstName,
-          lastName: shipObj.lastName,
-          phoneNumber: shipObj.phoneNumber,
-          emailId: shipObj.emailId,
-          flatNumber: shipObj.flatNumber,
-          address: shipObj.address,
-          city: shipObj.city,
-          state: shipObj.state,
-          zipcode: parseInt(shipObj.zipcode, 10),
-          country: country,
-          landmark: shipObj.landmark,
-          isShipped: false,
-        };
+    try {
+      if (isSuccess) {
+        const checkToken = await getAccessToken();
+        if (checkToken === null) {
+          // setCheckLogin(true);
+          const shipObjApi = {
+            firstName: shipObj.firstName,
+            lastName: shipObj.lastName,
+            phoneNumber: shipObj.phoneNumber,
+            emailId: shipObj.emailId,
+            flatNumber: shipObj.flatNumber,
+            address: shipObj.address,
+            city: shipObj.city,
+            state: shipObj.state,
+            zipcode: parseInt(shipObj.zipcode, 10),
+            country: country,
+            landmark: shipObj.landmark,
+            isShipped: false,
+          };
 
-        setShippingDetails(shipObjApi);
-        Router.push({
-          pathname: "/login",
-          query: { orderType: 0, country: country },
-        });
-      } else {
-        const getCartItem: any = getCartValue();
-        const allItems = JSON.parse(getCartItem);
-        for (let i = 0; i < allItems.length; i++) {
-          if (allItems[i]?.deviceType?.includes("NC-")) {
-            const itemObj = {
-              deviceColor: allItems[i].deviceColor,
-              deviceInventorId: allItems[i]?.deviceInventorId,
-              deviceType: allItems[i].deviceType,
-              fontColor: allItems[i].fontColor,
-              fontStyle: allItems[i].fontStyle,
-              name: allItems[i].name,
-              price: allItems[i].price,
-              quanitiy: allItems[i].quantity || allItems[i]?.quanitiy,
-            };
+          setShippingDetails(shipObjApi);
+          const getCartItem: any = getCartValue();
+          const allItems = JSON.parse(getCartItem);
+          // Parse the cart items
+          const addCartData = allItems.map(
+            (item: {
+              deviceType: string | string[];
+              deviceColor: any;
+              deviceInventorId: any;
+              fontColor: any;
+              fontStyle: any;
+              name: any;
+              price: any;
+              quanitiy: any;
+              productType: any;
+              quantity: any;
+              productColor: any;
+              productPrice: any;
+            }) => {
+              return {
+                productType: item?.productType || item?.deviceType,
+                quantity: item?.quantity || item?.quanitiy,
+                productColor: item?.productColor || item?.deviceColor,
+                productPrice: item?.productPrice || item?.price,
+                deviceInventorId: item?.deviceInventorId || null,
+                fontColor: item?.fontColor || "",
+                fontStyle: item?.fontStyle || "",
+                name: item?.name || "",
+              };
+            }
+          );
+          console.log(addCartData, "addCartData");
+          await addNonUserCartItem({
+            cartData: addCartData,
+            email: shipObj?.emailId,
+          });
+          const cart = await getNonUserCartItems(shipObj?.emailId);
+          const orderId = cart?.response?.data?.cart?.Carts[0]?.OrderId;
+          if (orderId) {
+            const shippingDetail = getShippingDetails();
+            console.log(shippingDetail, "shippingDetail");
+            if (shippingDetail && shippingDetail?.length > 0) {
+              const shipObj = JSON.parse(shippingDetail);
 
-            const response = await AddCartApi(itemObj);
-          } else if (allItems[i]?.deviceType?.includes("Full Custom")) {
-            const fullItemObj = {
-              quantity: allItems[i].quantity || allItems[i]?.quanitiy,
-              price: allItems[i].price,
-              deviceColor: allItems[i]?.deviceColor,
-              deviceType: allItems[i]?.deviceType,
-            };
-            const addCartItem = await AddFullyCustomApi(fullItemObj); // api call
-          } else {
-            const cartObj = {
-              productType: allItems[i].productType || allItems[i]?.deviceType,
-              quantity: allItems[i].quantity || allItems[i]?.quanitiy,
-              productColor: allItems[i].productColor,
-              productPrice: allItems[i].productPrice,
-              productStatus: true, // to be removed one API updated
-            };
-            const cartItemObj = {
-              cartItem: cartObj,
-            };
-            const response = await addCartItem(cartItemObj);
+              await shippingDetailsNonUser(shipObj, orderId, country);
+              router.push({
+                pathname: "/processPayment",
+                query: {
+                  orderId: orderId,
+                  orderType: 2,
+                  country: country,
+                },
+              });
+            }
           }
-        }
-        const cart = await getCartItems();
-        const orderId = cart?.response?.data?.cart?.Carts[0]?.OrderId;
-        setOrderId(cart?.response?.data?.cart?.Carts[0]?.OrderId);
-        if (orderId) {
-          const details = await shippingDetails(shipObj, orderId, country);
-          const response = details?.data.success;
-          if (response) {
-            localStorage.removeItem("cart");
-            localStorage.removeItem("AddData");
-            proceedPayment(orderId);
+
+          // Create an array of promises
+          // const promises = allItems.map(
+          //   async (item: {
+          //     deviceType: string | string[];
+          //     deviceColor: any;
+          //     deviceInventorId: any;
+          //     fontColor: any;
+          //     fontStyle: any;
+          //     name: any;
+          //     price: any;
+          //     quanitiy: any;
+          //     productType: any;
+          //     quantity: any;
+          //     productColor: any;
+          //     productPrice: any;
+          //   }) => {
+          //     if (item?.deviceType?.includes("NC-")) {
+          //       const itemObj = {
+          //         deviceColor: item.deviceColor,
+          //         deviceInventorId: item?.deviceInventorId,
+          //         deviceType: item.deviceType,
+          //         fontColor: item.fontColor,
+          //         fontStyle: item.fontStyle,
+          //         name: item.name,
+          //         price: item.price,
+          //         quanitiy: item.quantity || item.quanitiy,
+          //         email: shipObj.emailId,
+          //       };
+
+          //       // Return the promise from AddCartApi
+          //       return AddCartNonUserApi(itemObj);
+          //     }
+          //     if (item?.deviceType?.includes("Full Custom")) {
+          //       const fullItemObj = {
+          //         quantity: item.quantity || item.quanitiy,
+          //         price: item.price,
+          //         deviceColor: item?.deviceColor,
+          //         deviceType: item?.deviceType,
+          //         email: shipObj.emailId,
+          //       };
+
+          //       // Return the promise from AddFullyCustomApi
+          //       return AddFullyCustomNonUserApi(fullItemObj);
+          //     }
+          //     const cartObj = {
+          //       productType: item.productType || item?.deviceType,
+          //       quantity: item.quantity || item?.quanitiy,
+          //       productColor: item.productColor,
+          //       productPrice: item.productPrice,
+          //       productStatus: true, // to be removed once API updated
+          //     };
+          //     const cartItemObj = {
+          //       cartItem: cartObj,
+          //       email: shipObj.emailId,
+          //     };
+
+          //     // Return the promise from addCartItem
+          //     return addNonUserCartItem(cartItemObj);
+          //   }
+          // );
+
+          // Promise.all(promises).then(async (responses) => {
+          //   console.log("All items processed:", responses);
+
+          //   const cart = await getNonUserCartItems(shipObj?.emailId);
+          //   const orderId = cart?.response?.data?.cart?.Carts[0]?.OrderId;
+          //   if (orderId) {
+          //     const shippingDetail = getShippingDetails();
+          //     console.log(shippingDetail, "shippingDetail");
+          //     if (shippingDetail && shippingDetail?.length > 0) {
+          //       const shipObj = JSON.parse(shippingDetail);
+          //       console.log(router.query?.country);
+          //       await shippingDetailsNonUser(
+          //         shipObj,
+          //         orderId,
+          //         router.query?.country
+          //       );
+          //       router.push({
+          //         pathname: "/processPayment",
+          //         query: {
+          //           orderId: orderId,
+          //           orderType: 0,
+          //           country: country,
+          //         },
+          //       });
+          //     }
+
+          //     // router.push({
+          //     //   pathname: "/processPayment",
+          //     //   query: {
+          //     //     orderId: orderId,
+          //     //     orderType: 0,
+          //     //     country: country,
+          //     //   },
+          //     // });
+          //   }
+          // });
+        } else {
+          // const getCartItem: any = getCartValue();
+          // const allItems = JSON.parse(getCartItem);
+          // for (let i = 0; i < allItems.length; i++) {
+          //   if (allItems[i]?.deviceType?.includes("NC-")) {
+          //     const itemObj = {
+          //       deviceColor: allItems[i].deviceColor,
+          //       deviceInventorId: allItems[i]?.deviceInventorId,
+          //       deviceType: allItems[i].deviceType,
+          //       fontColor: allItems[i].fontColor,
+          //       fontStyle: allItems[i].fontStyle,
+          //       name: allItems[i].name,
+          //       price: allItems[i].price,
+          //       quanitiy: allItems[i].quantity || allItems[i]?.quanitiy,
+          //     };
+
+          //     const response = await AddCartApi(itemObj);
+          //   } else if (allItems[i]?.deviceType?.includes("Full Custom")) {
+          //     const fullItemObj = {
+          //       quantity: allItems[i].quantity || allItems[i]?.quanitiy,
+          //       price: allItems[i].price,
+          //       deviceColor: allItems[i]?.deviceColor,
+          //       deviceType: allItems[i]?.deviceType,
+          //     };
+          //     const addCartItem = await AddFullyCustomApi(fullItemObj); // api call
+          //   } else {
+          //     const cartObj = {
+          //       productType: allItems[i].productType || allItems[i]?.deviceType,
+          //       quantity: allItems[i].quantity || allItems[i]?.quanitiy,
+          //       productColor: allItems[i].productColor,
+          //       productPrice: allItems[i].productPrice,
+          //       productStatus: true, // to be removed one API updated
+          //     };
+          //     const cartItemObj = {
+          //       cartItem: cartObj,
+          //     };
+          //     const response = await addCartItem(cartItemObj);
+          //   }
+          // }
+          const cart = await getCartItems();
+          const orderId = cart?.response?.data?.cart?.Carts[0]?.OrderId;
+          setOrderId(cart?.response?.data?.cart?.Carts[0]?.OrderId);
+          if (orderId) {
+            const details = await shippingDetails(shipObj, orderId, country);
+            const response = details?.data.success;
+            if (response) {
+              localStorage.removeItem("cart");
+              localStorage.removeItem("AddData");
+              proceedPayment(orderId);
+            }
           }
         }
       }
+    } catch (error) {
+      console.log(error);
     }
   };
 

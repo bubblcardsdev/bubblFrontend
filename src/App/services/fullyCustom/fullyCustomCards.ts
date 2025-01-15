@@ -19,6 +19,18 @@ export const AddFullyCustomApi = async (postObj: any) => {
   }
 };
 
+export const AddFullyCustomNonUserApi = async (postObj: any) => {
+  try {
+    const addCartItem = await axios.post(
+      "/fullCustom/nonUser/fullyCustom",
+      postObj
+    );
+    return addCartItem.data;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 // get api for price from device
 export const getPriceFunc = async () => {
   // const headers = {

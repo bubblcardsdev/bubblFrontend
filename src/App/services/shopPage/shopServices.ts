@@ -22,6 +22,16 @@ export const addCartItem = async (cartObject: any) => {
   }
 };
 
+export const addNonUserCartItem = async (cartObject: any) => {
+  try {
+    const res = await axios.put("/cart/addToNonUserCart", cartObject);
+    return { res };
+  } catch (e) {
+    console.log(e);
+    return null;
+  }
+};
+
 export const getCartItems = async () => {
   const headers = {
     "Content-Type": "application/json",
@@ -29,6 +39,18 @@ export const getCartItems = async () => {
   };
   try {
     const res = await axios.get("cart/all", { headers: headers });
+    const response = res?.data;
+
+    return { response };
+  } catch (e) {
+    console.log(e);
+    return null;
+  }
+};
+
+export const getNonUserCartItems = async (email: string) => {
+  try {
+    const res = await axios.get(`cart/nonUser/all?email=${email}`);
     const response = res?.data;
 
     return { response };

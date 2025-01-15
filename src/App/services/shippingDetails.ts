@@ -38,6 +38,34 @@ export const shippingDetails = async (
   }
 };
 
+export const shippingDetailsNonUser = async (
+  shipObj: any,
+  orderId: any,
+  country: any
+) => {
+  try {
+    const shipObjApi = {
+      orderId: orderId,
+      firstName: shipObj.firstName,
+      lastName: shipObj.lastName,
+      phoneNumber: shipObj.phoneNumber,
+      emailId: shipObj.emailId,
+      flatNumber: shipObj.flatNumber,
+      address: shipObj.address,
+      city: shipObj.city,
+      state: shipObj.state,
+      zipcode: parseInt(shipObj.zipcode, 10),
+      country: country,
+      landmark: shipObj.landmark,
+      isShipped: false,
+    };
+
+    const res = await axios.post("order/checkoutNonUser", shipObjApi);
+    return res;
+  } catch (e) {
+    console.log(e);
+  }
+};
 export const updatePayment = async (orderId: any) => {
   const headers = {
     "Content-Type": "application/json",
