@@ -56,7 +56,7 @@ function OrderDetailsPage() {
       orderId: orderValue,
     };
     const token = getAccessToken();
-    const getOrderResponse = token
+    const getOrderResponse: any = token
       ? await getOrdersDetails(OrederObj)
       : getOrdersDetailsNonUser(OrederObj);
     setOrderDetails(getOrderResponse?.data.order);

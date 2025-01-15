@@ -22,6 +22,15 @@ async function Handler(req: NextApiRequest, res: NextApiResponse) {
             res.end();
             break;
           }
+          case "2": {
+            // removeCartValue();
+            // removePriceValue();
+            res.writeHead(302, {
+              Location: `/order_details?orderId=${orderId}`,
+            });
+            res.end();
+            break;
+          }
           default: {
             const token = response.data.jwtToken;
             const planObj = {
@@ -44,6 +53,13 @@ async function Handler(req: NextApiRequest, res: NextApiResponse) {
         }
         switch (response.orderType) {
           case "0": {
+            res.writeHead(302, {
+              Location: `/checkout?isFailed=1`,
+            });
+            res.end();
+            break;
+          }
+          case "2": {
             res.writeHead(302, {
               Location: `/checkout?isFailed=1`,
             });
