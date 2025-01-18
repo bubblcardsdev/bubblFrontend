@@ -26,7 +26,7 @@ async function Handler(req: NextApiRequest, res: NextApiResponse) {
             // removeCartValue();
             // removePriceValue();
             res.writeHead(302, {
-              Location: `/order_details?orderId=${orderId}`,
+              Location: `/paymentResponse?orderId=${orderId}`,
             });
             res.end();
             break;

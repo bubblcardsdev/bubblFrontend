@@ -14,6 +14,7 @@ import {
   removeCartValue,
   removeCheckLogin,
   removePriceValue,
+  removeShippingDetails,
 } from "src/App/helpers/local-storage";
 import {
   getOrdersDetails,
@@ -65,6 +66,7 @@ function OrderDetailsPage() {
     setDeviceName(getOrderResponse?.data?.displayNames);
     getCartValue();
     removeCartValue();
+    removeShippingDetails();
     removePriceValue();
   };
 
