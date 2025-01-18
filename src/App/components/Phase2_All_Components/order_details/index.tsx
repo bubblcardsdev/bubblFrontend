@@ -9,12 +9,17 @@
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import {
+  getAccessToken,
   getCartValue,
   removeCartValue,
   removeCheckLogin,
   removePriceValue,
+  removeShippingDetails,
 } from "src/App/helpers/local-storage";
-import { getOrdersDetails } from "src/App/services/orderDetails";
+import {
+  getOrdersDetails,
+  getOrdersDetailsNonUser,
+} from "src/App/services/orderDetails";
 
 import ParallaxBackground from "@/pages/backgroundimageswithgradient/background";
 
@@ -51,12 +56,17 @@ function OrderDetailsPage() {
     const OrederObj = {
       orderId: orderValue,
     };
-    const getOrderResponse = await getOrdersDetails(OrederObj);
-    setOrderDetails(getOrderResponse?.data.order);
+    const token = getAccessToken();
+    const getOrderResponse: any = token
+      ? await getOrdersDetails(OrederObj)
+      : await getOrdersDetailsNonUser(OrederObj);
+    console.log(getOrderResponse);
+    setOrderDetails(getOrderResponse?.data?.order);
     setImage(getOrderResponse?.data?.deviceImages);
     setDeviceName(getOrderResponse?.data?.displayNames);
     getCartValue();
     removeCartValue();
+    removeShippingDetails();
     removePriceValue();
   };
 
@@ -74,7 +84,9 @@ function OrderDetailsPage() {
   };
 
   useEffect(() => {
-    OrderDetailsFunc();
+    if (router?.query?.orderId) {
+      OrderDetailsFunc();
+    }
   }, [router]);
 
   useEffect(() => {

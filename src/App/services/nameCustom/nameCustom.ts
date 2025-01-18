@@ -18,6 +18,15 @@ export const AddCartApi = async (postObj: any) => {
   }
 };
 
+export const AddCartNonUserApi = async (postObj: any) => {
+  try {
+    const addCartItem = await axios.post("/custom/nonUser/nameCustom", postObj);
+    return addCartItem.data;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 // func for get all thumbnail Iages
 export const getAllThumbnailImages = async () => {
   try {
