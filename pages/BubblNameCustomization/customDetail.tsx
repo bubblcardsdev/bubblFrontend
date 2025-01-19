@@ -87,10 +87,10 @@ function NameCustomizationDetails({
           </Form.Select>
           <div className={styles.price}>
             <h3>Price</h3>
-            <div className={styles.discountContainer}>
+            {/* <div className={styles.discountContainer}>
               <p className={styles.slashedPrice}>INR 1299</p>
               <span className={styles.discountText}>18.77% off</span>
-            </div>
+            </div> */}
             <h4>
               ₹&nbsp; {priceValue}
               <span>&nbsp; Per Card</span>
@@ -132,17 +132,17 @@ function NameCustomizationDetails({
           </div>
         </div>
 
-         <div className={styles.price}>
-            <h3>Price</h3>
-            <div className={styles.discountContainer}>
-              <p className={styles.slashedPrice}>INR 1299</p>
-              <span className={styles.discountText}>18.77% off</span>
-            </div>
-            <h4>
-              ₹&nbsp; {priceValue}
-              <span>&nbsp; Per Card</span>
-            </h4>
+        <div className={styles.price}>
+          <h3>Price</h3>
+          <div className={styles.discountContainer}>
+            <p className={styles.slashedPrice}>INR 1299</p>
+            <span className={styles.discountText}>18.77% off</span>
           </div>
+          <h4>
+            ₹&nbsp; {priceValue}
+            <span>&nbsp; Per Card</span>
+          </h4>
+        </div>
       </div>
 
       <div className={styles.buttonsContainer}>

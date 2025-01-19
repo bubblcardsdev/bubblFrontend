@@ -437,7 +437,7 @@ function CheckOutPageFunc() {
                         <p>
                           {cartValues?.productType || cartValues?.deviceType}
                         </p>
-                        {(discountedTypes.includes(cartValues?.productType) ||
+                        {/* {(discountedTypes.includes(cartValues?.productType) ||
                           discountedTypes.includes(cartValues?.deviceType)) && (
                           <div className={styles.discountContainer}>
                             <p className={styles.slashedPrice}>
@@ -451,7 +451,7 @@ function CheckOutPageFunc() {
                                 : "28.61% off"}
                             </span>
                           </div>
-                        )}
+                        )} */}
                         <div className={styles.priceDiv}>
                           <div className={styles.piceTag}>Price</div>
                           <div>₹ {cartValues?.itemPrice}</div>
@@ -578,14 +578,14 @@ function CheckOutPageFunc() {
                         ₹ {value?.itemPrice}
                       </div>
                       {/* <p className={styles.slashedPrice}>INR 599</p> */}
-                      <span className={styles.discountText}>
+                      {/* <span className={styles.discountText}>
                         {" "}
                         {discountedTypes.includes(value?.deviceType)
                           ? value?.deviceType == "NC-Pattern"
                             ? "18.77% off"
                             : "20.02% off"
                           : "28.61% off"}
-                      </span>
+                      </span> */}
                     </div>
                   )}
                 </div>
