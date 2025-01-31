@@ -66,7 +66,7 @@ function ShippingDetails() {
   const [cartState, setCartState] = useState<any>();
   const [cartTotal, setCartTotal] = useState(0);
   const [discount, setDiscount] = useState(0);
-  const [total,setTotal]=useState(0)
+  const [total, setTotal] = useState(0);
   const [shipObj, setShipObj] = useState<any>();
   const [shippingCost, setShippingCost] = useState<any>();
   const [shippingTotal, setShippingTotal] = useState<any>();
@@ -298,7 +298,7 @@ function ShippingDetails() {
     try {
       if (isSuccess) {
         const checkToken = await getAccessToken();
-        if (checkToken === null) {
+        // if (checkToken === null) {
           // setCheckLogin(true);
           const shipObjApi = {
             firstName: shipObj.firstName,
@@ -468,58 +468,58 @@ function ShippingDetails() {
           //     // });
           //   }
           // });
-        } else {
-          // const getCartItem: any = getCartValue();
-          // const allItems = JSON.parse(getCartItem);
-          // for (let i = 0; i < allItems.length; i++) {
-          //   if (allItems[i]?.deviceType?.includes("NC-")) {
-          //     const itemObj = {
-          //       deviceColor: allItems[i].deviceColor,
-          //       deviceInventorId: allItems[i]?.deviceInventorId,
-          //       deviceType: allItems[i].deviceType,
-          //       fontColor: allItems[i].fontColor,
-          //       fontStyle: allItems[i].fontStyle,
-          //       name: allItems[i].name,
-          //       price: allItems[i].price,
-          //       quanitiy: allItems[i].quantity || allItems[i]?.quanitiy,
-          //     };
+        // } else {  
+        //   const getCartItem: any = getCartValue();
+        //   const allItems = JSON.parse(getCartItem);
+        //   for (let i = 0; i < allItems.length; i++) {
+        //     if (allItems[i]?.deviceType?.includes("NC-")) {
+        //       const itemObj = {
+        //         deviceColor: allItems[i].deviceColor,
+        //         deviceInventorId: allItems[i]?.deviceInventorId,
+        //         deviceType: allItems[i].deviceType,
+        //         fontColor: allItems[i].fontColor,
+        //         fontStyle: allItems[i].fontStyle,
+        //         name: allItems[i].name,
+        //         price: allItems[i].price,
+        //         quanitiy: allItems[i].quantity || allItems[i]?.quanitiy,
+        //       };
 
-          //     const response = await AddCartApi(itemObj);
-          //   } else if (allItems[i]?.deviceType?.includes("Full Custom")) {
-          //     const fullItemObj = {
-          //       quantity: allItems[i].quantity || allItems[i]?.quanitiy,
-          //       price: allItems[i].price,
-          //       deviceColor: allItems[i]?.deviceColor,
-          //       deviceType: allItems[i]?.deviceType,
-          //     };
-          //     const addCartItem = await AddFullyCustomApi(fullItemObj); // api call
-          //   } else {
-          //     const cartObj = {
-          //       productType: allItems[i].productType || allItems[i]?.deviceType,
-          //       quantity: allItems[i].quantity || allItems[i]?.quanitiy,
-          //       productColor: allItems[i].productColor,
-          //       productPrice: allItems[i].productPrice,
-          //       productStatus: true, // to be removed one API updated
-          //     };
-          //     const cartItemObj = {
-          //       cartItem: cartObj,
-          //     };
-          //     const response = await addCartItem(cartItemObj);
-          //   }
-          // }
-          const cart = await getCartItems();
-          const orderId = cart?.response?.data?.cart?.Carts[0]?.OrderId;
-          setOrderId(cart?.response?.data?.cart?.Carts[0]?.OrderId);
-          if (orderId) {
-            const details = await shippingDetails(shipObj, orderId, country);
-            const response = details?.data.success;
-            if (response) {
-              localStorage.removeItem("cart");
-              localStorage.removeItem("AddData");
-              proceedPayment(orderId);
-            }
-          }
-        }
+        //       const response = await AddCartApi(itemObj);
+        //     } else if (allItems[i]?.deviceType?.includes("Full Custom")) {
+        //       const fullItemObj = {
+        //         quantity: allItems[i].quantity || allItems[i]?.quanitiy,
+        //         price: allItems[i].price,
+        //         deviceColor: allItems[i]?.deviceColor,
+        //         deviceType: allItems[i]?.deviceType,
+        //       };
+        //       const addCartItem = await AddFullyCustomApi(fullItemObj); // api call
+        //     } else {
+        //       const cartObj = {
+        //         productType: allItems[i].productType || allItems[i]?.deviceType,
+        //         quantity: allItems[i].quantity || allItems[i]?.quanitiy,
+        //         productColor: allItems[i].productColor,
+        //         productPrice: allItems[i].productPrice,
+        //         productStatus: true, // to be removed one API updated
+        //       };
+        //       const cartItemObj = {
+        //         cartItem: cartObj,
+        //       };
+        //       const response = await addCartItem(cartItemObj);
+        //     }
+        //   }
+        //   const cart = await getCartItems();
+        //   const orderId = cart?.response?.data?.cart?.Carts[0]?.OrderId;
+        //   setOrderId(cart?.response?.data?.cart?.Carts[0]?.OrderId);
+        //   if (orderId) {
+        //     const details = await shippingDetails(shipObj, orderId, country);
+        //     const response = details?.data.success;
+        //     if (response) {
+        //       localStorage.removeItem("cart");
+        //       localStorage.removeItem("AddData");
+        //       proceedPayment(orderId);
+        //     }
+        //   }
+        // }
       }
     } catch (error) {
       console.log(error);

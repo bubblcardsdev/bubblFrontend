@@ -28,12 +28,16 @@ function PaymentResponse() {
   const router = useRouter();
 
   const orderId = router.query?.orderId;
+  const [isTokenPresent, setIsTokenPresent] = useState(false);
 
   useEffect(() => {
+    window.localStorage.getItem("accesstoken") !== null
+      ? setIsTokenPresent(true)
+      : setIsTokenPresent(false);
     removeCartValue();
     removeShippingDetails();
     removePriceValue();
-  }, []);
+  }, [isTokenPresent]);
 
   return (
     // Start of the section for creating profile
