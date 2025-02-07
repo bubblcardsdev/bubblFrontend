@@ -11,6 +11,7 @@ import styles from "./checkoutPage.module.css";
 type Props = {
   priceValue: number | undefined;
   quantity?: number;
+  cartItems?: any;
 };
 
 function SubTotalComponent({ priceValue, quantity }: Props) {
@@ -21,23 +22,60 @@ function SubTotalComponent({ priceValue, quantity }: Props) {
     discount: 0,
   });
 
+  const discountedTypes = ["Card", "Socket", "Tile", "Bundle Devices"];
+
   // DISCOUNT LOGIC
   useEffect(() => {
-    let totalPrice = Number(priceValue || 0);
+    let totalPrice = 0;
+    let discount = 0;
 
-    if (quantity === 1) {
-      totalPrice = totalPrice * 0.6; // 40% Discount
-    } else if (quantity === 2) {
-      totalPrice = totalPrice * 0.5; // 50% Discount
-    } else {
-      totalPrice = totalPrice * 0.4; // 60% Discount
+    const carts = localStorage?.getItem("cart") || "";
+    const cartItems = carts ? JSON.parse(carts) : [];
+    // console.log("Cart Items:", cartItems);
+
+    if (Array.isArray(cartItems) && cartItems.length > 0) {
+      const discountedItems = cartItems.filter(
+        (item) =>
+          item.deviceType !== "Full Custom" &&
+          item.deviceType !== "NC-Pattern" &&
+          (discountedTypes.includes(item.deviceType) ||
+            discountedTypes.includes(item.productType))
+      );
+
+      // console.log("Discounted Items:", discountedItems);
+
+      const totalQuantity = discountedItems.reduce(
+        (sum, item) => sum + item.quantity,
+        0
+      );
+      // console.log("Eligible Discount Quantity:", totalQuantity);
+
+      let discountRate = 0.4;
+      if (totalQuantity === 1) discountRate = 0.4;
+      else if (totalQuantity === 2) discountRate = 0.5;
+      else if (totalQuantity >= 3) discountRate = 0.6;
+
+      // console.log("Correct Discount Rate:", discountRate);
+
+      cartItems.forEach((item) => {
+        let itemTotalPrice = item.itemPrice * item.quantity;
+        // console.log(itemTotalPrice, "Before Discount");
+
+        if (discountedItems.some((dItem) => dItem.id === item.id)) {
+          let discountedItemTotal = itemTotalPrice * (1 - discountRate);
+          discount += itemTotalPrice - discountedItemTotal; // Accumulate discount
+          itemTotalPrice = discountedItemTotal;
+        }
+
+        totalPrice += itemTotalPrice;
+      });
     }
 
-    const newPriceData = {
+    // console.log("Final Price:", totalPrice, "Total Discount:", discount);
+    setPriceData({
       totalPrice: Math.round(totalPrice),
-      discount: Math.round((priceValue ?? 0) - totalPrice),
-    };
-    setPriceData(newPriceData);
+      discount: Math.round(discount),
+    });
   }, [quantity, priceValue]);
 
   const handleApplyPromo = () => {

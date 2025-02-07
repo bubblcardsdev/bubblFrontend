@@ -299,176 +299,176 @@ function ShippingDetails() {
       if (isSuccess) {
         const checkToken = await getAccessToken();
         // if (checkToken === null) {
-          // setCheckLogin(true);
-          const shipObjApi = {
-            firstName: shipObj.firstName,
-            lastName: shipObj.lastName,
-            phoneNumber: shipObj.phoneNumber,
-            emailId: shipObj.emailId,
-            flatNumber: shipObj.flatNumber,
-            address: shipObj.address,
-            city: shipObj.city,
-            state: shipObj.state,
-            zipcode: parseInt(shipObj.zipcode, 10),
-            country: country,
-            landmark: shipObj.landmark,
-            isShipped: false,
-          };
+        // setCheckLogin(true);
+        const shipObjApi = {
+          firstName: shipObj.firstName,
+          lastName: shipObj.lastName,
+          phoneNumber: shipObj.phoneNumber,
+          emailId: shipObj.emailId,
+          flatNumber: shipObj.flatNumber,
+          address: shipObj.address,
+          city: shipObj.city,
+          state: shipObj.state,
+          zipcode: parseInt(shipObj.zipcode, 10),
+          country: country,
+          landmark: shipObj.landmark,
+          isShipped: false,
+        };
 
-          setShippingDetails(shipObjApi);
-          const getCartItem: any = getCartValue();
-          const allItems = JSON.parse(getCartItem);
-          // Parse the cart items
-          const addCartData = allItems.map(
-            (item: {
-              deviceType: string | string[];
-              deviceColor: any;
-              deviceInventorId: any;
-              fontColor: any;
-              fontStyle: any;
-              name: any;
-              price: any;
-              quanitiy: any;
-              productType: any;
-              quantity: any;
-              productColor: any;
-              productPrice: any;
-            }) => {
-              return {
-                productType: item?.productType || item?.deviceType,
-                quantity: item?.quantity || item?.quanitiy,
-                productColor: item?.productColor || item?.deviceColor,
-                productPrice: item?.productPrice || item?.price,
-                deviceInventorId: item?.deviceInventorId || null,
-                fontColor: item?.fontColor || "",
-                fontStyle: item?.fontStyle || "",
-                name: item?.name || "",
-              };
-            }
-          );
-          console.log(addCartData, "addCartData");
-          await addNonUserCartItem({
-            cartData: addCartData,
-            email: shipObj?.emailId,
-          });
-          const cart = await getNonUserCartItems(shipObj?.emailId);
-          const orderId = cart?.response?.data?.cart?.Carts[0]?.OrderId;
-          if (orderId) {
-            const shippingDetail = getShippingDetails();
-            console.log(shippingDetail, "shippingDetail");
-            if (shippingDetail && shippingDetail?.length > 0) {
-              const shipObj = JSON.parse(shippingDetail);
-
-              await shippingDetailsNonUser(shipObj, orderId, country);
-              router.push({
-                pathname: "/processPayment",
-                query: {
-                  orderId: orderId,
-                  orderType: 2,
-                  country: country,
-                },
-              });
-            }
+        setShippingDetails(shipObjApi);
+        const getCartItem: any = getCartValue();
+        const allItems = JSON.parse(getCartItem);
+        // Parse the cart items
+        const addCartData = allItems.map(
+          (item: {
+            deviceType: string | string[];
+            deviceColor: any;
+            deviceInventorId: any;
+            fontColor: any;
+            fontStyle: any;
+            name: any;
+            price: any;
+            quanitiy: any;
+            productType: any;
+            quantity: any;
+            productColor: any;
+            productPrice: any;
+          }) => {
+            return {
+              productType: item?.productType || item?.deviceType,
+              quantity: item?.quantity || item?.quanitiy,
+              productColor: item?.productColor || item?.deviceColor,
+              productPrice: item?.productPrice || item?.price,
+              deviceInventorId: item?.deviceInventorId || null,
+              fontColor: item?.fontColor || "",
+              fontStyle: item?.fontStyle || "",
+              name: item?.name || "",
+            };
           }
+        );
+        console.log(addCartData, "addCartData");
+        await addNonUserCartItem({
+          cartData: addCartData,
+          email: shipObj?.emailId,
+        });
+        const cart = await getNonUserCartItems(shipObj?.emailId);
+        const orderId = cart?.response?.data?.cart?.Carts[0]?.OrderId;
+        if (orderId) {
+          const shippingDetail = getShippingDetails();
+          console.log(shippingDetail, "shippingDetail");
+          if (shippingDetail && shippingDetail?.length > 0) {
+            const shipObj = JSON.parse(shippingDetail);
 
-          // Create an array of promises
-          // const promises = allItems.map(
-          //   async (item: {
-          //     deviceType: string | string[];
-          //     deviceColor: any;
-          //     deviceInventorId: any;
-          //     fontColor: any;
-          //     fontStyle: any;
-          //     name: any;
-          //     price: any;
-          //     quanitiy: any;
-          //     productType: any;
-          //     quantity: any;
-          //     productColor: any;
-          //     productPrice: any;
-          //   }) => {
-          //     if (item?.deviceType?.includes("NC-")) {
-          //       const itemObj = {
-          //         deviceColor: item.deviceColor,
-          //         deviceInventorId: item?.deviceInventorId,
-          //         deviceType: item.deviceType,
-          //         fontColor: item.fontColor,
-          //         fontStyle: item.fontStyle,
-          //         name: item.name,
-          //         price: item.price,
-          //         quanitiy: item.quantity || item.quanitiy,
-          //         email: shipObj.emailId,
-          //       };
+            await shippingDetailsNonUser(shipObj, orderId, country);
+            router.push({
+              pathname: "/processPayment",
+              query: {
+                orderId: orderId,
+                orderType: 2,
+                country: country,
+              },
+            });
+          }
+        }
 
-          //       // Return the promise from AddCartApi
-          //       return AddCartNonUserApi(itemObj);
-          //     }
-          //     if (item?.deviceType?.includes("Full Custom")) {
-          //       const fullItemObj = {
-          //         quantity: item.quantity || item.quanitiy,
-          //         price: item.price,
-          //         deviceColor: item?.deviceColor,
-          //         deviceType: item?.deviceType,
-          //         email: shipObj.emailId,
-          //       };
+        // Create an array of promises
+        // const promises = allItems.map(
+        //   async (item: {
+        //     deviceType: string | string[];
+        //     deviceColor: any;
+        //     deviceInventorId: any;
+        //     fontColor: any;
+        //     fontStyle: any;
+        //     name: any;
+        //     price: any;
+        //     quanitiy: any;
+        //     productType: any;
+        //     quantity: any;
+        //     productColor: any;
+        //     productPrice: any;
+        //   }) => {
+        //     if (item?.deviceType?.includes("NC-")) {
+        //       const itemObj = {
+        //         deviceColor: item.deviceColor,
+        //         deviceInventorId: item?.deviceInventorId,
+        //         deviceType: item.deviceType,
+        //         fontColor: item.fontColor,
+        //         fontStyle: item.fontStyle,
+        //         name: item.name,
+        //         price: item.price,
+        //         quanitiy: item.quantity || item.quanitiy,
+        //         email: shipObj.emailId,
+        //       };
 
-          //       // Return the promise from AddFullyCustomApi
-          //       return AddFullyCustomNonUserApi(fullItemObj);
-          //     }
-          //     const cartObj = {
-          //       productType: item.productType || item?.deviceType,
-          //       quantity: item.quantity || item?.quanitiy,
-          //       productColor: item.productColor,
-          //       productPrice: item.productPrice,
-          //       productStatus: true, // to be removed once API updated
-          //     };
-          //     const cartItemObj = {
-          //       cartItem: cartObj,
-          //       email: shipObj.emailId,
-          //     };
+        //       // Return the promise from AddCartApi
+        //       return AddCartNonUserApi(itemObj);
+        //     }
+        //     if (item?.deviceType?.includes("Full Custom")) {
+        //       const fullItemObj = {
+        //         quantity: item.quantity || item.quanitiy,
+        //         price: item.price,
+        //         deviceColor: item?.deviceColor,
+        //         deviceType: item?.deviceType,
+        //         email: shipObj.emailId,
+        //       };
 
-          //     // Return the promise from addCartItem
-          //     return addNonUserCartItem(cartItemObj);
-          //   }
-          // );
+        //       // Return the promise from AddFullyCustomApi
+        //       return AddFullyCustomNonUserApi(fullItemObj);
+        //     }
+        //     const cartObj = {
+        //       productType: item.productType || item?.deviceType,
+        //       quantity: item.quantity || item?.quanitiy,
+        //       productColor: item.productColor,
+        //       productPrice: item.productPrice,
+        //       productStatus: true, // to be removed once API updated
+        //     };
+        //     const cartItemObj = {
+        //       cartItem: cartObj,
+        //       email: shipObj.emailId,
+        //     };
 
-          // Promise.all(promises).then(async (responses) => {
-          //   console.log("All items processed:", responses);
+        //     // Return the promise from addCartItem
+        //     return addNonUserCartItem(cartItemObj);
+        //   }
+        // );
 
-          //   const cart = await getNonUserCartItems(shipObj?.emailId);
-          //   const orderId = cart?.response?.data?.cart?.Carts[0]?.OrderId;
-          //   if (orderId) {
-          //     const shippingDetail = getShippingDetails();
-          //     console.log(shippingDetail, "shippingDetail");
-          //     if (shippingDetail && shippingDetail?.length > 0) {
-          //       const shipObj = JSON.parse(shippingDetail);
-          //       console.log(router.query?.country);
-          //       await shippingDetailsNonUser(
-          //         shipObj,
-          //         orderId,
-          //         router.query?.country
-          //       );
-          //       router.push({
-          //         pathname: "/processPayment",
-          //         query: {
-          //           orderId: orderId,
-          //           orderType: 0,
-          //           country: country,
-          //         },
-          //       });
-          //     }
+        // Promise.all(promises).then(async (responses) => {
+        //   console.log("All items processed:", responses);
 
-          //     // router.push({
-          //     //   pathname: "/processPayment",
-          //     //   query: {
-          //     //     orderId: orderId,
-          //     //     orderType: 0,
-          //     //     country: country,
-          //     //   },
-          //     // });
-          //   }
-          // });
-        // } else {  
+        //   const cart = await getNonUserCartItems(shipObj?.emailId);
+        //   const orderId = cart?.response?.data?.cart?.Carts[0]?.OrderId;
+        //   if (orderId) {
+        //     const shippingDetail = getShippingDetails();
+        //     console.log(shippingDetail, "shippingDetail");
+        //     if (shippingDetail && shippingDetail?.length > 0) {
+        //       const shipObj = JSON.parse(shippingDetail);
+        //       console.log(router.query?.country);
+        //       await shippingDetailsNonUser(
+        //         shipObj,
+        //         orderId,
+        //         router.query?.country
+        //       );
+        //       router.push({
+        //         pathname: "/processPayment",
+        //         query: {
+        //           orderId: orderId,
+        //           orderType: 0,
+        //           country: country,
+        //         },
+        //       });
+        //     }
+
+        //     // router.push({
+        //     //   pathname: "/processPayment",
+        //     //   query: {
+        //     //     orderId: orderId,
+        //     //     orderType: 0,
+        //     //     country: country,
+        //     //   },
+        //     // });
+        //   }
+        // });
+        // } else {
         //   const getCartItem: any = getCartValue();
         //   const allItems = JSON.parse(getCartItem);
         //   for (let i = 0; i < allItems.length; i++) {
@@ -559,29 +559,55 @@ function ShippingDetails() {
     submitPayment(isInvalid);
   };
 
-  const getDiscount=()=>{
-    let items=localStorage.getItem("cart") as string
+  const getDiscount = () => {
+    let items = localStorage.getItem("cart");
+    const cartItems: any[] = items ? JSON.parse(items) : [];
 
-   const cartItems:any[]=JSON.parse(items);
+    const discountedTypes = ["Card", "Socket", "Tile", "Bundle Devices"];
 
-    const totalQuantity=cartItems.reduce((a,b)=>a+b.quantity,0);
-    const totalPrice=cartItems.reduce((a,b)=>a+(b.itemPrice*b.quantity),0);
+    // Filter items eligible for a discount
+    const filterItems = cartItems.filter(
+      (item) =>
+        item.deviceType !== "Full Custom" &&
+        item.deviceType !== "NC-Pattern" &&
+        (discountedTypes.includes(item.deviceType) ||
+          discountedTypes.includes(item.productType))
+    );
 
-    let tempTotal=0;
+    const totalQuantity = filterItems.reduce(
+      (sum, item) => sum + item.quantity,
+      0
+    );
 
-    if(totalQuantity===1){
-      tempTotal=totalPrice*0.6;//40% DISCOUNT
-    }else if(totalQuantity===2){  
-      tempTotal=totalPrice*0.5;//50% DISCOUNT
-    }else{
-      tempTotal=totalPrice*0.4;//60% DISCOUNT
-    }
+    const totalPrice = cartItems.reduce(
+      (sum, item) => sum + item.itemPrice * item.quantity,
+      0
+    );
 
-    setTotal(totalPrice)
-    setCartTotal(Math.round(tempTotal))
-    setDiscount(Math.round((totalPrice ?? 0) - tempTotal))
+    let discountAmount = 0;
 
-  }
+    const discountedTotal = cartItems.reduce((sum, item) => {
+      let itemTotal = item.itemPrice * item.quantity;
+
+      // Apply discount only if the item is eligible
+      if (filterItems.some((dItem) => dItem.id === item.id)) {
+        let discountRate = 0.4;
+        if (totalQuantity === 1) discountRate = 0.4;
+        else if (totalQuantity === 2) discountRate = 0.5;
+        else if (totalQuantity >= 3) discountRate = 0.6;
+
+        const discountedItemTotal = itemTotal * (1 - discountRate);
+        discountAmount += itemTotal - discountedItemTotal;
+        itemTotal = discountedItemTotal;
+      }
+
+      return sum + itemTotal;
+    }, 0);
+
+    setTotal(Math.round(totalPrice));
+    setCartTotal(Math.round(discountedTotal));
+    setDiscount(Math.round(discountAmount));
+  };
 
   useEffect(() => {
     getCart();
