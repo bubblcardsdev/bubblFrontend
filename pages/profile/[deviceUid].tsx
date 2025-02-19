@@ -23,6 +23,7 @@ import { getUniqueName } from "src/App/services/unique";
 import { MODAL_TYPES, ModalT } from "types/modal";
 import LoaderScreen from "src/App/components/lottie/lottie";
 import RegisterPage from "../register";
+import Restaurants from '../../src/App/components/Restaurants/index' 
 
 export interface typeProfileI {
   firstName: string;
@@ -105,7 +106,6 @@ function TapComponent() {
       const tapResponse = await PostTapDetails(tapObj);
     }
   };
-
   const getProfileByDeviceFunction = async () => {
     if (deviceUid) {
       // Check if deviceUid contains at least one digit
@@ -218,7 +218,10 @@ function TapComponent() {
       break;
   }
   useEffect(() => {
-    getProfileByDeviceFunction();
+    if(deviceUid == "0ee031d4-e923-4064-8c50-bdc1229aa6bc"){
+      setPage('restraunt')    
+    }
+    else getProfileByDeviceFunction();
   }, [router]);
 
   function ApplyTemplate() {
@@ -364,7 +367,6 @@ function TapComponent() {
           />
         );
         break;
-
       default:
         break;
     }
@@ -382,7 +384,8 @@ function TapComponent() {
           return <RegisterPage />;
         case "profile":
           return <ApplyTemplate />;
-
+        case "restraunt":
+          return <Restaurants/>
         default:
           return <></>;
       }
