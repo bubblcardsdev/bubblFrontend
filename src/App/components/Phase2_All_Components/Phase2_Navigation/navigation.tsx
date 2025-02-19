@@ -172,7 +172,7 @@ function Navigation(props: NavigationProps) {
                 ANALYTICS
               </button>
             </Link>
-            <Link href="/order">
+            {/* <Link href="/order">
               <button
                 style={{
                   color:
@@ -184,7 +184,7 @@ function Navigation(props: NavigationProps) {
               >
                 MY ORDERS
               </button>
-            </Link>
+            </Link> */}
           </div>
         </Col>
         <Col className={styles.ActionButton}>

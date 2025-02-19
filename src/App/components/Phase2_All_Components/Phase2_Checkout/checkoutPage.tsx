@@ -13,7 +13,10 @@ import {
   getAddDataFlag,
   getCartValue,
   getExperationTime,
+  getShippingDetails,
   removeAddDataFlag,
+  removeCartValue,
+  removeShippingDetails,
   setAddDataFlag,
   setCartValue,
   setPriceValue,
@@ -21,6 +24,7 @@ import {
 import {
   cancelCart,
   clearCartItems,
+  clearNonUserCartItems,
   getCartItem,
 } from "src/App/services/shopPage/shopServices";
 
@@ -340,10 +344,22 @@ function CheckOutPageFunc() {
       router.push("/myPlanPage");
       localStorage.setItem("failurePath", "");
     }
-    if (isFailed === "1") {
-      clearCartItems();
-      localStorage.removeItem("cart");
-      getCartItems();
+    if (isFailed == "1") {
+      const token = getAccessToken();
+      const shippingDetails: any = getShippingDetails();
+
+      if (token) {
+        clearCartItems();
+        localStorage.removeItem("cart");
+        getCartItems();
+      } else {
+        if (shippingDetails && shippingDetails.length > 0) {
+          const shipObj = JSON.parse(shippingDetails);
+          clearNonUserCartItems({ email: shipObj?.emailId });
+        }
+        removeShippingDetails();
+        removeCartValue();
+      }
     }
     window.addEventListener("scroll", handleScroll);
 
@@ -421,7 +437,7 @@ function CheckOutPageFunc() {
                         <p>
                           {cartValues?.productType || cartValues?.deviceType}
                         </p>
-                        {(discountedTypes.includes(cartValues?.productType) ||
+                        {/* {(discountedTypes.includes(cartValues?.productType) ||
                           discountedTypes.includes(cartValues?.deviceType)) && (
                           <div className={styles.discountContainer}>
                             <p className={styles.slashedPrice}>
@@ -433,10 +449,9 @@ function CheckOutPageFunc() {
                               {discountedTypes.includes(cartValues?.deviceType)
                                 ? "20.02% off"
                                 : "28.61% off"}
-                                
                             </span>
                           </div>
-                        )}
+                        )} */}
                         <div className={styles.priceDiv}>
                           <div className={styles.piceTag}>Price</div>
                           <div>₹ {cartValues?.itemPrice}</div>
@@ -513,7 +528,13 @@ function CheckOutPageFunc() {
                   xl={4}
                   className={styles.promoCodeSection}
                 >
-                  <SubTotalComponent priceValue={priceTotal} />
+                  <SubTotalComponent
+                    priceValue={priceTotal}
+                    quantity={allCart?.reduce(
+                      (a: number, b: any) => a + Number(b["quantity"] || 0),
+                      0
+                    )}
+                  />
                 </Col>
               </Row>
             </>
@@ -557,14 +578,14 @@ function CheckOutPageFunc() {
                         ₹ {value?.itemPrice}
                       </div>
                       {/* <p className={styles.slashedPrice}>INR 599</p> */}
-                      <span className={styles.discountText}>
+                      {/* <span className={styles.discountText}>
                         {" "}
                         {discountedTypes.includes(value?.deviceType)
                           ? value?.deviceType == "NC-Pattern"
                             ? "18.77% off"
                             : "20.02% off"
                           : "28.61% off"}
-                      </span>
+                      </span> */}
                     </div>
                   )}
                 </div>
@@ -620,7 +641,13 @@ function CheckOutPageFunc() {
               xl={4}
               className={styles.promoCodeSection}
             >
-              <SubTotalComponent priceValue={priceTotal} />
+              <SubTotalComponent
+                priceValue={priceTotal}
+                quantity={allCart?.reduce(
+                  (a: number, b: any) => a + Number(b["quantity"] || 0),
+                  0
+                )}
+              />
             </Col>
           </Row>
         </div>

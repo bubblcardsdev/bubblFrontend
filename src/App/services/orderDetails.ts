@@ -17,3 +17,12 @@ export const getOrdersDetails = async (orderId: any) => {
     console.log(error);
   }
 };
+
+export const getOrdersDetailsNonUser = async (orderId: any) => {
+  try {
+    const orderResponse = axios.post("order/nonUser/one", orderId);
+    return orderResponse;
+  } catch (error) {
+    console.log(error);
+  }
+};

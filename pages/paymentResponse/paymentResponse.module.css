@@ -1,0 +1,218 @@
+.createProfilePage {
+    /* max-width: 1300px; */
+    margin: 0 auto;
+    height: 84dvh;
+}
+
+.createProfileSection {
+    /* background-image: url("../../images/Phase_2_All_Assets/create_profile/bg_image3x.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100%; */
+    background-color: black;
+    /* height: 100vh; */
+}
+
+.createProfile {
+    width: 505px;
+    border-radius: 10px;
+    background-color: #18171E;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 100px;
+    padding-bottom: 6vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.createProfile h2 {
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 34px;
+    padding-bottom: 15px;
+    text-align: center;
+    padding-top: 30px;
+    color: white;
+    padding-inline: 20px;
+    max-width: 380px;
+}
+
+.createProfile p {
+    width: 350px;
+    padding-inline: 20px;
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.createProfile p:nth-child(3) {
+    margin-top: 2.5vh;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.footerSectionInside {
+    width: 85.7vw;
+    margin: 0% auto;
+}
+
+.footerSection {
+    background: linear-gradient(1deg, rgba(58, 73, 249, .88) -171.77%, rgba(129, 45, 226, .49) -22.73%, transparent 102.14%) !important;
+    padding-top: 35px;
+}
+
+.cardImg {
+    margin: 0 auto;
+    justify-content: center;
+    display: flex;
+    margin-top: 30px;
+}
+
+.Profile a {
+    background-color: #AB39D2;
+    border-radius: 20px;
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 16px;
+    width: 150px;
+    height: 45px;
+    text-align: center;
+    border: #AB39D2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.Profile a:hover,
+.Profile a:active {
+    color: white;
+    border: #AB39D2;
+    background-color: #AB39D2;
+}
+
+.profileAction {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    gap: 30px;
+}
+
+.ProfileLink a {
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 14px;
+    color: white;
+    border-bottom: 1px solid white;
+}
+
+.breadCrumbs {
+    display: flex;
+    gap: 5px;
+    margin-top: 20px;
+    padding-left: 40px;
+}
+
+.link1 a {
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 14px;
+    color: white;
+}
+
+.link2 a {
+    font-family: "Oxygen";
+    font-weight: 400;
+    font-size: 14px;
+    color: #AB39D2;
+}
+
+.shopNowButton {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 2vh;
+}
+
+.navContainer {
+    width: 85.7vw;
+    margin: 0% auto;
+}
+
+.BuyNowText a {
+    color: #AB39D2;
+    text-decoration: underline;
+    font-family: "Oxygen";
+    font-size: 18px;
+}
+
+.profileBtn {
+    width: 206px;
+    height: 48px;
+    border-radius: 5px;
+    background: #AF38D6;
+    border: none;
+    color: #FFF;
+    font-family: "Oxygen", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.profileBtn:hover {
+    background: #AF38D6;
+}
+
+.profileBtn:active {
+    background: #AF38D6 !important;
+}
+
+
+@media screen and (max-width: 500px) {
+    .createProfile {
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 5vh;
+        margin-bottom: 60px;
+    }
+
+    .createProfile p {
+        font-size: 12px;
+        width: auto;
+        padding-inline: 20px;
+    }
+
+    .createProfile h2 {
+        font-size: 28px;
+        padding-inline: 20px;
+    }
+
+    .profileAction {
+        gap: 20px;
+        padding: 0 10px 0 10px;
+    }
+
+    .ProfileLink a {
+        font-size: 12px;
+
+    }
+
+    .Profile a {
+        width: 90px;
+        height: 40px;
+        font-size: 13px;
+    }
+
+    .breadCrumbs {
+        display: none;
+    }
+
+
+
+}

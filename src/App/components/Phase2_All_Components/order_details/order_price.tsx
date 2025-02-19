@@ -23,7 +23,6 @@ function OrderPrice({ orderDetails }: any) {
   useEffect(() => {
     setTotal(GetSubTotalPrice());
   }, [orderDetails]);
-
   const shippingCharge = orderDetails?.Payments[0]?.shippingCharge || 0;
   const tax = Math.round(Total * 0.18);
   const grandTotal = Math.round(Total + 0 + shippingCharge);
@@ -68,6 +67,7 @@ function OrderPrice({ orderDetails }: any) {
               <p>Shipping :</p>
               <p>Total :</p>
               {/* <p>Tax :</p> */}
+              <p>Discount</p>
               <h5>Grand Total :</h5>
             </div>
             <div>
@@ -78,9 +78,13 @@ function OrderPrice({ orderDetails }: any) {
                 {Total + shippingCharge}
               </p>
               {/* <p>₹&nbsp;{tax}</p> */}
+              <p>- ₹&nbsp;{orderDetails?.discountAmount || 0}</p>
               <h5>
                 ₹&nbsp;
-                {Math.round(grandTotal)}/-
+                {orderDetails?.soldPrice > 0
+                  ? Math.round(orderDetails?.soldPrice)
+                  : Math.round(grandTotal)}
+                /-
               </h5>
             </div>
           </div>

@@ -12,7 +12,7 @@ const PromoPopup = (props: any) => {
   const { visible, onHide } = props;
   const router = useRouter();
   const onPromoClick = () => {
-    router.push("/shopPage");
+    router.replace("/shopPage");
     onHide();
   };
   return (
@@ -24,8 +24,8 @@ const PromoPopup = (props: any) => {
           </span>
           <span className={styles.popupImg} onClick={() => onPromoClick()}>
             <Image
-              src="/independenceDayPoster.jpg"
-              alt="/independenceDayPoster.jpg"
+              src="/offerBanner.png"
+              alt="/offerBanner.png"
               width={500}
               height={500}
             />
