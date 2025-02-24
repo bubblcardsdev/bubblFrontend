@@ -41,34 +41,26 @@ function SubTotalComponent({ priceValue, quantity }: Props) {
           (discountedTypes.includes(item.deviceType) ||
             discountedTypes.includes(item.productType))
       );
-
-      // console.log("Discounted Items:", discountedItems);
-
       const totalQuantity = discountedItems.reduce(
         (sum, item) => sum + item.quantity,
         0
       );
-      // console.log("Eligible Discount Quantity:", totalQuantity);
-
       let discountRate = 0.4;
       if (totalQuantity === 1) discountRate = 0.4;
       else if (totalQuantity === 2) discountRate = 0.5;
       else if (totalQuantity >= 3) discountRate = 0.6;
 
-      // console.log("Correct Discount Rate:", discountRate);
 
       cartItems.forEach((item) => {
         let itemTotalPrice = item.itemPrice * item.quantity;
-        // console.log(itemTotalPrice, "Before Discount");
-
-        if (discountedItems.some((dItem) => dItem.id === item.id)) {
-          let discountedItemTotal = itemTotalPrice * (1 - discountRate);
-          discount += itemTotalPrice - discountedItemTotal; // Accumulate discount
-          itemTotalPrice = discountedItemTotal;
-        }
-
+        // if (discountedItems.some((dItem) => dItem.id === item.id)) {
+        //   let discountedItemTotal = itemTotalPrice * (1 - discountRate);
+        //   discount += itemTotalPrice - discountedItemTotal; 
+        //   itemTotalPrice = discountedItemTotal;
+        // }
         totalPrice += itemTotalPrice;
-      });
+      }
+    );
     }
 
     // console.log("Final Price:", totalPrice, "Total Discount:", discount);

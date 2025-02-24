@@ -596,9 +596,9 @@ function ShippingDetails() {
         else if (totalQuantity === 2) discountRate = 0.5;
         else if (totalQuantity >= 3) discountRate = 0.6;
 
-        const discountedItemTotal = itemTotal * (1 - discountRate);
-        discountAmount += itemTotal - discountedItemTotal;
-        itemTotal = discountedItemTotal;
+        // const discountedItemTotal = itemTotal * (1 - discountRate);
+        // discountAmount += itemTotal - discountedItemTotal;
+        // itemTotal = discountedItemTotal;
       }
 
       return sum + itemTotal;
