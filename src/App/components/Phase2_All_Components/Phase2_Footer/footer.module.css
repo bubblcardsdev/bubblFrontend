@@ -9,7 +9,6 @@
     cursor: pointer;
 
 }
-
 .footer_links {
     display: flex;
     gap: 100px;
@@ -286,3 +285,110 @@
         gap: 0;
     }
 }
+/*  */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f9f9f9;
+    padding: 20px;
+  }
+  
+  .policyBox {
+    max-width: 1300px;
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+  }
+  
+  /* Unique styles for paragraphs */
+  .returnInfo,
+  .returnDeadline,
+  .returnInstructions,
+  .reimbursementDetails,
+  .conditionsInfo,
+  .purchaseCondition,
+  .packagingCondition,
+  .returnProcess,
+  .contactInfo {
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 24px;
+    font-size: 1rem; /* Default size */
+  }
+  
+  /* Unique styles for headings */
+  .conditionsHeading,
+  .returningGoodsHeading,
+  .contactHeading {
+    margin-top: 20px;
+    color: #333;
+    font-size: 1.5rem;
+  }
+  
+  /* Highlighted text */
+  .highlight {
+    color: #007bff;
+    font-weight: bold;
+  }
+  
+  /* 📱 Responsive Design */
+  @media (max-width: 1024px) {
+    .policyBox {
+      max-width: 90%;
+      padding: 30px;
+    }
+    .conditionsHeading,
+    .returningGoodsHeading,
+    .contactHeading {
+      font-size: 1.3rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .policyBox {
+      padding: 20px;
+    }
+    .returnInfo,
+    .returnDeadline,
+    .returnInstructions,
+    .reimbursementDetails,
+    .conditionsInfo,
+    .purchaseCondition,
+    .packagingCondition,
+    .returnProcess,
+    .contactInfo {
+      font-size: 0.95rem;
+    }
+    .conditionsHeading,
+    .returningGoodsHeading,
+    .contactHeading {
+      font-size: 1.2rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .policyBox {
+      padding: 15px;
+    }
+    .returnInfo,
+    .returnDeadline,
+    .returnInstructions,
+    .reimbursementDetails,
+    .conditionsInfo,
+    .purchaseCondition,
+    .packagingCondition,
+    .returnProcess,
+    .contactInfo {
+      font-size: 0.9rem;
+    }
+    .conditionsHeading,
+    .returningGoodsHeading,
+    .contactHeading {
+      font-size: 1.1rem;
+    }
+  }
+  

@@ -129,7 +129,7 @@ export default function FreeTemplateTwo({
   } else {
     backgroundColor = "#007AFF";
   }
-    const [showPf, setShow] = useState(false);
+  const [showPf, setShow] = useState(false);
   const [qrShow, setQrShow] = useState(false);
   const updateAddress = userProfile?.data?.address || getAllProfile?.address;
   let val2 = "";
@@ -198,32 +198,41 @@ export default function FreeTemplateTwo({
       clickAction: clickId,
     };
   };
-  const getPhoneNumbersWithCountryCode = (getAllProfile:any, userProfile:any) => {
+  const getPhoneNumbersWithCountryCode = (
+    getAllProfile: any,
+    userProfile: any
+  ) => {
     try {
       if (getAllProfile?.profilePhoneNumbers) {
         return getAllProfile.profilePhoneNumbers;
       }
-        if (userProfile?.data?.profilePhoneNumbers?.length) {
-        return userProfile.data.profilePhoneNumbers.map((phone:any, index:number) => ({
-          ...phone,
-          phoneNumber: `${phone?.countryCode || ''} ${phone?.phoneNumber || ''}`.trim(),
-        }));
+      if (userProfile?.data?.profilePhoneNumbers?.length) {
+        return userProfile.data.profilePhoneNumbers.map(
+          (phone: any, index: number) => ({
+            ...phone,
+            phoneNumber: `${phone?.countryCode || ""} ${
+              phone?.phoneNumber || ""
+            }`.trim(),
+          })
+        );
       }
-        return [];
+      return [];
     } catch (error) {
       console.error("Error retrieving profile phone numbers:", error);
       return [];
     }
   };
   const handleClickSave = async (e: any) => {
-    console.log(getAllProfile,'profile',userProfile)
+    console.log(getAllProfile, "profile", userProfile);
     const firstName =
       getAllProfile?.firstName || (userProfile && userProfile?.data?.firstName);
     const vcfdata = await SaveVCFContact(
       firstName,
       getAllProfile?.lastName || (userProfile && userProfile?.data?.lastName),
-      getAllProfile?.companyName || (userProfile && userProfile?.data?.companyName),
-      getAllProfile?.designation || (userProfile && userProfile?.data?.designation),
+      getAllProfile?.companyName ||
+        (userProfile && userProfile?.data?.companyName),
+      getAllProfile?.designation ||
+        (userProfile && userProfile?.data?.designation),
       getPhoneNumbersWithCountryCode(getAllProfile, userProfile),
       profileImage?.square,
       getAllProfile?.address || (userProfile && userProfile?.data?.address),
@@ -240,7 +249,6 @@ export default function FreeTemplateTwo({
       getAllProfile?.state || (userProfile && userProfile?.data?.country),
       deviceUid
     );
-
     const file = new Blob([vcfdata], { type: "text/vcard" });
     const url = URL.createObjectURL(file);
     const a = document.createElement("a");
@@ -351,11 +359,8 @@ export default function FreeTemplateTwo({
       a.href = url;
       a.setAttribute("download", `${firstName}.vcf`);
       document.body.appendChild(a);
-
       a.click();
-
       document.body.removeChild(a);
-
       URL.revokeObjectURL(url);
     }
   }
@@ -413,6 +418,12 @@ export default function FreeTemplateTwo({
     saveContactAuto();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userProfile]);
+
+  console.log(
+    getAllProfile?.profilePhoneNumbers?.[0]?.phoneNumber ||
+      phoneNumberField?.phoneNumber,
+    "datta"
+  );
   return (
     <>
       {/* Upload Logo */}
@@ -450,14 +461,12 @@ export default function FreeTemplateTwo({
                 id="qrImageInput"
                 onChange={handleQrSave}
               />
-
               {imageError && (
                 <p style={{ color: "red" }} className={styles.errorMsg}>
                   {imageError}
                 </p>
               )}
             </div>
-
             <Button onClick={handleQrClose} className={styles.SaveLogo}>
               Save
             </Button>
@@ -780,7 +789,7 @@ export default function FreeTemplateTwo({
               >
                 {/* logo upload */}
                 <div className={styles.qrImg}>
-                  {userPlan?.planId ===2 && qrImage ? (
+                  {userPlan?.planId === 2 && qrImage ? (
                     <img
                       src={qrImage}
                       alt="Logo"
@@ -796,7 +805,7 @@ export default function FreeTemplateTwo({
                   )}
                 </div>
 
-                {(edit && userPlan?.planId === 2 )? (
+                {edit && userPlan?.planId === 2 ? (
                   <div className={styles.QrEdit} style={{ backgroundColor }}>
                     <Image
                       src={ProfileEditIcon}

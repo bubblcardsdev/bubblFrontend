@@ -391,16 +391,24 @@ async function SaveVCFContact(
     | { url: any; label: string }
     | { url?: undefined; label?: undefined }
   )[] = [];
-
   // Push phone numbers into an array
+  // if (Array.isArray(phoneNumber)) {
+  //   phoneNumber.forEach((element: any) => {
+  //     if (element.phoneNumber) {
+  //       phoneNumbers.push(element.phoneNumber);
+  //     }
+  //   });
+  // }
   if (Array.isArray(phoneNumber)) {
     phoneNumber.forEach((element: any) => {
       if (element.phoneNumber) {
-        phoneNumbers.push(element.phoneNumber);
+        const formattedNumber = element.countryCode
+          ? `${element.countryCode}${element.phoneNumber}`
+          : element.phoneNumber;
+        phoneNumbers.push(formattedNumber);
       }
     });
   }
-
   // Push emails into an array
   if (Array.isArray(emailId)) {
     emailId.forEach((element: any) => {
@@ -409,7 +417,6 @@ async function SaveVCFContact(
       }
     });
   }
-
   // Push valid website URLs into an array
   if (website) {
     website.forEach((element: any) => {
