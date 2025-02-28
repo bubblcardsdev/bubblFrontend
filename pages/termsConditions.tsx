@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./policy.module.css"; // Using the CSS module styles
+import styles from "../styles/policy.module.css";
 
 const TermsCondition = () => {
   return (

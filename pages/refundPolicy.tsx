@@ -1,4 +1,4 @@
-import styles from "./policy.module.css";
+import styles from "../styles/policy.module.css";
 
 const RefundPolicy = () => {
   return (
