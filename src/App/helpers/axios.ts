@@ -5,7 +5,8 @@ import { removeAccessToken } from "./local-storage";
 // live EC2
 // const BASE_URL = "https://bubbl.cards/api";
 // development
-const BASE_URL = "devapii.bubbl.cards/api";
+http://devapii.bubbl.cards/
+const BASE_URL = "http://devapii.bubbl.cards/api";
 // const BASE_URL = "http://localhost:8001/api";
 const axiosInstance = axios.create({ baseURL: BASE_URL });
 
