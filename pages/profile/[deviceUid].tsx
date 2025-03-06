@@ -21,8 +21,9 @@ import { getDirectUrlMode } from "src/App/services/modes";
 import { PostTapDetails } from "src/App/services/tapApi";
 import { getUniqueName } from "src/App/services/unique";
 import { MODAL_TYPES, ModalT } from "types/modal";
-
+import LoaderScreen from "src/App/components/lottie/lottie";
 import RegisterPage from "../register";
+import Restaurants from '../../src/App/components/Restaurants/index' 
 
 export interface typeProfileI {
   firstName: string;
@@ -105,7 +106,6 @@ function TapComponent() {
       const tapResponse = await PostTapDetails(tapObj);
     }
   };
-
   const getProfileByDeviceFunction = async () => {
     if (deviceUid) {
       // Check if deviceUid contains at least one digit
@@ -164,7 +164,7 @@ function TapComponent() {
         setPage("profile");
       } else {
         getDeviceIdFromStorage();
-        setPage("register");
+        router.push("/register");
       }
     }
   };
@@ -218,7 +218,10 @@ function TapComponent() {
       break;
   }
   useEffect(() => {
-    getProfileByDeviceFunction();
+    if(deviceUid == "0ee031d4-e923-4064-8c50-bdc1229aa6bc"){
+      setPage('restraunt')    
+    }
+    else getProfileByDeviceFunction();
   }, [router]);
 
   function ApplyTemplate() {
@@ -230,9 +233,10 @@ function TapComponent() {
           getUrlValue.includes("https://") ||
           getUrlValue.includes("http://")
         ) {
-          window.open(getUrlValue, "_blank", "noreferrer");
-        } else {
-          window.open(`https://${getUrlValue}`, "_blank", "noreferrer");
+          window.open(getUrlValue, "_self", "noreferrer");
+        } 
+        else {
+          window.open(`https://${getUrlValue}`, "_self", "noreferrer");
         }
       }
     }
@@ -363,7 +367,6 @@ function TapComponent() {
           />
         );
         break;
-
       default:
         break;
     }
@@ -374,17 +377,22 @@ function TapComponent() {
       </div>
     );
   }
-
   function RenderPage() {
-    let render = null;
-    if (page === "register") {
-      render = <RegisterPage />;
-    } else if (page === "profile") {
-      render = <ApplyTemplate />;
-    }
-    return render;
+    const renderContent = () => {
+      switch (page) {
+        case "register":
+          return <RegisterPage />;
+        case "profile":
+          return <ApplyTemplate />;
+        case "restraunt":
+          return <Restaurants/>
+        default:
+          return <></>;
+      }
+    };
+    const content = renderContent();
+    return content;
   }
-
   return <RenderPage />;
 }
 export default TapComponent;

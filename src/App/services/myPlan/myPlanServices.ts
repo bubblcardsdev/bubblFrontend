@@ -30,7 +30,6 @@ export const getUserPlan = async (): Promise<
     const res = await axios.get("plan/find", {
       headers: headers,
     });
-    console.log(res, "ressss");
     return res;
   } catch (e) {
     console.log(e);

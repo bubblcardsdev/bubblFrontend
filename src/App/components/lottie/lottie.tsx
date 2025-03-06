@@ -23,7 +23,7 @@ function LoaderScreen({ children }: PropsWithChildren) {
     return () => {
       clearTimeout(timeoutId);
     };
-  });
+  }, []);
   const lotteComp = (
     <div className={styles.loader}>
       <lottie-player

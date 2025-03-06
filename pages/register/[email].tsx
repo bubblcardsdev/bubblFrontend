@@ -6,9 +6,9 @@ import bubblepattern from "../../images/Bubbl-Post_Login_Asset/Sign_up/bubbl-pat
 import verified from "../../images/Bubbl-Post_Login_Asset/Sign_up/verifeid_successfully-icon.svg";
 import alert from "../../images/Bubbl-Post_Login_Asset/Sign_up/invalid_alert-icon.svg";
 import styles from "./register.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button, Spinner } from "react-bootstrap";
-import { verifyEmailOtp } from "src/App/services/api";
+import { resendMailOTP, verifyEmailOtp } from "src/App/services/api";
 import { useRouter } from "next/router";
 
 export default function verfied() {
@@ -17,6 +17,10 @@ export default function verfied() {
   const { email }: any = router.query;
   const [error, setError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const MINUTE = 1;
+  const SECONDS = 30;
+  const [minutes, setMinutes] = useState(MINUTE);
+  const [seconds, setSeconds] = useState(SECONDS);
   const validateOtpRegex = /^\d{6}$/;
   const onChange = (value: string) => {
     const input = value ? value.slice(0, 6) : "";
@@ -38,6 +42,35 @@ export default function verfied() {
       setIsSubmitting(false);
     });
   };
+
+  const resendOTPHandler = () => {
+    resendMailOTP(email).then((data) => {
+      if (data.success) {
+        setMinutes(MINUTE);
+        setSeconds(SECONDS);
+      }
+    });
+  };
+  console.log(minutes, seconds);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (seconds > 0) {
+        setSeconds(seconds - 1);
+      }
+
+      if (seconds === 0) {
+        if (minutes === 0) {
+          clearInterval(interval);
+        } else {
+          setSeconds(59);
+          setMinutes(minutes - 1);
+        }
+      }
+    }, 1000);
+    return () => {
+      clearInterval(interval);
+    };
+  }, [seconds, minutes]);
 
   return (
     <div
@@ -105,6 +138,29 @@ export default function verfied() {
                       </Spinner>
                     )}
                   </Button>
+                  {(seconds === SECONDS && minutes === MINUTE) ||
+                  (seconds === 0 && minutes === 0) ? (
+                    <div className={styles.resend_otp}>
+                      <button
+                        className={styles.resend}
+                        disabled={seconds > 0 || minutes > 0}
+                        style={{
+                          color:
+                            seconds > 0 || minutes > 0 ? "#DFE3E8" : "#af38d6",
+                        }}
+                        onClick={resendOTPHandler}
+                      >
+                        Resend OTP
+                      </button>
+                    </div>
+                  ) : (
+                    <div className={styles.resend_otp}>
+                      <p style={{ textAlign: "center", color: "#af38d6" }}>
+                        {minutes < 10 ? `0${minutes}` : minutes}:
+                        {seconds < 10 ? `0${seconds}` : seconds}
+                      </p>
+                    </div>
+                  )}
                 </div>
                 {/* <h6 className={styles.linkotp}>
                   to continue Sign up <br />

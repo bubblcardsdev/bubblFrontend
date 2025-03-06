@@ -557,10 +557,10 @@ function ProductListTile() {
                     </Col>
                     <Col className={styles.customization_details_right}>
                       <h3 className={styles.quantityText_price}>Price</h3>
-                      <div className={styles.discountContainer}>
-                        <p className={styles.slashedPrice}>INR 599</p>
-                        <span className={styles.discountText}>40% off</span>
-                      </div>
+                      {/* <div className={styles.discountContainer}>
+                        <p className={styles.slashedPrice}>INR 699</p>
+                        <span className={styles.discountText}>28.61% off</span>
+                      </div> */}
                       <h4>
                         Rs.{individuals[0]?.price} <span>Per socket</span>
                       </h4>

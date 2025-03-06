@@ -14,9 +14,11 @@ import { useEffect, useState } from "react";
 import TagManager from "react-gtm-module";
 import { ParallaxProvider } from "react-scroll-parallax";
 
+// import PromoPopup from "src/App/components/promoPopup/promoPopup";
+// import { useRouter } from "next/router";
+import { wrapper } from "../store/store";
 import PromoPopup from "src/App/components/promoPopup/promoPopup";
 import { useRouter } from "next/router";
-import { wrapper } from "../store/store";
 
 <script src="/node_modules/@lottiefiles/lottie-player/dist/lottie-player.js" />;
 
@@ -33,7 +35,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     }
     const popupShowPaths = ["/", "/shopPage"];
     if (popupShowPaths.includes(router.pathname)) {
-      const popupdelayTime = router?.pathname === "/" ? 6000 : 3000;
+      const popupdelayTime = router?.pathname === "/" ? 5000 : 2000;
       const timeoutId = setTimeout(() => {
         setPopUpState(true);
       }, popupdelayTime);

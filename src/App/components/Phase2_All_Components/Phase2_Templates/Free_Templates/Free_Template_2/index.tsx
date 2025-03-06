@@ -20,10 +20,8 @@ import {
 } from "src/App/services/myPlan/myPlanServices";
 import { PostTapDetails } from "src/App/services/tapApi";
 import { MODAL_TYPES } from "types/modal";
-
 import CropSection from "@/pages/createProfileStep2/imageCropModal";
 import CropSectionLogo from "@/pages/createProfileStep2/imageCropModalLogo";
-
 import customCloseButtonImage from "../../../../../../../images/Phase_2_All_Assets/comman_assets/close.png";
 import QrModal from "../../Components/QrModal/qrModal";
 import SaveContactUnique from "../../Components/SaveContact_2_3/saveContact";
@@ -47,7 +45,6 @@ import Banner1 from "./Components/banner/Mask group-3.png";
 import Banner7 from "./Components/banner/Mask group-4.png";
 import Banner3 from "./Components/banner/Mask group-5.png";
 import CallSVG from "./Components/icons/call_svg";
-import DownSVG from "./Components/icons/downArrow_svg";
 import FacebookSVG from "./Components/icons/facebook_svg";
 import InstaSVG from "./Components/icons/insta_svg";
 import LinkDinSVG from "./Components/icons/linkdin_svg";
@@ -60,7 +57,26 @@ import WatsSVG from "./Components/icons/wats_svg";
 import WebSVG from "./Components/icons/web_svg";
 import YoutubeSVG from "./Components/icons/youtube_svg";
 import styles from "./style.module.css";
-
+import ShareOutlined from "./Components/icons/share";
+import QrOutlined from "./Components/icons/qr";
+import VerticalDivider from "./Components/icons/verticalDivider";
+import Caller_icon from "./Components/icons/caller_icon";
+import Mail_icon from "./Components/icons/mail_icon";
+import Instagram_icon from "./Components/icons/instagram_icon";
+import Twitter_icon from "./Components/icons/twitter_icon";
+import Linkedin_icon from "./Components/icons/linkdin_icon";
+import Whatsapp from "./Components/icons/whatsapp_icon";
+import Facebook from "./Components/icons/facebook_icon";
+import Youtube from "./Components/icons/youtube_icon";
+import RightArrow from "./Components/icons/rightArrow";
+import Dribble from "./Components/icons/Dribble_icon";
+import PhonePay from "./Components/icons/phonepay_icon";
+import GooglePay from "./Components/icons/googlepay_icons";
+import Paytm_icon from "./Components/icons/paytm_icon";
+import { style } from "@mui/system";
+import WebsiteIcon from "./Components/icons/website";
+import MapsIcon from "./Components/icons/maps";
+import ClientSection from "../../../Phase_2_HomePage/clientSection/clientSection";
 const bannerMap = {
   "#F53232": Banner1,
   "#0082E1": Banner2,
@@ -105,14 +121,15 @@ export default function FreeTemplateTwo({
   deviceId: any;
 }) {
   const mode = deviceBranding?.darkMode ? "dark" : "light";
-  let backgroundColor: string | undefined;
+  var backgroundColor: string | undefined;
   const router = useRouter();
+
   if (deviceBranding !== undefined) {
     backgroundColor = deviceBranding?.brandingBackGroundColor;
   } else {
-    backgroundColor = "rgb(245, 50, 50)";
+    backgroundColor = "#007AFF";
   }
-  const [showPf, setShow] = useState(false);
+    const [showPf, setShow] = useState(false);
   const [qrShow, setQrShow] = useState(false);
   const updateAddress = userProfile?.data?.address || getAllProfile?.address;
   let val2 = "";
@@ -136,7 +153,6 @@ export default function FreeTemplateTwo({
     emailIdFieldCount,
     websiteFieldCount,
   } = useProfile({ userProfile, userProfileDispatch, getAllProfile });
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const handleQrClose = () => setQrShow(false);
@@ -171,13 +187,74 @@ export default function FreeTemplateTwo({
     navigator.clipboard.writeText(textToCopy);
     toast.success(`Copied "${textToCopy}" to clipboard!`, { autoClose: 3000 });
   };
-
+  //
   const handlePaymentClick = (paymentMethod: any) => {
     navigator.clipboard.writeText(paymentMethod);
     toast.success(`Copied ${paymentMethod} to clipboard!`, { autoClose: 3000 });
   };
+  const handleClickEvent = async (clickId: any) => {
+    const tapObj = {
+      deviceId: deviceId,
+      clickAction: clickId,
+    };
+  };
+  const getPhoneNumbersWithCountryCode = (getAllProfile:any, userProfile:any) => {
+    try {
+      if (getAllProfile?.profilePhoneNumbers) {
+        return getAllProfile.profilePhoneNumbers;
+      }
+        if (userProfile?.data?.profilePhoneNumbers?.length) {
+        return userProfile.data.profilePhoneNumbers.map((phone:any, index:number) => ({
+          ...phone,
+          phoneNumber: `${phone?.countryCode || ''} ${phone?.phoneNumber || ''}`.trim(),
+        }));
+      }
+        return [];
+    } catch (error) {
+      console.error("Error retrieving profile phone numbers:", error);
+      return [];
+    }
+  };
+  const handleClickSave = async (e: any) => {
+    console.log(getAllProfile,'profile',userProfile)
+    const firstName =
+      getAllProfile?.firstName || (userProfile && userProfile?.data?.firstName);
+    const vcfdata = await SaveVCFContact(
+      firstName,
+      getAllProfile?.lastName || (userProfile && userProfile?.data?.lastName),
+      getAllProfile?.companyName || (userProfile && userProfile?.data?.companyName),
+      getAllProfile?.designation || (userProfile && userProfile?.data?.designation),
+      getPhoneNumbersWithCountryCode(getAllProfile, userProfile),
+      profileImage?.square,
+      getAllProfile?.address || (userProfile && userProfile?.data?.address),
+      getAllProfile?.profileSocialMediaLinks ||
+        (userProfile && userProfile?.data?.profileSocialMediaLinks),
+      getAllProfile?.profileWebsites ||
+        (userProfile && userProfile?.data?.profileWebsites),
+      getAllProfile?.profileEmails ||
+        (userProfile && userProfile?.data?.profileEmails),
+      getAllProfile?.id || (userProfile && userProfile?.data?.id),
+      getAllProfile?.state || (userProfile && userProfile?.data?.state),
+      getAllProfile?.city || (userProfile && userProfile?.data?.city),
+      getAllProfile?.address || (userProfile && userProfile?.data?.address),
+      getAllProfile?.state || (userProfile && userProfile?.data?.country),
+      deviceUid
+    );
 
-  // Handling individual field preview and hide
+    const file = new Blob([vcfdata], { type: "text/vcard" });
+    const url = URL.createObjectURL(file);
+    const a = document.createElement("a");
+    a.href = url;
+    a.setAttribute("download", `${firstName}.vcf`);
+    document.body.appendChild(a);
+
+    a.click();
+
+    document.body.removeChild(a);
+
+    URL.revokeObjectURL(url);
+    // setIsDownloading(false);
+  };
   const showPhoneNumber =
     getAllProfile?.profilePhoneNumbers.length !== undefined ||
     edit ||
@@ -194,7 +271,6 @@ export default function FreeTemplateTwo({
   const { address, city, state, country, zipCode } =
     getAllProfile || (userProfile && userProfile?.data) || {};
   const showAddress = edit || address || city || state || zipCode || country;
-
   // Handling Full preview and hide section
   let showContactSection = [
     showPhoneNumber,
@@ -202,32 +278,26 @@ export default function FreeTemplateTwo({
     showWebsite,
     showAddress,
   ].some((show) => show);
-
   if (getAllProfile?.profilePhoneNumbers?.length > 0) {
     showContactSection = true;
   }
-
   const showSocialMediaSection =
     edit || Object.values(mediaLinks).some((socialLink) => socialLink !== "#");
 
   // if (getAllProfile?.profileSocialMediaLinks?.length > 0) {
   //   showSocialMediaSection = true;
   // }
-
   const showDigitalPaymentSection =
     edit ||
     Object.values(digitalPayments).some(
       (digitalPaymentLink) => digitalPaymentLink.digitalPaymentLink
     );
-
   // if (getAllProfile?.profileDigitalPaymentLinks) {
   //   showDigitalPaymentSection = true;
   // }
-
   const bannerSrc =
     bannerMap[backgroundColor as keyof typeof bannerMap] || defaultBanner;
-  const shouldHandleClick = !router.pathname.startsWith("/createProfileStep3/");
-
+  const shouldHandleClick = router.pathname.startsWith("/createProfileStep3/");
   const handleClick = async (clickId: any) => {
     if (shouldHandleClick) {
       const tapObj = {
@@ -289,6 +359,55 @@ export default function FreeTemplateTwo({
       URL.revokeObjectURL(url);
     }
   }
+  const modal_types: any = {
+    4: MODAL_TYPES.mobileNumberEdit,
+    5: MODAL_TYPES.emailIdEdit,
+    6: MODAL_TYPES.websiteEdit,
+    7: MODAL_TYPES.addressEdit,
+  };
+  const onEdit = (e: any, type: number) => {
+    e.stopPropagation();
+    const modalType = modal_types[type];
+    setModalType(modalType);
+  };
+  const onCallClick = () => {
+    if (phoneNumberCount > 1) {
+      setModalType(MODAL_TYPES.mobileNumberView);
+    } else
+      window.open(
+        `tel:${
+          getAllProfile?.profilePhoneNumbers?.[0]?.phoneNumber ||
+          phoneNumberField?.phoneNumber
+        }`,
+        "_self"
+      );
+  };
+  const onSocialClick = (url: string) => {
+    if (url && url !== "#") {
+      window.open(url, "_blank");
+    }
+  };
+  const onMailClick = () => {
+    if (emailIdFieldCount > 1) {
+      setModalType(MODAL_TYPES.emailIdView);
+    } else
+      window.open(
+        `mailto:${
+          getAllProfile?.profileEmails?.[0]?.emailId || emailIdField?.emailId
+        }`,
+        "_self"
+      );
+  };
+
+  const onWebsiteClick = () => {
+    if (websiteFieldCount > 1) {
+      setModalType(MODAL_TYPES.websiteView);
+    } else
+      window.open(
+        getAllProfile?.profileWebsites?.[0]?.website || websiteField?.website,
+        "_blank"
+      );
+  };
 
   useEffect(() => {
     saveContactAuto();
@@ -399,121 +518,178 @@ export default function FreeTemplateTwo({
       {/* Body Starts Here */}
       <section
         className={styles.FreeTemplateTwo}
-        style={
-          mode === "dark"
-            ? {
-                background: "#262626",
-              }
-            : {}
-        }
+        // style={mode === "dark" ? { background: "#262626" } : {}}
       >
-        <div className={styles.templateBanner}>
-          <div className={styles.BannerImg}>
-            <div className={styles.UserImg}>
-              <div className={styles.B_Img}>
-                {/* {bannerSrc && <Image src={bannerSrc} alt="banner" />} */}
-                <Image src={bannerSrc} alt="banner" />
-              </div>
-              <div className={styles.userProfile}>
+        <div className={styles.UserImg}>
+          <div className={styles.B_Img}>
+            <Image
+              className={styles.rupy_banner_img}
+              src={profileImage?.square}
+              alt="banner"
+              height={600}
+              width={1000}
+            />
+          </div>
+          {/* <div className={styles.userProfile}>
                 <div className={styles.ProfileImg}>
                   <div className={styles.respImg}>
                     {profileImage?.square && profileImage.square !== "" ? (
-                      <Image
-                        src={profileImage?.square}
-                        loader={({ src }) => src}
-                        alt="UserImage"
-                        width={150}
-                        height={150}
-                      />
+                      <Image src={profileImage?.square} loader={({ src }) => src} alt="UserImage"width={150}height={150}/>
                     ) : (
-                      <Image
-                        src={UserImg}
-                        loader={({ src }) => src}
-                        alt="Dummy"
-                        width={150}
-                        height={150}
-                      />
+                      <Image src={UserImg} loader={({ src }) => src} alt="Dummy"width={1}height={1}/>
                     )}
                   </div>
-
                   {edit ? (
-                    <div
-                      className={styles.userProfileEdit}
-                      style={{ backgroundColor }}
-                    >
-                      <Image
-                        src={ProfileEditIcon}
-                        alt="ProfileEditIcon"
-                        width={18}
-                        height={18}
-                        onClick={handleShow}
-                      />
+                    <div className={styles.userProfileEdit} style={{ backgroundColor }}>
+                      <Image src={ProfileEditIcon} alt="ProfileEditIcon"width={18}height={18}onClick={handleShow}/>
                     </div>
                   ) : (
                     ""
                   )}
                 </div>
-              </div>
+              </div> */}
+        </div>
+        <div
+          className={styles.Rupy_body_section}
+          style={mode === "dark" ? { background: "black" } : {}}
+        >
+          <div className={styles.rupy_logo_parent}>
+            {/* User Profile Image */}
+            <div>
+              {profileImage?.square && profileImage.square !== "" ? (
+                <Image
+                  className={styles.rupy_logo_img}
+                  src={profileImage?.square}
+                  alt="UserImage"
+                  width={150}
+                  height={150}
+                />
+              ) : (
+                <Image
+                  className={styles.rupy_logo_img}
+                  src={UserImg}
+                  alt="Dummy"
+                  width={120}
+                  height={120}
+                  style={{
+                    borderColor: backgroundColor ?? "#B13DFF",
+                    borderWidth: 3,
+                    borderStyle: "solid",
+                    borderRadius: 20,
+                  }}
+                />
+              )}
             </div>
-            <div
-              className={styles.InfoSection}
-              style={
-                mode === "dark"
-                  ? {
-                      background: "black",
-                    }
-                  : {}
-              }
-            >
-              <div className={styles.InfoSectionDetails}>
-                <div
-                  className={styles.InfoHeader}
-                  style={{ borderBottom: `1px solid ${backgroundColor}` }}
-                >
-                  <div className={styles.Information}>
-                    {editingFieldName === "firstName" ? (
-                      <div className={styles.FirstNameEdit}>
+
+            {/* User Profile Edit Icon Container */}
+            {edit ? (
+              <div
+                className={styles.userProfileEdit}
+                style={{ backgroundColor }}
+              >
+                {/* Profile Edit Icon Image */}
+                <Image
+                  src={ProfileEditIcon}
+                  alt="ProfileEditIcon"
+                  width={18}
+                  height={18}
+                  onClick={handleShow}
+                />
+              </div>
+            ) : (
+              ""
+            )}
+          </div>
+          <div className={styles.ruby_body_parent}>
+            <div className={styles.rupy_containerOne}>
+              <div className={styles.rupy_name_container}>
+                {/* UserName came to api  */}
+                <div>
+                  {editingFieldName === "firstName" ? (
+                    <div className={styles.FirstNameEdit}>
+                      <input
+                        type="text"
+                        value={userProfile?.data?.firstName || ""}
+                        autoFocus
+                        className={styles.input_line}
+                        onChange={inputChangeHandlers.name}
+                        onBlur={inputBlurHandlers.name}
+                        maxLength={32}
+                        style={mode === "dark" ? { color: "white" } : {}}
+                      />
+                      {userProfile?.error?.firstName && (
+                        <div className={styles.error}>
+                          {userProfile?.error?.firstName}
+                        </div>
+                      )}
+                    </div>
+                  ) : (
+                    <div className={styles.FirstName}>
+                      <p
+                        className={styles.FirstName_text}
+                        style={mode === "dark" ? { color: "white" } : {}}
+                      >
+                        {getAllProfile?.firstName ||
+                          userProfile?.data?.firstName ||
+                          "Your Name"}
+                      </p>
+                      {edit ? (
+                        <div
+                          onClick={editHandlers.name}
+                          className={styles.PencilEdit}
+                        >
+                          {mode === "dark" ? (
+                            <Image
+                              src={PencilView}
+                              alt="PencilDark"
+                              width={25}
+                              height={25}
+                            />
+                          ) : (
+                            <Image
+                              src={PencilViewBlack}
+                              alt="PencilWhite"
+                              width={25}
+                              height={25}
+                            />
+                          )}
+                        </div>
+                      ) : null}
+                    </div>
+                  )}
+                </div>
+                <div>
+                  {/* designation */}
+                  <div className={styles.rupy_job_container}>
+                    {editingFieldName === "designation" ? (
+                      <div className={styles.RoleNameEdit}>
                         <input
                           type="text"
-                          value={userProfile && userProfile?.data?.firstName}
-                          autoFocus
+                          value={userProfile && userProfile?.data?.designation}
                           className={styles.input_line}
-                          onChange={inputChangeHandlers.name}
-                          onBlur={inputBlurHandlers.name}
-                          maxLength={32}
-                          style={
-                            mode === "dark"
-                              ? {
-                                  color: "white",
-                                }
-                              : {}
-                          }
+                          autoFocus
+                          onChange={inputChangeHandlers.job}
+                          onBlur={inputBlurHandlers.job}
+                          maxLength={30}
+                          style={mode === "dark" ? { color: "white" } : {}}
                         />
-                        {userProfile?.error?.firstName && (
+                        {userProfile?.error?.designation && (
                           <div className={styles.error}>
-                            {userProfile?.error?.firstName}
+                            {userProfile?.error?.designation}
                           </div>
                         )}
                       </div>
                     ) : (
-                      <div className={styles.FirstName}>
-                        <h2
-                          style={
-                            mode === "dark"
-                              ? {
-                                  color: "white",
-                                }
-                              : {}
-                          }
-                        >
-                          {getAllProfile?.firstName
-                            ? getAllProfile?.firstName
-                            : (userProfile && userProfile?.data?.firstName) ||
-                              "Your Name"}
-                        </h2>
+                      <div className={styles.RoleName}>
+                        <h3 style={mode === "dark" ? { color: "white" } : {}}>
+                          {getAllProfile?.designation
+                            ? getAllProfile?.designation
+                            : (userProfile && userProfile?.data?.designation) ||
+                              "Designation"}
+                        </h3>
                         {edit ? (
                           <div
-                            onClick={editHandlers.name}
+                            onClick={editHandlers.job}
                             className={styles.PencilEdit}
                           >
                             {mode === "dark" ? (
@@ -537,54 +713,40 @@ export default function FreeTemplateTwo({
                         )}
                       </div>
                     )}
-                    <div>
-                      {editingFieldName === "designation" ? (
+
+                    {/* company name */}
+                    {/* <div>
+                      {editingFieldName === "companyName" ? (
                         <div className={styles.RoleNameEdit}>
                           <input
                             type="text"
                             value={
-                              userProfile && userProfile?.data?.designation
+                              getAllProfile?.companyName ||
+                              (userProfile && userProfile?.data?.companyName)
                             }
                             className={styles.input_line}
                             autoFocus
-                            onChange={inputChangeHandlers.job}
-                            onBlur={inputBlurHandlers.job}
+                            onChange={inputChangeHandlers.companyName}
+                            onBlur={inputBlurHandlers.companyName}
                             maxLength={30}
-                            style={
-                              mode === "dark"
-                                ? {
-                                    // Add style for placeholder text in dark mode
-                                    color: "white",
-                                  }
-                                : {}
-                            }
+                            style={mode === "dark" ? { color: "white" } : {}}
                           />
-                          {userProfile?.error?.designation && (
+                          {userProfile?.error?.companyName && (
                             <div className={styles.error}>
-                              {userProfile?.error?.designation}
+                              {userProfile?.error?.companyName}
                             </div>
                           )}
                         </div>
                       ) : (
                         <div className={styles.RoleName}>
-                          <h3
-                            style={
-                              mode === "dark"
-                                ? {
-                                    color: "white",
-                                  }
-                                : {}
-                            }
-                          >
-                            {getAllProfile?.designation
-                              ? getAllProfile?.designation
-                              : (userProfile &&
-                                  userProfile?.data?.designation) ||
-                                "Designation"}
+                          <h3 style={mode === "dark" ? { color: "white" } : {}}>
+                            {getAllProfile?.companyName ||
+                              (userProfile && userProfile?.data?.companyName) ||
+                              "Company Name"}
                           </h3>
                           {edit ? (
                             <div
-                              onClick={editHandlers.job}
+                              onClick={editHandlers.companyName}
                               className={styles.PencilEdit}
                             >
                               {mode === "dark" ? (
@@ -608,1280 +770,929 @@ export default function FreeTemplateTwo({
                           )}
                         </div>
                       )}
-                    </div>
-                  </div>
-                  <div
-                    className={styles.LogoBrand}
-                    style={
-                      mode === "dark"
-                        ? {
-                            backgroundColor: "#1E1E1E",
-                          }
-                        : {}
-                    }
-                  >
-                    <div className={styles.qrImg}>
-                      {userPlan?.planId !== 1 && qrImage ? (
-                        <img
-                          src={qrImage}
-                          alt="Logo"
-                          className={styles.qrImgLogo}
-                        />
-                      ) : (
-                        <Image
-                          src={mode === "dark" ? LogoBlue : LogoWhite}
-                          alt="Logo"
-                          width={79}
-                          height={19}
-                        />
-                      )}
-                    </div>
-
-                    {edit && userPlan?.planId !== 1 ? (
-                      <div
-                        className={styles.QrEdit}
-                        style={{ backgroundColor }}
-                      >
-                        <Image
-                          src={ProfileEditIcon}
-                          alt="ProfileEditIcon"
-                          width={12}
-                          height={12}
-                          onClick={handleShowLogo}
-                        />
-                      </div>
-                    ) : (
-                      ""
-                    )}
+                    </div> */}
                   </div>
                 </div>
-
-                <div
-                  className={styles.Description}
-                  style={{ borderBottom: `1px solid ${backgroundColor}` }}
-                >
-                  {editingFieldName === "shortDescription" ? (
-                    <div className={styles.DesEdit}>
-                      <Form.Control
-                        as="textarea"
-                        rows={3}
-                        type="text"
-                        autoFocus
-                        value={
-                          userProfile && userProfile?.data?.shortDescription
-                        }
-                        className={styles.input_line_des}
-                        onChange={inputChangeHandlers.desc}
-                        onBlur={inputBlurHandlers.desc}
-                        maxLength={200}
-                        style={
-                          mode === "dark"
-                            ? {
-                                // Add style for placeholder text in dark mode
-                                color: "white",
-                              }
-                            : {}
-                        }
-                      />
-                      {userProfile?.error?.shortDescription && (
-                        <div className={styles.error}>
-                          {userProfile?.error?.shortDescription}
-                        </div>
-                      )}
-                    </div>
+              </div>
+              <div
+                className={styles.LogoBrand}
+                style={mode === "dark" ? { backgroundColor: "#1E1E1E" } : {}}
+              >
+                {/* logo upload */}
+                <div className={styles.qrImg}>
+                  {userPlan?.planId ===2 && qrImage ? (
+                    <img
+                      src={qrImage}
+                      alt="Logo"
+                      className={styles.qrImgLogo}
+                    />
                   ) : (
-                    <div className={styles.DescriptionPara}>
-                      <p
-                        style={
-                          mode === "dark"
-                            ? {
-                                color: "white",
-                              }
-                            : {}
-                        }
-                      >
-                        {getAllProfile?.shortDescription
-                          ? getAllProfile?.shortDescription
-                          : (userProfile &&
-                              userProfile?.data?.shortDescription) ||
-                            "Description"}
-                      </p>
-                      {edit ? (
-                        <div
-                          onClick={editHandlers.desc}
-                          className={styles.PencilEdit}
-                        >
-                          {mode === "dark" ? (
-                            <Image
-                              src={PencilView}
-                              alt="PencilDark"
-                              width={25}
-                              height={25}
-                            />
-                          ) : (
-                            <Image
-                              src={PencilViewBlack}
-                              alt="PencilWhite"
-                              width={25}
-                              height={25}
-                            />
-                          )}
-                        </div>
-                      ) : (
-                        ""
-                      )}
-                    </div>
+                    <Image
+                      src={mode === "dark" ? LogoWhite : LogoBlue}
+                      alt="Logo"
+                      width={80}
+                      height={22}
+                    />
                   )}
                 </div>
 
-                <div className={styles.SaveContactSection}>
-                  <div className={styles.SaveContact}>
-                    <SaveContactUnique
-                      deviceUid={deviceUid}
-                      black=""
-                      saveTextBorderColor=""
-                      saveTextFieldColor=""
-                      saveTextBackColor=""
-                      saveIconBorderColor=""
-                      saveIconBackgroundColor={
-                        backgroundColor || "rgb(245, 50, 50)"
-                      }
-                      saveIconColor=""
-                      fontSize=""
-                      fontWeight=""
-                      firstName={
-                        getAllProfile?.firstName ||
-                        (userProfile && userProfile?.data?.firstName)
-                      }
-                      lastName={
-                        getAllProfile?.lastName ||
-                        (userProfile && userProfile?.data?.lastName)
-                      }
-                      phoneNumber={
-                        getAllProfile?.profilePhoneNumbers ||
-                        (userProfile && userProfile?.data?.profilePhoneNumbers)
-                      }
-                      emailId={
-                        getAllProfile?.profileEmails ||
-                        (userProfile && userProfile?.data?.profileEmails)
-                      }
-                      website={
-                        getAllProfile?.profileWebsites ||
-                        (userProfile && userProfile?.data?.profileWebsites)
-                      }
-                      contacts={
-                        getAllProfile?.address ||
-                        (userProfile && userProfile?.data?.address)
-                      }
-                      state={
-                        getAllProfile?.state ||
-                        (userProfile && userProfile?.data?.state)
-                      }
-                      city={
-                        getAllProfile?.city ||
-                        (userProfile && userProfile?.data?.city)
-                      }
-                      country={
-                        getAllProfile?.state ||
-                        (userProfile && userProfile?.data?.country)
-                      }
-                      deviceId={
-                        getAllProfile?.id ||
-                        (userProfile && userProfile?.data?.id)
-                      }
-                      qrImageUrl={qrImage}
-                      mediaArray={
-                        getAllProfile?.profileSocialMediaLinks ||
-                        (userProfile &&
-                          userProfile?.data?.profileSocialMediaLinks)
-                      }
-                      profileImg={profileImage?.square}
-                      companyName={
-                        getAllProfile?.companyName ||
-                        (userProfile && userProfile?.data?.companyName)
-                      }
-                      designation={
-                        getAllProfile?.designation ||
-                        (userProfile && userProfile?.data?.designation)
-                      }
-                    />
-                    <a
-                      className={styles.Share}
-                      onClick={handleShareIconClick}
-                      style={{
-                        borderColor: backgroundColor,
-                      }}
-                    >
-                      <ShareSVG color={backgroundColor || "rgb(245, 50, 50)"} />
-                    </a>
-                  </div>
-                  <div className={styles.Qr} style={{ backgroundColor }}>
-                    <QrModal
-                      saveIconBorderColor=""
-                      saveIconBackgroundColor=""
-                      qrImageUrl=""
-                      linkVal={userName}
+                {(edit && userPlan?.planId === 2 )? (
+                  <div className={styles.QrEdit} style={{ backgroundColor }}>
+                    <Image
+                      src={ProfileEditIcon}
+                      alt="ProfileEditIcon"
+                      width={12}
+                      height={10}
+                      onClick={handleShowLogo}
                     />
                   </div>
+                ) : (
+                  ""
+                )}
+              </div>
+            </div>
+            {/* contact save */}
+            <div className={styles.ruby_share_container}>
+              <button
+                className={styles.rupy_save_contact_button}
+                style={{ background: backgroundColor || "#007AFF" }}
+                onClick={(e: any) => {
+                  handleClickSave(e);
+                  handleClickEvent(3);
+                }}
+              >
+                Save Contact
+              </button>
+              <div
+                style={
+                  mode === "dark"
+                    ? {
+                        background: "#3B3B3B",
+                      }
+                    : {
+                        background: "rgba(235, 235, 235, 0.70)",
+                      }
+                }
+                className={styles.share_icon_btn}
+                onClick={handleShareIconClick}
+              >
+                <ShareOutlined
+                  className={styles.share_icon}
+                  color={backgroundColor || "#007AFF"}
+                />
+              </div>
+              <div
+                className={styles.share_icon_btn}
+                style={
+                  mode === "dark"
+                    ? {
+                        background: "#3B3B3B",
+                      }
+                    : {
+                        background: "rgba(235, 235, 235, 0.70)",
+                      }
+                }
+              >
+                <div
+                  className={styles.Qr}
+                  style={{ backgroundColor: "transparent" }}
+                >
+                  <QrModal
+                    saveIconBorderColor=""
+                    saveIconBackgroundColor="transparent"
+                    qrImageUrl=""
+                    linkVal={userName}
+                    qrComponent={
+                      <QrOutlined
+                        className={styles.share_icon}
+                        color={backgroundColor || "#007AFF"}
+                      />
+                    }
+                  />
                 </div>
-                {/* Contact Information  */}
-                {showContactSection ? (
-                  <div className={styles.ContactInformation}>
-                    <h2
+              </div>
+            </div>
+            {/* description */}
+            <div className={styles.descriptionContainer}>
+              <div>
+                <VerticalDivider color={backgroundColor || "#007AFF"} />
+              </div>
+              <div className={styles.shortDescription_text_container}>
+                {editingFieldName === "shortDescription" ? (
+                  <div className={styles.DesEdit}>
+                    <Form.Control
+                      as="textarea"
+                      rows={3}
+                      type="text"
+                      autoFocus
+                      value={userProfile && userProfile?.data?.shortDescription}
+                      className={styles.input_line}
+                      onChange={inputChangeHandlers.desc}
+                      onBlur={inputBlurHandlers.desc}
+                      maxLength={200}
+                      style={
+                        mode === "dark"
+                          ? { color: "white" }
+                          : { margin: "0 0 30px" }
+                      }
+                    />
+                    {userProfile?.error?.shortDescription && (
+                      <div className={styles.error}>
+                        {userProfile?.error?.shortDescription}
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <div className={styles.Description}>
+                    <p
+                      style={
+                        mode === "dark"
+                          ? { color: "white" }
+                          : { width: "300px" }
+                      }
+                    >
+                      {getAllProfile?.shortDescription
+                        ? getAllProfile?.shortDescription
+                        : (userProfile &&
+                            userProfile?.data?.shortDescription) ||
+                          "Description"}
+                    </p>
+                    {edit ? (
+                      <div
+                        onClick={editHandlers.desc}
+                        className={styles.PencilEdit}
+                      >
+                        {mode === "dark" ? (
+                          <Image
+                            src={PencilView}
+                            alt="PencilDark"
+                            width={25}
+                            height={25}
+                          />
+                        ) : (
+                          <Image
+                            src={PencilViewBlack}
+                            alt="PencilWhite"
+                            width={25}
+                            height={25}
+                          />
+                        )}
+                      </div>
+                    ) : (
+                      ""
+                    )}
+                  </div>
+                )}
+              </div>
+            </div>
+            <div>
+              <div style={{ border: "", margin: "" }}>
+                <h5
+                  style={
+                    mode === "dark"
+                      ? { color: "white", margin: "0 0 25px 0 " }
+                      : { margin: "0 0 25px 0" }
+                  }
+                >
+                  Contact information
+                </h5>
+                <div className={styles.socialMediaShareParent}>
+                  <div
+                    style={
+                      mode === "dark"
+                        ? {
+                            paddingRight: edit ? "10px" : "0",
+                            background: "#3B3B3B",
+                            color: "#fff",
+                          }
+                        : {
+                            paddingRight: edit ? "10px" : "0",
+                            background: "rgba(235, 235, 235, 0.70)",
+                          }
+                    }
+                    className={styles.socialMediaShareParentContainer}
+                    onClick={(e: any) => {
+                      onCallClick();
+                      handleClick(4);
+                    }}
+                  >
+                    <div className={styles.socialMediaShareInnerContainer}>
+                      <Caller_icon />
+                      <div className={styles.shareInfoContentContainer}>
+                        <p className={styles.shareInfoContent_contact}>
+                          {getAllProfile?.profilePhoneNumbers?.[0]
+                            ?.phoneNumber || phoneNumberField?.phoneNumber}
+                        </p>
+                      </div>
+                    </div>
+                    {edit ? (
+                      <Image
+                        src={mode === "dark" ? PencilView : PencilViewBlack}
+                        alt="PencilWhite"
+                        width={25}
+                        height={25}
+                        className={styles.pointer}
+                        onClick={(e: any) => onEdit(e, 4)}
+                      />
+                    ) : (
+                      <div
+                        style={{
+                          height: "100%",
+                          width: "35px",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          borderRadius: "0 5px 5px 0px",
+                          background: mode === "dark" ? "#292929" : "#E2E2E2",
+                        }}
+                      >
+                        <RightArrow
+                          className={styles.pointer}
+                          onClick={() => onCallClick()}
+                          color={backgroundColor || "#007AFF"}
+                        />
+                      </div>
+                    )}
+                  </div>
+                  {/* Email */}
+                  <div
+                    style={
+                      mode === "dark"
+                        ? {
+                            paddingRight: edit ? "10px" : "0",
+                            background: "#3B3B3B",
+                            color: "#fff",
+                          }
+                        : {
+                            paddingRight: edit ? "10px" : "0",
+                            background: "rgba(235, 235, 235, 0.70)",
+                          }
+                    }
+                    className={styles.socialMediaShareParentContainer}
+                    onClick={(e: any) => {
+                      onMailClick();
+                      handleClick(5);
+                    }}
+                  >
+                    <div className={styles.socialMediaShareInnerContainer}>
+                      <Mail_icon />
+                      <div className={styles.shareInfoContentContainer}>
+                        <p className={styles.shareInfoContent_mail}>
+                          {getAllProfile?.profileEmails?.[0]?.emailId ||
+                            emailIdField?.emailId}
+                        </p>
+                      </div>
+                    </div>
+                    {edit ? (
+                      <Image
+                        src={mode === "dark" ? PencilView : PencilViewBlack}
+                        alt="PencilWhite"
+                        width={25}
+                        height={25}
+                        className={styles.pointer}
+                        onClick={(e: any) => onEdit(e, 5)}
+                      />
+                    ) : (
+                      <div
+                        style={{
+                          height: "100%",
+                          width: "35px",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          borderRadius: "0 5px 5px 0px",
+                          background: mode === "dark" ? "#292929" : "#E2E2E2",
+                        }}
+                      >
+                        <RightArrow
+                          className={styles.pointer}
+                          onClick={() => onMailClick()}
+                          color={backgroundColor || "#007AFF"}
+                        />
+                      </div>
+                    )}
+                  </div>
+                  {/* Website */}
+                  {(showWebsite || edit) && (
+                    <div
                       style={
                         mode === "dark"
                           ? {
-                              color: "white",
+                              paddingRight: edit ? "10px" : "0",
+                              background: "#3B3B3B",
+                              color: "#fff",
                             }
-                          : {}
+                          : {
+                              paddingRight: edit ? "10px" : "0",
+                              background: "rgba(235, 235, 235, 0.70)",
+                            }
                       }
+                      className={styles.socialMediaShareParentContainer}
+                      onClick={(e: any) => {
+                        onWebsiteClick();
+                        handleClick(6);
+                      }}
                     >
-                      Contact Information
-                    </h2>
-                    {/* Phone Number */}
-                    {showPhoneNumber ? (
-                      <div
-                        className={styles.ContactAction}
-                        onClick={() => handleClick(4)}
-                      >
-                        <div
-                          className={styles.ContactActionAll}
-                          style={
-                            mode === "dark"
-                              ? {
-                                  background:
-                                    "linear-gradient(90deg, #262626 0.5%, #3D3D3D 95.48%)",
-                                }
-                              : {}
-                          }
-                        >
-                          <div className={styles.ContactActionBoth}>
-                            <div className={styles.Left}>
-                              <CallSVG
-                                color={backgroundColor || "rgb(245, 50, 50)"}
-                              />
-                            </div>
-                            {getAllProfile?.profilePhoneNumbers?.length > 1 ||
-                            phoneNumberCount > 1 ? (
-                              <div
-                                className={styles.Middle}
-                                onClick={() =>
-                                  setModalType(MODAL_TYPES.mobileNumberView)
-                                }
-                              >
-                                <p
-                                  style={
-                                    mode === "dark"
-                                      ? {
-                                          color: "white",
-                                        }
-                                      : {}
-                                  }
-                                >
-                                  {getAllProfile?.profilePhoneNumbers[0]
-                                    ?.phoneNumber ||
-                                  (phoneNumberField &&
-                                    phoneNumberField.phoneNumber) ? (
-                                    getAllProfile?.profilePhoneNumbers?.[0]
-                                      ?.phoneNumber ||
-                                    phoneNumberField?.phoneNumber
-                                  ) : (
-                                    <span style={{ opacity: 0.5 }}>
-                                      Enter your number
-                                    </span>
-                                  )}
-                                </p>
-                              </div>
+                      <div className={styles.socialMediaShareInnerContainer}>
+                        <WebsiteIcon />
+                        <div className={styles.shareInfoContentContainer}>
+                          <p className={styles.shareInfoContent_mail}>
+                            {getAllProfile?.profileWebsites[0]?.website ||
+                            (websiteField && websiteField?.website) ? (
+                              getAllProfile?.profileWebsites[0]?.website ||
+                              websiteField?.website
                             ) : (
-                              <a
-                                className={styles.Middle}
-                                href={`tel:${
-                                  getAllProfile?.profilePhoneNumbers?.[0]
-                                    ?.phoneNumber ||
-                                  phoneNumberField?.phoneNumber
-                                }`}
-                              >
-                                <p
-                                  style={
-                                    mode === "dark"
-                                      ? {
-                                          color: "white",
-                                        }
-                                      : {}
-                                  }
-                                >
-                                  {getAllProfile?.profilePhoneNumbers[0]
-                                    ?.phoneNumber ||
-                                  (phoneNumberField &&
-                                    phoneNumberField.phoneNumber) ? (
-                                    getAllProfile?.profilePhoneNumbers?.[0]
-                                      ?.phoneNumber ||
-                                    phoneNumberField?.phoneNumber
-                                  ) : (
-                                    <span style={{ opacity: 0.5 }}>
-                                      Enter your number
-                                    </span>
-                                  )}
-                                </p>
-                              </a>
+                              <span style={{ opacity: 0.5 }}>
+                                Enter your website
+                              </span>
                             )}
-                          </div>
-                          {edit ? (
-                            <div
-                              className={styles.Right}
-                              onClick={() =>
-                                setModalType(MODAL_TYPES.mobileNumberEdit)
-                              }
-                              style={
-                                mode === "dark"
-                                  ? {
-                                      background: "#2D2D2D",
-                                      filter:
-                                        "drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))",
-                                    }
-                                  : {}
-                              }
-                            >
-                              {mode === "dark" ? (
-                                <Image
-                                  src={PencilView}
-                                  alt="PencilDark"
-                                  width={25}
-                                  height={25}
-                                />
-                              ) : (
-                                <Image
-                                  src={PencilViewBlack}
-                                  alt="PencilWhite"
-                                  width={25}
-                                  height={25}
-                                />
-                              )}
-                            </div>
-                          ) : getAllProfile?.profilePhoneNumbers?.length > 1 ||
-                            phoneNumberCount > 1 ? (
-                            <div
-                              className={styles.Right}
-                              onClick={() =>
-                                setModalType(MODAL_TYPES.mobileNumberView)
-                              }
-                              style={
-                                mode === "dark"
-                                  ? {
-                                      background: "#2D2D2D",
-                                      filter:
-                                        "drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))",
-                                    }
-                                  : {}
-                              }
-                            >
-                              <DownSVG
-                                color={backgroundColor || "rgb(245, 50, 50)"}
-                              />
-                            </div>
-                          ) : (
-                            <a
-                              className={styles.Right}
-                              href={`tel:${
-                                getAllProfile?.profilePhoneNumbers?.[0]
-                                  ?.phoneNumber || phoneNumberField?.phoneNumber
-                              }`}
-                              style={
-                                mode === "dark"
-                                  ? {
-                                      background: "#2D2D2D",
-                                      filter:
-                                        "drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))",
-                                    }
-                                  : {}
-                              }
-                            >
-                              <DownSVG
-                                color={backgroundColor || "rgb(245, 50, 50)"}
-                              />
-                            </a>
-                          )}
+                          </p>
                         </div>
                       </div>
-                    ) : (
-                      ""
-                    )}
-                    {/* Email */}
-                    {showEmailIds ? (
-                      <div className={styles.ContactAction}>
+                      {edit ? (
+                        <Image
+                          src={mode === "dark" ? PencilView : PencilViewBlack}
+                          alt="PencilWhite"
+                          width={25}
+                          height={25}
+                          className={styles.pointer}
+                          onClick={(e: any) => onEdit(e, 6)}
+                        />
+                      ) : (
                         <div
-                          onClick={() => handleClick(5)}
-                          className={styles.ContactActionAll}
-                          style={
-                            mode === "dark"
-                              ? {
-                                  background:
-                                    "linear-gradient(90deg, #262626 0.5%, #3D3D3D 95.48%)",
-                                }
-                              : {}
-                          }
-                        >
-                          <div className={styles.ContactActionBoth}>
-                            <div className={styles.Left}>
-                              <MailSVG
-                                color={backgroundColor || "rgb(245, 50, 50)"}
-                              />
-                            </div>
-                            {getAllProfile?.profileEmails?.length > 1 ||
-                            emailIdFieldCount > 1 ? (
-                              <div
-                                className={styles.Middle}
-                                onClick={() =>
-                                  setModalType(MODAL_TYPES.emailIdView)
-                                }
-                              >
-                                <p
-                                  style={
-                                    mode === "dark"
-                                      ? {
-                                          color: "white",
-                                        }
-                                      : {}
-                                  }
-                                >
-                                  {getAllProfile?.profileEmails[0]?.emailId ||
-                                  (emailIdField && emailIdField.emailId) ? (
-                                    getAllProfile?.profileEmails[0]?.emailId ||
-                                    emailIdField?.emailId
-                                  ) : (
-                                    <span style={{ opacity: 0.5 }}>
-                                      Enter your Mail id
-                                    </span>
-                                  )}
-                                </p>
-                              </div>
-                            ) : (
-                              <a
-                                className={styles.Middle}
-                                href={`mailto:${
-                                  getAllProfile?.profileEmails?.[0]?.emailId ||
-                                  emailIdField?.emailId
-                                }`}
-                              >
-                                <p
-                                  style={
-                                    mode === "dark"
-                                      ? {
-                                          color: "white",
-                                        }
-                                      : {}
-                                  }
-                                >
-                                  {getAllProfile?.profileEmails[0]?.emailId ||
-                                  (emailIdField && emailIdField.emailId) ? (
-                                    getAllProfile?.profileEmails[0]?.emailId ||
-                                    emailIdField?.emailId
-                                  ) : (
-                                    <span style={{ opacity: 0.5 }}>
-                                      Enter your Mail id
-                                    </span>
-                                  )}
-                                </p>
-                              </a>
-                            )}
-                          </div>
-                          {edit ? (
-                            <div
-                              className={styles.Right}
-                              onClick={() =>
-                                setModalType(MODAL_TYPES.emailIdEdit)
-                              }
-                              style={
-                                mode === "dark"
-                                  ? {
-                                      background: "#2D2D2D",
-                                      filter:
-                                        "drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))",
-                                    }
-                                  : {}
-                              }
-                            >
-                              {mode === "dark" ? (
-                                <Image
-                                  src={PencilView}
-                                  alt="PencilDark"
-                                  width={25}
-                                  height={25}
-                                />
-                              ) : (
-                                <Image
-                                  src={PencilViewBlack}
-                                  alt="PencilWhite"
-                                  width={25}
-                                  height={25}
-                                />
-                              )}
-                            </div>
-                          ) : getAllProfile?.profileEmails?.length > 1 ||
-                            emailIdFieldCount > 1 ? (
-                            <div
-                              className={styles.Right}
-                              onClick={() =>
-                                setModalType(MODAL_TYPES.emailIdView)
-                              }
-                              style={
-                                mode === "dark"
-                                  ? {
-                                      background: "#2D2D2D",
-                                      filter:
-                                        "drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))",
-                                    }
-                                  : {}
-                              }
-                            >
-                              <DownSVG
-                                color={backgroundColor || "rgb(245, 50, 50)"}
-                              />
-                            </div>
-                          ) : (
-                            <a
-                              className={styles.Right}
-                              href={`mailto:${
-                                getAllProfile?.profileEmails?.[0]?.emailId ||
-                                emailIdField?.emailId
-                              }`}
-                              style={
-                                mode === "dark"
-                                  ? {
-                                      background: "#2D2D2D",
-                                      filter:
-                                        "drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))",
-                                    }
-                                  : {}
-                              }
-                            >
-                              <DownSVG
-                                color={backgroundColor || "rgb(245, 50, 50)"}
-                              />
-                            </a>
-                          )}
-                        </div>
-                      </div>
-                    ) : (
-                      ""
-                    )}
-                    {/* Website */}
-                    {showWebsite ? (
-                      <div className={styles.ContactAction}>
-                        <div
-                          onClick={() => {
-                            handleClick(6);
+                          style={{
+                            height: "100%",
+                            width: "35px",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            borderRadius: "0 5px 5px 0px",
+                            background: mode === "dark" ? "#292929" : "#E2E2E2",
                           }}
-                          className={styles.ContactActionAll}
-                          style={
-                            mode === "dark"
-                              ? {
-                                  background:
-                                    "linear-gradient(90deg, #262626 0.5%, #3D3D3D 95.48%)",
-                                }
-                              : {}
-                          }
                         >
-                          <div className={styles.ContactActionBoth}>
-                            <div className={styles.Left}>
-                              <WebSVG
-                                color={backgroundColor || "rgb(245, 50, 50)"}
-                              />
-                            </div>
-                            {getAllProfile?.profileWebsites?.length > 1 ||
-                            websiteFieldCount > 1 ? (
-                              <div
-                                className={styles.Middle}
-                                onClick={() =>
-                                  setModalType(MODAL_TYPES.websiteView)
-                                }
-                              >
-                                <p
-                                  style={
-                                    mode === "dark"
-                                      ? {
-                                          color: "white",
-                                        }
-                                      : {}
-                                  }
-                                >
-                                  {getAllProfile?.profileWebsites[0]?.website ||
-                                  (websiteField && websiteField?.website) ? (
-                                    getAllProfile?.profileWebsites[0]
-                                      ?.website || websiteField?.website
-                                  ) : (
-                                    <span style={{ opacity: 0.5 }}>
-                                      Enter your website
-                                    </span>
-                                  )}
-                                </p>
-                              </div>
-                            ) : (
-                              <a
-                                className={styles.Middle}
-                                href={`${
-                                  getAllProfile?.profileWebsites?.[0]
-                                    ?.website || websiteField?.website
-                                }`}
-                                target="_blank"
-                                rel="noreferrer"
-                              >
-                                <p
-                                  style={
-                                    mode === "dark"
-                                      ? {
-                                          color: "white",
-                                        }
-                                      : {}
-                                  }
-                                >
-                                  {getAllProfile?.profileWebsites[0]?.website ||
-                                  (websiteField && websiteField?.website) ? (
-                                    getAllProfile?.profileWebsites[0]
-                                      ?.website || websiteField?.website
-                                  ) : (
-                                    <span style={{ opacity: 0.5 }}>
-                                      Enter your website
-                                    </span>
-                                  )}
-                                </p>
-                              </a>
-                            )}
-                          </div>
+                          <RightArrow
+                            className={styles.pointer}
+                            onClick={(e: any) => {
+                              handleClick(6);
+                              onWebsiteClick();
+                            }}
+                            color={backgroundColor || "#007AFF"}
+                          />
+                        </div>
+                      )}
+                    </div>
+                  )}
+                  {/* Location */}
 
-                          {edit ? (
-                            <div
-                              className={styles.Right}
-                              onClick={() =>
-                                setModalType(MODAL_TYPES.websiteEdit)
-                              }
-                              style={
-                                mode === "dark"
-                                  ? {
-                                      background: "#2D2D2D",
-                                      filter:
-                                        "drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))",
-                                    }
-                                  : {}
-                              }
-                            >
-                              {mode === "dark" ? (
-                                <Image
-                                  src={PencilView}
-                                  alt="PencilDark"
-                                  width={25}
-                                  height={25}
-                                />
-                              ) : (
-                                <Image
-                                  src={PencilViewBlack}
-                                  alt="PencilWhite"
-                                  width={25}
-                                  height={25}
-                                />
-                              )}
-                            </div>
-                          ) : getAllProfile?.profileWebsites?.length > 1 ||
-                            websiteFieldCount > 1 ? (
-                            <div
-                              className={styles.Right}
-                              onClick={() =>
-                                setModalType(MODAL_TYPES.websiteView)
-                              }
-                              style={
-                                mode === "dark"
-                                  ? {
-                                      background: "#2D2D2D",
-                                      filter:
-                                        "drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))",
-                                    }
-                                  : {}
-                              }
-                            >
-                              <DownSVG
-                                color={backgroundColor || "rgb(245, 50, 50)"}
-                              />
-                            </div>
-                          ) : (
-                            <a
-                              className={styles.Right}
-                              href={`${
-                                getAllProfile?.profileWebsites?.[0]?.website ||
-                                websiteField?.website
-                              }`}
-                              target="_blank"
-                              rel="noreferrer"
-                              style={
-                                mode === "dark"
-                                  ? {
-                                      background: "#2D2D2D",
-                                      filter:
-                                        "drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))",
-                                    }
-                                  : {}
-                              }
-                            >
-                              <DownSVG
-                                color={backgroundColor || "rgb(245, 50, 50)"}
-                              />
-                            </a>
-                          )}
+                  {(showAddress || edit) && (
+                    <div
+                      style={
+                        mode === "dark"
+                          ? {
+                              paddingRight: edit ? "10px" : "0",
+                              background: "#3B3B3B",
+                              color: "#fff",
+                            }
+                          : {
+                              paddingRight: edit ? "10px" : "0",
+                              background: "rgba(235, 235, 235, 0.70)",
+                            }
+                      }
+                      className={styles.socialMediaShareParentContainer}
+                      onClick={(e: any) => {
+                        handleClick(7);
+                        setModalType(MODAL_TYPES.addressView);
+                        window.open(
+                          `https://www.google.com/maps/search/?api=1&query=${
+                            val2 || ""
+                          }+${getAllProfile?.city || userProfile?.data?.city}+${
+                            getAllProfile?.country || userProfile?.data?.country
+                          }`,
+                          "_blank"
+                        );
+                      }}
+                    >
+                      <div className={styles.socialMediaShareInnerContainer}>
+                        <MapsIcon />
+                        <div className={styles.shareInfoContentContainer}>
+                          <p className={styles.shareInfoContent_mail}>
+                            {getAllProfile?.city || userProfile?.data?.city ? (
+                              `${
+                                getAllProfile?.city || userProfile?.data?.city
+                              }, ${
+                                getAllProfile?.country ||
+                                userProfile?.data?.country
+                              }`
+                            ) : (
+                              <span style={{ opacity: 0.5 }}>
+                                Enter city and country
+                              </span>
+                            )}
+                          </p>
                         </div>
                       </div>
-                    ) : (
-                      ""
-                    )}
-                    {/* Address */}
-                    {showAddress ? (
-                      <div className={styles.ContactAction}>
+                      {edit ? (
+                        <Image
+                          src={mode === "dark" ? PencilView : PencilViewBlack}
+                          alt="PencilWhite"
+                          width={25}
+                          height={25}
+                          className={styles.pointer}
+                          onClick={(e: any) => onEdit(e, 7)}
+                        />
+                      ) : (
                         <div
-                          onClick={() => handleClick(7)}
-                          className={styles.ContactActionAll}
-                          style={
-                            mode === "dark"
-                              ? {
-                                  background:
-                                    "linear-gradient(90deg, #262626 0.5%, #3D3D3D 95.48%)",
-                                }
-                              : {}
-                          }
+                          style={{
+                            height: "100%",
+                            width: "35px",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            borderRadius: "0 5px 5px 0px",
+                            background: mode === "dark" ? "#292929" : "#E2E2E2",
+                          }}
                         >
-                          <div className={styles.ContactActionBoth}>
-                            <div className={styles.Left}>
-                              <a
-                                target="_blank"
-                                href={`https://www.google.com/maps/search/?api=1&query=${
+                          <RightArrow
+                            className={styles.pointer}
+                            onClick={(e: any) => {
+                              handleClick(7);
+                              setModalType(MODAL_TYPES.addressView);
+                              window.open(
+                                `https://www.google.com/maps/search/?api=1&query=${
                                   val2 || ""
                                 }+${
                                   getAllProfile?.city || userProfile?.data?.city
                                 }+${
                                   getAllProfile?.country ||
                                   userProfile?.data?.country
-                                }`}
-                                rel="noreferrer"
-                              >
-                                <LocationSVG
-                                  color={backgroundColor || "rgb(245, 50, 50)"}
-                                />
-                              </a>
-                            </div>
-                            <div
-                              className={styles.Middle}
-                              onClick={() => {
-                                setModalType(MODAL_TYPES.addressView);
-                                window.open(
-                                  `https://www.google.com/maps/search/?api=1&query=${
-                                    val2 || ""
-                                  }+${
-                                    getAllProfile?.city ||
-                                    userProfile?.data?.city
-                                  }+${
-                                    getAllProfile?.country ||
-                                    userProfile?.data?.country
-                                  }`
-                                );
-                              }}
-                            >
-                              <p
-                                style={
-                                  mode === "dark"
-                                    ? {
-                                        color: "white",
-                                      }
-                                    : {}
-                                }
-                              >
-                                {/* {getAllProfile?.city
-                                  ? `${getAllProfile?.city}, ${getAllProfile?.country}`
-                                  : `${userProfile?.data?.city}, ${userProfile?.data?.country}`} */}
-
-                                {getAllProfile?.city ||
-                                userProfile?.data?.city ? (
-                                  `${
-                                    getAllProfile?.city ||
-                                    userProfile?.data?.city
-                                  }, ${
-                                    getAllProfile?.country ||
-                                    userProfile?.data?.country
-                                  }`
-                                ) : (
-                                  <span style={{ opacity: 0.5 }}>
-                                    Enter city and country
-                                  </span>
-                                )}
-                              </p>
-                            </div>
-                          </div>
-                          {edit ? (
-                            <div
-                              className={styles.Right}
-                              onClick={() =>
-                                setModalType(MODAL_TYPES.addressEdit)
-                              }
-                              style={
-                                mode === "dark"
-                                  ? {
-                                      background: "#2D2D2D",
-                                      filter:
-                                        "drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))",
-                                    }
-                                  : {}
-                              }
-                            >
-                              {mode === "dark" ? (
-                                <Image
-                                  src={PencilView}
-                                  alt="PencilDark"
-                                  width={25}
-                                  height={25}
-                                />
-                              ) : (
-                                <Image
-                                  src={PencilViewBlack}
-                                  alt="PencilWhite"
-                                  width={25}
-                                  height={25}
-                                />
-                              )}
-                            </div>
-                          ) : (
-                            <div
-                              className={styles.Right}
-                              onClick={() =>
-                                setModalType(MODAL_TYPES.addressView)
-                              }
-                              style={
-                                mode === "dark"
-                                  ? {
-                                      background: "#2D2D2D",
-                                      filter:
-                                        "drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))",
-                                    }
-                                  : {}
-                              }
-                            >
-                              <DownSVG
-                                color={backgroundColor || "rgb(245, 50, 50)"}
-                              />
-                            </div>
-                          )}
+                                }`,
+                                "_blank"
+                              );
+                            }}
+                            color={backgroundColor || "#007AFF"}
+                          />
                         </div>
-                      </div>
-                    ) : (
-                      ""
-                    )}
-                  </div>
-                ) : (
-                  ""
-                )}
-                {/* Social Media */}
-                {modeId === 1 ? null : (
-                  <>
-                    {showSocialMediaSection ? (
-                      <div className={styles.socialSection}>
-                        <div className={styles.SocialEdit}>
-                          <h2
-                            style={
-                              mode === "dark"
-                                ? {
-                                    color: "white",
-                                  }
-                                : {}
-                            }
-                          >
-                            Social Media
-                          </h2>
-                          {edit ? (
-                            <div
-                              className={styles.SocialEditImg}
-                              onClick={() =>
-                                setModalType(MODAL_TYPES.socialEdit)
-                              }
-                            >
-                              {mode === "dark" ? (
-                                <Image
-                                  src={PencilView}
-                                  alt="PencilDark"
-                                  width={25}
-                                  height={25}
-                                />
-                              ) : (
-                                <Image
-                                  src={PencilViewBlack}
-                                  alt="PencilWhite"
-                                  width={25}
-                                  height={25}
-                                />
-                              )}
-                            </div>
-                          ) : (
-                            ""
-                          )}
-                        </div>
-
-                        <div className={styles.SocialMediaIcons}>
-                          {edit || mediaLinks.instaLink !== "#" ? (
-                            <a
-                              onClick={() => {
-                                handleClick(8);
-                              }}
-                              className={styles.SocailInfo}
-                              href={mediaLinks.instaLink}
-                              target="_blank"
-                              rel="noreferrer"
-                              style={{
-                                pointerEvents:
-                                  mediaLinks.instaLink !== "#"
-                                    ? undefined
-                                    : "none",
-                                ...(mode === "dark"
-                                  ? {
-                                      background:
-                                        "linear-gradient(90deg, #262626 0.5%, #3D3D3D 95.48%)",
-                                    }
-                                  : {}),
-                              }}
-                            >
-                              <InstaSVG
-                                color={backgroundColor || "rgb(245, 50, 50)"}
-                              />
-                            </a>
-                          ) : (
-                            ""
-                          )}
-                          {edit || mediaLinks.facebookLink !== "#" ? (
-                            <a
-                              onClick={() => {
-                                handleClick(11);
-                              }}
-                              className={styles.SocailInfo}
-                              href={mediaLinks.facebookLink}
-                              target="_blank"
-                              rel="noreferrer"
-                              style={{
-                                pointerEvents:
-                                  mediaLinks.facebookLink !== "#"
-                                    ? undefined
-                                    : "none",
-                                ...(mode === "dark"
-                                  ? {
-                                      background:
-                                        "linear-gradient(90deg, #262626 0.5%, #3D3D3D 95.48%)",
-                                    }
-                                  : {}),
-                              }}
-                            >
-                              <FacebookSVG
-                                color={backgroundColor || "rgb(245, 50, 50)"}
-                              />
-                            </a>
-                          ) : (
-                            ""
-                          )}
-                          {edit || mediaLinks.linkedInLink !== "#" ? (
-                            <a
-                              onClick={() => {
-                                handleClick(9);
-                              }}
-                              className={styles.SocailInfo}
-                              href={mediaLinks.linkedInLink}
-                              target="_blank"
-                              rel="noreferrer"
-                              style={{
-                                backgroundColor,
-                                pointerEvents:
-                                  mediaLinks.linkedInLink !== "#"
-                                    ? undefined
-                                    : "none",
-                                ...(mode === "dark"
-                                  ? {
-                                      background:
-                                        "linear-gradient(90deg, #262626 0.5%, #3D3D3D 95.48%)",
-                                    }
-                                  : {}),
-                              }}
-                            >
-                              <LinkDinSVG
-                                color={backgroundColor || "rgb(245, 50, 50)"}
-                              />
-                            </a>
-                          ) : (
-                            ""
-                          )}
-                          {edit || mediaLinks.twitterLink !== "#" ? (
-                            <a
-                              onClick={() => {
-                                handleClick(10);
-                              }}
-                              className={styles.SocailInfo}
-                              href={mediaLinks.twitterLink}
-                              target="_blank"
-                              rel="noreferrer"
-                              style={{
-                                backgroundColor,
-                                pointerEvents:
-                                  mediaLinks.twitterLink !== "#"
-                                    ? undefined
-                                    : "none",
-                                ...(mode === "dark"
-                                  ? {
-                                      background:
-                                        "linear-gradient(90deg, #262626 0.5%, #3D3D3D 95.48%)",
-                                    }
-                                  : {}),
-                              }}
-                            >
-                              <TwitterSVG
-                                color={backgroundColor || "rgb(245, 50, 50)"}
-                              />
-                            </a>
-                          ) : (
-                            ""
-                          )}
-                          {edit || mediaLinks.whatsAppLink !== "#" ? (
-                            <a
-                              className={styles.SocailInfo}
-                              href={`https://wa.me/+91${mediaLinks.whatsAppLink}`}
-                              target="_blank"
-                              rel="noreferrer"
-                              style={{
-                                pointerEvents:
-                                  mediaLinks.whatsAppLink !== "#"
-                                    ? undefined
-                                    : "none",
-                                ...(mode === "dark"
-                                  ? {
-                                      background:
-                                        "linear-gradient(90deg, #262626 0.5%, #3D3D3D 95.48%)",
-                                    }
-                                  : {}),
-                              }}
-                            >
-                              <WatsSVG
-                                color={backgroundColor || "rgb(245, 50, 50)"}
-                              />
-                            </a>
-                          ) : (
-                            ""
-                          )}
-                          {edit || mediaLinks.youtubeLink !== "#" ? (
-                            <a
-                              onClick={() => {
-                                handleClick(12);
-                              }}
-                              className={styles.SocailInfo}
-                              href={mediaLinks.youtubeLink}
-                              target="_blank"
-                              rel="noreferrer"
-                              style={{
-                                backgroundColor,
-                                pointerEvents:
-                                  mediaLinks.youtubeLink !== "#"
-                                    ? undefined
-                                    : "none",
-                                ...(mode === "dark"
-                                  ? {
-                                      background:
-                                        "linear-gradient(90deg, #262626 0.5%, #3D3D3D 95.48%)",
-                                    }
-                                  : {}),
-                              }}
-                            >
-                              <YoutubeSVG
-                                color={backgroundColor || "rgb(245, 50, 50)"}
-                              />
-                            </a>
-                          ) : (
-                            ""
-                          )}
-                        </div>
-                      </div>
-                    ) : (
-                      ""
-                    )}
-
-                    {/* Digital Payments */}
-                    {showDigitalPaymentSection ? (
-                      <div className={styles.DigitalPayment}>
-                        <div className={styles.PaymentInformationHead}>
-                          <h2
-                            style={
-                              mode === "dark"
-                                ? {
-                                    color: "white",
-                                  }
-                                : {}
-                            }
-                          >
-                            Digital Payments
-                          </h2>
-                          {edit ? (
-                            <div
-                              className={styles.DigitalEditImg}
-                              onClick={() =>
-                                setModalType(MODAL_TYPES.digitalEdit)
-                              }
-                            >
-                              {mode === "dark" ? (
-                                <Image
-                                  src={PencilView}
-                                  alt="PencilDark"
-                                  width={25}
-                                  height={25}
-                                />
-                              ) : (
-                                <Image
-                                  src={PencilViewBlack}
-                                  alt="PencilWhite"
-                                  width={25}
-                                  height={25}
-                                />
-                              )}
-                            </div>
-                          ) : (
-                            ""
-                          )}
-                        </div>
-                        <div className={styles.DigitalMediaIcons}>
-                          {edit || digitalPayments.gPay.digitalPaymentLink ? (
-                            <div
-                              className={styles.DigitalInfo}
-                              onClick={() => {
-                                handlePaymentClick(
-                                  digitalPayments.gPay.digitalPaymentLink
-                                );
-                                handleClick(13);
-                              }}
-                              style={{
-                                pointerEvents:
-                                  digitalPayments.gPay.digitalPaymentLink !==
-                                  "#"
-                                    ? undefined
-                                    : "none",
-                                ...(mode === "dark"
-                                  ? {
-                                      background:
-                                        "linear-gradient(90deg, #262626 0.5%, #3D3D3D 95.48%)",
-                                    }
-                                  : {}),
-                              }}
-                            >
-                              <Image src={Gpay} alt="gpay" />
-                            </div>
-                          ) : (
-                            ""
-                          )}
-                          {edit ||
-                          digitalPayments.phonePe.digitalPaymentLink ? (
-                            <div
-                              className={styles.DigitalInfo}
-                              onClick={() => {
-                                handlePaymentClick(
-                                  digitalPayments.phonePe.digitalPaymentLink
-                                );
-                                handleClick(14);
-                              }}
-                              style={{
-                                pointerEvents:
-                                  digitalPayments.phonePe.digitalPaymentLink !==
-                                  "#"
-                                    ? undefined
-                                    : "none",
-                                ...(mode === "dark"
-                                  ? {
-                                      background:
-                                        "linear-gradient(90deg, #262626 0.5%, #3D3D3D 95.48%)",
-                                    }
-                                  : {}),
-                              }}
-                            >
-                              <Image
-                                src={mode === "dark" ? PhonePeWhite : PhonePe}
-                                alt="PhonePe"
-                              />
-                            </div>
-                          ) : (
-                            ""
-                          )}
-                          {edit || digitalPayments.payTm.digitalPaymentLink ? (
-                            <div
-                              className={styles.DigitalInfo}
-                              onClick={() => {
-                                handlePaymentClick(
-                                  digitalPayments.payTm.digitalPaymentLink
-                                );
-                                handleClick(15);
-                              }}
-                              style={{
-                                pointerEvents:
-                                  digitalPayments.payTm.digitalPaymentLink !==
-                                  "#"
-                                    ? undefined
-                                    : "none",
-                                ...(mode === "dark"
-                                  ? {
-                                      background:
-                                        "linear-gradient(90deg, #262626 0.5%, #3D3D3D 95.48%)",
-                                    }
-                                  : {}),
-                              }}
-                            >
-                              <Image
-                                src={mode === "dark" ? PaytmWhite : Paytm}
-                                alt="Paytm"
-                              />
-                            </div>
-                          ) : (
-                            ""
-                          )}
-                        </div>
-                      </div>
-                    ) : (
-                      ""
-                    )}
-                  </>
-                )}
-
-                {/* Footer */}
-                <div
-                  className={styles.TemplateFooter}
-                  style={
-                    mode === "dark"
-                      ? {
-                          borderTop: "1px solid white",
-                        }
-                      : {}
-                  }
-                >
-                  <h3
-                    style={
-                      mode === "dark"
-                        ? {
-                            color: "white",
-                          }
-                        : {}
-                    }
-                  >
-                    Go Digital - Save Paper, Trees & Our Earth.
-                  </h3>
-                  <div className={styles.SubscribeText}>
-                    <Button href="/">Try Now</Button>
-                  </div>
-                  <p
-                    style={
-                      mode === "dark"
-                        ? {
-                            color: "white",
-                          }
-                        : {}
-                    }
-                  >
-                    Powered by bubbl cards.
-                  </p>
+                      )}
+                    </div>
+                  )}
                 </div>
+              </div>
+              {(showSocialMediaSection || edit) && (
+                <div className={styles.socialLink_text_container}>
+                  <div>
+                    <h5 style={mode === "dark" ? { color: "white" } : {}}>
+                      Social Links
+                    </h5>
+                  </div>
+                  <div className={styles.socialLink_edit_container}>
+                    {edit && (
+                      <Image
+                        src={mode === "dark" ? PencilView : PencilViewBlack}
+                        alt="PencilWhite"
+                        width={25}
+                        height={25}
+                        className={styles.pointer}
+                        onClick={() => setModalType(MODAL_TYPES.socialEdit)}
+                        style={{ border: "1px solid red" }}
+                      />
+                    )}
+                  </div>
+                </div>
+              )}
+              <div className={styles.socialMediaShareParent}>
+                {mediaLinks?.instaLink && mediaLinks?.instaLink.length > 5 && (
+                  <div
+                    style={
+                      mode === "dark"
+                        ? {
+                            background: "#3B3B3B",
+                            color: "#fff",
+                          }
+                        : {
+                            background: "rgba(235, 235, 235, 0.70)",
+                          }
+                    }
+                    className={styles.socialMediaShareParentContainer}
+                    onClick={() => {
+                      onSocialClick(mediaLinks?.instaLink);
+                    }}
+                  >
+                    <div className={styles.socialMediaShareInnerContainer}>
+                      <Instagram_icon />
+                      <div className={styles.shareInfoContentContainer}>
+                        <h2 className={styles.shareInfoTitle}>Instagram</h2>
+                      </div>
+                    </div>
+                    <div
+                      style={{
+                        height: "100%",
+                        width: "35px",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        borderRadius: "0 5px 5px 0px",
+                        background: mode === "dark" ? "#292929" : "#E2E2E2",
+                      }}
+                    >
+                      <RightArrow
+                        className={styles.pointer}
+                        color={backgroundColor || "#007AFF"}
+                      />
+                    </div>
+                  </div>
+                )}
+                {mediaLinks?.twitterLink && mediaLinks?.twitterLink.length > 5 && (
+                  <div
+                    style={
+                      mode === "dark"
+                        ? {
+                            background: "#3B3B3B",
+                            color: "#fff",
+                          }
+                        : {
+                            background: "rgba(235, 235, 235, 0.70)",
+                          }
+                    }
+                    className={styles.socialMediaShareParentContainer}
+                    onClick={() => {
+                      onSocialClick(mediaLinks?.twitterLink);
+                    }}
+                  >
+                    <div className={styles.socialMediaShareInnerContainer}>
+                      <Twitter_icon />
+                      <div className={styles.shareInfoContentContainer}>
+                        <h2 className={styles.shareInfoTitle}>Twitter</h2>
+                      </div>
+                    </div>
+                    <div
+                      style={{
+                        height: "100%",
+                        width: "35px",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        borderRadius: "0 5px 5px 0px",
+                        background: mode === "dark" ? "#292929" : "#E2E2E2",
+                      }}
+                    >
+                      <RightArrow
+                        className={styles.pointer}
+                        color={backgroundColor || "#007AFF"}
+                      />
+                    </div>
+                  </div>
+                )}
+                {mediaLinks?.linkedInLink &&
+                  mediaLinks?.linkedInLink.length > 5 && (
+                    <div
+                      style={
+                        mode === "dark"
+                          ? {
+                              background: "#3B3B3B",
+                              color: "#fff",
+                            }
+                          : {
+                              background: "rgba(235, 235, 235, 0.70)",
+                            }
+                      }
+                      className={styles.socialMediaShareParentContainer}
+                      onClick={() => {
+                        onSocialClick(mediaLinks?.linkedInLink);
+                      }}
+                    >
+                      <div className={styles.socialMediaShareInnerContainer}>
+                        <Linkedin_icon />
+                        <div className={styles.shareInfoContentContainer}>
+                          <h2 className={styles.shareInfoTitle}>Linked in</h2>
+                        </div>
+                      </div>
+                      <div
+                        style={{
+                          height: "100%",
+                          width: "35px",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          borderRadius: "0 5px 5px 0px",
+                          background: mode === "dark" ? "#292929" : "#E2E2E2",
+                        }}
+                      >
+                        <RightArrow
+                          className={styles.pointer}
+                          color={backgroundColor || "#007AFF"}
+                        />
+                      </div>{" "}
+                    </div>
+                  )}
+                {mediaLinks?.youtubeLink && mediaLinks?.youtubeLink.length > 5 && (
+                  <div
+                    style={
+                      mode === "dark"
+                        ? {
+                            background: "#3B3B3B",
+                            color: "#fff",
+                          }
+                        : {
+                            background: "rgba(235, 235, 235, 0.70)",
+                          }
+                    }
+                    className={styles.socialMediaShareParentContainer}
+                    onClick={() => {
+                      onSocialClick(mediaLinks?.youtubeLink);
+                    }}
+                  >
+                    <div className={styles.socialMediaShareInnerContainer}>
+                      <Youtube />
+                      <div className={styles.shareInfoContentContainer}>
+                        <h2 className={styles.shareInfoTitle}>Youtube</h2>
+                      </div>
+                    </div>
+                    <div
+                      style={{
+                        height: "100%",
+                        width: "35px",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        borderRadius: "0 5px 5px 0px",
+                        background: mode === "dark" ? "#292929" : "#E2E2E2",
+                      }}
+                    >
+                      <RightArrow
+                        className={styles.pointer}
+                        color={backgroundColor || "#007AFF"}
+                      />
+                    </div>
+                  </div>
+                )}
+                {mediaLinks?.facebookLink &&
+                  mediaLinks?.facebookLink.length > 5 && (
+                    <div
+                      style={
+                        mode === "dark"
+                          ? {
+                              background: "#3B3B3B",
+                              color: "#fff",
+                            }
+                          : {
+                              background: "rgba(235, 235, 235, 0.70)",
+                            }
+                      }
+                      className={styles.socialMediaShareParentContainer}
+                      onClick={() => {
+                        onSocialClick(mediaLinks?.facebookLink);
+                      }}
+                    >
+                      <div className={styles.socialMediaShareInnerContainer}>
+                        <Facebook />
+                        <div className={styles.shareInfoContentContainer}>
+                          <h2 className={styles.shareInfoTitle}>Facebook</h2>
+                        </div>
+                      </div>
+                      <div
+                        style={{
+                          height: "100%",
+                          width: "35px",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          borderRadius: "0 5px 5px 0px",
+                          background: mode === "dark" ? "#292929" : "#E2E2E2",
+                        }}
+                      >
+                        <RightArrow
+                          className={styles.pointer}
+                          color={backgroundColor || "#007AFF"}
+                        />
+                      </div>
+                    </div>
+                  )}
+                {mediaLinks?.whatsAppLink &&
+                  mediaLinks?.whatsAppLink.length > 5 && (
+                    <div
+                      style={
+                        mode === "dark"
+                          ? {
+                              background: "#3B3B3B",
+                              color: "#fff",
+                            }
+                          : {
+                              background: "rgba(235, 235, 235, 0.70)",
+                            }
+                      }
+                      className={styles.socialMediaShareParentContainer}
+                      onClick={() => {
+                        const whatsappURL = `https://wa.me/${mediaLinks.whatsAppLink}`;
+                        onSocialClick(whatsappURL); // Optional if you still want to handle analytics or tracking
+                        window.open(whatsappURL, "_blank"); // Open the WhatsApp link in a new tab
+                      }}
+                    >
+                      <div className={styles.socialMediaShareInnerContainer}>
+                        <Whatsapp />
+                        <div className={styles.shareInfoContentContainer}>
+                          <h2 className={styles.shareInfoTitle}>WhatsApp</h2>
+                        </div>
+                      </div>
+                      <div
+                        style={{
+                          height: "100%",
+                          width: "35px",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          borderRadius: "0 5px 5px 0px",
+                          background: mode === "dark" ? "#292929" : "#E2E2E2",
+                        }}
+                      >
+                        <RightArrow
+                          className={styles.pointer}
+                          color={backgroundColor || "#007AFF"}
+                        />
+                      </div>
+                    </div>
+                  )}
+              </div>
+              {(showDigitalPaymentSection || edit) && (
+                <div className={styles.socialLink_text_container}>
+                  <div>
+                    <h5 style={mode === "dark" ? { color: "white" } : {}}>
+                      Digital Payments
+                    </h5>
+                  </div>
+                  <div>
+                    {edit && (
+                      <Image
+                        src={mode === "dark" ? PencilView : PencilViewBlack}
+                        alt="PencilWhite"
+                        width={25}
+                        height={25}
+                        className={styles.pointer}
+                        onClick={() => setModalType(MODAL_TYPES.digitalEdit)}
+                      />
+                    )}
+                  </div>
+                </div>
+              )}
+              <div className={styles.socialMediaShareParent}>
+                {digitalPayments.gPay.digitalPaymentLink &&
+                  digitalPayments.gPay.digitalPaymentLink.length > 5 && (
+                    <div
+                      style={
+                        mode === "dark"
+                          ? {
+                              background: "#3B3B3B",
+                              color: "#fff",
+                            }
+                          : {
+                              background: "rgba(235, 235, 235, 0.70)",
+                            }
+                      }
+                      className={styles.socialMediaShareParentContainer}
+                      onClick={() => {
+                        handlePaymentClick(
+                          digitalPayments.gPay.digitalPaymentLink
+                        );
+                        handleClick(13);
+                      }}
+                    >
+                      <div className={styles.socialMediaShareInnerContainer}>
+                        <GooglePay />
+                        <div className={styles.shareInfoContentContainer}>
+                          <h2 className={styles.shareInfoTitle}>Google Pay</h2>
+                        </div>
+                      </div>
+                      <div
+                        style={{
+                          height: "100%",
+                          width: "35px",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          borderRadius: "0 5px 5px 0px",
+                          background: mode === "dark" ? "#292929" : "#E2E2E2",
+                        }}
+                      >
+                        <RightArrow
+                          className={styles.pointer}
+                          color={backgroundColor || "#007AFF"}
+                        />
+                      </div>
+                    </div>
+                  )}
+
+                {digitalPayments.phonePe.digitalPaymentLink &&
+                  digitalPayments.phonePe.digitalPaymentLink.length > 5 && (
+                    <div
+                      style={
+                        mode === "dark"
+                          ? {
+                              background: "#3B3B3B",
+                              color: "#fff",
+                            }
+                          : {
+                              background: "rgba(235, 235, 235, 0.70)",
+                            }
+                      }
+                      className={styles.socialMediaShareParentContainer}
+                      onClick={() => {
+                        handlePaymentClick(
+                          digitalPayments.phonePe.digitalPaymentLink
+                        );
+                        handleClick(14);
+                      }}
+                    >
+                      <div className={styles.socialMediaShareInnerContainer}>
+                        <PhonePay />
+                        <div className={styles.shareInfoContentContainer}>
+                          <h2 className={styles.shareInfoTitle}>Phone Pay</h2>
+                        </div>
+                      </div>
+                      <div
+                        style={{
+                          height: "100%",
+                          width: "35px",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          borderRadius: "0 5px 5px 0px",
+                          background: mode === "dark" ? "#292929" : "#E2E2E2",
+                        }}
+                      >
+                        <RightArrow
+                          className={styles.pointer}
+                          color={backgroundColor || "#007AFF"}
+                        />
+                      </div>
+                    </div>
+                  )}
+
+                {digitalPayments.payTm.digitalPaymentLink &&
+                  digitalPayments.payTm.digitalPaymentLink.length > 5 && (
+                    <div
+                      className={styles.socialMediaShareParentContainer}
+                      style={
+                        mode === "dark"
+                          ? {
+                              background: "#3B3B3B",
+                              color: "#fff",
+                            }
+                          : {
+                              background: "rgba(235, 235, 235, 0.70)",
+                            }
+                      }
+                    >
+                      <div
+                        className={styles.socialMediaShareInnerContainer}
+                        onClick={() => {
+                          handlePaymentClick(
+                            digitalPayments.payTm.digitalPaymentLink
+                          );
+                          handleClick(15);
+                        }}
+                      >
+                        <Paytm_icon />
+                        <div className={styles.shareInfoContentContainer}>
+                          <h2 className={styles.shareInfoTitle}>Paytm</h2>
+                        </div>
+                      </div>
+                      <div
+                        style={{
+                          height: "100%",
+                          width: "35px",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          borderRadius: "0 5px 5px 0px",
+                          background: mode === "dark" ? "#292929" : "#E2E2E2",
+                        }}
+                      >
+                        <RightArrow
+                          className={styles.pointer}
+                          color={backgroundColor || "#007AFF"}
+                        />
+                      </div>
+                    </div>
+                  )}
+              </div>
+
+              {/* Footer */}
+              <div
+                className={styles.TemplateFooter}
+                style={mode === "dark" ? { borderTop: "1px solid white" } : {}}
+              >
+                <h3 style={mode === "dark" ? { color: "white" } : {}}>
+                  Go Digital - Save Paper, Trees & Our Earth.
+                </h3>
+                <div className={styles.SubscribeText}>
+                  <Button href="/">Try Now</Button>
+                </div>
+                <p style={mode === "dark" ? { color: "white" } : {}}>
+                  Powered by bubbl cards.
+                </p>
               </div>
             </div>
           </div>
+          <div></div>
         </div>
       </section>
       <ToastContainer />

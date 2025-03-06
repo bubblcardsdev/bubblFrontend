@@ -557,7 +557,7 @@ export default function FreeTemplateOne({
                   )}
                 </div>
 
-                {edit && userPlan?.planId !== 1 ? (
+                {(edit && userPlan?.planId !== 1 ) ? (
                   <div className={styles.QrEdit} style={{ backgroundColor }}>
                     <Image
                       src={ProfileEditIcon}

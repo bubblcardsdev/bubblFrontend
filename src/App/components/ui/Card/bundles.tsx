@@ -14,7 +14,7 @@ import styles from "./bundle.module.css";
 
 export default function BundleCards({
   price,
-  // originalPrice,
+ 
   selectedColor,
   // colors = [],
   images,
@@ -138,14 +138,17 @@ export default function BundleCards({
             <div className={styles.cards_prod_img}>
               <img src={images[color]} alt="cards" />
             </div>
-
             {showDiscount && price && price > 0 && (
               <div className={styles.discountContainer}>
-                <p className={styles.slashedPrice}>INR 999</p>
-                <span className={styles.discountText}>40% off</span>
+                {/* <p className={styles.slashedPrice}>INR {salesPrice}</p> */}
+                <p className={styles.slashedPrice}>
+                  INR{title === "Name Custom" ? 799 : 1299}
+                </p>
+                <span className={styles.discountText}>
+                  {title === "Name Custom" ? 18.77 : 20.02}%
+                </span>
               </div>
             )}
-
             {price && price > 0 ? (
               <div className={styles.rateDiv}>
                 <p className={styles.rate}>
@@ -167,7 +170,7 @@ export default function BundleCards({
               <img src={images[color]} alt="cards" />
             </div>
 
-            {/* {value.map((img) => (
+            {/*  {value.map((img) => (
               <div className={styles.cards_prod_img}>
                 <img src={images[color]} alt="cards" />
               </div>
@@ -176,11 +179,10 @@ export default function BundleCards({
 
             {showDiscount && price && price > 0 && (
               <div className={styles.discountContainer}>
-                <p className={styles.slashedPrice}>INR 599</p>
-                <span className={styles.discountText}>43% off</span>
+                <p className={styles.slashedPrice}>INR 699</p>
+                <span className={styles.discountText}>28.61% off</span>
               </div>
             )}
-
             {price && price > 0 ? (
               <div className={styles.rateDiv}>
                 <p className={styles.rate}>

@@ -4,10 +4,10 @@ function Marquee() {
   return (
     <div className={styles.marqueeContainer}>
       <div className={styles.marqueeText}>
-        “Let's celebrate the triumph of courage and determination on this
-        Independence Day!! &nbsp;
         <span className={styles.blinkText}>
-          Join the revolution, Enjoy upto 50% off site wide” &#127881;
+          {/* Don't miss out on BIG savings across our entire collection. &#127881; */}
+          Buy 1 and Get 40% Disount &#127881; &nbsp; Buy 2 and Get 50% Disount
+          &nbsp; &#127881; Buy 3 and Get 60% Disount &#127881;
         </span>
       </div>
     </div>

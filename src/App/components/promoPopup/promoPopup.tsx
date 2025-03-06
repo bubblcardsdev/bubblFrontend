@@ -12,26 +12,28 @@ const PromoPopup = (props: any) => {
   const { visible, onHide } = props;
   const router = useRouter();
   const onPromoClick = () => {
-    router.push("/shopPage");
+    router.replace("/shopPage");
     onHide();
   };
   return (
     visible && (
-      <div className={styles.popupBg}>
+      <>
+       {/*<div className={styles.popupBg}>
         <div className={styles.popupContainer}>
           <span className={styles.popupClose} onClick={() => onHide()}>
             <Image src="/close.png" alt="/close.png" width={96} height={96} />
           </span>
           <span className={styles.popupImg} onClick={() => onPromoClick()}>
             <Image
-              src="/independenceDayPoster.jpg"
-              alt="/independenceDayPoster.jpg"
+              src="/offerBanner.png"
+              alt="/offerBanner.png"
               width={500}
               height={500}
             />
           </span>
-        </div>
-      </div>
+        </div> 
+      </div>*/}
+      </>
     )
   );
 };

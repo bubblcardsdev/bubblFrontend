@@ -65,6 +65,13 @@ export const resendOTP = (countryCode: string, phoneNumber: string) =>
     })
     .then((res) => res.data);
 
+export const resendMailOTP = (email: string) =>
+  axios
+    .post<GenericResponseT>("/resendMailOTP", {
+      email,
+    })
+    .then((res) => res.data);
+
 export const verifyEmail = (emailVerificationId: string) =>
   axios
     .post<GenericResponseT>("/verifyemail", { emailVerificationId })
