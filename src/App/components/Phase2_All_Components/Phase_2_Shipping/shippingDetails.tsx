@@ -104,7 +104,7 @@ function ShippingDetails() {
 
   const [isSubmitClicked, setIsSubmitClicked] = useState(false);
 
-  function validateForm(shipDetail: any, shipErrorsData: any) {
+  function validateForm(shipDetail: any, shipErrorsData: any , country: any) {
     const errors = {};
     // check name is null
     if (!shipDetail.firstName.trim()) {
@@ -226,6 +226,11 @@ function ShippingDetails() {
       } else {
         shipErrorsData.state = "";
       }
+    }
+    if (shipDetail.country === undefined || shipDetail.country.trim().length <= 0) {
+      shipErrorsData.country = "Select your country";
+    }else {
+      shipErrorsData.country = "";
     }
 
     return shipErrorsData;
@@ -528,7 +533,7 @@ function ShippingDetails() {
 
   const checkIfFormValid = () => {
     setIsSubmitClicked(true);
-    const isError = validateForm(shipObj, shipObjErrors);
+    const isError = validateForm(shipObj, shipObjErrors, country);
     let isInvalid = false;
     setShipObjErrors(isError);
     setShipObjErrors((prevState) => ({
@@ -636,7 +641,7 @@ function ShippingDetails() {
         setActiveDevicesCount(1);
       }
     }
-  });
+  },[]);
 
   const [scrollPosition, setScrollPosition] = useState(0);
 
