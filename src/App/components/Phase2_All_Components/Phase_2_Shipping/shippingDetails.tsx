@@ -104,7 +104,7 @@ function ShippingDetails() {
 
   const [isSubmitClicked, setIsSubmitClicked] = useState(false);
 
-  function validateForm(shipDetail: any, shipErrorsData: any) {
+  function validateForm(shipDetail: any, shipErrorsData: any , country: any) {
     const errors = {};
     // check name is null
     if (!shipDetail.firstName.trim()) {
@@ -226,6 +226,12 @@ function ShippingDetails() {
       } else {
         shipErrorsData.state = "";
       }
+    }
+
+    if (shipDetail.country === undefined || shipDetail.country.trim().length <= 0) {
+      shipErrorsData.country = "Select your country";
+    }else {
+      shipErrorsData.country = "";
     }
 
     return shipErrorsData;
@@ -528,7 +534,7 @@ function ShippingDetails() {
 
   const checkIfFormValid = () => {
     setIsSubmitClicked(true);
-    const isError = validateForm(shipObj, shipObjErrors);
+    const isError = validateForm(shipObj, shipObjErrors, country);
     let isInvalid = false;
     setShipObjErrors(isError);
     setShipObjErrors((prevState) => ({
@@ -612,7 +618,7 @@ function ShippingDetails() {
   useEffect(() => {
     getCart();
     getDiscount();
-  }, [isSubmitClicked]);
+  }, [isSubmitClicked,shippingCost]);
 
   const tokenSetRef = useRef(false);
 
@@ -636,7 +642,7 @@ function ShippingDetails() {
         setActiveDevicesCount(1);
       }
     }
-  });
+  },[]);
 
   const [scrollPosition, setScrollPosition] = useState(0);
 
@@ -646,12 +652,12 @@ function ShippingDetails() {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+    // window.addEventListener("scroll", handleScroll);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [scrollPosition]);
 
   const topPositions = [10, 40, 30];
   const sizes = [65, 45, 45];
