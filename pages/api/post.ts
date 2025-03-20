@@ -7,6 +7,7 @@ async function Handler(req: NextApiRequest, res: NextApiResponse) {
   try {
     if (req.method === "POST") {
       // Handle the POST request
+      const failerPath = localStorage.getItem("failurePath");
       const orderId = req.body.orderNo;
       const encString = req.body.encResp;
       const response = await verifyPay(encString);
@@ -40,8 +41,8 @@ async function Handler(req: NextApiRequest, res: NextApiResponse) {
         }
     } else {
         // 🛠 Ensure that `res.writeHead()` is called only once
-        if (!response.data?.message?.generatedMessage) {
-            res.writeHead(302, { Location: `/checkout?isFailed=1` });
+        if (failerPath) {
+            res.writeHead(302, { Location: `/myPlanPage` });
             return res.end();
         }
 

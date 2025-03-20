@@ -6,7 +6,8 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  overflow: hidden; /* Prevent scrolling */
+  overflow: hidden;
+  /* Prevent scrolling */
 }
 
 .restaurants-child-container {
@@ -15,8 +16,10 @@
   background-color: #111111;
   padding-bottom: 2rem;
   position: relative;
-  height: 100%; /* Ensure it takes full height */
-  overflow-y: auto; /* Allow scrolling inside the container if content overflows */
+  height: 100%;
+  /* Ensure it takes full height */
+  overflow-y: auto;
+  /* Allow scrolling inside the container if content overflows */
 }
 
 .restaurants-image-container {
@@ -116,9 +119,12 @@
 
 @media (max-width: 480px) {
   .restaurants-child-container {
-    max-width: 100%; /* Allow it to take full width on smaller screens */
-    height: 100vh; /* Ensure it takes full viewport height */
-    padding-bottom: 1rem; /* Reduce padding to fit content */
+    max-width: 100%;
+    /* Allow it to take full width on smaller screens */
+    height: 100vh;
+    /* Ensure it takes full viewport height */
+    padding-bottom: 1rem;
+    /* Reduce padding to fit content */
   }
 
   .restaurants-button-child-container {
@@ -132,10 +138,27 @@
 
   .restaurants-icons {
     gap: 1.25rem;
-    margin-top: 1rem; /* Reduce margin to fit content */
+    margin-top: 1rem;
+    /* Reduce margin to fit content */
   }
 
   .restaurants-button-container-parent {
-    margin-top: 7rem; /* Reduce margin to fit content */
+    margin-top: 7rem;
+    /* Reduce margin to fit content */
   }
+}
+
+.order-now {
+  width: 90%;
+  position: fixed;
+  bottom: 30px;
+  background: #F6AE48;
+  color: #fff;
+  height: 45px;
+  border-radius: 18px;
+  outline: none;
+  border: none;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 350px;
 }

@@ -344,7 +344,7 @@ function CheckOutPageFunc() {
       router.push("/myPlanPage");
       localStorage.setItem("failurePath", "");
     }
-    if (isFailed == "1") {
+    if (isFailed == "1" && !failurePathRead ) {
       const token = getAccessToken();
       const shippingDetails: any = getShippingDetails();
 

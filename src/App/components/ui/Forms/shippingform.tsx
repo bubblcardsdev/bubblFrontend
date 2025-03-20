@@ -375,15 +375,25 @@ const ShippingForm: React.FC<Props> = ({
           </Col>
         </Col>
         <Col className={styles.firstname}>
-          <Col xl={8} lg={5} md={6} xs={10} className={styles.colGap}>
+          <Col xl={6} lg={5} md={6} xs={10} className={styles.colGap}>
             <Form.Group className="mb-3">
-              <Form.Label>Country or Region</Form.Label>
+              <Form.Label>Country or Region*</Form.Label>
               <Col className={styles.countryCode}>
                 <CountryDropdown
                   value={country}
-                  onChange={(val: any) => setCountry(val)}
+                  onChange={(val: any) => {
+                    setCountry(val);
+                    setShipDetails(() => ({ ...shipDetail, ["country"]: val }))
+                  }}
                   whitelist={["IN"]}
                 />
+                {
+                  shipErrors.country && (
+                    <span className="text-danger" role="alert">
+                      {shipErrors.country}
+                    </span>
+                  )
+                }
               </Col>
             </Form.Group>
           </Col>

@@ -272,6 +272,7 @@ function NameCustomization() {
     setBackCard(getImage[0]?.NameCustomImages[1]?.imageUrl);
     setFrontCard(getImage[0]?.NameCustomImages[0]?.imageUrl);
     setThumbnailImages(getImage);
+    setDeviceImageId(getImage[0]?.id);
 
     const CardImages = getImage;
     if (value === "NC-Pattern") {
@@ -296,7 +297,7 @@ function NameCustomization() {
     }
     if (value === "NC-Bamboo") {
       setFontColor(CardImages[0].fontColor);
-      setDeviceImageId(11);
+      // setDeviceImageId(11);
       const patternImg = CardImages?.filter((image: any) => {
         return image.deviceType === "NC-Bamboo";
       });
