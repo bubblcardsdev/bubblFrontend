@@ -1,838 +1,823 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Oxygen&family=Poppins:wght@700&family=Readex+Pro:wght@400;500;700&display=swap');
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
-
 .FreeTemplateTwo {
-    max-width: 400px;
-    min-height: 100vh;
-    position: relative;
-    border-radius: 20px;
-    /* overflow: auto; */
+  max-width: 400px;
+  min-height: 100vh;
+  position: relative;
+  border-radius: 20px;
+  /* overflow: auto; */
 }
 
 .rupy_banner_img {
-    object-fit: cover;
-    filter: blur(12px);
-    border-radius: 20px;
-    border: 1px solid red;
+  object-fit: cover;
+  filter: blur(12px);
+  border-radius: 20px;
+  border: 1px solid red;
 
 }
 
 .socialLink_text_container {
-    display: flex;
-    gap: 10px;
-    margin: 30px 0 20px 0;
+  display: flex;
+  gap: 10px;
+  margin: 30px 0 20px 0;
 }
 
 .Rupy_body_section {
-    width: 100%;
-    min-height: max-content !important;
-    position: relative;
-    top: -80px;
-    border-radius: 20px;
-    background: linear-gradient(0deg, #FFF 0%, #FFF 100%), rgba(153, 153, 153, 0.97);
-    background-blend-mode: color-dodge, normal;
-    box-shadow: 0px 0px 100px 0px rgba(0, 0, 0, 0.05);
-    padding: 12px 30px;
-    font-family: "Inter", sans-serif;
-    padding-bottom: 80px;
+  width: 100%;
+  min-height: max-content !important;
+  position: relative;
+  top: -80px;
+  border-radius: 20px;
+  background: linear-gradient(0deg, #FFF 0%, #FFF 100%), rgba(153, 153, 153, 0.97);
+  background-blend-mode: color-dodge, normal;
+  box-shadow: 0px 0px 100px 0px rgba(0, 0, 0, 0.05);
+  padding: 12px 30px;
+  font-family: "Inter", sans-serif;
+  padding-bottom: 80px;
 }
 
 /* Template Banner */
 
 .rupy_containerOne {
-    width: 100%;
-    display: flex;
-    gap: 15px;
-    justify-content: space-between;
-    align-items: center;
+  width: 100%;
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .rupy_name_container {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    text-transform: capitalize;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-transform: capitalize;
 }
 
 .socialMediaShareParent {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .socialMediaShareParentContainer {
-    height: 55px;
-    border-radius: 10px;
-    backdrop-filter: blur(2px);
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 0px 0px 0 15px;
-    justify-content: space-between;
-    cursor: pointer;
+  height: 55px;
+  border-radius: 10px;
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 0px 0px 0 15px;
+  justify-content: space-between;
+  cursor: pointer;
 }
 
 .socialMediaShareInnerContainer {
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    gap: 20px;
-    width: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 20px;
+  width: auto;
 }
 
 .ruby_share_container {
-    display: flex;
-    width: 100%;
-    gap: 10px;
-    align-items: center;
+  display: flex;
+  width: 100%;
+  gap: 10px;
+  align-items: center;
 }
 
 .pointer {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .shareInfoContentContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 1px;
-    cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  cursor: pointer;
 
 }
 
 .shareInfoTitle {
-    font-size: 16px;
-
+  font-size: 16px;
 }
 
 .shareInfoContent {
-
-    font-size: 16px;
+  font-size: 16px;
 }
 
 .shareInfoContent_mail {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 200px;
 }
 
 .shareInfoContent_contact {
-    width: 50%;
-    font-size: 16px;
+  width: 50%;
+  font-size: 16px;
 }
 
 .rupy_save_contact_button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 12px;
-    border: none;
-    outline: none;
-    color: #fff;
-    height: 45px;
-    flex: 1.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  color: #fff;
+  height: 45px;
+  flex: 1.5;
 }
 
 .shareIcon {
-    width: 50px;
-    flex: 1
+  width: 50px;
+  flex: 1;
 }
 
 .B_Img {
-    position: relative;
-    background: linear-gradient(180deg, #FFF 0%, #E9E9E9 100%);
-    background-blend-mode: hard-light;
-    box-shadow: 0px -0.33px 0px 0px rgba(0, 0, 0, 0.30);
-    border-radius: 20px;
+  position: relative;
+  background: linear-gradient(180deg, #FFF 0%, #E9E9E9 100%);
+  background-blend-mode: hard-light;
+  box-shadow: 0px -0.33px 0px 0px rgba(0, 0, 0, 0.30);
+  border-radius: 20px;
 }
 
-.B_Img>span {
-    border-radius: 20px;
+.B_Img > span {
+  border-radius: 20px;
 }
 
 .rupy_logo_parent {
-    width: 100%;
-    border-radius: 20px;
-    position: absolute;
-    top: -80px;
-    left: 0px;
-    display: flex;
-    justify-content: center;
+  width: 100%;
+  border-radius: 20px;
+  position: absolute;
+  top: -80px;
+  left: 0px;
+  display: flex;
+  justify-content: center;
 }
 
 .descriptionContainer {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  width: 100%;
 }
 
 .share_icon_btn {
-    height: 45px;
-    width: 45px;
-    border-radius: 15px;
-    display: flex;
-    justify-content: center;
-    border-radius: 13px;
-    backdrop-filter: blur(40px);
-    align-items: center;
-
+  height: 45px;
+  width: 45px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  border-radius: 13px;
+  backdrop-filter: blur(40px);
+  align-items: center;
 }
 
 .rupy_logo_img {
-    height: 200px;
-    width: 200px;
-    border-radius: 20px;
-    position: relative;
+  height: 200px;
+  width: 200px;
+  border-radius: 20px;
+  position: relative;
 }
 
-
 .FirstName_text {
-    color: #0B0B0B;
-    font-weight: 700;
-    font-family: "Inter", sans-serif;
-    font-size: 18px;
+  color: #0B0B0B;
+  font-weight: 700;
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
 }
 
 .ruby_body_parent {
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    gap: 15px;
-    top: 70px;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  gap: 15px;
+  top: 70px;
 }
 
 .rupy_job_container {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .qrImgLogo {
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
 }
 
 .qrImg {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: center;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .UserImg {
-    display: flex;
-    justify-content: center;
-    position: relative;
+  display: flex;
+  justify-content: center;
+  position: relative;
 }
 
 .userProfile {
-    position: absolute;
-    top: 140px;
+  position: absolute;
+  top: 140px;
 }
 
 .respImg img {
-    border-radius: 50% !important;
+  border-radius: 50% !important;
 }
 
 .userProfileEdit {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    bottom: 35px;
-    display: flex;
-    margin-left: 125px;
-    cursor: pointer;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 35px;
+  display: flex;
+  margin-left: 125px;
+  cursor: pointer;
 }
 
 .errorMsg {
-    display: flex;
-    justify-content: center;
-    padding-top: 5px;
-    padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  padding-top: 5px;
+  padding-bottom: 20px;
 }
 
 /* Info Section */
 .InfoSection {
-    background: #EDEDED;
-    margin-top: 60px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+  background: #EDEDED;
+  margin-top: 60px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
 .InfoSectionDetails {
-    max-width: 330px;
-    margin: 0 auto;
+  max-width: 330px;
+  margin: 0 auto;
 }
 
-
 .InfoHeader {
-    padding: 20px 0px 20px 0px;
-    border-bottom: 2px solid #0082E1;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
+  padding: 20px 0px 20px 0px;
+  border-bottom: 2px solid #0082E1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .FirstNameEdit,
 .RoleNameEdit,
 .DesEdit {
-    margin-bottom: 5px;
-    width: 100%;
+  margin-bottom: 5px;
+  width: 100%;
 }
 
 .Information h2 {
-    font-family: "Poppins", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 18px;
-    overflow: hidden;
-    /* max-width: 22ch;
-    text-overflow: ellipsis; */
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 18px;
+  overflow: hidden;
+  /* max-width: 22ch;
+  text-overflow: ellipsis; */
 }
 
 .FirstNameEdit input {
-    font-family: "Poppins", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 20px;
-    color: #4F4F4F;
-    word-break: keep-all;
-    width: 100%;
-    /* overflow: hidden;
-    max-width: 25ch;
-    text-overflow: ellipsis; */
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 20px;
+  color: #4F4F4F;
+  word-break: keep-all;
+  width: 100%;
+  /* overflow: hidden;
+  max-width: 25ch;
+  text-overflow: ellipsis; */
 }
 
 .FirstName,
 .RoleName {
-    display: flex;
-    gap: 10px;
-    align-items: center;
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
 
 .FirstName h2 {
-    width: 80px;
+  width: 80px;
 }
 
 .FirstName {
-    overflow-wrap: anywhere;
+  overflow-wrap: anywhere;
 }
 
 .FirstName img,
 .RoleName img {
-    cursor: pointer;
-    display: flex;
+  cursor: pointer;
+  display: flex;
 }
 
 .RoleName h3 {
-    font-family: "Inter", sans-serif;
-    text-transform: none;
-    font-style: normal;
-    font-size: 14px;
-    overflow: hidden;
-    max-width: 22ch;
-    text-overflow: ellipsis;
-    width: 100%;
+  font-family: "Inter", sans-serif;
+  text-transform: none;
+  font-style: normal;
+  font-size: 14px;
+  overflow: hidden;
+  max-width: 22ch;
+  text-overflow: ellipsis;
+  width: 100%;
 }
 
 .RoleNameEdit input {
-    font-family: "inter", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 14px;
+  font-family: "inter", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
 }
 
 .DescriptionPara {
-    display: flex;
-    gap: 10px;
-    align-items: center;
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
 
-
 .Description {
-    padding: 15px 0px 15px 0px;
-    display: flex;
+  padding: 15px 0px 15px 0px;
+  display: flex;
 }
 
 .Description p {
-    font-family: "Inter", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 14px;
-    color: #808080;
-    width: 250px;
-    word-wrap: break-word;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  color: #808080;
+  width: 250px;
+  word-wrap: break-word;
 }
 
 .shortDescription_text_container {
-    display: flex;
-    width: 100%;
-    flex-direction: row;
-    margin: 0 5px;
-
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  margin: 0 5px;
 }
 
 .input_line,
 .input_line:focus-visible {
-    border: none;
-    border-bottom: 1px solid black;
-    outline: none;
-    background-color: transparent;
-    width: 100%;
-    max-width: 100%;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
-    padding-left: 0;
+  border: none;
+  border-bottom: 1px solid black;
+  outline: none;
+  background-color: transparent;
+  width: 100%;
+  max-width: 100%;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  padding-left: 0;
 }
 
 .input_line_des,
 .input_line_des:focus-visible {
-    font-family: "Oxygen", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 13px;
-    color: #4F4F4F;
-    border: none;
-    outline: none;
-    background-color: transparent;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
-    padding-left: 0;
-    resize: none;
+  font-family: "Oxygen", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 13px;
+  color: #4F4F4F;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  padding-left: 0;
+  resize: none;
 }
 
 .error {
-    color: red;
-    font-family: "Oxygen", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 12px;
+  color: red;
+  font-family: "Oxygen", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 12px;
 }
 
-
 .PencilEdit {
-    display: flex;
-    vertical-align: center;
-    cursor: pointer;
+  display: flex;
+  vertical-align: center;
+  cursor: pointer;
 }
 
 .LogoBrand {
-    position: relative;
-    min-width: 80px;
-    max-width: 80px;
-    height: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    margin-left: 8px;
+  position: relative;
+  min-width: 80px;
+  max-width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  margin-left: 8px;
 }
 
 .CropBody {
-    padding: 30px;
-    background-color: #1E1D24;
-    border-radius: 20px;
+  padding: 30px;
+  background-color: #1E1D24;
+  border-radius: 20px;
 }
 
 .CropBodyHeader {
-    padding: 0;
-    padding-bottom: 20px;
+  padding: 0;
+  padding-bottom: 20px;
 }
 
 .ImageCrop {
-    font-family: "Poppins", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 18px;
-    color: #AB39D2;
-    /* margin-top: 20px; */
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 18px;
+  color: #AB39D2;
+  /* margin-top: 20px; */
 }
 
 .SaveLogo {
-    background-color: #AB39D2 !important;
-    border: 1px solid #AB39D2 !important;
-    color: white !important;
-    font-family: "Oxygen", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 14px;
-    width: 100%;
-    height: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  background-color: #AB39D2 !important;
+  border: 1px solid #AB39D2 !important;
+  color: white !important;
+  font-family: "Oxygen", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  width: 100%;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .LogoUploadInput {
-    display: flex;
-    justify-content: center;
-    margin-top: 40px;
-    margin-bottom: 20px;
-    flex-direction: column;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  flex-direction: column;
 }
 
 .LogoUploadInput input {
-    background-color: white;
-    padding: 10px;
-    border-radius: 5px;
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
 }
 
 .CustomCloseButton {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .QrEdit {
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    position: absolute;
-    bottom: -5px;
-    margin-left: 80px;
-    background-color: #1F87FA;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -5px;
+  margin-left: 80px;
+  background-color: #1F87FA;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
 /* Save Contact */
 
 .SaveContact {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .Share {
-    border: 2px solid rgb(245, 50, 50);
-    height: 42px;
-    width: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 6px;
-    color: rgb(245, 50, 50);
-    cursor: pointer;
+  border: 2px solid rgb(245, 50, 50);
+  height: 42px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  color: rgb(245, 50, 50);
+  cursor: pointer;
 }
 
 .Qr {
-    height: 42px;
-    width: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 6px;
-    background-color: rgb(245, 50, 50);
-    cursor: pointer;
+  height: 42px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  background-color: rgb(245, 50, 50);
+  cursor: pointer;
 }
 
 .SaveContactSection {
-    margin-top: 30px;
-    display: flex;
-    gap: 20px;
-    /* justify-content: space-between; */
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+  /* justify-content: space-between; */
 }
 
 .SaveContact {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 }
 
 .Share {
-    position: absolute;
-    top: 0;
-    right: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 
 /* Contact Information */
 .ContactAction {
-    display: flex;
-    justify-content: space-between;
-    background: linear-gradient(90deg, #CBCBCB 0.5%, #E2E2E2 95.48%);
-    border-top-left-radius: 12px;
-    border-bottom-left-radius: 12px;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  background: linear-gradient(90deg, #CBCBCB 0.5%, #E2E2E2 95.48%);
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
-.ContactInformation>div {
-    margin-bottom: 16px;
+.ContactInformation > div {
+  margin-bottom: 16px;
 }
 
 .ContactActionBoth {
-    display: flex;
-    gap: 10px;
-    width: 100%;
+  display: flex;
+  gap: 10px;
+  width: 100%;
 }
 
 .ContactActionBoth p {
-    font-family: "Oxygen", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 14px;
-    overflow: hidden;
-    max-width: 27ch;
-    text-overflow: ellipsis;
-    color: black;
+  font-family: "Oxygen", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  overflow: hidden;
+  max-width: 27ch;
+  text-overflow: ellipsis;
+  color: black;
 }
 
 .ContactActionAll {
-    display: flex;
-    width: 100%;
-    border-top-right-radius: 19px;
-    border-bottom-right-radius: 19px;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    height: 45px;
+  display: flex;
+  width: 100%;
+  border-top-right-radius: 19px;
+  border-bottom-right-radius: 19px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  height: 45px;
 }
 
 .Left {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-left: 10px;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 10px;
 }
 
 .Middle {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 80px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 80px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .Right {
-    position: relative;
-    right: -3px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-    padding-left: 1px;
-    /* background: #E8E8E8; */
-    /* filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); */
-    padding-top: 3px;
+  position: relative;
+  right: -3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  padding-left: 1px;
+  /* background: #E8E8E8; */
+  /* filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); */
+  padding-top: 3px;
 }
 
 .ContactInformation {
-    padding-top: 30px;
+  padding-top: 30px;
 }
 
 .ContactInformationDetails p {
-    color: #0B0B0B;
-    font-family: "Poppins", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 14px;
+  color: #0B0B0B;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 14px;
 }
 
 .ContactInformation h2 {
-    color: #4F4F4F;
-    font-family: "Poppins", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 18px;
-    padding-bottom: 25px;
+  color: #4F4F4F;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 18px;
+  padding-bottom: 25px;
 }
 
 
 /* Social Information */
 
 .SocialEdit {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding-bottom: 25px;
-    padding-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 25px;
+  padding-top: 10px;
 }
 
 .socialSection h2 {
-    color: #4F4F4F;
-    font-family: "Poppins", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 18px;
-
+  color: #4F4F4F;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 18px;
 }
 
 .SocialMediaIcons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .SocialEditImg {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .SocailInfo {
-    border-radius: 10px;
-    background: linear-gradient(315deg, #D0D0D0 0%, #F8F8F8 100%);
-    width: 52px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  border-radius: 10px;
+  background: linear-gradient(315deg, #D0D0D0 0%, #F8F8F8 100%);
+  width: 52px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .SocailInfo svg {
-    margin-top: 5px;
+  margin-top: 5px;
 }
 
 /* Digital Payment */
 
 .PaymentInformationHead {
-    display: flex;
-    gap: 12px;
-    margin-top: 30px;
+  display: flex;
+  gap: 12px;
+  margin-top: 30px;
 }
 
 .DigitalMediaIcons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .DigitalPayment h2 {
-    color: #4F4F4F;
-    font-family: "Poppins", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 18px;
-    padding-bottom: 25px;
-
+  color: #4F4F4F;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 18px;
+  padding-bottom: 25px;
 }
 
 .DigitalEditImg {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .DigitalInfo {
-    border-radius: 10px;
-    background: linear-gradient(315deg, #D0D0D0 0%, #F8F8F8 100%);
-    width: 52px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-left: 5px;
-    padding-right: 5px;
-    cursor: pointer;
+  border-radius: 10px;
+  background: linear-gradient(315deg, #D0D0D0 0%, #F8F8F8 100%);
+  width: 52px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 5px;
+  padding-right: 5px;
+  cursor: pointer;
 }
 
 
 /* Footer */
 .TemplateFooter {
-    margin-top: 35px;
-    text-align: center;
-    border-top: 1px solid black;
-    padding-top: 15px;
-    padding-bottom: 30px;
+  margin-top: 35px;
+  text-align: center;
+  border-top: 1px solid black;
+  padding-top: 15px;
+  padding-bottom: 30px;
 }
 
 .TemplateFooter p {
-    color: #0B0B0B;
-    font-family: "Poppins", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 12px;
-    display: flex;
-    justify-content: center;
-    padding: 14px 0 0px 0;
+  color: #0B0B0B;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  padding: 14px 0 0px 0;
 }
 
 .TemplateFooter h3 {
-    color: #0B0B0B;
-    font-family: "Poppins", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 13px;
+  color: #0B0B0B;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 13px;
 }
 
 .SubscribeText a {
-    width: 113px;
-    height: 37px;
-    border-radius: 6px;
-    background: linear-gradient(96deg, #11427D 3.06%, #663EF7 100%);
-    font-family: "Oxygen", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 16px;
-    border: none;
-    margin-top: 15px;
+  width: 113px;
+  height: 37px;
+  border-radius: 6px;
+  background: linear-gradient(96deg, #11427D 3.06%, #663EF7 100%);
+  font-family: "Oxygen", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  border: none;
+  margin-top: 15px;
 }
 
-@media screen and (max-width: 500px) {
-    .InfoSection {
-        padding: 0 25px;
-        margin-top: 70px;
-    }
-
-    .userProfile {
-        top: 120px;
-    }
-
-    .respImg {
-        margin-top: -25px;
-    }
-
-    .respImg img {
-        width: 180px !important;
-        height: 180px !important;
-    }
-
-    .userProfileEdit {
-        margin-left: 150px;
-    }
-
-    .ContactActionBoth p {
-        overflow: hidden;
-        max-width: 22ch;
-        text-overflow: ellipsis;
-    }
+@media screen and (max-width:500px) {
+  .InfoSection {
+    padding: 0 25px;
+    margin-top: 70px;
+  }
+  
+  .userProfile {
+    top: 120px;
+  }
+  
+  .respImg {
+    margin-top: -25px;
+  }
+  
+  .respImg img {
+    width: 180px !important;
+    height: 180px !important;
+  }
+  
+  .userProfileEdit {
+    margin-left: 150px;
+  }
+  
+  .ContactActionBoth p {
+    overflow: hidden;
+    max-width: 22ch;
+    text-overflow: ellipsis;
+  }
 }
 
-@media screen and (max-width: 500px) {
-    .LogoUploadInput input {
-        width: 280px;
-    }
-
+@media screen and (max-width:500px) {
+  .LogoUploadInput input {
+    width: 280px;
+  }
 }
 
-@media screen and (max-width: 380px) {
-
-
-    .BannerImg {
-        padding: 5px 15px 0px 15px;
-    }
-
-    .InfoSection {
-        padding: 25px 12px 25px 12px;
-    }
-
-    .userProfile {
-        top: 120px;
-    }
+@media screen and (max-width:380px) {
+  
+  
+  .BannerImg {
+    padding: 5px 15px 0px 15px;
+  }
+  
+  .InfoSection {
+    padding: 25px 12px 25px 12px;
+  }
+  
+  .userProfile {
+    top: 120px;
+  }
 }

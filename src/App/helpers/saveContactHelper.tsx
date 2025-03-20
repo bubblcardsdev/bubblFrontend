@@ -1,4 +1,5 @@
 /* eslint-disable no-unneeded-ternary */
+import { CountryCodes } from "validator/lib/isISO31661Alpha2";
 import { getImageUrl } from "../services/getImage";
 
 /* eslint-disable no-unused-vars */
@@ -396,7 +397,8 @@ async function SaveVCFContact(
   if (Array.isArray(phoneNumber)) {
     phoneNumber.forEach((element: any) => {
       if (element.phoneNumber) {
-        phoneNumbers.push(element.phoneNumber);
+        // phoneNumbers.push(element.phoneNumber);
+        phoneNumbers.push(`${element?.countryCode}${element.phoneNumber}`);
       }
     });
   }

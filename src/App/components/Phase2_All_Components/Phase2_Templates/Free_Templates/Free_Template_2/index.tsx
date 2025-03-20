@@ -129,7 +129,7 @@ export default function FreeTemplateTwo({
   } else {
     backgroundColor = "#007AFF";
   }
-    const [showPf, setShow] = useState(false);
+  const [showPf, setShow] = useState(false);
   const [qrShow, setQrShow] = useState(false);
   const updateAddress = userProfile?.data?.address || getAllProfile?.address;
   let val2 = "";
@@ -198,33 +198,44 @@ export default function FreeTemplateTwo({
       clickAction: clickId,
     };
   };
-  const getPhoneNumbersWithCountryCode = (getAllProfile:any, userProfile:any) => {
+  const getPhoneNumbersWithCountryCode = (
+    getAllProfile: any,
+    userProfile: any
+  ) => {
     try {
       if (getAllProfile?.profilePhoneNumbers) {
         return getAllProfile.profilePhoneNumbers;
       }
-        if (userProfile?.data?.profilePhoneNumbers?.length) {
-        return userProfile.data.profilePhoneNumbers.map((phone:any, index:number) => ({
-          ...phone,
-          phoneNumber: `${phone?.countryCode || ''} ${phone?.phoneNumber || ''}`.trim(),
-        }));
+      if (userProfile?.data?.profilePhoneNumbers?.length) {
+        return userProfile.data.profilePhoneNumbers.map(
+          (phone: any, index: number) => ({
+            ...phone,
+            phoneNumber: `${phone?.countryCode || ""} ${
+              phone?.phoneNumber || ""
+            }`.trim(),
+          })
+        );
       }
-        return [];
+      return [];
     } catch (error) {
       console.error("Error retrieving profile phone numbers:", error);
       return [];
     }
   };
   const handleClickSave = async (e: any) => {
-    console.log(getAllProfile,'profile',userProfile)
+    console.log(getAllProfile, "profile", userProfile);
     const firstName =
       getAllProfile?.firstName || (userProfile && userProfile?.data?.firstName);
     const vcfdata = await SaveVCFContact(
       firstName,
       getAllProfile?.lastName || (userProfile && userProfile?.data?.lastName),
-      getAllProfile?.companyName || (userProfile && userProfile?.data?.companyName),
-      getAllProfile?.designation || (userProfile && userProfile?.data?.designation),
-      getPhoneNumbersWithCountryCode(getAllProfile, userProfile),
+      getAllProfile?.companyName ||
+        (userProfile && userProfile?.data?.companyName),
+      getAllProfile?.designation ||
+        (userProfile && userProfile?.data?.designation),
+      // getPhoneNumbersWithCountryCode(getAllProfile, userProfile),
+      getAllProfile?.profilePhoneNumbers ||
+        (userProfile && userProfile?.data?.profilePhoneNumbers),
       profileImage?.square,
       getAllProfile?.address || (userProfile && userProfile?.data?.address),
       getAllProfile?.profileSocialMediaLinks ||
@@ -780,7 +791,7 @@ export default function FreeTemplateTwo({
               >
                 {/* logo upload */}
                 <div className={styles.qrImg}>
-                  {userPlan?.planId ===2 && qrImage ? (
+                  {userPlan?.planId === 2 && qrImage ? (
                     <img
                       src={qrImage}
                       alt="Logo"
@@ -796,7 +807,7 @@ export default function FreeTemplateTwo({
                   )}
                 </div>
 
-                {(edit && userPlan?.planId === 2 )? (
+                {edit && userPlan?.planId === 2 ? (
                   <div className={styles.QrEdit} style={{ backgroundColor }}>
                     <Image
                       src={ProfileEditIcon}
