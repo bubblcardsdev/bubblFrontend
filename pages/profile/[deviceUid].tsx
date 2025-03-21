@@ -23,7 +23,7 @@ import { getUniqueName } from "src/App/services/unique";
 import { MODAL_TYPES, ModalT } from "types/modal";
 import LoaderScreen from "src/App/components/lottie/lottie";
 import RegisterPage from "../register";
-import Restaurants from '../../src/App/components/Restaurants/index' 
+import Restaurants from "../../src/App/components/Restaurants/index";
 
 export interface typeProfileI {
   firstName: string;
@@ -45,7 +45,7 @@ function TapComponent() {
   const [modalType, setModalType] = useState<ModalT>("");
   const [uniqueName, setUniqueName] = useState<any>();
   const [templateId, setTemplateId] = useState(1);
-  const [modeId, setModeId] = useState();
+  const [modeId, setModeId] = useState(2);
   const [getUrlValue, setGetUrlValue] = useState<any>();
   const [leadFormShow, setLeadFormShow] = useState<boolean>(false);
   const [leadValues, setLeadValues] = useState<any>();
@@ -133,6 +133,14 @@ function TapComponent() {
             response?.profile?.DeviceLink?.AccountDeviceLink?.DeviceId,
             response?.profile?.DeviceLink?.ModeId
           );
+        } else {
+          console.log("came in", modeId);
+          setProfileInformation(response?.profile);
+
+          setTemplateId(response.profile?.TemplateId);
+          setLogo(response?.profile?.brandingLogoUrl);
+          const mode = 2;
+          setModeId(2);
         }
         if (response?.profile?.DeviceLink?.id) {
           getUniqueNameFunc(response?.profile?.DeviceLink?.id);
@@ -153,10 +161,13 @@ function TapComponent() {
           },
           {}
         );
-
+        console.log(profileImage, "dfd");
         setProfileImg(profileImage);
         response?.deviceBranding?.map((val: any) => {
-          if (val.templateId === response?.profile?.DeviceLink?.templateId) {
+          if (
+            val.templateId === response?.profile?.DeviceLink?.templateId ||
+            val.templateId === response?.profile?.templateId
+          ) {
             setDeviceBranding(val);
           }
         });
@@ -218,10 +229,9 @@ function TapComponent() {
       break;
   }
   useEffect(() => {
-    if(deviceUid == "0ee031d4-e923-4064-8c50-bdc1229aa6bc"){
-      setPage('restraunt')    
-    }
-    else getProfileByDeviceFunction();
+    if (deviceUid == "0ee031d4-e923-4064-8c50-bdc1229aa6bc") {
+      setPage("restraunt");
+    } else getProfileByDeviceFunction();
   }, [router]);
 
   function ApplyTemplate() {
@@ -234,8 +244,7 @@ function TapComponent() {
           getUrlValue.includes("http://")
         ) {
           window.open(getUrlValue, "_self", "noreferrer");
-        } 
-        else {
+        } else {
           window.open(`https://${getUrlValue}`, "_self", "noreferrer");
         }
       }
@@ -385,7 +394,7 @@ function TapComponent() {
         case "profile":
           return <ApplyTemplate />;
         case "restraunt":
-          return <Restaurants/>
+          return <Restaurants />;
         default:
           return <></>;
       }
