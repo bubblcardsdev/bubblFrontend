@@ -77,6 +77,7 @@ import { style } from "@mui/system";
 import WebsiteIcon from "./Components/icons/website";
 import MapsIcon from "./Components/icons/maps";
 import ClientSection from "../../../Phase_2_HomePage/clientSection/clientSection";
+import { getAccessToken } from "src/App/helpers/local-storage";
 const bannerMap = {
   "#F53232": Banner1,
   "#0082E1": Banner2,
@@ -163,23 +164,23 @@ export default function FreeTemplateTwo({
   const handleCloseLogo = () => setShowLogo(false);
   const handleShowLogo = () => setShowLogo(true);
   const [userPlan, setUserPlan] = useState<null | IPlanDetail>(null);
-
+  const token = getAccessToken();
   useEffect(() => {
-    // if (edit) {
-    const userPlanPromise = getUserPlan();
-    if (userPlanPromise) {
-      userPlanPromise
-        .then((res) => res.data)
-        .then((data) => {
-          const { getPlans } = data;
-          setUserPlan(getPlans);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+    if (token) {
+      const userPlanPromise = getUserPlan();
+      if (userPlanPromise) {
+        userPlanPromise
+          .then((res) => res.data)
+          .then((data) => {
+            const { getPlans } = data;
+            setUserPlan(getPlans);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      }
     }
-    // }
-  }, [edit]);
+  }, [token]);
   const handleShareIconClick = () => {
     if (!userName) {
       toast.info("No unique name is configured");
