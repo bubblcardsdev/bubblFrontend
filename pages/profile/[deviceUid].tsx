@@ -23,7 +23,7 @@ import { getUniqueName } from "src/App/services/unique";
 import { MODAL_TYPES, ModalT } from "types/modal";
 import LoaderScreen from "src/App/components/lottie/lottie";
 import RegisterPage from "../register";
-import Restaurants from '../../src/App/components/Restaurants/index' 
+import Restaurants from "../../src/App/components/Restaurants/index";
 
 export interface typeProfileI {
   firstName: string;
@@ -35,6 +35,7 @@ function TapComponent() {
   const { deviceUid } = router.query;
 
   const [getAllProfile, setAllProfile] = useState<any>();
+  const [userData, setUserData] = useState<any>(null);
   const [deviceBranding, setDeviceBranding] = useState<any>();
   const [profileImg, setProfileImg] = useState<{
     square: string;
@@ -118,12 +119,14 @@ function TapComponent() {
           response?.profile?.DeviceLink?.AccountDeviceLink?.Device?.deviceUid
         );
         setAllProfile(response?.profile);
+        setUserData(response?.user);
       } else {
         response = await getProfileByDevice(deviceUid);
         setDeviceNo(deviceUid);
       }
       if (response.success === true) {
         setAllProfile(response?.profile);
+        setUserData(response?.user);
         if (response?.profile?.DeviceLink) {
           setProfileInformation(response?.profile);
           setModeId(response?.profile?.DeviceLink?.ModeId);
@@ -218,10 +221,9 @@ function TapComponent() {
       break;
   }
   useEffect(() => {
-    if(deviceUid == "0ee031d4-e923-4064-8c50-bdc1229aa6bc"){
-      setPage('restraunt')    
-    }
-    else getProfileByDeviceFunction();
+    if (deviceUid == "0ee031d4-e923-4064-8c50-bdc1229aa6bc") {
+      setPage("restraunt");
+    } else getProfileByDeviceFunction();
   }, [router]);
 
   function ApplyTemplate() {
@@ -234,8 +236,7 @@ function TapComponent() {
           getUrlValue.includes("http://")
         ) {
           window.open(getUrlValue, "_self", "noreferrer");
-        } 
-        else {
+        } else {
           window.open(`https://${getUrlValue}`, "_self", "noreferrer");
         }
       }
@@ -301,6 +302,7 @@ function TapComponent() {
             imageError=""
             deviceUid={deviceNo}
             deviceId={deviceNo}
+            userData={userData}
           />
         );
         break;
@@ -385,7 +387,7 @@ function TapComponent() {
         case "profile":
           return <ApplyTemplate />;
         case "restraunt":
-          return <Restaurants/>
+          return <Restaurants />;
         default:
           return <></>;
       }

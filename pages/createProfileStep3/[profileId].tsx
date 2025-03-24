@@ -948,6 +948,7 @@ function CreateProfileStep3() {
           imageError={imageError}
           deviceUid={deviceUpdateId}
           deviceId={deviceUpdateId}
+          userData={undefined}
         />
       );
       break;

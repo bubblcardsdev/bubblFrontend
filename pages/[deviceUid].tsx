@@ -34,6 +34,7 @@ function TapComponent() {
   const { deviceUid } = router.query;
 
   const [getAllProfile, setAllProfile] = useState<any>();
+  const [userData, setUserData] = useState<any>();
   const [deviceBranding, setDeviceBranding] = useState<any>();
   const [profileImg, setProfileImg] = useState<{
     square: string;
@@ -118,6 +119,7 @@ function TapComponent() {
           response?.profile?.DeviceLink?.AccountDeviceLink?.Device?.deviceUid
         );
         setAllProfile(response?.profile);
+        setUserData(response?.user);
       } else {
         response = await getProfileByDevice(deviceUid);
         setDeviceNo(deviceUid);
@@ -126,6 +128,7 @@ function TapComponent() {
       console.log(response, "resoo");
       if (response.success === true) {
         setAllProfile(response?.profile);
+        setUserData(response?.user);
         if (response?.profile?.DeviceLink) {
           setProfileInformation(response?.profile);
           setModeId(response?.profile?.DeviceLink?.ModeId);
@@ -300,6 +303,7 @@ function TapComponent() {
             imageError=""
             deviceUid={deviceNo}
             deviceId={deviceNo}
+            userData={userData}
           />
         );
         break;

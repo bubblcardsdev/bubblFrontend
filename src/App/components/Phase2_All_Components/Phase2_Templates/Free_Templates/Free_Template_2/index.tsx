@@ -103,6 +103,7 @@ export default function FreeTemplateTwo({
   imageError,
   deviceUid,
   deviceId,
+  userData,
 }: {
   edit: boolean;
   deviceBranding: IDeviceBranding | null;
@@ -119,6 +120,7 @@ export default function FreeTemplateTwo({
   imageError: string;
   deviceUid: any;
   deviceId: any;
+  userData: any;
 }) {
   const mode = deviceBranding?.darkMode ? "dark" : "light";
   var backgroundColor: string | undefined;
@@ -163,20 +165,20 @@ export default function FreeTemplateTwo({
   const [userPlan, setUserPlan] = useState<null | IPlanDetail>(null);
 
   useEffect(() => {
-    if (edit) {
-      const userPlanPromise = getUserPlan();
-      if (userPlanPromise) {
-        userPlanPromise
-          .then((res) => res.data)
-          .then((data) => {
-            const { getPlans } = data;
-            setUserPlan(getPlans);
-          })
-          .catch((error) => {
-            console.log(error);
-          });
-      }
+    // if (edit) {
+    const userPlanPromise = getUserPlan();
+    if (userPlanPromise) {
+      userPlanPromise
+        .then((res) => res.data)
+        .then((data) => {
+          const { getPlans } = data;
+          setUserPlan(getPlans);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     }
+    // }
   }, [edit]);
   const handleShareIconClick = () => {
     if (!userName) {
@@ -419,6 +421,9 @@ export default function FreeTemplateTwo({
         "_blank"
       );
   };
+
+  const planId =
+    userData?.BubblPlanManagements[0]?.planId || userPlan?.planId || 1;
 
   useEffect(() => {
     saveContactAuto();
@@ -791,7 +796,7 @@ export default function FreeTemplateTwo({
               >
                 {/* logo upload */}
                 <div className={styles.qrImg}>
-                  {userPlan?.planId === 2 && qrImage ? (
+                  {planId === 2 && qrImage ? (
                     <img
                       src={qrImage}
                       alt="Logo"
@@ -807,7 +812,7 @@ export default function FreeTemplateTwo({
                   )}
                 </div>
 
-                {edit && userPlan?.planId === 2 ? (
+                {edit && planId === 2 ? (
                   <div className={styles.QrEdit} style={{ backgroundColor }}>
                     <Image
                       src={ProfileEditIcon}
