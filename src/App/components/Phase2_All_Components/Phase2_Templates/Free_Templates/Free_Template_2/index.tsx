@@ -387,14 +387,16 @@ export default function FreeTemplateTwo({
   const onCallClick = () => {
     if (phoneNumberCount > 1) {
       setModalType(MODAL_TYPES.mobileNumberView);
-    } else
+    } else {
+  
       window.open(
-        `tel:${
+        `tel:${getAllProfile?.profilePhoneNumbers?.[0]?.countryCode || ""}${
           getAllProfile?.profilePhoneNumbers?.[0]?.phoneNumber ||
           phoneNumberField?.phoneNumber
         }`,
         "_self"
       );
+    }
   };
   const onSocialClick = (url: string) => {
     if (url && url !== "#") {
@@ -997,6 +999,9 @@ export default function FreeTemplateTwo({
                       <Caller_icon />
                       <div className={styles.shareInfoContentContainer}>
                         <p className={styles.shareInfoContent_contact}>
+                          {getAllProfile?.profilePhoneNumbers?.[0]
+                            ?.countryCode || phoneNumberField?.countryCode}
+                          &nbsp;
                           {getAllProfile?.profilePhoneNumbers?.[0]
                             ?.phoneNumber || phoneNumberField?.phoneNumber}
                         </p>
