@@ -22,6 +22,7 @@ function SaveContactFour({
   designation,
   profileImg,
   website,
+  zipCode,
 }: any) {
   const handleClickEvent = async (clickId: any) => {
     const tapObj = {
@@ -47,6 +48,7 @@ function SaveContactFour({
       state,
       city,
       contacts,
+      zipCode,
       country,
       deviceUid
     );

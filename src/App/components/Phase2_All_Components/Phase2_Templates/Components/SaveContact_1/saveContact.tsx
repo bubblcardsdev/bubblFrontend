@@ -21,6 +21,7 @@ function SaveContact({
   designation,
   profileImg,
   website,
+  zipCode,
 }: any) {
   console.log(deviceUid, "deviceUid");
   console.log(phoneNumber, "phoneNumber");
@@ -62,6 +63,7 @@ function SaveContact({
       state,
       city,
       "address",
+      zipCode,
       country,
       deviceUid
     );

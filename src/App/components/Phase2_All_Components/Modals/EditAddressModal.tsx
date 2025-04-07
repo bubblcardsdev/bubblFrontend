@@ -76,9 +76,9 @@ function EditAddressModal({
         setAddress((prevState) => ({
           ...prevState,
           error: {
-            address: "",
-            state: "",
-            zipCode: "",
+            address: "address is required",
+            state: " state is required",
+            zipCode: "postal code is required",
             city: !city ? "City is required" : "",
             country: !country ? "Country is required" : "",
           },

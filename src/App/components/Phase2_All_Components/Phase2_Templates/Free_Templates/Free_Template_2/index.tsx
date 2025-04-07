@@ -139,7 +139,8 @@ export default function FreeTemplateTwo({
   if (updateAddress) {
     // const val = updateAddress.replace(/ /g, "+");
     // console.log(val, "val");
-    val2 = updateAddress.replace(/,/g, "+");
+    // val2 = updateAddress.replace(/,/g, "+");
+    val2 = encodeURIComponent(updateAddress);
   }
   const {
     digitalPayments,
@@ -251,7 +252,8 @@ export default function FreeTemplateTwo({
       getAllProfile?.state || (userProfile && userProfile?.data?.state),
       getAllProfile?.city || (userProfile && userProfile?.data?.city),
       getAllProfile?.address || (userProfile && userProfile?.data?.address),
-      getAllProfile?.state || (userProfile && userProfile?.data?.country),
+      getAllProfile?.zipCode || (userProfile && userProfile?.data?.zipCode),
+      getAllProfile?.country || (userProfile && userProfile?.data?.country),
       deviceUid
     );
 
@@ -356,6 +358,7 @@ export default function FreeTemplateTwo({
         stateList,
         cityList,
         addressList,
+        zipCode,
         countryList,
         deviceUid
       );
@@ -388,7 +391,6 @@ export default function FreeTemplateTwo({
     if (phoneNumberCount > 1) {
       setModalType(MODAL_TYPES.mobileNumberView);
     } else {
-  
       window.open(
         `tel:${getAllProfile?.profilePhoneNumbers?.[0]?.countryCode || ""}${
           getAllProfile?.profilePhoneNumbers?.[0]?.phoneNumber ||
@@ -415,14 +417,27 @@ export default function FreeTemplateTwo({
       );
   };
 
+  // const onWebsiteClick = () => {
+  //   if (websiteFieldCount > 1) {
+  //     setModalType(MODAL_TYPES.websiteView);
+  //   } else
+  //     window.open(
+  //      getAllProfile?.profileWebsites?.[0]?.website || websiteField?.website,
+  //       "_blank"
+  //     );
+  // };
   const onWebsiteClick = () => {
+    const website =
+      getAllProfile?.profileWebsites?.[0]?.website || websiteField?.website;
+    const formattedWebsite = website.startsWith("http")
+      ? website
+      : `https://${website}`;
+
     if (websiteFieldCount > 1) {
       setModalType(MODAL_TYPES.websiteView);
-    } else
-      window.open(
-        getAllProfile?.profileWebsites?.[0]?.website || websiteField?.website,
-        "_blank"
-      );
+    } else {
+      window.open(formattedWebsite, "_blank");
+    }
   };
 
   const planId =
@@ -432,6 +447,7 @@ export default function FreeTemplateTwo({
     saveContactAuto();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userProfile]);
+  console.log(getAllProfile, "profile", userProfile);
   return (
     <>
       {/* Upload Logo */}
@@ -843,34 +859,31 @@ export default function FreeTemplateTwo({
                 Save Contact
               </button>
               <div
-                style={
-                  mode === "dark"
-                    ? {
-                        background: "#3B3B3B",
-                      }
-                    : {
-                        background: "rgba(235, 235, 235, 0.70)",
-                      }
-                }
+                style={{
+                  backgroundColor:backgroundColor
+                  // mode === "dark"
+                  //   ? {
+                  //       background: "#3B3B3B",
+                  //     }
+                  //   : {
+                  //       background: "rgba(235, 235, 235, 0.70)",
+                  //     }
+                }}
                 className={styles.share_icon_btn}
                 onClick={handleShareIconClick}
               >
                 <ShareOutlined
                   className={styles.share_icon}
-                  color={backgroundColor || "#007AFF"}
+                  color='#ffffff'
+                
                 />
               </div>
               <div
                 className={styles.share_icon_btn}
-                style={
-                  mode === "dark"
-                    ? {
-                        background: "#3B3B3B",
-                      }
-                    : {
-                        background: "rgba(235, 235, 235, 0.70)",
-                      }
-                }
+                style={{
+                  backgroundColor:backgroundColor
+              
+                }}
               >
                 <div
                   className={styles.Qr}
@@ -884,8 +897,8 @@ export default function FreeTemplateTwo({
                     qrComponent={
                       <QrOutlined
                         className={styles.share_icon}
-                        color={backgroundColor || "#007AFF"}
-                      />
+                        color='#ffffff'       
+                       />
                     }
                   />
                 </div>
