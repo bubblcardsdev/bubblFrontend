@@ -157,6 +157,7 @@ export default function Profile() {
     state: any,
     city: any,
     address: any,
+    zipCode:any,
     country: any,
     deviceUid: any
   ) => {
@@ -175,6 +176,7 @@ export default function Profile() {
       state,
       city,
       address,
+      zipCode,
       country,
       deviceUid
     );
@@ -310,6 +312,7 @@ export default function Profile() {
             response?.profile?.state,
             response?.profile?.city,
             response?.profile?.address,
+            response?.profile?.zipCode,
             response?.profile?.country,
             "1"
           );
