@@ -22,6 +22,7 @@ function SaveContactFive({
   designation,
   profileImg,
   website,
+  zipCode,
 }: any) {
   const handleClickEvent = async (clickId: any) => {
     const tapObj = {
@@ -48,6 +49,7 @@ function SaveContactFive({
       state,
       city,
       contacts,
+      zipCode,
       country,
       deviceUid
     );
@@ -58,7 +60,7 @@ function SaveContactFive({
     a.href = url;
     a.setAttribute("download", `${firstName}.vcf`);
     document.body.appendChild(a);
-
+    
     a.click();
 
     document.body.removeChild(a);

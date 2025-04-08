@@ -106,8 +106,9 @@ export default function ProTemplateTwo({
   const updateAddress = userProfile?.data?.address || getAllProfile?.address;
   let val2 = "";
   if (updateAddress) {
-    const val = updateAddress.replace(/ /g, "+");
-    val2 = val.replace(/,/g, "");
+    // const val = updateAddress.replace(/ /g, "+");
+    // val2 = val.replace(/,/g, "");
+    val2 = encodeURIComponent(updateAddress);
   }
   const {
     digitalPayments,
@@ -236,6 +237,7 @@ export default function ProTemplateTwo({
     const saveId = getAllProfile?.id;
     const socialMedia = getAllProfile?.profileSocialMediaLinks;
     const profileImgs = profileImage;
+    const profileZipCode = getAllProfile?.zipCode || zipCode || "";
 
     if (Number(modeId) === 1) {
       const vcfData = await SaveVCFContact(
@@ -253,6 +255,7 @@ export default function ProTemplateTwo({
         stateList,
         cityList,
         addressList,
+        profileZipCode,
         countryList,
         deviceUid
       );
@@ -275,6 +278,12 @@ export default function ProTemplateTwo({
     saveContactAuto();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userProfile]);
+  function ensureURLProtocol(url: any) {
+    if (url.startsWith("https://") || url.startsWith("http://")) {
+      return url;
+    }
+    return `https://${url}`;
+  }
   return (
     <>
       {/* Upload Logo */}
@@ -720,84 +729,107 @@ export default function ProTemplateTwo({
               </div>
 
               <div className={styles.SaveContactSection}>
-                <div className={styles.SaveContact}>
-                  <SaveContactUnique
-                    deviceUid={deviceUid}
-                    black=""
-                    saveTextBorderColor=""
-                    saveTextFieldColor=""
-                    saveTextBackColor=""
-                    saveIconBorderColor=""
-                    saveIconBackgroundColor={
-                      backgroundColor || "rgb(31, 135, 250)"
-                    }
-                    saveIconColor=""
-                    fontSize=""
-                    fontWeight=""
-                    firstName={
-                      getAllProfile?.firstName ||
-                      (userProfile && userProfile?.data?.firstName)
-                    }
-                    lastName={
-                      getAllProfile?.lastName ||
-                      (userProfile && userProfile?.data?.lastName)
-                    }
-                    phoneNumber={
-                      getAllProfile?.profilePhoneNumbers ||
-                      (userProfile && userProfile?.data?.profilePhoneNumbers)
-                    }
-                    emailId={
-                      getAllProfile?.profileEmails ||
-                      (userProfile && userProfile?.data?.profileEmails)
-                    }
-                    website={
-                      getAllProfile?.profileWebsites ||
-                      (userProfile && userProfile?.data?.profileWebsites)
-                    }
-                    contacts={
-                      getAllProfile?.address ||
-                      (userProfile && userProfile?.data?.address)
-                    }
-                    state={
-                      getAllProfile?.state ||
-                      (userProfile && userProfile?.data?.state)
-                    }
-                    city={
-                      getAllProfile?.city ||
-                      (userProfile && userProfile?.data?.city)
-                    }
-                    country={
-                      getAllProfile?.state ||
-                      (userProfile && userProfile?.data?.country)
-                    }
-                    deviceId={
-                      getAllProfile?.id ||
-                      (userProfile && userProfile?.data?.id)
-                    }
-                    qrImageUrl={qrImage}
-                    mediaArray={
-                      getAllProfile?.profileSocialMediaLinks ||
-                      (userProfile &&
-                        userProfile?.data?.profileSocialMediaLinks)
-                    }
-                    profileImg={profileImage?.square}
-                    companyName={
-                      getAllProfile?.companyName ||
-                      (userProfile && userProfile?.data?.companyName)
-                    }
-                    designation={
-                      getAllProfile?.designation ||
-                      (userProfile && userProfile?.data?.designation)
-                    }
-                  />
+                <div
+                  className={styles.SaveContact}
+                  style={{
+                    border: `1px solid ${
+                      backgroundColor == "#2E2E2E" && mode == "dark"
+                        ? "#ffffff"
+                        : backgroundColor || "rgb(31, 135, 250)"
+                    }`,
+                  }}
+                >
+                  <div className={styles.contactSaveButton}>
+                    <SaveContactUnique
+                      deviceUid={deviceUid}
+                      black=""
+                      saveTextBorderColor=""
+                      saveTextFieldColor=""
+                      saveTextBackColor=""
+                      saveIconBorderColor=""
+                      saveIconBackgroundColor={
+                        backgroundColor == "#2E2E2E" && mode == "dark"
+                          ? "#ffffff"
+                          : backgroundColor || "rgb(31, 135, 250)"
+                      }
+                      saveIconColor=""
+                      fontSize=""
+                      fontWeight=""
+                      firstName={
+                        getAllProfile?.firstName ||
+                        (userProfile && userProfile?.data?.firstName)
+                      }
+                      lastName={
+                        getAllProfile?.lastName ||
+                        (userProfile && userProfile?.data?.lastName)
+                      }
+                      phoneNumber={
+                        getAllProfile?.profilePhoneNumbers ||
+                        (userProfile && userProfile?.data?.profilePhoneNumbers)
+                      }
+                      emailId={
+                        getAllProfile?.profileEmails ||
+                        (userProfile && userProfile?.data?.profileEmails)
+                      }
+                      website={
+                        getAllProfile?.profileWebsites ||
+                        (userProfile && userProfile?.data?.profileWebsites)
+                      }
+                      contacts={
+                        getAllProfile?.address ||
+                        (userProfile && userProfile?.data?.address)
+                      }
+                      state={
+                        getAllProfile?.state ||
+                        (userProfile && userProfile?.data?.state)
+                      }
+                      city={
+                        getAllProfile?.city ||
+                        (userProfile && userProfile?.data?.city)
+                      }
+                      country={
+                        getAllProfile?.country ||
+                        (userProfile && userProfile?.data?.country)
+                      }
+                      deviceId={
+                        getAllProfile?.id ||
+                        (userProfile && userProfile?.data?.id)
+                      }
+                      qrImageUrl={qrImage}
+                      mediaArray={
+                        getAllProfile?.profileSocialMediaLinks ||
+                        (userProfile &&
+                          userProfile?.data?.profileSocialMediaLinks)
+                      }
+                      profileImg={profileImage?.square}
+                      companyName={
+                        getAllProfile?.companyName ||
+                        (userProfile && userProfile?.data?.companyName)
+                      }
+                      designation={
+                        getAllProfile?.designation ||
+                        (userProfile && userProfile?.data?.designation)
+                      }
+                      zipCode={zipCode}
+                    />
+                  </div>
                   <a
                     className={styles.Share}
                     onClick={handleShareIconClick}
                     style={{
-                      borderColor: backgroundColor,
+                      borderColor:
+                        backgroundColor == "#2E2E2E" && mode == "dark"
+                          ? "#ffffff"
+                          : backgroundColor || "rgb(31, 135, 250)",
                     }}
                   >
-                    <ShareSVG color={backgroundColor} />
+                    <ShareSVG
+                      color={
+                        backgroundColor == "#2E2E2E" && mode == "dark"
+                          ? "#ffffff"
+                          : backgroundColor || "rgb(31, 135, 250)"
+                      }
+                    />
                   </a>
                 </div>
                 <div className={styles.Qr} style={{ backgroundColor }}>
@@ -970,10 +1002,10 @@ export default function ProTemplateTwo({
                           />
                         ) : (
                           <a
-                            href={`${
+                            href={`${ensureURLProtocol(
                               getAllProfile?.profileWebsites?.[0]?.website ||
                               websiteField?.website
-                            }`}
+                        )}`}
                             target="_blank"
                             rel="noreferrer"
                           >
@@ -1008,10 +1040,10 @@ export default function ProTemplateTwo({
                         ) : (
                           <a
                             className={styles.ContactNumber}
-                            href={`${
+                            href={`${ensureURLProtocol(
                               getAllProfile?.profileWebsites?.[0]?.website ||
-                              websiteField?.website
-                            }`}
+                                websiteField?.website
+                              ) }`}
                             target="_blank"
                             style={{ backgroundColor }}
                             rel="noreferrer"
@@ -1127,7 +1159,7 @@ export default function ProTemplateTwo({
                               ...(mode === "dark"
                                 ? {
                                     background:
-                                      "linear-gradient(90deg, #262626 0.5%, #3D3D3D 95.48%)",
+                                      "linear-gradient(90deg,rgb(255, 255, 255) 0.5%,rgb(253, 251, 251) 95.48%)",
                                   }
                                 : {}),
                             }}
@@ -1156,7 +1188,7 @@ export default function ProTemplateTwo({
                               ...(mode === "dark"
                                 ? {
                                     background:
-                                      "linear-gradient(90deg, #262626 0.5%, #3D3D3D 95.48%)",
+                                      "linear-gradient(90deg,rgb(253, 251, 251) 0.5%,rgb(255, 255, 255) 95.48%)",
                                   }
                                 : {}),
                             }}
@@ -1185,7 +1217,7 @@ export default function ProTemplateTwo({
                               ...(mode === "dark"
                                 ? {
                                     background:
-                                      "linear-gradient(90deg, #262626 0.5%, #3D3D3D 95.48%)",
+                                      "linear-gradient(90deg,rgb(250, 249, 249) 0.5%,rgb(255, 255, 255) 95.48%)",
                                   }
                                 : {}),
                             }}
@@ -1215,7 +1247,7 @@ export default function ProTemplateTwo({
                               ...(mode === "dark"
                                 ? {
                                     background:
-                                      "linear-gradient(90deg, #262626 0.5%, #3D3D3D 95.48%)",
+                                      "linear-gradient(90deg,rgb(255, 255, 255) 0.5%,rgb(249, 244, 244) 95.48%)",
                                   }
                                 : {}),
                             }}
@@ -1241,7 +1273,7 @@ export default function ProTemplateTwo({
                               ...(mode === "dark"
                                 ? {
                                     background:
-                                      "linear-gradient(90deg, #262626 0.5%, #3D3D3D 95.48%)",
+                                      "linear-gradient(90deg,rgb(255, 253, 253) 0.5%,rgb(248, 247, 247) 95.48%)",
                                   }
                                 : {}),
                             }}
@@ -1271,7 +1303,7 @@ export default function ProTemplateTwo({
                               ...(mode === "dark"
                                 ? {
                                     background:
-                                      "linear-gradient(90deg, #262626 0.5%, #3D3D3D 95.48%)",
+                                      "linear-gradient(90deg,rgb(254, 252, 252) 0.5%,rgb(255, 254, 254) 95.48%)",
                                   }
                                 : {}),
                             }}

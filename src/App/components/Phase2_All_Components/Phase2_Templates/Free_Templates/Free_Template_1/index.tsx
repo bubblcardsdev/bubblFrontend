@@ -232,6 +232,7 @@ export default function FreeTemplateOne({
     const saveId = getAllProfile?.id;
     const socialMedia = getAllProfile?.profileSocialMediaLinks;
     const profileImgs = profileImage;
+    const profileZipCode = getAllProfile?.zipCode || zipCode || "";
 
     if (Number(modeId) === 1) {
       const vcfData = await SaveVCFContact(
@@ -249,6 +250,7 @@ export default function FreeTemplateOne({
         stateList,
         cityList,
         addressList,
+        profileZipCode,
         countryList,
         deviceUid
       );
@@ -271,7 +273,12 @@ export default function FreeTemplateOne({
     saveContactAuto();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userProfile]);
-
+  function ensureURLProtocol(url: any) {
+    if (url.startsWith("https://") || url.startsWith("http://")) {
+      return url;
+    }
+    return `https://${url}`;
+  }
   return (
     <>
       <Head>
@@ -487,7 +494,7 @@ export default function FreeTemplateOne({
                       (userProfile && userProfile?.data?.city)
                     }
                     country={
-                      getAllProfile?.state ||
+                      getAllProfile?.country ||
                       (userProfile && userProfile?.data?.country)
                     }
                     deviceId={
@@ -509,6 +516,7 @@ export default function FreeTemplateOne({
                       getAllProfile?.designation ||
                       (userProfile && userProfile?.data?.designation)
                     }
+                    zipCode={zipCode}
                   />
                 </div>
 
@@ -557,7 +565,7 @@ export default function FreeTemplateOne({
                   )}
                 </div>
 
-                {(edit && userPlan?.planId !== 1 ) ? (
+                {edit && userPlan?.planId !== 1 ? (
                   <div className={styles.QrEdit} style={{ backgroundColor }}>
                     <Image
                       src={ProfileEditIcon}
@@ -848,8 +856,15 @@ export default function FreeTemplateOne({
                               ?.phoneNumber ||
                             (phoneNumberField &&
                               phoneNumberField.phoneNumber) ? (
-                              getAllProfile?.profilePhoneNumbers?.[0]
-                                ?.phoneNumber || phoneNumberField?.phoneNumber
+                              `${
+                                getAllProfile?.profilePhoneNumbers?.[0]
+                                  ?.countryCode || phoneNumberField?.countryCode
+                              }             
+                                  ${
+                                    getAllProfile?.profilePhoneNumbers?.[0]
+                                      ?.phoneNumber ||
+                                    phoneNumberField?.phoneNumber
+                                  }`
                             ) : (
                               <span style={{ opacity: 0.5 }}>
                                 Enter your number
@@ -1119,10 +1134,10 @@ export default function FreeTemplateOne({
                       ) : (
                         <a
                           className={styles.Middle}
-                          href={`${
+                          href={`${ensureURLProtocol(
                             getAllProfile?.profileWebsites?.[0]?.website ||
-                            websiteField?.website
-                          }`}
+                              websiteField?.website
+                          )}`}
                           target="_blank"
                           rel="noreferrer"
                           style={

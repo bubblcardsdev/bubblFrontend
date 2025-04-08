@@ -379,6 +379,7 @@ async function SaveVCFContact(
   state: any,
   city: any,
   address: any,
+  zipCode: any,
   country: any,
   deviceUid: any
 ) {
@@ -446,7 +447,7 @@ async function SaveVCFContact(
   const formattedCity = city || "";
   const formattedState = state || "";
   const formattedCountry = country || "";
-
+  const formattedzipCode = zipCode || "";
   const vCardData = generateVCardV4(
     formattedFirstName,
     formattedCompanyName,
@@ -457,8 +458,8 @@ async function SaveVCFContact(
     websiteUrl,
     formattedAddress,
     formattedCity,
+    formattedzipCode,
     formattedState,
-    "",
     formattedCountry,
     socialMedia
   );

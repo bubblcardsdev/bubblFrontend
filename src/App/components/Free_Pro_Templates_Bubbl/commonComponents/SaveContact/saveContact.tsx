@@ -130,11 +130,12 @@ function SaveContactNew({
       website,
       emailId,
       deviceId,
-      contacts.state,
-      contacts.city,
-      contacts?.address,
-      contacts.country,
-      "1"
+      contacts?.state,
+      contacts?.city,
+      contacts,
+      contacts?.zipCode,
+      contacts?.country,
+      contacts?. deviceUid
     );
 
     const file = new Blob([vcfdata], { type: "text/vcard" });

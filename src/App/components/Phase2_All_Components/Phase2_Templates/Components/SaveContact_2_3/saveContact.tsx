@@ -22,6 +22,7 @@ function SaveContactUnique({
   designation,
   profileImg,
   website,
+  zipCode,
 }: any) {
   const handleClickEvent = async (clickId: any) => {
     const tapObj = {
@@ -48,6 +49,7 @@ function SaveContactUnique({
       state,
       city,
       contacts,
+      zipCode,
       country,
       deviceUid
     );
@@ -76,8 +78,12 @@ function SaveContactUnique({
           handleClickEvent(3);
         }}
         style={{
-          border: `2px solid ${saveIconBackgroundColor}`,
+          border: `0px solid ${saveIconBackgroundColor} `,
+          // color:` mode === "dark" ? "white" : ${saveIconBackgroundColor}`,
           color: saveIconBackgroundColor,
+          backgroundColor:'transparent',
+          fontWeight:700,
+          
         }}
       >
         Save Contact

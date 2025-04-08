@@ -123,7 +123,8 @@ export default function ProTemplateFour({
   let val2 = "";
   if (updateAddress) {
     // const val = updateAddress.replace(/ /g, "+");
-    val2 = updateAddress.replace(/,/g, "+");
+    // val2 = updateAddress.replace(/,/g, "+");
+    val2 = encodeURIComponent(updateAddress);
   }
 
   const {
@@ -206,14 +207,11 @@ export default function ProTemplateFour({
   if (getAllProfile?.profilePhoneNumbers?.length > 0) {
     showContactSection = true;
   }
-
   const showSocialMediaSection =
     edit || Object.values(mediaLinks).some((socialLink) => socialLink !== "#");
-
   // if (getAllProfile?.profileSocialMediaLinks?.length > 0) {
   //   showSocialMediaSection = true;
   // }
-
   const showDigitalPaymentSection =
     edit ||
     Object.values(digitalPayments).some(
@@ -251,6 +249,7 @@ export default function ProTemplateFour({
     const saveId = getAllProfile?.id;
     const socialMedia = getAllProfile?.profileSocialMediaLinks;
     const profileImgs = profileImage;
+    const profileZipCode = getAllProfile?.zipCode || zipCode || "";
 
     if (Number(modeId) === 1) {
       const vcfData = await SaveVCFContact(
@@ -268,6 +267,7 @@ export default function ProTemplateFour({
         stateList,
         cityList,
         addressList,
+        profileZipCode,
         countryList,
         deviceUid
       );
@@ -290,6 +290,12 @@ export default function ProTemplateFour({
     saveContactAuto();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userProfile]);
+  function ensureURLProtocol(url:any) {
+    if (url.startsWith("https://") || url.startsWith("http://")) {
+      return url; 
+    }
+    return `https://${url}`;
+  }
   return (
     <>
       {/* Upload Logo */}
@@ -549,7 +555,7 @@ export default function ProTemplateFour({
                     (userProfile && userProfile?.data?.city)
                   }
                   country={
-                    getAllProfile?.state ||
+                    getAllProfile?.country ||
                     (userProfile && userProfile?.data?.country)
                   }
                   deviceId={
@@ -568,6 +574,11 @@ export default function ProTemplateFour({
                   designation={
                     getAllProfile?.designation ||
                     (userProfile && userProfile?.data?.designation)
+                  }
+                  zipCode={
+                    zipCode ||
+                    getAllProfile?.zipCode ||
+                    (userProfile && userProfile?.data?.zipCode)
                   }
                 />
 
@@ -862,9 +873,12 @@ export default function ProTemplateFour({
                                     ?.phoneNumber ||
                                   (phoneNumberField &&
                                     phoneNumberField.phoneNumber) ? (
-                                    getAllProfile?.profilePhoneNumbers?.[0]
+                                    `${getAllProfile?.profilePhoneNumbers?.[0]
+                                      ?.countryCode ||
+                                    phoneNumberField?.countryCode}
+                                    ${getAllProfile?.profilePhoneNumbers?.[0]
                                       ?.phoneNumber ||
-                                    phoneNumberField?.phoneNumber
+                                    phoneNumberField?.phoneNumber}`
                                   ) : (
                                     <span style={{ opacity: 0.5 }}>
                                       Enter your number
@@ -1153,10 +1167,10 @@ export default function ProTemplateFour({
                           ) : (
                             <a
                               className={styles.ContactActionBoth}
-                              href={`${
+                              href={`${ensureURLProtocol(
                                 getAllProfile?.profileWebsites?.[0]?.website ||
                                 websiteField?.website
-                              }`}
+                           ) }`}
                               target="_blank"
                               rel="noreferrer"
                             >

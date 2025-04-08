@@ -340,6 +340,7 @@ export default function ProTemplateFive({
     const saveId = getAllProfile?.id;
     const socialMedia = getAllProfile?.profileSocialMediaLinks;
     const profileImgs = profileImage;
+    const profileZipCode = getAllProfile?.zipCode || zipCode || "";
 
     if (Number(modeId) === 1) {
       const vcfData = await SaveVCFContact(
@@ -357,6 +358,7 @@ export default function ProTemplateFive({
         stateList,
         cityList,
         addressList,
+        "",
         countryList,
         deviceUid
       );
@@ -379,6 +381,12 @@ export default function ProTemplateFive({
     saveContactAuto();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userProfile]);
+  function ensureURLProtocol(url: any) {
+    if (url.startsWith("https://") || url.startsWith("http://")) {
+      return url;
+    }
+    return `https://${url}`;
+  }
   return (
     <>
       {/* Upload Logo */}
@@ -763,7 +771,7 @@ export default function ProTemplateFive({
                             (userProfile && userProfile?.data?.city)
                           }
                           country={
-                            getAllProfile?.state ||
+                            getAllProfile?.country ||
                             (userProfile && userProfile?.data?.country)
                           }
                           deviceId={
@@ -784,6 +792,11 @@ export default function ProTemplateFive({
                           designation={
                             getAllProfile?.designation ||
                             (userProfile && userProfile?.data?.designation)
+                          }
+                          zipCode={
+                            zipCode ||
+                            getAllProfile?.zipCode ||
+                            (userProfile && userProfile?.data?.zipCode)
                           }
                         />
 
@@ -970,10 +983,10 @@ export default function ProTemplateFive({
                               />
                             ) : (
                               <a
-                                href={`${
+                                href={`${ensureURLProtocol(
                                   getAllProfile?.profileWebsites?.[0]
                                     ?.website || websiteField?.website
-                                }`}
+                                )}`}
                                 target="_blank"
                                 rel="noreferrer"
                               >
@@ -1009,10 +1022,10 @@ export default function ProTemplateFive({
                             ) : (
                               <a
                                 className={styles.ContactNumber}
-                                href={`${
+                                href={`${ensureURLProtocol(
                                   getAllProfile?.profileWebsites?.[0]
                                     ?.website || websiteField?.website
-                                }`}
+                                )}`}
                                 target="_blank"
                                 style={{
                                   background: bgColor,
