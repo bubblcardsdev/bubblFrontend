@@ -586,7 +586,9 @@ export default function FreeTemplateTwo({
         </div>
         <div
           className={styles.Rupy_body_section}
-          style={mode === "dark" ? { background: "black" } : {}}
+          style={
+            mode === "dark" ? { background: "black" } : { background: "#fff" }
+          }
         >
           <div className={styles.rupy_logo_parent}>
             {/* User Profile Image */}
@@ -860,7 +862,7 @@ export default function FreeTemplateTwo({
               </button>
               <div
                 style={{
-                  backgroundColor:backgroundColor
+                  backgroundColor: backgroundColor,
                   // mode === "dark"
                   //   ? {
                   //       background: "#3B3B3B",
@@ -872,17 +874,12 @@ export default function FreeTemplateTwo({
                 className={styles.share_icon_btn}
                 onClick={handleShareIconClick}
               >
-                <ShareOutlined
-                  className={styles.share_icon}
-                  color='#ffffff'
-                
-                />
+                <ShareOutlined className={styles.share_icon} color="#ffffff" />
               </div>
               <div
                 className={styles.share_icon_btn}
                 style={{
-                  backgroundColor:backgroundColor
-              
+                  backgroundColor: backgroundColor,
                 }}
               >
                 <div
@@ -897,8 +894,8 @@ export default function FreeTemplateTwo({
                     qrComponent={
                       <QrOutlined
                         className={styles.share_icon}
-                        color='#ffffff'       
-                       />
+                        color="#ffffff"
+                      />
                     }
                   />
                 </div>
