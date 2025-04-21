@@ -290,9 +290,11 @@ export default function ProTemplateFour({
     saveContactAuto();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userProfile]);
-  function ensureURLProtocol(url:any) {
+  function ensureURLProtocol(url: any) {
+    if (!url) return "";
+
     if (url.startsWith("https://") || url.startsWith("http://")) {
-      return url; 
+      return url;
     }
     return `https://${url}`;
   }
@@ -873,12 +875,16 @@ export default function ProTemplateFour({
                                     ?.phoneNumber ||
                                   (phoneNumberField &&
                                     phoneNumberField.phoneNumber) ? (
-                                    `${getAllProfile?.profilePhoneNumbers?.[0]
-                                      ?.countryCode ||
-                                    phoneNumberField?.countryCode}
-                                    ${getAllProfile?.profilePhoneNumbers?.[0]
-                                      ?.phoneNumber ||
-                                    phoneNumberField?.phoneNumber}`
+                                    `${
+                                      getAllProfile?.profilePhoneNumbers?.[0]
+                                        ?.countryCode ||
+                                      phoneNumberField?.countryCode
+                                    }
+                                    ${
+                                      getAllProfile?.profilePhoneNumbers?.[0]
+                                        ?.phoneNumber ||
+                                      phoneNumberField?.phoneNumber
+                                    }`
                                   ) : (
                                     <span style={{ opacity: 0.5 }}>
                                       Enter your number
@@ -1169,8 +1175,8 @@ export default function ProTemplateFour({
                               className={styles.ContactActionBoth}
                               href={`${ensureURLProtocol(
                                 getAllProfile?.profileWebsites?.[0]?.website ||
-                                websiteField?.website
-                           ) }`}
+                                  websiteField?.website
+                              )}`}
                               target="_blank"
                               rel="noreferrer"
                             >

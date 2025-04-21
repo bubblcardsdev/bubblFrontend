@@ -617,7 +617,6 @@ export default function FreeTemplateTwo({
                 />
               )}
             </div>
-
             {/* User Profile Edit Icon Container */}
             {edit ? (
               <div
@@ -651,7 +650,7 @@ export default function FreeTemplateTwo({
                         className={styles.input_line}
                         onChange={inputChangeHandlers.name}
                         onBlur={inputBlurHandlers.name}
-                        maxLength={32}
+                        maxLength={50}
                         style={mode === "dark" ? { color: "white" } : {}}
                       />
                       {userProfile?.error?.firstName && (
@@ -707,7 +706,7 @@ export default function FreeTemplateTwo({
                           autoFocus
                           onChange={inputChangeHandlers.job}
                           onBlur={inputBlurHandlers.job}
-                          maxLength={30}
+                          maxLength={255}
                           style={mode === "dark" ? { color: "white" } : {}}
                         />
                         {userProfile?.error?.designation && (
@@ -918,7 +917,7 @@ export default function FreeTemplateTwo({
                       className={styles.input_line}
                       onChange={inputChangeHandlers.desc}
                       onBlur={inputBlurHandlers.desc}
-                      maxLength={200}
+                      maxLength={255}
                       style={
                         mode === "dark"
                           ? { color: "white" }

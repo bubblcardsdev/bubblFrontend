@@ -276,9 +276,9 @@ export default function ProTemplateTwo({
 
   useEffect(() => {
     saveContactAuto();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userProfile]);
   function ensureURLProtocol(url: any) {
+    if (!url) return "";
     if (url.startsWith("https://") || url.startsWith("http://")) {
       return url;
     }
@@ -623,7 +623,7 @@ export default function ProTemplateTwo({
                           onChange={inputChangeHandlers.desc}
                           onBlur={inputBlurHandlers.desc}
                           className={styles.input_line_des}
-                          maxLength={200}
+                          maxLength={255}
                           style={
                             mode === "dark"
                               ? {
@@ -1004,8 +1004,8 @@ export default function ProTemplateTwo({
                           <a
                             href={`${ensureURLProtocol(
                               getAllProfile?.profileWebsites?.[0]?.website ||
-                              websiteField?.website
-                        )}`}
+                                websiteField?.website
+                            )}`}
                             target="_blank"
                             rel="noreferrer"
                           >
@@ -1043,7 +1043,7 @@ export default function ProTemplateTwo({
                             href={`${ensureURLProtocol(
                               getAllProfile?.profileWebsites?.[0]?.website ||
                                 websiteField?.website
-                              ) }`}
+                            )}`}
                             target="_blank"
                             style={{ backgroundColor }}
                             rel="noreferrer"

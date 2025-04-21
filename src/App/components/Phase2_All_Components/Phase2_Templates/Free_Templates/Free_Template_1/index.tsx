@@ -271,9 +271,9 @@ export default function FreeTemplateOne({
 
   useEffect(() => {
     saveContactAuto();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userProfile]);
   function ensureURLProtocol(url: any) {
+    if (!url) return "";
     if (url.startsWith("https://") || url.startsWith("http://")) {
       return url;
     }
@@ -594,7 +594,7 @@ export default function FreeTemplateOne({
                         className={styles.input_line}
                         onChange={inputChangeHandlers.name}
                         onBlur={inputBlurHandlers.name}
-                        maxLength={32}
+                        maxLength={50}
                         style={
                           mode === "dark"
                             ? {
@@ -663,7 +663,7 @@ export default function FreeTemplateOne({
                         autoFocus
                         onChange={inputChangeHandlers.job}
                         onBlur={inputBlurHandlers.job}
-                        maxLength={30}
+                        maxLength={255}
                         style={
                           mode === "dark"
                             ? {
@@ -734,7 +734,7 @@ export default function FreeTemplateOne({
                     className={styles.input_line}
                     onChange={inputChangeHandlers.desc}
                     onBlur={inputBlurHandlers.desc}
-                    maxLength={200}
+                    maxLength={255}
                     style={
                       mode === "dark"
                         ? {
