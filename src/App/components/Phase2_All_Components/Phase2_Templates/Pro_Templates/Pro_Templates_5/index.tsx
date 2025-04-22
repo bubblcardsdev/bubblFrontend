@@ -382,6 +382,7 @@ export default function ProTemplateFive({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userProfile]);
   function ensureURLProtocol(url: any) {
+    if (!url) return "";
     if (url.startsWith("https://") || url.startsWith("http://")) {
       return url;
     }
