@@ -119,12 +119,12 @@ function CreateProfileStep1() {
               ) : (
                 <div
                   className={styles.Profile}
-                  style={{ opacity: allProfiles?.length >= 5 ? 0.5 : 1 }}
+                  style={{ opacity: allProfiles?.length >= 25 ? 0.5 : 1 }}
                 >
                   <Button
                     className={styles.profileBtn}
                     onClick={() => {
-                      allProfiles?.length >= 5
+                      allProfiles?.length >= 25
                         ? toast.error("Cannot create more than 5 profiles")
                         : router.push("/createProfileStep2");
                     }}

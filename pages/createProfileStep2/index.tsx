@@ -149,7 +149,7 @@ function CreateProfileStep2({ handleSaveImage, profileImg }: Props) {
       router.push("/bubblProfiles");
     }
 
-    if (plan?.getPlans?.planId !== 1 && allProfiles.length >= 5) {
+    if (plan?.getPlans?.planId !== 1 && allProfiles.length >= 25) {
       router.push("/bubblProfiles");
     }
   };

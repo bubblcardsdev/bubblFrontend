@@ -101,7 +101,7 @@ const CreateTemplate: React.FC = () => {
 
   useEffect(() => {
     import("@lottiefiles/lottie-player");
-  });
+  },[]);
 
   let [profileErrors, setProfileErrors] = useState({
     firstName: "",
