@@ -258,7 +258,7 @@ function generateVCardV4(
     socialMedia
   );
   console.log("came inside");
-  console.log(photoURL, "photo");
+  // console.log(photoURL, "photo");
   //   let vCard = `BEGIN:VCARD
   // VERSION:4.0
   // N:${fullName};;;;
@@ -324,23 +324,26 @@ TEL;TYPE=work,voice${index > 0 ? "," : ""}:${phoneNumber}`;
 EMAIL;TYPE=internet,work${index > 0 ? "," : ""}:${email}`;
   });
 
-  const addressSet = new Set(websiteURLs);
-
-  addressSet.forEach((url, index) => {
+  websiteURLs.forEach((url, index) => {
     const label = "Website";
     vCard += `
 item${index + 1}.URL;type=pref:${url}
 item${index + 1}.X-ABLabel:${label}`;
-  });
+    //   vCard += `
+    //   item1.URL;type=pref:https://www.gourmetpopcornica.in/
+    //   item1.X-ABLabel:Website
+    //   item2.URL;type=pref:https://drive.google.com/drive/folders/1jHAQaci1D1UG9eWvxjUZ5wj18FMign8F
+    //   item2.X-ABLabel:Portfolio`;
+    // });
 
-  // Adding website URLs with labels
-  //   websiteURLs.slice(0, 1).forEach((website, index) => {
-  //     const url = website;
-  //     const label = "Website";
-  //     vCard += `
-  // item${index + 1}.URL;type=pref:${url}
-  // item${index + 1}.X-ABLabel:${label}`;
-  //   });
+    // Adding website URLs with labels
+    //   websiteURLs.slice(0, 1).forEach((website, index) => {
+    //     const url = website;
+    //     const label = "Website";
+    //     vCard += `
+    // item${index + 1}.URL;type=pref:${url}
+    // item${index + 1}.X-ABLabel:${label}`;
+  });
 
   // console.log("address address", address);
 
