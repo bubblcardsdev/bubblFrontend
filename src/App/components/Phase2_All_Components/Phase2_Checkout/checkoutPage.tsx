@@ -335,7 +335,32 @@ function CheckOutPageFunc() {
     "Tile",
     "Full Custom",
     "NC-Pattern",
+    "NC-Metal",
+    "NC-Bamboo",
+    "Bundle Devices",
   ];
+
+  const price: any = {
+    Card: 699,
+    Socket: 699,
+    Tile: 699,
+    "Full Custom": 1299,
+    "NC-Pattern": 769,
+    "NC-Metal": 1999,
+    "NC-Bamboo": 999,
+    "Bundle Devices": 1499,
+  };
+
+  const discounts: any = {
+    Card: 21,
+    Socket: 21,
+    Tile: 21,
+    "Full Custom": 21,
+    "NC-Pattern": 21,
+    "NC-Metal": 15,
+    "NC-Bamboo": 21,
+    "Bundle Devices": 21,
+  };
 
   const { isFailed } = router.query;
   useEffect(() => {
@@ -344,7 +369,7 @@ function CheckOutPageFunc() {
       router.push("/myPlanPage");
       localStorage.setItem("failurePath", "");
     }
-    if (isFailed == "1" && !failurePathRead ) {
+    if (isFailed == "1" && !failurePathRead) {
       const token = getAccessToken();
       const shippingDetails: any = getShippingDetails();
 
@@ -437,21 +462,21 @@ function CheckOutPageFunc() {
                         <p>
                           {cartValues?.productType || cartValues?.deviceType}
                         </p>
-                        {/* {(discountedTypes.includes(cartValues?.productType) ||
+                        {(discountedTypes.includes(cartValues?.productType) ||
                           discountedTypes.includes(cartValues?.deviceType)) && (
                           <div className={styles.discountContainer}>
                             <p className={styles.slashedPrice}>
-                              {discountedTypes.includes(cartValues?.deviceType)
-                                ? "INR 1299"
-                                : "INR 699"}
+                              INR{" "}
+                              {price[cartValues?.productType] ||
+                                price[cartValues?.deviceType]}
                             </p>
                             <span className={styles.discountText}>
-                              {discountedTypes.includes(cartValues?.deviceType)
-                                ? "20.02% off"
-                                : "28.61% off"}
+                              {discounts[cartValues?.productType] ||
+                                discounts[cartValues?.deviceType]}
+                              % off
                             </span>
                           </div>
-                        )} */}
+                        )}
                         <div className={styles.priceDiv}>
                           <div className={styles.piceTag}>Price</div>
                           <div>₹ {cartValues?.itemPrice}</div>

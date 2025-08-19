@@ -6,8 +6,10 @@ function Marquee() {
       <div className={styles.marqueeText}>
         <span className={styles.blinkText}>
           {/* Don't miss out on BIG savings across our entire collection. &#127881; */}
-          Buy 1 and Get 40% Disount &#127881; &nbsp; Buy 2 and Get 50% Disount
-          &nbsp; &#127881; Buy 3 and Get 60% Disount &#127881;
+          {/* Buy 1 and Get 40% Discount &#127881; &nbsp; Buy 2 and Get 50% Discount
+          &nbsp; &#127881; Buy 3 and Get 60% Discount &#127881; */}
+          Independence Day Special! &nbsp;&nbsp;&nbsp; Unlock up to 30% OFF
+          &nbsp;&nbsp;&nbsp; Valid till 25th AUG only!
         </span>
       </div>
     </div>

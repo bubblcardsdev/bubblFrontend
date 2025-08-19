@@ -804,3 +804,20 @@
         opacity: 60%;
     }
 }
+
+.discountContainer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.slashedPrice {
+    color: #FFFFFF;
+    text-decoration: line-through;
+    font-size: 14px;
+}
+
+.discountText {
+    color: #AF38D6;
+    font-weight: 600;
+}

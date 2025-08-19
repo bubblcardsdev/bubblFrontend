@@ -18,21 +18,21 @@ const PromoPopup = (props: any) => {
   return (
     visible && (
       <>
-       {/*<div className={styles.popupBg}>
-        <div className={styles.popupContainer}>
-          <span className={styles.popupClose} onClick={() => onHide()}>
-            <Image src="/close.png" alt="/close.png" width={96} height={96} />
-          </span>
-          <span className={styles.popupImg} onClick={() => onPromoClick()}>
-            <Image
-              src="/offerBanner.png"
-              alt="/offerBanner.png"
-              width={500}
-              height={500}
-            />
-          </span>
-        </div> 
-      </div>*/}
+        <div className={styles.popupBg}>
+          <div className={styles.popupContainer}>
+            <span className={styles.popupClose} onClick={() => onHide()}>
+              <Image src="/close.png" alt="/close.png" width={96} height={96} />
+            </span>
+            <span className={styles.popupImg} onClick={() => onPromoClick()}>
+              <Image
+                src="/poster.jpg"
+                alt="/poster.jpg"
+                width={500}
+                height={600}
+              />
+            </span>
+          </div>
+        </div>
       </>
     )
   );

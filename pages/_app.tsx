@@ -35,7 +35,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     }
     const popupShowPaths = ["/", "/shopPage"];
     if (popupShowPaths.includes(router.pathname)) {
-      const popupdelayTime = router?.pathname === "/" ? 5000 : 2000;
+      const popupdelayTime = router?.pathname === "/" ? 4500 : 2000;
       const timeoutId = setTimeout(() => {
         setPopUpState(true);
       }, popupdelayTime);

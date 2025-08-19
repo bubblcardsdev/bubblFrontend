@@ -17,7 +17,20 @@ function NameCustomizationDetails({
   buyNowFunction,
   priceValue,
   nameError,
+  choosePattern,
 }: any) {
+  const price: any = {
+    "NC-Pattern": 799,
+    "NC-Metal": 1999,
+    "NC-Bamboo": 999,
+  };
+
+  const discount: any = {
+    "NC-Pattern": "21% off",
+    "NC-Metal": "15% off",
+    "NC-Bamboo": "21% off",
+  };
+
   return (
     <div>
       <Col className={styles.custom_details}>
@@ -87,10 +100,14 @@ function NameCustomizationDetails({
           </Form.Select>
           <div className={styles.price}>
             <h3>Price</h3>
-            {/* <div className={styles.discountContainer}>
-              <p className={styles.slashedPrice}>INR 1299</p>
-              <span className={styles.discountText}>18.77% off</span>
-            </div> */}
+            <div className={styles.discountContainer}>
+              <p className={styles.slashedPrice}>
+                INR {price[choosePattern] || price["NC-Pattern"]}
+              </p>
+              <span className={styles.discountText}>
+                {discount[choosePattern] || discount["NC-Pattern"]}
+              </span>
+            </div>
             <h4>
               ₹&nbsp; {priceValue}
               <span>&nbsp; Per Card</span>
@@ -135,8 +152,12 @@ function NameCustomizationDetails({
         <div className={styles.price}>
           <h3>Price</h3>
           <div className={styles.discountContainer}>
-            <p className={styles.slashedPrice}>INR 1299</p>
-            <span className={styles.discountText}>18.77% off</span>
+            <p className={styles.slashedPrice}>
+              INR {price[choosePattern] || price["NC-Pattern"]}
+            </p>
+            <span className={styles.discountText}>
+              {discount[choosePattern] || discount["NC-Pattern"]}
+            </span>
           </div>
           <h4>
             ₹&nbsp; {priceValue}

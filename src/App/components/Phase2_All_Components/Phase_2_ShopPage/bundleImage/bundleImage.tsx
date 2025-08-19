@@ -8,8 +8,6 @@ import "react-multi-carousel/lib/styles.css";
 import Image from "next/image";
 import React, { Dispatch, SetStateAction, useMemo, useState } from "react";
 import { Button, Col } from "react-bootstrap";
-import Carousel from "react-multi-carousel";
-
 import styles from "./bundleImage.module.css";
 
 export default function BundleImage({
@@ -17,11 +15,13 @@ export default function BundleImage({
   selectedColor,
   images,
   title,
+  showDiscount,
 }: {
   price?: number;
   selectedColor: string;
   images: Record<string, string>;
   title: string;
+  showDiscount?: boolean;
 }) {
   const responsive = {
     desktop: {
@@ -88,7 +88,7 @@ export default function BundleImage({
   const handleMouseLeave = () => {
     setTiltAngle({ x: 0, y: 0 });
   };
-
+  console.log(value, "ddfvfdv");
   return (
     <div className={styles.cardDiv}>
       <Col
@@ -124,6 +124,13 @@ export default function BundleImage({
             <div className={styles.cards_prod_img}>
               <img src={images[selectedColor]} alt="cards" />
             </div>
+            {showDiscount && price && price > 0 && (
+              <div className={styles.discountContainer}>
+                {/* <p className={styles.slashedPrice}>INR {salesPrice}</p> */}
+                <p className={styles.slashedPrice}>INR 1499</p>
+                <span className={styles.discountText}>21% off</span>
+              </div>
+            )}
             {price && price > 0 ? (
               <div className={styles.rateDiv}>
                 <p className={styles.rate}>
@@ -137,7 +144,13 @@ export default function BundleImage({
             <div className={styles.cards_prod_img}>
               <img src={images[color]} alt="cards" />
             </div>
-
+            {showDiscount && price && price > 0 && (
+              <div className={styles.discountContainer}>
+                {/* <p className={styles.slashedPrice}>INR {salesPrice}</p> */}
+                <p className={styles.slashedPrice}>INR 1499</p>
+                <span className={styles.discountText}>21% off</span>
+              </div>
+            )}
             {price && price > 0 ? (
               <div className={styles.rateDiv}>
                 <p className={styles.rate}>

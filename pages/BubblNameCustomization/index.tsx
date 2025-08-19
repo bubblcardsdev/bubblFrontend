@@ -743,6 +743,7 @@ function NameCustomization() {
                     addCartFunction={addCartFunction}
                     buyNowFunction={buyNowFunction}
                     priceValue={priceValue}
+                    choosePattern={choosePattern}
                   />
                 </div>
               </div>

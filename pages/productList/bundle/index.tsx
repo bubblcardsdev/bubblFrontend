@@ -547,9 +547,12 @@ function BundleDevice() {
                     </Col>
                     <Col className={styles.customization_details_right}>
                       <h3 className={styles.quantityText_price}>Price</h3>
+                      <div className={styles.discountContainer}>
+                        <p className={styles.slashedPrice}>INR 1499</p>
+                        <span className={styles.discountText}>21% off</span>
+                      </div>
                       <h4>
-                        ₹ {individuals?.price} &nbsp;
-                        <span> Per bundle</span>
+                        Rs.{individuals?.price} <span>Per card</span>
                       </h4>
                     </Col>
                   </Row>

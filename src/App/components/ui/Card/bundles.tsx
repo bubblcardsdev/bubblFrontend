@@ -14,7 +14,7 @@ import styles from "./bundle.module.css";
 
 export default function BundleCards({
   price,
- 
+
   selectedColor,
   // colors = [],
   images,
@@ -145,7 +145,7 @@ export default function BundleCards({
                   INR{title === "Name Custom" ? 799 : 1299}
                 </p>
                 <span className={styles.discountText}>
-                  {title === "Name Custom" ? 18.77 : 20.02}%
+                  {title === "Name Custom" ? 21 : 21}% off
                 </span>
               </div>
             )}
@@ -180,7 +180,7 @@ export default function BundleCards({
             {showDiscount && price && price > 0 && (
               <div className={styles.discountContainer}>
                 <p className={styles.slashedPrice}>INR 699</p>
-                <span className={styles.discountText}>28.61% off</span>
+                <span className={styles.discountText}>21% off</span>
               </div>
             )}
             {price && price > 0 ? (
