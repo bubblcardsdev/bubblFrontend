@@ -209,19 +209,20 @@ function ShopComponent() {
                 features, it's the perfect accessory for the modern
                 professional.
               </p>
+              {bands?.images && (
+                <div className={styles.customDiv}>
+                  <Col xl={4} sm={4} xs={11} style={{ width: "375px" }}>
+                    <CardComponent
+                      price={bands?.price}
+                      title={bands?.type}
+                      description={bands?.description}
+                      images={bands?.images}
+                    />
+                  </Col>
+                </div>
+              )}
+              <div className={styles.line} />
             </div>
-            {bands?.images && (
-              <div className={styles.customDiv}>
-                <Col xl={4} sm={4} xs={11} style={{ width: "375px" }}>
-                  <CardComponent
-                    price={bands?.price}
-                    title={bands?.type}
-                    description={bands?.description}
-                    images={bands?.images}
-                  />
-                </Col>
-              </div>
-            )}
 
             {/* Bubbl Bundle */}
             <div className={styles.background}>
@@ -381,6 +382,35 @@ function ShopComponent() {
               <BubblCustomSlider shopDetails={nameCustom} showDiscount />
             </div>
             <div className={styles.line} />
+
+            {/* Wrist Bands */}
+            <div className={styles.individualContainer}>
+              <p className={styles.individualHead}>
+                Bubbl{" "}
+                <span className={styles.individualSubHead}>Wrist Bands</span>
+              </p>
+              <div className={styles.individualDiv}>
+                <p className={styles.individualContent}>
+                  Experience the convenience of networking on the go with our
+                  Bubbl Wrist Band. Stylish, comfortable, and packed with
+                  features, it's the perfect accessory for the modern
+                  professional.
+                </p>
+              </div>
+              {bands?.images && (
+                <div className={styles.customDiv}>
+                  <Col xl={4} sm={4} xs={10}>
+                    <CardComponent
+                      price={bands?.price}
+                      title={bands?.type}
+                      description={bands?.description}
+                      images={bands?.images}
+                    />
+                  </Col>
+                </div>
+              )}
+              <div className={styles.line} />
+            </div>
             {/* Bubbl Bundle */}
 
             <div className={styles.individualContainer}>
@@ -406,34 +436,7 @@ function ShopComponent() {
                     showGradients={showGradients}
                   />
                 </div>
-                <div className={styles.individualContainer}>
-                  <p className={styles.individualHead}>
-                    Bubbl{" "}
-                    <span className={styles.individualSubHead}>
-                      Wrist Bands
-                    </span>
-                  </p>
-                  <div className={styles.individualDiv}>
-                    <p className={styles.individualContent}>
-                      Experience the convenience of networking on the go with
-                      our Bubbl Wrist Band. Stylish, comfortable, and packed
-                      with features, it's the perfect accessory for the modern
-                      professional.
-                    </p>
-                  </div>
-                </div>
-                {bands?.images && (
-                  <div className={styles.customDiv}>
-                    <Col xl={4} sm={4} xs={10}>
-                      <CardComponent
-                        price={bands?.price}
-                        title={bands?.type}
-                        description={bands?.description}
-                        images={bands?.images}
-                      />
-                    </Col>
-                  </div>
-                )}
+
                 <div className={styles.bundleComp}>
                   <Col xl={4} sm={4} xs={10}>
                     {bundle && (
