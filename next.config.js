@@ -31,6 +31,9 @@ module.exports = {
     buildActivity: false,
   },
   images: {
-    domains: ["bubbls3.s3.ap-south-1.amazonaws.com"],
+    domains: [
+      "bubbls3.s3.ap-south-1.amazonaws.com",
+      "bubbldev.s3.ap-south-1.amazonaws.com",
+    ],
   },
 };

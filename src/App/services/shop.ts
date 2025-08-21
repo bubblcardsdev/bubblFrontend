@@ -12,7 +12,8 @@ export type DeviceT = {
     | "NC-Pattern"
     | "NC-Metal"
     | "Full Custom"
-    | "Name Custom";
+    | "Name Custom"
+    | "Wrist Band";
   images: Record<string, string>;
   description: string;
   price: number;
@@ -38,7 +39,8 @@ export const getShop = async () => {
             | "NC-Pattern"
             | "NC-Metal"
             | "Full Custom"
-            | "Name Custom";
+            | "Name Custom"
+            | "Wrist Band";
           id: number;
           price: number;
         }[];

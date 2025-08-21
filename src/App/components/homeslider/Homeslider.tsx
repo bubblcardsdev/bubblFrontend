@@ -38,7 +38,6 @@ const HomeSlider = ({
       items: 1,
     },
   };
-
   return (
     <div className="container">
       <div className={styles.slider_cards}>

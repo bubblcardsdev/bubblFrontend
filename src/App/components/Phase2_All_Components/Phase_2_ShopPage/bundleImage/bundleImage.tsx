@@ -88,7 +88,7 @@ export default function BundleImage({
   const handleMouseLeave = () => {
     setTiltAngle({ x: 0, y: 0 });
   };
-  console.log(value, "ddfvfdv");
+
   return (
     <div className={styles.cardDiv}>
       <Col

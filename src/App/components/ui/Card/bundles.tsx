@@ -64,6 +64,8 @@ export default function BundleCards({
       "Chalk white": "#C8C8C8",
       Yellow: "#FBBF20",
       "Sapphire blue": "#2E5F95",
+      White: "#FFFFFF",
+      Black: "#000000",
     }),
     []
   );

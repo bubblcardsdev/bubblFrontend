@@ -27,20 +27,15 @@ import TestimonialComponent from "../../Phase_2_HomePage/testimonialSection/test
 import Footer from "../../Phase2_Footer/footer";
 import BundleComponent from "../bundleCard/bundleComponent";
 import styles from "./shopPage.module.css";
+import CardComponent from "src/App/components/homeslider/CardComponent";
 
 function ShopComponent() {
-  const [devices, setDevices] = useState<Record<
-    DeviceT["type"],
-    DeviceT
-  > | null>(null);
-  const [carouselIndex, setCarouselIndex] = useState<number | undefined>(
-    undefined
-  );
+  const [devices, setDevices] = useState<any>(null);
+
   const router = useRouter();
 
   const getShopDetails = async () => {
     const shopItems = await getShop();
-
     setDevices(shopItems);
   };
   const tokenSetRef = useRef(false);
@@ -50,7 +45,8 @@ function ShopComponent() {
   const individuals = devices
     ? [devices.Card, devices.Socket, devices.Tile]
     : [];
-
+  // bands
+  const bands = devices ? devices["Wrist Band"] : null;
   // bubbl customize
   const nameCustom = devices
     ? [devices["Full Custom"], devices["Name Custom"]]
@@ -201,6 +197,31 @@ function ShopComponent() {
               </div>
               <div className={styles.line} />
             </div>
+            {/* Bubbl Wrist Band */}
+            <div className={styles.individualContainer}>
+              <p className={styles.individualHead}>
+                Bubbl{" "}
+                <span className={styles.individualSubHead}>Wrist Bands</span>
+              </p>
+              <p className={styles.individualContent}>
+                Experience the convenience of networking on the go with our
+                Bubbl Wrist Band. Stylish, comfortable, and packed with
+                features, it's the perfect accessory for the modern
+                professional.
+              </p>
+            </div>
+            {bands?.images && (
+              <div className={styles.customDiv}>
+                <Col xl={4} sm={4} xs={11} style={{ width: "375px" }}>
+                  <CardComponent
+                    price={bands?.price}
+                    title={bands?.type}
+                    description={bands?.description}
+                    images={bands?.images}
+                  />
+                </Col>
+              </div>
+            )}
 
             {/* Bubbl Bundle */}
             <div className={styles.background}>
@@ -385,6 +406,34 @@ function ShopComponent() {
                     showGradients={showGradients}
                   />
                 </div>
+                <div className={styles.individualContainer}>
+                  <p className={styles.individualHead}>
+                    Bubbl{" "}
+                    <span className={styles.individualSubHead}>
+                      Wrist Bands
+                    </span>
+                  </p>
+                  <div className={styles.individualDiv}>
+                    <p className={styles.individualContent}>
+                      Experience the convenience of networking on the go with
+                      our Bubbl Wrist Band. Stylish, comfortable, and packed
+                      with features, it's the perfect accessory for the modern
+                      professional.
+                    </p>
+                  </div>
+                </div>
+                {bands?.images && (
+                  <div className={styles.customDiv}>
+                    <Col xl={4} sm={4} xs={10}>
+                      <CardComponent
+                        price={bands?.price}
+                        title={bands?.type}
+                        description={bands?.description}
+                        images={bands?.images}
+                      />
+                    </Col>
+                  </div>
+                )}
                 <div className={styles.bundleComp}>
                   <Col xl={4} sm={4} xs={10}>
                     {bundle && (
