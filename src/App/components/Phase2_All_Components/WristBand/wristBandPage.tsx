@@ -22,7 +22,7 @@ import Black from "../../../../../images/cardassets/black.png";
 import HomePageNavigation from "../Phase_2_HomePage/navigationHome/homeNavigation";
 import Footer from "../Phase2_Footer/footer";
 // import NavBar from "../../../src/App/components/ui/NavBar/_navbar";
-import styles from "./wristBandList.module.css";
+import styles from "./wristbandList.module.css";
 
 function WristBandProductList() {
   const router = useRouter();
