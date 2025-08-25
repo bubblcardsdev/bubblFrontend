@@ -462,7 +462,7 @@ function CheckOutPageFunc() {
                         <p>
                           {cartValues?.productType || cartValues?.deviceType}
                         </p>
-                        {(discountedTypes.includes(cartValues?.productType) ||
+                        {/* {(discountedTypes.includes(cartValues?.productType) ||
                           discountedTypes.includes(cartValues?.deviceType)) && (
                           <div className={styles.discountContainer}>
                             <p className={styles.slashedPrice}>
@@ -476,7 +476,7 @@ function CheckOutPageFunc() {
                               % off
                             </span>
                           </div>
-                        )}
+                        )} */}
                         <div className={styles.priceDiv}>
                           <div className={styles.piceTag}>Price</div>
                           <div>₹ {cartValues?.itemPrice}</div>
