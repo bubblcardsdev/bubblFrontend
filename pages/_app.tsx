@@ -33,16 +33,16 @@ function MyApp({ Component, pageProps }: AppProps) {
         gtmId: process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS, // Replace with your actual GTM ID
       });
     }
-    const popupShowPaths = ["/", "/shopPage"];
-    if (popupShowPaths.includes(router.pathname)) {
-      const popupdelayTime = router?.pathname === "/" ? 4500 : 2000;
-      const timeoutId = setTimeout(() => {
-        setPopUpState(true);
-      }, popupdelayTime);
-      return () => {
-        clearTimeout(timeoutId);
-      };
-    }
+    // const popupShowPaths = ["/", "/shopPage"];
+    // if (popupShowPaths.includes(router.pathname)) {
+    //   const popupdelayTime = router?.pathname === "/" ? 4500 : 2000;
+    //   const timeoutId = setTimeout(() => {
+    //     setPopUpState(true);
+    //   }, popupdelayTime);
+    //   return () => {
+    //     clearTimeout(timeoutId);
+    //   };
+    // }
   }, []);
   return (
     <ParallaxProvider>
