@@ -173,7 +173,7 @@ function ShopComponent() {
                 of futuristic networking.
               </p>
             </div>
-            <HomeSlider shopDetails={individuals} />
+            <HomeSlider shopDetails={individuals} showDiscount />
             {/* <ProductCards
               carouselItemIndex={undefined}
               shopDetails={individuals}
@@ -192,7 +192,7 @@ function ShopComponent() {
               </p>
               <div className={styles.customDiv}>
                 <Col xl={8} sm={7} xs={6} className={styles.customCol}>
-                  <BubblCustomSlider shopDetails={nameCustom} />
+                  <BubblCustomSlider shopDetails={nameCustom} showDiscount />
                 </Col>
               </div>
               <div className={styles.line} />
@@ -217,6 +217,7 @@ function ShopComponent() {
                       title={bands?.type}
                       description={bands?.description}
                       images={bands?.images}
+                      showDiscount
                     />
                   </Col>
                 </div>
@@ -256,6 +257,7 @@ function ShopComponent() {
                         title={bundle.type}
                         description={bundle.description}
                         images={bundle.images}
+                        showDiscount
                       />
                     )}
                   </Col>
@@ -352,7 +354,7 @@ function ShopComponent() {
                 </p>
               </div>
             </div>
-            <HomeSlider shopDetails={individuals} />
+            <HomeSlider shopDetails={individuals} showDiscount />
 
             {/* Custom */}
 
@@ -378,7 +380,7 @@ function ShopComponent() {
                 options. We offer custom branding and bulk orders for corporate
                 clients. Join us today!
               </p>
-              <BubblCustomSlider shopDetails={nameCustom} />
+              <BubblCustomSlider shopDetails={nameCustom} showDiscount />
             </div>
             <div className={styles.line} />
 
@@ -404,6 +406,7 @@ function ShopComponent() {
                       title={bands?.type}
                       description={bands?.description}
                       images={bands?.images}
+                      showDiscount
                     />
                   </Col>
                 </div>
@@ -450,6 +453,7 @@ function ShopComponent() {
                         title={bundle.type}
                         description={bundle.description}
                         images={bundle.images}
+                        showDiscount
                       />
                     )}
                     <div className={styles.background}>

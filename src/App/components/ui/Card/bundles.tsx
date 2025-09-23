@@ -147,7 +147,7 @@ export default function BundleCards({
                   INR{title === "Name Custom" ? 799 : 1299}
                 </p>
                 <span className={styles.discountText}>
-                  {title === "Name Custom" ? 21 : 21}% off
+                  {title === "Name Custom" ? 35 : 35}% off
                 </span>
               </div>
             )}
@@ -182,7 +182,7 @@ export default function BundleCards({
             {showDiscount && price && price > 0 && (
               <div className={styles.discountContainer}>
                 <p className={styles.slashedPrice}>INR 699</p>
-                <span className={styles.discountText}>21% off</span>
+                <span className={styles.discountText}>35% off</span>
               </div>
             )}
             {price && price > 0 ? (

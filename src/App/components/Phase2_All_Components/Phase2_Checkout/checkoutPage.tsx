@@ -339,6 +339,7 @@ function CheckOutPageFunc() {
     "NC-Metal",
     "NC-Bamboo",
     "Bundle Devices",
+    "Wrist Band",
   ];
 
   const price: any = {
@@ -350,17 +351,19 @@ function CheckOutPageFunc() {
     "NC-Metal": 1999,
     "NC-Bamboo": 999,
     "Bundle Devices": 1499,
+    "Wrist Band": 2499,
   };
 
   const discounts: any = {
-    Card: 21,
-    Socket: 21,
-    Tile: 21,
-    "Full Custom": 21,
-    "NC-Pattern": 21,
-    "NC-Metal": 15,
-    "NC-Bamboo": 21,
-    "Bundle Devices": 21,
+    Card: 35,
+    Socket: 35,
+    Tile: 35,
+    "Full Custom": 35,
+    "NC-Pattern": 35,
+    "NC-Metal": 35,
+    "NC-Bamboo": 35,
+    "Bundle Devices": 35,
+    "Wrist Band": 35,
   };
 
   const { isFailed } = router.query;
@@ -468,21 +471,23 @@ function CheckOutPageFunc() {
                           <p>
                             {cartValues?.productType || cartValues?.deviceType}
                           </p>
-                          {/* {(discountedTypes.includes(cartValues?.productType) ||
-                          discountedTypes.includes(cartValues?.deviceType)) && (
-                          <div className={styles.discountContainer}>
-                            <p className={styles.slashedPrice}>
-                              INR{" "}
-                              {price[cartValues?.productType] ||
-                                price[cartValues?.deviceType]}
-                            </p>
-                            <span className={styles.discountText}>
-                              {discounts[cartValues?.productType] ||
-                                discounts[cartValues?.deviceType]}
-                              % off
-                            </span>
-                          </div>
-                        )} */}
+                          {(discountedTypes.includes(cartValues?.productType) ||
+                            discountedTypes.includes(
+                              cartValues?.deviceType
+                            )) && (
+                            <div className={styles.discountContainer}>
+                              <p className={styles.slashedPrice}>
+                                INR{" "}
+                                {price[cartValues?.productType] ||
+                                  price[cartValues?.deviceType]}
+                              </p>
+                              <span className={styles.discountText}>
+                                {discounts[cartValues?.productType] ||
+                                  discounts[cartValues?.deviceType]}
+                                % off
+                              </span>
+                            </div>
+                          )}
                           <div className={styles.priceDiv}>
                             <div className={styles.piceTag}>Price</div>
                             <div>₹ {cartValues?.itemPrice}</div>
@@ -617,18 +622,16 @@ function CheckOutPageFunc() {
                     {(discountedTypes.includes(value?.productType) ||
                       discountedTypes.includes(value?.deviceType)) && (
                       <div className={styles.discountContainer}>
-                        <div className={styles.itemPrice}>
-                          ₹ {value?.itemPrice}
-                        </div>
-                        {/* <p className={styles.slashedPrice}>INR 599</p> */}
-                        {/* <span className={styles.discountText}>
-                        {" "}
-                        {discountedTypes.includes(value?.deviceType)
-                          ? value?.deviceType == "NC-Pattern"
-                            ? "18.77% off"
-                            : "20.02% off"
-                          : "28.61% off"}
-                      </span> */}
+                        <p className={styles.slashedPrice}>
+                          INR{" "}
+                          {price[value?.productType] ||
+                            price[value?.deviceType]}
+                        </p>
+                        <span className={styles.discountText}>
+                          {discounts[value?.productType] ||
+                            discounts[value?.deviceType]}
+                          % off
+                        </span>
                       </div>
                     )}
                   </div>

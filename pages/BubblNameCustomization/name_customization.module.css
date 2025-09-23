@@ -483,7 +483,7 @@
 
 .buttonContainerResp {
     display: flex;
-    gap: 20vw
+    gap: 10vw
 }
 
 .price_resp h4 {
@@ -547,6 +547,10 @@
     .slider {
         margin-top: 0px;
         margin-bottom: 10px;
+    }
+
+    .discountText {
+        font-size: 14px;
     }
 
     .checkOutBtn_fixed {

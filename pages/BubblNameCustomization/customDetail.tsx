@@ -2,6 +2,7 @@
 /* eslint-disable prettier/prettier */
 
 import { Button, Col, Form } from "react-bootstrap";
+import useWindowSize from "src/App/hooks/useWindowSize";
 
 import styles from "./name_customization.module.css";
 
@@ -26,12 +27,14 @@ function NameCustomizationDetails({
   };
 
   const discount: any = {
-    "NC-Pattern": "21% off",
-    "NC-Metal": "15% off",
-    "NC-Bamboo": "21% off",
+    "NC-Pattern": "35% off",
+    "NC-Metal": "35% off",
+    "NC-Bamboo": "35% off",
   };
 
   const outOfStock = choosePattern === "NC-Metal";
+
+  const size = useWindowSize();
 
   return (
     <div>
@@ -100,21 +103,23 @@ function NameCustomizationDetails({
             <option value="muller">Muller</option>
             <option value="romeliosans">Romeliosans</option>
           </Form.Select>
-          <div className={styles.price}>
-            <h3>Price</h3>
-            {/* <div className={styles.discountContainer}>
-              <p className={styles.slashedPrice}>
-                INR {price[choosePattern] || price["NC-Pattern"]}
-              </p>
-              <span className={styles.discountText}>
-                {discount[choosePattern] || discount["NC-Pattern"]}
-              </span>
-            </div> */}
-            <h4>
-              ₹&nbsp; {priceValue}
-              <span>&nbsp; Per Card</span>
-            </h4>
-          </div>
+          {size?.width > 500 && (
+            <div className={styles.price}>
+              <h3>Price</h3>
+              <div className={styles.discountContainer}>
+                <p className={styles.slashedPrice}>
+                  INR {price[choosePattern] || price["NC-Pattern"]}
+                </p>
+                <span className={styles.discountText}>
+                  {discount[choosePattern] || discount["NC-Pattern"]}
+                </span>
+              </div>
+              <h4>
+                ₹&nbsp; {priceValue}
+                <span>&nbsp; Per Card</span>
+              </h4>
+            </div>
+          )}
         </Col>
       </Col>
       {/* Responsive for Add Product */}
@@ -151,16 +156,16 @@ function NameCustomizationDetails({
           </div>
         </div>
 
-        <div className={styles.price}>
+        <div className={styles.price_resp}>
           <h3>Price</h3>
-          {/* <div className={styles.discountContainer}>
+          <div className={styles.discountContainer}>
             <p className={styles.slashedPrice}>
               INR {price[choosePattern] || price["NC-Pattern"]}
             </p>
             <span className={styles.discountText}>
               {discount[choosePattern] || discount["NC-Pattern"]}
             </span>
-          </div> */}
+          </div>
           <h4>
             ₹&nbsp; {priceValue}
             <span>&nbsp; Per Card</span>
