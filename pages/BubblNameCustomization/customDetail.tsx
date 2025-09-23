@@ -31,6 +31,8 @@ function NameCustomizationDetails({
     "NC-Bamboo": "21% off",
   };
 
+  const outOfStock = choosePattern === "NC-Metal";
+
   return (
     <div>
       <Col className={styles.custom_details}>
@@ -166,25 +168,29 @@ function NameCustomizationDetails({
         </div>
       </div>
 
-      <div className={styles.buttonsContainer}>
-        <Button
-          type="submit"
-          className={styles.cartButton}
-          onClick={addCartFunction}
-        >
-          ADD TO CART
-        </Button>
-        <Button
-          type="button"
-          variant="none"
-          className={styles.cartButtonBuyNow}
-          onClick={() => {
-            buyNowFunction();
-          }}
-        >
-          BUY NOW
-        </Button>
-      </div>
+      {!outOfStock ? (
+        <p className={styles.outOfStock}>Out of Stock</p>
+      ) : (
+        <div className={styles.buttonsContainer}>
+          <Button
+            type="submit"
+            className={styles.cartButton}
+            onClick={addCartFunction}
+          >
+            ADD TO CART
+          </Button>
+          <Button
+            type="button"
+            variant="none"
+            className={styles.cartButtonBuyNow}
+            onClick={() => {
+              buyNowFunction();
+            }}
+          >
+            BUY NOW
+          </Button>
+        </div>
+      )}
     </div>
   );
 }

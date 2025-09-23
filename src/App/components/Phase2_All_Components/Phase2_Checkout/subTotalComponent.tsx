@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { Button } from "react-bootstrap";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 
 import arrow from "../../../../../images/Bubble-website_assets/bubbl-banner/shop-now-navigation.svg";
 import ButtonComp from "../../ui/CommonButtons/_commonbuttons";
@@ -21,6 +21,7 @@ function SubTotalComponent({ priceValue, quantity }: Props) {
     totalPrice: 0,
     discount: 0,
   });
+  const [outofStock, setOutofStock] = useState(false);
 
   const discountedTypes = ["Card", "Socket", "Tile", "Bundle Devices"];
 
@@ -32,7 +33,12 @@ function SubTotalComponent({ priceValue, quantity }: Props) {
     const carts = localStorage?.getItem("cart") || "";
     const cartItems = carts ? JSON.parse(carts) : [];
     // console.log("Cart Items:", cartItems);
+    const outOfStock =
+      Array.isArray(cartItems) &&
+      cartItems.length > 0 &&
+      cartItems.some((item: any) => item.deviceType == "NC-Metal");
 
+    setOutofStock(outOfStock);
     if (Array.isArray(cartItems) && cartItems.length > 0) {
       const discountedItems = cartItems.filter(
         (item) =>
@@ -50,17 +56,15 @@ function SubTotalComponent({ priceValue, quantity }: Props) {
       else if (totalQuantity === 2) discountRate = 0.5;
       else if (totalQuantity >= 3) discountRate = 0.6;
 
-
       cartItems.forEach((item) => {
         let itemTotalPrice = item.itemPrice * item.quantity;
         // if (discountedItems.some((dItem) => dItem.id === item.id)) {
         //   let discountedItemTotal = itemTotalPrice * (1 - discountRate);
-        //   discount += itemTotalPrice - discountedItemTotal; 
+        //   discount += itemTotalPrice - discountedItemTotal;
         //   itemTotalPrice = discountedItemTotal;
         // }
         totalPrice += itemTotalPrice;
-      }
-    );
+      });
     }
 
     // console.log("Final Price:", totalPrice, "Total Discount:", discount);
@@ -76,6 +80,11 @@ function SubTotalComponent({ priceValue, quantity }: Props) {
     if (!isValid) {
       toast.error("Invalid promo code!");
     }
+  };
+
+  const checkout = () => {
+    if (outofStock) toast.error("Out of stock");
+    else router.push("/shippingDetails");
   };
 
   return (
@@ -117,13 +126,12 @@ function SubTotalComponent({ priceValue, quantity }: Props) {
           {priceData ? <p>₹ {priceData.totalPrice}</p> : null}
         </div>
         <div className={styles.applyButton}>
-          <Button onClick={() => router.push("/shippingDetails")}>
+          <Button onClick={() => checkout()}>
             <p className={styles.checkOutImage}>Proceed to Checkout</p>
             <Image src={arrow} className={styles.arw} alt="bubbl" />
           </Button>
         </div>
       </div>
-      <ToastContainer />
     </>
   );
 }

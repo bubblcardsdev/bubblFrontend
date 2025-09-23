@@ -55,12 +55,12 @@ import ParallaxBackground from "@/pages/backgroundimageswithgradient/background"
 import Right from "../../../../../images/Phase_2_All_Assets/comman_assets/rightArr.svg";
 import group from "../../../../../images/Phase_2_All_Assets/group.svg";
 import arrow from "../../../../../public/order_page/checkout-arrow.svg";
-import circle from "../../../../../public/order_page/circle.svg";
 import ShippingForm from "../../ui/Forms/shippingform";
 import HomePageNavigation from "../Phase_2_HomePage/navigationHome/homeNavigation";
 import Footer from "../Phase2_Footer/footer";
 import Navigation from "../Phase2_Navigation/navigation";
 import styles from "./shippingDetails.module.css";
+import { toast, ToastContainer } from "react-toastify";
 
 function ShippingDetails() {
   const [cartState, setCartState] = useState<any>();
@@ -104,7 +104,7 @@ function ShippingDetails() {
 
   const [isSubmitClicked, setIsSubmitClicked] = useState(false);
 
-  function validateForm(shipDetail: any, shipErrorsData: any , country: any) {
+  function validateForm(shipDetail: any, shipErrorsData: any, country: any) {
     const errors = {};
     // check name is null
     if (!shipDetail.firstName.trim()) {
@@ -228,9 +228,12 @@ function ShippingDetails() {
       }
     }
 
-    if (shipDetail.country === undefined || shipDetail.country.trim().length <= 0) {
+    if (
+      shipDetail.country === undefined ||
+      shipDetail.country.trim().length <= 0
+    ) {
       shipErrorsData.country = "Select your country";
-    }else {
+    } else {
       shipErrorsData.country = "";
     }
 
@@ -352,6 +355,14 @@ function ShippingDetails() {
             };
           }
         );
+
+        const outOfStock = addCartData.some(
+          (item: any) => item.productType === "NC-Metal"
+        );
+
+        if (outOfStock) {
+          return toast.error("Out of Stock");
+        }
         console.log(addCartData, "addCartData");
         await addNonUserCartItem({
           cartData: addCartData,
@@ -618,7 +629,7 @@ function ShippingDetails() {
   useEffect(() => {
     getCart();
     getDiscount();
-  }, [isSubmitClicked,shippingCost]);
+  }, [isSubmitClicked, shippingCost]);
 
   const tokenSetRef = useRef(false);
 
@@ -642,7 +653,7 @@ function ShippingDetails() {
         setActiveDevicesCount(1);
       }
     }
-  },[]);
+  }, []);
 
   const [scrollPosition, setScrollPosition] = useState(0);
 
@@ -667,6 +678,7 @@ function ShippingDetails() {
   return (
     <section className={styles.shippingContainer}>
       <div className={styles.shippingPage}>
+        <ToastContainer />
         {activeDevicesCount === 0 ? <HomePageNavigation /> : <Navigation />}
         <div className={styles.analyticsBackgroundContainer}>
           <ParallaxBackground

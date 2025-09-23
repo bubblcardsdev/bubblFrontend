@@ -2,35 +2,46 @@
     padding-left: 27px;
 }
 
+.outOfStock {
+    color: red;
+    font-weight: 600;
+    margin-top: 25px;
+}
+
 .oldPrices {
     text-decoration: line-through;
     -webkit-text-decoration-color: #af38d6;
     text-decoration-color: #af38d6;
     text-decoration-thickness: 1.5px;
 }
+
 .slashedPrice {
     color: #FFFFFF;
     text-decoration: line-through;
     font-size: 16px;
 }
+
 .discountText {
     color: #AF38D6;
     font-weight: 600;
     margin-bottom: 12px;
 }
-.price  {
+
+.price {
     font-family: "Oxygen";
     font-weight: 700;
     font-size: 18px;
     padding-bottom: 12px;
     color: white;
 }
+
 .discountContainer {
     display: flex;
     align-items: center;
     gap: 10px;
 
 }
+
 .container {
     background-color: black;
     overflow: hidden;

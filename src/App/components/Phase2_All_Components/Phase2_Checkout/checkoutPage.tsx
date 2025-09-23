@@ -37,6 +37,7 @@ import Footer from "../Phase2_Footer/footer";
 import Navigation from "../Phase2_Navigation/navigation";
 import styles from "./checkoutPage.module.css";
 import SubTotalComponent from "./subTotalComponent";
+import { ToastContainer } from "react-toastify";
 
 function CheckOutPageFunc() {
   const router: any = useRouter();
@@ -403,6 +404,7 @@ function CheckOutPageFunc() {
 
   return (
     <section className={styles.checkOutPageSection}>
+      <ToastContainer />
       <div className={styles.checkOutPageDiv}>
         <div className={styles.navigationContainer}>
           {activeDevicesCount === 0 ? (
@@ -450,19 +452,23 @@ function CheckOutPageFunc() {
               <h1 className={styles.cartHeading}>Your Cart</h1>
               <Row className={styles.rowDeviceList}>
                 <Col xs={12} md={12} lg={12} xl={7}>
-                  {allCart?.map((cartValues: any) => (
-                    <Row className={styles.listDivSection}>
-                      <Col className={styles.imageDiv} md={2}>
-                        <div>
-                          <img src={cartValues?.productImage} width="100px" />
-                        </div>
-                      </Col>
+                  {allCart?.map((cartValues: any) => {
+                    const outOfStock =
+                      cartValues?.productType === "NC-Metal" ||
+                      cartValues?.deviceType === "NC-Metal";
+                    return (
+                      <Row className={styles.listDivSection}>
+                        <Col className={styles.imageDiv} md={2}>
+                          <div>
+                            <img src={cartValues?.productImage} width="100px" />
+                          </div>
+                        </Col>
 
-                      <Col className={styles.deviceTypeDiv} md={4}>
-                        <p>
-                          {cartValues?.productType || cartValues?.deviceType}
-                        </p>
-                        {/* {(discountedTypes.includes(cartValues?.productType) ||
+                        <Col className={styles.deviceTypeDiv} md={4}>
+                          <p>
+                            {cartValues?.productType || cartValues?.deviceType}
+                          </p>
+                          {/* {(discountedTypes.includes(cartValues?.productType) ||
                           discountedTypes.includes(cartValues?.deviceType)) && (
                           <div className={styles.discountContainer}>
                             <p className={styles.slashedPrice}>
@@ -477,73 +483,81 @@ function CheckOutPageFunc() {
                             </span>
                           </div>
                         )} */}
-                        <div className={styles.priceDiv}>
-                          <div className={styles.piceTag}>Price</div>
-                          <div>₹ {cartValues?.itemPrice}</div>
-                        </div>
-                        <div className={styles.qunatityDiv}>
-                          <div className={styles.piceTag}>Quantity</div>
+                          <div className={styles.priceDiv}>
+                            <div className={styles.piceTag}>Price</div>
+                            <div>₹ {cartValues?.itemPrice}</div>
+                          </div>
+                          <div className={styles.qunatityDiv}>
+                            <div className={styles.piceTag}>Quantity</div>
 
-                          <div className={styles.quantityNumber}>
-                            <div>
-                              {cartValues?.quantity === 1 ? (
+                            <div className={styles.quantityNumber}>
+                              <div>
+                                {cartValues?.quantity === 1 ? (
+                                  <span
+                                    role="button"
+                                    tabIndex={0}
+                                    className={styles.minusDisabled}
+                                    onClick={() =>
+                                      decrementCount(cartValues?.id)
+                                    }
+                                    // onKeyDown={decrementCountKeyHandler}
+                                  >
+                                    -
+                                  </span>
+                                ) : (
+                                  <span
+                                    role="button"
+                                    tabIndex={0}
+                                    className={styles.minus}
+                                    onClick={() =>
+                                      decrementCount(cartValues?.id)
+                                    }
+                                    // onKeyDown={decrementCountKeyHandler}
+                                  >
+                                    -
+                                  </span>
+                                )}
+
+                                <span className={styles.minus}>
+                                  {cartValues?.quantity || cartValues?.quanitiy}
+                                </span>
+
                                 <span
                                   role="button"
                                   tabIndex={0}
-                                  className={styles.minusDisabled}
-                                  onClick={() => decrementCount(cartValues?.id)}
-                                  // onKeyDown={decrementCountKeyHandler}
+                                  className={styles.plus}
+                                  onClick={() => incrementCount(cartValues?.id)}
+                                  // onKeyDown={incrementCountKeyHandler}
                                 >
-                                  -
+                                  +
                                 </span>
-                              ) : (
-                                <span
-                                  role="button"
-                                  tabIndex={0}
-                                  className={styles.minus}
-                                  onClick={() => decrementCount(cartValues?.id)}
-                                  // onKeyDown={decrementCountKeyHandler}
-                                >
-                                  -
-                                </span>
-                              )}
-
-                              <span className={styles.minus}>
-                                {cartValues?.quantity || cartValues?.quanitiy}
-                              </span>
-
-                              <span
-                                role="button"
-                                tabIndex={0}
-                                className={styles.plus}
-                                onClick={() => incrementCount(cartValues?.id)}
-                                // onKeyDown={incrementCountKeyHandler}
-                              >
-                                +
-                              </span>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                      </Col>
+                        </Col>
 
-                      <Col className={styles.deviceTypeDiv2}>
-                        <div className={styles.subTotal}>
-                          Total&nbsp; &nbsp; &nbsp; &nbsp;
-                          <span>
-                            ₹ {cartValues?.productPrice || cartValues?.price}
-                          </span>
-                        </div>
-                        <div className={styles.deleteIcon}>
-                          <Image
-                            src={DeleteIcon}
-                            alt="Delete"
-                            onClick={() => deleteCartItems(cartValues?.id)}
-                            style={{ cursor: "pointer" }}
-                          />
-                        </div>
-                      </Col>
-                    </Row>
-                  ))}
+                        <Col className={styles.deviceTypeDiv2}>
+                          <div className={styles.subTotal}>
+                            Total&nbsp; &nbsp; &nbsp; &nbsp;
+                            <span>
+                              ₹ {cartValues?.productPrice || cartValues?.price}
+                            </span>
+                          </div>
+                          <div className={styles.deleteIcon}>
+                            <Image
+                              src={DeleteIcon}
+                              alt="Delete"
+                              onClick={() => deleteCartItems(cartValues?.id)}
+                              style={{ cursor: "pointer" }}
+                            />
+                          </div>
+                          {outOfStock && (
+                            <p className={styles.outOfStock}>Out of Stock</p>
+                          )}
+                        </Col>
+                      </Row>
+                    );
+                  })}
                 </Col>
 
                 <Col
@@ -567,43 +581,47 @@ function CheckOutPageFunc() {
         </div>
         <div>
           {/* Responsive for Card */}
-          {allCart?.map((value: any) => (
-            <Row className={styles.responsiveRow}>
-              <Col
-                style={{
-                  color: "white",
-                  display: "flex",
-                  alignItems: "center",
-                  padding: 0,
-                }}
-              >
-                <div>
-                  <img src={value?.productImage} width="120px" />
-                </div>
-              </Col>
+          {allCart?.map((value: any) => {
+            const outOfStock =
+              value?.productType === "NC-Metal" ||
+              value?.deviceType === "NC-Metal";
+            return (
+              <Row className={styles.responsiveRow}>
+                <Col
+                  style={{
+                    color: "white",
+                    display: "flex",
+                    alignItems: "center",
+                    padding: 0,
+                  }}
+                >
+                  <div>
+                    <img src={value?.productImage} width="120px" />
+                  </div>
+                </Col>
 
-              <Col
-                style={{
-                  color: "white",
-                  fontWeight: "700",
-                  fontFamily: "oxygen",
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: 7,
-                }}
-              >
-                <p>{value?.productType || value?.deviceType}</p>
-                <div className={styles.priceDiv}>
-                  <div className={styles.piceTag}>Price</div>
+                <Col
+                  style={{
+                    color: "white",
+                    fontWeight: "700",
+                    fontFamily: "oxygen",
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: 7,
+                  }}
+                >
+                  <p>{value?.productType || value?.deviceType}</p>
+                  <div className={styles.priceDiv}>
+                    <div className={styles.piceTag}>Price</div>
 
-                  {(discountedTypes.includes(value?.productType) ||
-                    discountedTypes.includes(value?.deviceType)) && (
-                    <div className={styles.discountContainer}>
-                      <div className={styles.itemPrice}>
-                        ₹ {value?.itemPrice}
-                      </div>
-                      {/* <p className={styles.slashedPrice}>INR 599</p> */}
-                      {/* <span className={styles.discountText}>
+                    {(discountedTypes.includes(value?.productType) ||
+                      discountedTypes.includes(value?.deviceType)) && (
+                      <div className={styles.discountContainer}>
+                        <div className={styles.itemPrice}>
+                          ₹ {value?.itemPrice}
+                        </div>
+                        {/* <p className={styles.slashedPrice}>INR 599</p> */}
+                        {/* <span className={styles.discountText}>
                         {" "}
                         {discountedTypes.includes(value?.deviceType)
                           ? value?.deviceType == "NC-Pattern"
@@ -611,52 +629,61 @@ function CheckOutPageFunc() {
                             : "20.02% off"
                           : "28.61% off"}
                       </span> */}
-                    </div>
-                  )}
-                </div>
-                <div className={styles.qunatityDiv}>
-                  <div className={styles.piceTag}>Qunatity</div>
-                  <div className={styles.quantityNumber}>
-                    <div>
-                      <span
-                        role="button"
-                        tabIndex={0}
-                        className={styles.minus}
-                        onClick={() => decrementCount(value?.id)}
-                      >
-                        -
-                      </span>
-                      <span className={styles.minus}>{value?.quantity}</span>
+                      </div>
+                    )}
+                  </div>
+                  <div className={styles.qunatityDiv}>
+                    <div className={styles.piceTag}>Qunatity</div>
+                    <div className={styles.quantityNumber}>
+                      <div>
+                        <span
+                          role="button"
+                          tabIndex={0}
+                          className={styles.minus}
+                          onClick={() => decrementCount(value?.id)}
+                        >
+                          -
+                        </span>
+                        <span className={styles.minus}>{value?.quantity}</span>
 
-                      <span
-                        role="button"
-                        tabIndex={0}
-                        className={styles.plus}
-                        onClick={() => incrementCount(value?.id)}
-                        // onKeyDown={incrementCountKeyHandler}
-                      >
-                        +
-                      </span>
+                        <span
+                          role="button"
+                          tabIndex={0}
+                          className={styles.plus}
+                          onClick={() => incrementCount(value?.id)}
+                          // onKeyDown={incrementCountKeyHandler}
+                        >
+                          +
+                        </span>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className={styles.priceDiv}>
-                  <div className={styles.piceTag}>Total</div>
-                  <div className={styles.totalTextResp}>
-                    ₹ {value?.productPrice || value?.price}
+                  <div className={styles.priceDiv}>
+                    <div className={styles.piceTag}>Total</div>
+                    <div className={styles.totalTextResp}>
+                      ₹ {value?.productPrice || value?.price}
+                    </div>
                   </div>
-                </div>
-                <div className={styles.delIcon}>
-                  <Image
-                    src={DeleteIcon}
-                    alt="Delete"
-                    onClick={() => deleteCartItems(value?.id)}
-                    style={{ cursor: "pointer" }}
-                  />
-                </div>
-              </Col>
-            </Row>
-          ))}
+                  <div className={styles.delIcon}>
+                    {outOfStock && (
+                      <p
+                        className={styles.outOfStock}
+                        style={{ marginTop: 0, marginRight: 20 }}
+                      >
+                        Out of Stock
+                      </p>
+                    )}
+                    <Image
+                      src={DeleteIcon}
+                      alt="Delete"
+                      onClick={() => deleteCartItems(value?.id)}
+                      style={{ cursor: "pointer" }}
+                    />
+                  </div>
+                </Col>
+              </Row>
+            );
+          })}
 
           <Row className={styles.responseTotal}>
             <Col

@@ -107,6 +107,13 @@
     }
 }
 
+.outOfStock {
+    color: red;
+    font-weight: 600;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
 .slashedPrice {
     color: #FFFFFF;
     text-decoration: line-through;
