@@ -168,7 +168,7 @@ function NameCustomizationDetails({
         </div>
       </div>
 
-      {!outOfStock ? (
+      {outOfStock ? (
         <p className={styles.outOfStock}>Out of Stock</p>
       ) : (
         <div className={styles.buttonsContainer}>
