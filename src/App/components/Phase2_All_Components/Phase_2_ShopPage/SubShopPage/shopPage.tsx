@@ -124,7 +124,7 @@ function ShopComponent() {
               </div>
             </div>
 
-            {/* <Marquee /> */}
+            <Marquee />
 
             <div className={styles.shopPageDiv}>
               {/* <div className={styles.shopBreadCrumbs}>
@@ -308,7 +308,7 @@ function ShopComponent() {
                   )}
                 </div>
               </div>
-              {/* <Marquee /> */}
+              <Marquee />
             </div>
             <div className={styles.shopPageBackSection}>
               {/* <div className={styles.shopBreadCrumbs}>
