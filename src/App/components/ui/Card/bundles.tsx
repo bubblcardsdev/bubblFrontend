@@ -11,7 +11,9 @@ import { Button, Col } from "react-bootstrap";
 import Carousel from "react-multi-carousel";
 
 import styles from "./bundle.module.css";
+import { discounts, price } from "src/App/helpers/constants";
 
+const PRICES = price;
 export default function BundleCards({
   price,
 
@@ -144,10 +146,16 @@ export default function BundleCards({
               <div className={styles.discountContainer}>
                 {/* <p className={styles.slashedPrice}>INR {salesPrice}</p> */}
                 <p className={styles.slashedPrice}>
-                  INR{title === "Name Custom" ? 799 : 1299}
+                  INR
+                  {title === "Name Custom"
+                    ? PRICES["NC-Pattern"]
+                    : PRICES["Full Custom"]}
                 </p>
                 <span className={styles.discountText}>
-                  {title === "Name Custom" ? 35 : 35}% off
+                  {title === "Name Custom"
+                    ? discounts["NC-Pattern"]
+                    : discounts["Full Custom"]}
+                  % off
                 </span>
               </div>
             )}
@@ -181,8 +189,10 @@ export default function BundleCards({
 
             {showDiscount && price && price > 0 && (
               <div className={styles.discountContainer}>
-                <p className={styles.slashedPrice}>INR 699</p>
-                <span className={styles.discountText}>35% off</span>
+                <p className={styles.slashedPrice}>INR {PRICES[title]}</p>
+                <span className={styles.discountText}>
+                  {discounts[title]}% off
+                </span>
               </div>
             )}
             {price && price > 0 ? (
