@@ -11,6 +11,7 @@ function Marquee() {
           {/* Independence Day Special! &nbsp;&nbsp;&nbsp; Unlock up to 30% OFF
           &nbsp;&nbsp;&nbsp; Valid till 25th AUG only! */}
           Navaratri Special: 35% Off Site-Wide! Celebrate 9 Days of Savings 🎉🕉️
+          &nbsp;&nbsp; ** For Website Users Only **
         </span>
       </div>
     </div>
