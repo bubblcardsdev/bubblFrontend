@@ -1,0 +1,72 @@
+/* Root block */
+.shipping-policy {
+    --sp-max-width: 860px;
+    --sp-text: #151515;
+    --sp-muted: #4e4e4e;
+    --sp-bg: #ffffff;
+    --sp-border: #e7e7e9;
+    --sp-accent: #0f62fe;
+
+    margin: 0 auto;
+    padding: 2rem 1.25rem;
+    max-width: var(--sp-max-width);
+    color: var(--sp-text);
+    line-height: 1.6;
+}
+
+/* Titles & headings */
+.sp-title {
+    font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2.25rem);
+    line-height: 1.15;
+    margin: 0 0 0.75rem 0;
+    letter-spacing: -0.01em;
+}
+
+.sp-intro {
+    margin: 0 0 1.25rem 0;
+    color: var(--sp-muted);
+}
+
+.sp-heading {
+    margin: 1.75rem 0 0.5rem 0;
+    font-size: clamp(1.1rem, 1rem + 0.5vw, 1.375rem);
+    line-height: 1.3;
+}
+
+/* Lists */
+.sp-list {
+    margin: 0 0 1rem 1.25rem;
+    padding: 0;
+}
+
+.sp-list li {
+    margin: 0.5rem 0;
+    padding-left: 0.25rem;
+}
+
+/* Paragraphs */
+.sp-paragraph {
+    margin: 0 0 1rem 0;
+}
+
+/* Links */
+.sp-link {
+    color: var(--sp-accent);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.sp-link:hover,
+.sp-link:focus {
+    color: #0842b7;
+    border-color: currentColor;
+    outline: none;
+}
+
+/* Subtle card-like feel on large screens */
+@media (min-width: 768px) {
+    .shipping-policy {
+        padding: 2.25rem 2rem;
+    }
+}
