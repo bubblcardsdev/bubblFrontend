@@ -70,3 +70,96 @@
         padding: 2.25rem 2rem;
     }
 }
+
+/* Inherit the same design tokens as shipping-policy if you like */
+.rr-policy {
+    --rr-max-width: 860px;
+    --rr-text: #151515;
+    --rr-muted: #5b5b5b;
+    --rr-border: #e7e7e9;
+    --rr-accent: #0f62fe;
+
+    margin: 0 auto;
+    padding: 2rem 1.25rem;
+    max-width: var(--rr-max-width);
+    color: var(--rr-text);
+    background: var(--rr-bg);
+    border-radius: 16px;
+    line-height: 1.6;
+}
+
+.rr-title {
+    font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2.25rem);
+    line-height: 1.15;
+    margin: 0 0 0.75rem 0;
+    letter-spacing: -0.01em;
+}
+
+.rr-intro {
+    margin: 0 0 1.25rem 0;
+    color: var(--rr-muted);
+}
+
+.rr-heading {
+    margin: 1.75rem 0 0.5rem 0;
+    font-size: clamp(1.1rem, 1rem + 0.5vw, 1.375rem);
+    line-height: 1.3;
+}
+
+.rr-list {
+    margin: 0 0 1rem 1.25rem;
+    padding: 0;
+}
+
+.rr-list li {
+    margin: 0.5rem 0;
+    padding-left: 0.25rem;
+}
+
+/* Ordered steps */
+.rr-steps {
+    margin: 0 0 1rem 1.25rem;
+    padding: 0;
+}
+
+.rr-steps li {
+    margin: 0.5rem 0;
+    padding-left: 0.25rem;
+}
+
+.rr-paragraph {
+    margin: 0 0 1rem 0;
+}
+
+/* Links */
+.rr-link {
+    color: var(--rr-accent);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.rr-link:hover,
+.rr-link:focus {
+    color: #0842b7;
+    border-color: currentColor;
+    outline: none;
+}
+
+@media (min-width: 768px) {
+    .rr-policy {
+        padding: 2.25rem 2rem;
+    }
+}
+
+/* Optional dark mode
+@media (prefers-color-scheme: dark) {
+    .rr-policy {
+        --rr-text: #e8e8ea;
+        --rr-muted: #b6b6bb;
+        --rr-bg: #121216;
+        --rr-border: #24242a;
+        --rr-accent: #70a0ff;
+        border-color: var(--rr-border);
+    }
+} */

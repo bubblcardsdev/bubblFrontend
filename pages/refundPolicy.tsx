@@ -1,55 +1,106 @@
-import styles from "../styles/policy.module.css";
+import React from "react";
 
-const RefundPolicy = () => {
+export default function ReturnsRefunds() {
   return (
-    <div className={styles.container}>
-      <div className={styles.policyBox}>
-        <h1> Returns & Refunds Policy</h1>
-        <p className={styles.returnInfo}>
-          You are entitled to return your order within 3 days only if it is
-          delivered damaged.
-        </p>
-        <p className={styles.returnDeadline}>
-          The deadline for returning an order is 3 days from the date you
-          received the order.
-        </p>
-        <p className={styles.returnInstructions}>
-          In order to return the order, you must inform us of your decision by
-          emailing us at{" "}
-          <span className={styles.highlight}>support@bubbl.cards</span>
-        </p>
-        <p className={styles.reimbursementDetails}>
-          We will reimburse you no later than 30 days from the day on which we
-          receive the returned goods. We will use the same means of payment as
-          you used for the order, and you will not incur any fees for such
-          reimbursement.
-        </p>
-        <h3 className={styles.conditionsHeading}>Conditions for returns:</h3>
-        <p className={styles.conditionsInfo}>
-          In order for the goods to be eligible for a return, please make sure
-          that:
-        </p>
-        <p className={styles.purchaseCondition}>
-          The goods were purchased in the last 3 days
-        </p>
-        <p className={styles.packagingCondition}>
-          The goods are in the original packaging
-        </p>
-        <h3 className={styles.returningGoodsHeading}>Returning Goods</h3>
-        <p className={styles.returnProcess}>
-          We will be initiating the return process by sharing the shipment
-          instructions with you over your registered email address.
-        </p>
-        <h3 className={styles.contactHeading}>Contact Us</h3>
-        <p className={styles.contactInfo}>
-          If you have any questions about our Returns and Refunds Policy, please
-          contact us by{" "}
-          <span className={styles.highlight}>support@bubbl.cards</span> or call
-          <span className={styles.highlight}> +91 7845861552</span>
-        </p>
-      </div>
-    </div>
-  );
-};
+    <section
+      className="rr-policy"
+      aria-labelledby="returns-refunds-title"
+      role="region"
+    >
+      <h1 className="rr-title" id="returns-refunds-title">
+        Returns &amp; Refunds Policy
+      </h1>
 
-export default RefundPolicy;
+      <p className="rr-intro">
+        We aim to deliver quality products every time. If something arrives
+        damaged, we’re here to help. This policy explains when and how refunds
+        are processed.
+      </p>
+
+      <h2 className="rr-heading">Refund Eligibility</h2>
+      <ul className="rr-list">
+        <li>
+          <strong>
+            Refunds are available only for physical damage on arrival.
+          </strong>
+        </li>
+        <li>
+          You must request a refund{" "}
+          <strong>within 7 days of receipt of the product</strong>.
+        </li>
+        <li>
+          The item must be in its original condition (aside from the reported
+          damage) and include any packaging, inserts, or accessories provided.
+        </li>
+      </ul>
+
+      <h2 className="rr-heading">What’s Not Eligible</h2>
+      <ul className="rr-list">
+        <li>Change of mind or buyer’s remorse</li>
+        <li>Incorrect personalization details provided by the customer</li>
+        <li>Normal wear and tear or damage occurring after delivery</li>
+        <li>Issues caused by improper use, storage, or handling</li>
+        <li>
+          Performance variations due to third-party devices, cases, or NFC
+          reader compatibility
+        </li>
+      </ul>
+
+      <h2 className="rr-heading">How to Request a Refund</h2>
+      <ol className="rr-steps">
+        <li>
+          <strong>Contact us within 7 days of delivery</strong> via email or
+          phone with your order number.
+        </li>
+        <li>
+          Provide <strong>clear photos or a short video</strong> showing the
+          physical damage and the packaging condition.
+        </li>
+        <li>
+          Our team will review your request and may ask for additional
+          information if needed. We’ll{" "}
+          <strong>
+            communicate updates by email or phone call on a need basis
+          </strong>
+          .
+        </li>
+      </ol>
+
+      <h2 className="rr-heading">Inspection &amp; Approval</h2>
+      <p className="rr-paragraph">
+        Once your claim is reviewed, we’ll confirm eligibility. If approved,
+        we’ll issue a refund to your original payment method. Depending on your
+        bank or payment provider, it may take several business days to appear in
+        your account.
+      </p>
+
+      <h2 className="rr-heading">Replacements (If Applicable)</h2>
+      <p className="rr-paragraph">
+        If a replacement is preferred and stock allows, we may offer a
+        like-for-like replacement instead of a refund for eligible damage
+        claims.
+      </p>
+
+      <h2 className="rr-heading">Return Shipping (If Requested)</h2>
+      <p className="rr-paragraph">
+        In some cases, we may request the product be returned for inspection. If
+        a return is required for an approved damage claim,{" "}
+        <strong>we will provide return instructions</strong>. Please do not
+        return items without prior authorization.
+      </p>
+
+      <h2 className="rr-heading">Contact</h2>
+      <p className="rr-paragraph">
+        For refund requests or questions, contact us at{" "}
+        <a className="rr-link" href="mailto:support@bubbl.cards">
+          support@bubbl.cards
+        </a>{" "}
+        or{" "}
+        <a className="rr-link" href="tel:+10000000000">
+          +91 7358108634
+        </a>
+        .
+      </p>
+    </section>
+  );
+}
