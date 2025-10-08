@@ -53,7 +53,7 @@ const HomeSlider = ({
               title={item?.type}
               description={item?.description}
               images={item?.images}
-              showDiscount={showDiscount}
+              // showDiscount={showDiscount}
             />
           ))}
         </Carousel>

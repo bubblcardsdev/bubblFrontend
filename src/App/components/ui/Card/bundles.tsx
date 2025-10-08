@@ -145,18 +145,18 @@ export default function BundleCards({
             {showDiscount && price && price > 0 && (
               <div className={styles.discountContainer}>
                 {/* <p className={styles.slashedPrice}>INR {salesPrice}</p> */}
-                <p className={styles.slashedPrice}>
+                {/* <p className={styles.slashedPrice}>
                   INR
                   {title === "Name Custom"
                     ? PRICES["NC-Pattern"]
                     : PRICES["Full Custom"]}
-                </p>
-                <span className={styles.discountText}>
+                </p> */}
+                {/* <span className={styles.discountText}>
                   {title === "Name Custom"
                     ? discounts["NC-Pattern"]
                     : discounts["Full Custom"]}
                   % off
-                </span>
+                </span> */}
               </div>
             )}
             {price && price > 0 ? (

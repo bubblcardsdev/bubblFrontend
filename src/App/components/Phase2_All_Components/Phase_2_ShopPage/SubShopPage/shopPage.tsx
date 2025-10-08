@@ -124,7 +124,7 @@ function ShopComponent() {
               </div>
             </div>
 
-            <Marquee />
+            {/* <Marquee /> */}
 
             <div className={styles.shopPageDiv}>
               {/* <div className={styles.shopBreadCrumbs}>
@@ -217,7 +217,7 @@ function ShopComponent() {
                       title={bands?.type}
                       description={bands?.description}
                       images={bands?.images}
-                      showDiscount
+                      // showDiscount
                     />
                   </Col>
                 </div>
@@ -257,7 +257,7 @@ function ShopComponent() {
                         title={bundle.type}
                         description={bundle.description}
                         images={bundle.images}
-                        showDiscount
+                        // showDiscount
                       />
                     )}
                   </Col>
@@ -308,7 +308,7 @@ function ShopComponent() {
                   )}
                 </div>
               </div>
-              <Marquee />
+              {/* <Marquee /> */}
             </div>
             <div className={styles.shopPageBackSection}>
               {/* <div className={styles.shopBreadCrumbs}>
@@ -406,7 +406,7 @@ function ShopComponent() {
                       title={bands?.type}
                       description={bands?.description}
                       images={bands?.images}
-                      showDiscount
+                      // showDiscount
                     />
                   </Col>
                 </div>
@@ -453,7 +453,7 @@ function ShopComponent() {
                         title={bundle.type}
                         description={bundle.description}
                         images={bundle.images}
-                        showDiscount
+                        // showDiscount
                       />
                     )}
                     <div className={styles.background}>

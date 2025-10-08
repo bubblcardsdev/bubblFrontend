@@ -562,8 +562,8 @@ function ProductListSocket() {
                     <Col className={styles.customization_details_right}>
                       <h3 className={styles.quantityText_price}>Price</h3>
                       <div className={styles.discountContainer}>
-                        <p className={styles.slashedPrice}>INR 699</p>
-                        <span className={styles.discountText}>35% off</span>
+                        {/* <p className={styles.slashedPrice}>INR 699</p> */}
+                        {/* <span className={styles.discountText}>35% off</span> */}
                       </div>
                       <h4>
                         Rs.{individuals[0]?.price} <span>Per socket</span>

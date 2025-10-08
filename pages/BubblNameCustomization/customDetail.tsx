@@ -106,14 +106,14 @@ function NameCustomizationDetails({
           {size?.width > 500 && (
             <div className={styles.price}>
               <h3>Price</h3>
-              <div className={styles.discountContainer}>
+              {/* <div className={styles.discountContainer}>
                 <p className={styles.slashedPrice}>
                   INR {price[choosePattern] || price["NC-Pattern"]}
                 </p>
                 <span className={styles.discountText}>
                   {discount[choosePattern] || discount["NC-Pattern"]}
                 </span>
-              </div>
+              </div> */}
               <h4>
                 ₹&nbsp; {priceValue}
                 <span>&nbsp; Per Card</span>
@@ -158,14 +158,14 @@ function NameCustomizationDetails({
 
         <div className={styles.price_resp}>
           <h3>Price</h3>
-          <div className={styles.discountContainer}>
+          {/* <div className={styles.discountContainer}>
             <p className={styles.slashedPrice}>
               INR {price[choosePattern] || price["NC-Pattern"]}
             </p>
             <span className={styles.discountText}>
               {discount[choosePattern] || discount["NC-Pattern"]}
             </span>
-          </div>
+          </div> */}
           <h4>
             ₹&nbsp; {priceValue}
             <span>&nbsp; Per Card</span>

@@ -128,7 +128,7 @@ export default function BundleImage({
               <div className={styles.discountContainer}>
                 {/* <p className={styles.slashedPrice}>INR {salesPrice}</p> */}
                 <p className={styles.slashedPrice}>INR 1499</p>
-                <span className={styles.discountText}>35% off</span>
+                {/* <span className={styles.discountText}>35% off</span> */}
               </div>
             )}
             {price && price > 0 ? (
